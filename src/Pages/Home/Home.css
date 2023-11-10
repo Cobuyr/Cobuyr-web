@@ -17,6 +17,7 @@
   border: 1px var(--text-color) solid;
   border-radius: 20px;
   padding: 5px 25px;
+  margin-block: 2.5vh;
 }
 .badge:hover {
   box-shadow: 0 0 10px -5px var(--text-color);
@@ -44,4 +45,5 @@
 
 .primary-btn {
   padding: 10px 20px;
+  margin-block: 2.5vh;
 }/*# sourceMappingURL=Home.css.map */

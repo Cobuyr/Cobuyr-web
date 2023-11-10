@@ -13,7 +13,9 @@ const Home = () => {
       </h2>
       <button className="primary-btn">Join Waitlist</button>
     </section>
+
     <section className="future">
+    <div className="badge">The Future</div>
         <div className="future-textbox">
             <h2 className="future-h2">THE FUTURE OF PAYMENTS</h2>
             <p className="future-text">Unlock new sales and savings by providing your customers with the ability to purchase together with Social Buying, the future of online payments, from Cobuyr.</p>
