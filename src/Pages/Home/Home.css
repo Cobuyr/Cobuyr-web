@@ -1,6 +1,7 @@
 :root {
   --text-color: hsl(0, 0%, 50%);
   --highlight-color: hsl(0, 0%, 90%);
+  --light-border: hsla(0, 0%, 75%, 0.3);
 }
 
 .hero {
@@ -83,7 +84,7 @@
   list-style: none;
   width: 150px;
   padding: 40px 10px;
-  outline: 2px hsla(0, 0%, 75%, 0.3) solid;
+  outline: 2px var(--light-border) solid;
   border-radius: 10px;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
@@ -100,4 +101,66 @@
 .future-text {
   width: 45ch;
   margin: 0 auto;
+}
+
+.transform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0px 5px 10px -15px hsl(0, 0%, 5%);
+}
+.transform .transform-textbox {
+  text-align: -webkit-center;
+}
+.transform .hex-box {
+  width: 100%;
+  min-height: 80vh;
+  margin-block: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transform .hex-box .hex-list {
+  --s: 200px;
+  --g: 15px;
+  display: grid;
+}
+.transform .hex-box .hex-list li {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 10px;
+  border-block: 1px solid var(--light-border);
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1.15;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+          clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0 50%);
+  transform: translate(var(--_x, 0), var(--_y, 0));
+  list-style: none;
+  outline: 2px hsla(0, 0%, 75%, 0.3) solid;
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.262));
+}
+.transform .hex-box .hex-list li:nth-child(1) {
+  --_y: calc(-100% - var(--g));
+}
+.transform .hex-box .hex-list li:nth-child(7) {
+  --_y: calc(100% + var(--g));
+}
+.transform .hex-box .hex-list li:nth-child(3), .transform .hex-box .hex-list li:nth-child(5) {
+  --_x: calc(-75% - 0.87 * var(--g));
+}
+.transform .hex-box .hex-list li:nth-child(4), .transform .hex-box .hex-list li:nth-child(6) {
+  --_x: calc(75% + 0.87 * var(--g));
+}
+.transform .hex-box .hex-list li:nth-child(3), .transform .hex-box .hex-list li:nth-child(4) {
+  --_y: calc(-50% - 0.5 * var(--g));
+}
+.transform .hex-box .hex-list li:nth-child(5), .transform .hex-box .hex-list li:nth-child(6) {
+  --_y: calc(50% + 0.5 * var(--g));
 }/*# sourceMappingURL=Home.css.map */

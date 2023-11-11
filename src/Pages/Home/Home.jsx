@@ -35,24 +35,30 @@ const Home = () => {
         </div>
     </section>
     
-    
-    <section className="future">
-    <div className="badge">The Future</div>
-    <div className="future-wrap">
-        <div className="future-textbox">
-            <h2 className="future-h2">THE FUTURE OF PAYMENTS</h2>
-            <p className="future-text">Unlock new sales and savings by providing your customers with the ability to purchase together with Social Buying, the future of online payments, from Cobuyr.</p>
+
+    <section className="transform">
+    <div className="badge">Checkout Transformation</div>
+        <div className="transform-textbox">
+            <h2 className="transform-h2">TRANSFORM YOUR CHECKOUT PROCESS FOR TODAY'S ERA OF SHARING </h2>
+            <p className="transform-text">Cobuyr gives customers a new and memorable social buying experience that also modernizes your checkout process by making co-buying a reality, and creating more value for you.</p>
         </div>
-        <div className="future-listbox">
-            <ul className="listbox">
-                <li>Lower the cost of customer acquisition</li>
-                <li>Highly personalised buying experience</li>
-                <li>Fewer discounts to move unsold products</li>
-                <li>Unique insights into customer networks</li>
-                <li>Multiple customer buy together in one order</li>
-                <li>Richer data for better marketing engagement</li>
+        <div className="hex-box">
+            <ul className="hex-list">
+                <li>Monetize existing data</li>
+                <li>LOGO HERE</li>
+                <li>Reduce customer acquisition costs</li>
+                <li>Lower basket abandonment</li>
+                <li>Improve customer satisfaction</li>
+                <li>Increase average order value</li>
+                <li>Reduce technology spend</li>
             </ul>
         </div>
+    </section>
+
+    <section className="info-banner">
+    <div className="banner-textbox">
+            <h2 className="banner-h2">TRANSFORM YOUR CHECKOUT PROCESS FOR TODAY'S ERA OF SHARING </h2>
+            <p className="banner-text">Cobuyr gives customers a new and memorable social buying experience that also modernizes your checkout process by making co-buying a reality, and creating more value for you.</p>
         </div>
     </section>
     </>
