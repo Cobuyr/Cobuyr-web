@@ -18,6 +18,7 @@
   border-radius: 20px;
   padding: 5px 25px;
   margin-block: 2.5vh;
+  place-self: center;
 }
 .badge:hover {
   box-shadow: 0 0 10px -5px var(--text-color);
@@ -46,4 +47,57 @@
 .primary-btn {
   padding: 10px 20px;
   margin-block: 2.5vh;
+}
+
+.future {
+  padding-block: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.future-wrap {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-template-rows: 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  place-items: center;
+  align-items: stretch;
+}
+
+.future-listbox {
+  width: 100%;
+}
+
+.listbox {
+  display: grid;
+  row-gap: 20px;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  grid-auto-rows: 150px;
+  grid-template-columns: repeat(3, minmax(150px, 1fr));
+  perspective: 1500px;
+}
+.listbox li {
+  list-style: none;
+  width: 150px;
+  padding: 40px 10px;
+  outline: 2px hsla(0, 0%, 75%, 0.3) solid;
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  background: rgba(250, 235, 215, 0.1019607843);
+  background: linear-gradient(125deg, rgba(255, 255, 255, 0.075) 40%, rgba(255, 255, 255, 0.262));
+  transform-origin: center;
+  transition: all 0.5s ease-in-out;
+}
+.listbox li:hover {
+  transform: translateZ(100px);
+  z-index: 2;
+}
+
+.future-text {
+  width: 45ch;
+  margin: 0 auto;
 }/*# sourceMappingURL=Home.css.map */

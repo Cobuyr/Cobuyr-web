@@ -14,14 +14,16 @@ const Home = () => {
       <button className="primary-btn">Join Waitlist</button>
     </section>
 
+
     <section className="future">
     <div className="badge">The Future</div>
+    <div className="future-wrap">
         <div className="future-textbox">
             <h2 className="future-h2">THE FUTURE OF PAYMENTS</h2>
             <p className="future-text">Unlock new sales and savings by providing your customers with the ability to purchase together with Social Buying, the future of online payments, from Cobuyr.</p>
         </div>
         <div className="future-listbox">
-            <ul>
+            <ul className="listbox">
                 <li>Lower the cost of customer acquisition</li>
                 <li>Highly personalised buying experience</li>
                 <li>Fewer discounts to move unsold products</li>
@@ -29,6 +31,28 @@ const Home = () => {
                 <li>Multiple customer buy together in one order</li>
                 <li>Richer data for better marketing engagement</li>
             </ul>
+        </div>
+        </div>
+    </section>
+    
+    
+    <section className="future">
+    <div className="badge">The Future</div>
+    <div className="future-wrap">
+        <div className="future-textbox">
+            <h2 className="future-h2">THE FUTURE OF PAYMENTS</h2>
+            <p className="future-text">Unlock new sales and savings by providing your customers with the ability to purchase together with Social Buying, the future of online payments, from Cobuyr.</p>
+        </div>
+        <div className="future-listbox">
+            <ul className="listbox">
+                <li>Lower the cost of customer acquisition</li>
+                <li>Highly personalised buying experience</li>
+                <li>Fewer discounts to move unsold products</li>
+                <li>Unique insights into customer networks</li>
+                <li>Multiple customer buy together in one order</li>
+                <li>Richer data for better marketing engagement</li>
+            </ul>
+        </div>
         </div>
     </section>
     </>

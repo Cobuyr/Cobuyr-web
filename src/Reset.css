@@ -17,7 +17,11 @@ html {
 
 /* Sections
      ========================================================================== */
-
+section{
+    width: 100%;
+    min-height: 50vh;
+    position: relative;
+}
 /**
    * Remove the margin in all browsers.
    */
