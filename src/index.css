@@ -1,6 +1,6 @@
 :root {
   --bg-color:#242424;
-  --text-color: hsl(0, 0%, 50%);
+  --text-color: hsla(240,5%,65%,.8);
   --highlight-color: hsl(0, 0%, 90%);
   --light-border: hsla(0, 0%, 75%, 0.3);
   --primary-dark: hsl(210, 100%, 25%);
@@ -13,7 +13,7 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: var(--text-color);
   background-color: var(--bg-color);
   text-align: center;
 

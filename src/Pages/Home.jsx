@@ -9,23 +9,23 @@ const Home = () => {
         <h1>
           MODERNIZE YOUR CHECKOUT FOR TODAY’S ERA OF SHARING WITH SOCIAL BUYING
         </h1>
-        <h2 className="hero-h2">
+        <h3 className="hero-h3">
           Acquire <span className="highlight">more customers</span>,{" "}
           <span className="highlight">increase average order</span> value and
           drive <span className="highlight">repeat purchases</span> by enabling
           your customers to buy together.
-        </h2>
+        </h3>
         <button className="primary-btn">Join Waitlist</button>
       </section>
 
       <section className="future">
-        <div className="badge">The Future</div>
         <div className="future-wrap">
           <div className="future-textbox">
+          <div className="badge">The Future</div>
             <h2>THE FUTURE OF PAYMENTS</h2>
             <p>
               Unlock new sales and savings by providing your customers with the
-              ability to purchase together with Social Buying, the future of
+              <span className="highlight"> ability to purchase together with Social Buying</span>, the future of
               online payments, from Cobuyr.
             </p>
           </div>
@@ -48,8 +48,8 @@ const Home = () => {
           <h2>TRANSFORM YOUR CHECKOUT PROCESS FOR TODAY'S ERA OF SHARING </h2>
           <p className="transform-text">
             Cobuyr gives customers a new and memorable social buying experience
-            that also modernizes your checkout process by making co-buying a
-            reality, and creating more value for you.
+            that also modernizes your checkout process by <span className="highlight">making co-buying a
+            reality</span> , and creating more value for you.
           </p>
         </div>
         <div className="hex-box">
@@ -66,7 +66,6 @@ const Home = () => {
       </section>
 
       <section className="info-banner">
-        <div className="glow"></div>
         <div className="badge">Checkout Transformation</div>
         <div className="textbox">
           <h2>Buff up customer Transaction</h2>
@@ -78,6 +77,7 @@ const Home = () => {
           </p>
           <button className="primary-btn">Book Demo</button>
         </div>
+        <div className="glow"></div>
         <div className="glow2"></div>
       </section>
 

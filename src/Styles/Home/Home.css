@@ -4,10 +4,10 @@
   place-items: center;
 }
 
-.hero-h2 {
-  color: var(--text-color);
+.hero-h3 {
   padding-inline: 10vw;
   font-size: clamp(0.5em, 3vw, 1.2em);
+  padding-inline: 20%;
 }
 
 .badge {
@@ -31,16 +31,6 @@
   place-items: center;
 }
 
-h1 {
-  font-size: clamp(2em, 5vw, 3em);
-  padding-inline: 7vw;
-  background-image: linear-gradient(125deg, hsla(0, 0%, 100%, 0.8) 0%, hsl(0, 0%, 50%) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-}
-
 .highlight {
   color: var(--highlight-color);
 }
@@ -51,9 +41,10 @@ h1 {
 }
 
 .future {
-  padding-block: 10vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
 }
 
 .future-wrap {
@@ -65,6 +56,9 @@ h1 {
   row-gap: 20px;
   place-items: center;
   align-items: stretch;
+}
+.future-wrap h2 {
+  padding-left: 0;
 }
 
 .future-listbox {
@@ -98,12 +92,15 @@ h1 {
   z-index: 2;
 }
 
-.future-text {
-  width: 45ch;
-  margin: 0 auto;
+.future-textbox {
+  text-align: left;
+  padding-left: 0;
+  max-width: 500px;
+  margin-block: auto;
 }
 
 .transform {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -171,6 +168,7 @@ h1 {
   height: 75vh;
   position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #202022;
@@ -211,6 +209,7 @@ h1 {
 }
 
 .modern {
+  height: 100%;
   background-color: var(--bg-color);
   border-radius: 100px 100px 0 0;
   box-shadow: 0px -20px 25px -15px hsl(0, 0%, 5%);
@@ -241,7 +240,13 @@ h1 {
 }
 
 .banner2 {
-  background: radial-gradient(circle at 50% 0%, rgba(50, 50, 50, 0.4156862745) 0%, rgba(50, 50, 50, 0.7607843137) 70%, var(--bg-color) 90%), url("/public/grid.png");
+  height: 100%;
+  width: 95%;
+  margin-inline: auto;
+  border-radius: 25px;
+  box-shadow: 0 0 50px -25px var(--bg-color);
+  background: radial-gradient(circle at 50% 0%, hsla(120, 20%, 80%, 0.3) 0%, hsla(120, 20%, 80%, 0.5) 70%, var(--bg-color) 90%), url(/grid.png);
+  color: #202022;
 }
 
 .feature .ft-listbox {
