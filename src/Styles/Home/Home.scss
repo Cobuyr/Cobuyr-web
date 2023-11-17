@@ -399,13 +399,6 @@
   }
 }
 
-:root {
-  --size: clamp(10rem, 1rem + 40vmin, 30rem);
-  --gap: calc(var(--size) / 14);
-  --duration: 60s;
-  --scroll-start: 0;
-  --scroll-end: calc(-100% - var(--gap));
-}
 .marquee {
   height: 415px;
   display: flex;
@@ -647,13 +640,21 @@ ul:has(> :focus) > li:not(:focus) {
 .early{
 
   form{
-    display: flex;
+    padding: 12px 24px;
+    outline: 1px solid;
+    border-radius: 20px;
+    width: fit-content;
+    margin-inline: auto;
 
     input{
       padding: 16px 32px;
     border-radius: 15px;
     border: none;
     outline: 1px solid white;
+    margin-inline: 10px;
     }
+  }
+  h6{
+    opacity: 0.6;
   }
 }

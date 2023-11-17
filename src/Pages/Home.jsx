@@ -266,7 +266,7 @@ const Home = () => {
           Early Adopter Programme Ends on <span>January 8 2024</span>
         </div>
         <h2 className="early-h2">Early Adopter Programme</h2>
-        <h3>Embrace the power of Social Buying</h3>
+        <h3>Become an early adopter and <span className="highlight">embrace the power of Social Buying</span> with Cobuyr today.</h3>
         <form>
           <span className="formtext"></span>
           <input type="text" placeholder="Name" required />
