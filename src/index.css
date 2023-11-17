@@ -1,6 +1,6 @@
 :root {
   --bg-color:#242424;
-  --text-color: hsla(240,5%,65%,.8);
+  --text-color: hsl(0, 0%, 60%);
   --highlight-color: hsl(0, 0%, 90%);
   --light-border: hsla(0, 0%, 75%, 0.3);
   --primary-dark: hsl(210, 100%, 25%);
