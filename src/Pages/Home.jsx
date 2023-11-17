@@ -129,11 +129,11 @@ const Home = () => {
         </div>
       </section> */}
 
-<section className="modern">
+      <section className="modern">
         <div className="container">
           <div className="head">
             <div className="badge">The Future</div>
-            <h2>THE FUTURE OF PAYMENTS</h2>
+            <h2>THE MODERN PAYMENTS PLATFORM</h2>
           </div>
           <div className="info1">
             <div className="textbox">
@@ -173,6 +173,27 @@ const Home = () => {
                 data, and market analytics. Gain profound market understanding
                 through collaborative purchasing trends.
               </p>
+            </div>
+          </div>
+          <div className="sec">
+            <h2>Security Features</h2>
+            <div className=" marquee">
+              <ul className="marquee__group ">
+                <li>Data Encryption</li>
+                <li>Tokenization</li>
+                <li>Comnpliance Checks</li>
+                <li>Authentication</li>
+                <li>Fraud Prevention</li>
+                <li>User Privacy</li>
+              </ul>
+              <ul aria-hidden="true" className="marquee__group ">
+                <li>Data Encryption</li>
+                <li>Tokenization</li>
+                <li>Comnpliance Checks</li>
+                <li>Authentication</li>
+                <li>Fraud Prevention</li>
+                <li>User Privacy</li>
+              </ul>
             </div>
           </div>
           <div className="info-mini">
@@ -266,7 +287,11 @@ const Home = () => {
           Early Adopter Programme Ends on <span>January 8 2024</span>
         </div>
         <h2 className="early-h2">Early Adopter Programme</h2>
-        <h3>Become an early adopter and <span className="highlight">embrace the power of Social Buying</span> with Cobuyr today.</h3>
+        <h3>
+          Become an early adopter and{" "}
+          <span className="highlight">embrace the power of Social Buying</span>{" "}
+          with Cobuyr today.
+        </h3>
         <form>
           <span className="formtext"></span>
           <input type="text" placeholder="Name" required />
