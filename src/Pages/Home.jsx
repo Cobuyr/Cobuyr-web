@@ -105,7 +105,8 @@ const Home = () => {
           </ul>
         </div>
       </section> */}
-      <section className="modern">
+
+      {/* <section className="modern">
         <div className="badge">New Method</div>
         <div className="textbox">
           <h2>THE MODERN PAYMENT PLATFORM</h2>
@@ -124,6 +125,72 @@ const Home = () => {
               src={dash}
               alt="new category of multi-party payment transactions"
             />
+          </div>
+        </div>
+      </section> */}
+
+<section className="modern">
+        <div className="container">
+          <div className="head">
+            <div className="badge">The Future</div>
+            <h2>THE FUTURE OF PAYMENTS</h2>
+          </div>
+          <div className="info1">
+            <div className="textbox">
+              <h3>Unified Payment Innovation</h3>
+              <p>
+                Discover Cobuyr, the pioneer in integrated payment platforms.
+                Seamlessly amalgamating payments, data, and analytics, it
+                revolutionizes the purchasing experience. Unlock the collective
+                purchasing power of millions engaged in collaborative buying
+                with family and friends.
+              </p>
+              {/* <div className="image">
+                <img
+                  src={dash}
+                  alt="new category of multi-party payment transactions"
+                />
+              </div> */}
+            </div>
+          </div>
+          <div className="info3">
+            <div className="textbox">
+              <h3>Collaborative Purchasing Community</h3>
+              <p>
+                Cobuyr fosters a vibrant community of cobuyers. It empowers
+                individuals seeking shared expenses for online products and
+                services. Join this collaborative revolution, transforming how
+                purchases are made and enjoyed.
+              </p>
+            </div>
+          </div>
+          <div className="info2">
+            <div className="textbox">
+              <h3>Cutting-edge Data and Analytics</h3>
+              <p>
+                At Cobuyr, dive into an innovative world of data and analytics.
+                Explore a holistic platform merging payment insights, customer
+                data, and market analytics. Gain profound market understanding
+                through collaborative purchasing trends.
+              </p>
+            </div>
+          </div>
+          <div className="info-mini">
+            <div className="textbox">
+              <h3>How Social?</h3>
+              <p>Discover Cobuyr</p>
+            </div>
+          </div>
+          <div className="poll">
+            <div className="textbox">
+              <h3>What Ecommerce platform is your favourite?</h3>
+              <ul>
+                <li>Shopify</li>
+                <li>WooCommerce</li>
+                <li>Magneto</li>
+                <li>Wix</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -193,77 +260,6 @@ const Home = () => {
           </ul>
         </div>
       </section>
-      
-      <section>
-        <div class="container">
-          <div class="head">
-            <div className="badge">The Future</div>
-            <h2>THE FUTURE OF PAYMENTS</h2>
-          </div>
-          <div class="info1">
-            <div className="textbox">
-              <h3>Unified Payment Innovation</h3>
-              <p>
-                Discover Cobuyr, the pioneer in integrated payment platforms.
-                Seamlessly amalgamating payments, data, and analytics, it
-                revolutionizes the purchasing experience. Unlock the collective
-                purchasing power of millions engaged in collaborative buying
-                with family and friends.
-              </p>
-              {/* <div className="image">
-                <img
-                  src={dash}
-                  alt="new category of multi-party payment transactions"
-                />
-              </div> */}
-            </div>
-          </div>
-          <div class="info3">
-          <div className="textbox">
-              <h3>Unified Payment Innovation</h3>
-              <p>
-                Discover Cobuyr, the pioneer in integrated payment platforms.
-                Seamlessly amalgamating payments, data, and analytics, it
-                revolutionizes the purchasing experience. Unlock the collective
-                purchasing power of millions engaged in collaborative buying
-                with family and friends.
-              </p>
-            </div>
-          </div>
-          <div class="info2">
-          <div className="textbox">
-              <h3>Unified Payment Innovation</h3>
-              <p>
-                Discover Cobuyr, the pioneer in integrated payment platforms.
-                Seamlessly amalgamating payments, data, and analytics, it
-                revolutionizes the purchasing experience. Unlock the collective
-                purchasing power of millions engaged in collaborative buying
-                with family and friends.
-              </p>
-            </div>
-          </div>
-          <div class="info-mini">
-          <div className="textbox">
-              <h3>Unified Payment Innovation</h3>
-              <p>
-                Discover Cobuyr
-              </p>
-            </div>
-          </div>
-          <div className="poll">
-          <div className="textbox">
-              <h3>What Ecommerce platform is your favourite?</h3>
-              <p>
-                Discover Cobuyr, the pioneer in integrated payment platforms.
-                Seamlessly amalgamating payments, data, and analytics, it
-                revolutionizes the purchasing experience. Unlock the collective
-                purchasing power of millions engaged in collaborative buying
-                with family and friends.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <section className="early">
         <div className="badge">
@@ -288,7 +284,6 @@ const Home = () => {
           .
         </h6>
       </section>
-
     </>
   );
 };

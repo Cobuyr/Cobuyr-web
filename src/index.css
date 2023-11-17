@@ -2,7 +2,7 @@
   --bg-color:#242424;
   --text-color: hsl(0, 0%, 60%);
   --highlight-color: hsl(0, 0%, 90%);
-  --light-border: hsla(0, 0%, 75%, 0.3);
+  --light-border: #ffffff17;
   --primary-dark: hsl(210, 100%, 25%);
   --primary-light: hsl(120, 20%, 80%);
   --accent: hsl(335, 90%, 60%);
