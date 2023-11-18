@@ -298,16 +298,7 @@ const Home = () => {
           <input type="email" placeholder="Email" required />
           <button>Go!</button>
         </form>
-        <h6>
-          This site is protected by <span className="highlight">reCAPTCHA</span>{" "}
-          and the{" "}
-          <a href="https://policies.google.com/privacy">
-            Google Privacy Policy
-          </a>{" "}
-          and{" "}
-          <a href="https://policies.google.com/terms">Terms of Service apply</a>
-          .
-        </h6>
+        
       </section>
     </>
   );

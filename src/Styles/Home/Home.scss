@@ -16,7 +16,6 @@
   border-radius: 20px;
   font-size: 13px;
   padding: 5px 25px;
-  margin-block: 2.5vh;
   margin-inline: auto;
   place-self: center;
   span {
@@ -359,6 +358,8 @@
 }
 
 .integrate {
+  // min-height: 60vh;
+  padding-block: 10vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -398,6 +399,10 @@
     // width: 900px;
   }
 }
+
+
+//marquee animation
+
 
 .marquee {
   height: 415px;
@@ -857,7 +862,5 @@ ul:has(> :focus) > li:not(:focus) {
       margin-inline: 10px;
     }
   }
-  h6 {
-    opacity: 0.6;
-  }
+  
 }

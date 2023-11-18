@@ -11,7 +11,6 @@
   border-radius: 20px;
   font-size: 13px;
   padding: 5px 25px;
-  margin-block: 2.5vh;
   margin-inline: auto;
   place-self: center;
 }
@@ -197,6 +196,7 @@
 }
 
 .integrate {
+  padding-block: 10vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -461,7 +461,4 @@ ul:has(> :focus) > li:not(:focus) {
   border: none;
   outline: 1px solid white;
   margin-inline: 10px;
-}
-.early h6 {
-  opacity: 0.6;
 }/*# sourceMappingURL=Home.css.map */
