@@ -59,7 +59,7 @@ const Header = () => {
 <div className="nav-wrap">
       <nav>
         <ul className={menuOpen ? "navbar open" : "navbar"}>
-          <li>
+          <li className="hide">
             <a href="#" className="active">
               Home
             </a>
