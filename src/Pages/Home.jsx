@@ -264,6 +264,7 @@ const Home = () => {
           </p>
           <button className="primary-btn">Documentation</button>
         </div>
+        <div className="marquee-wrap">
         <div className=" marquee marquee--vertical">
           <ul className="marquee__group ">
             <li>Lower the cost of customer acquisition</li>
@@ -280,6 +281,40 @@ const Home = () => {
             <li>Multiple customer buy together in one order</li>
           </ul>
         </div>
+        <div className=" marquee marquee--vertical marquee--reverse">
+          <ul className="marquee__group ">
+            <li>Lower the cost of customer acquisition</li>
+            <li>Highly personalised buying experience</li>
+            <li>Fewer discounts to move unsold products</li>
+            <li>Unique insights into customer networks</li>
+            <li>Multiple customer buy together in one order</li>
+          </ul>
+          <ul aria-hidden="true" className="marquee__group ">
+            <li>Lower the cost of customer acquisition</li>
+            <li>Highly personalised buying experience</li>
+            <li>Fewer discounts to move unsold products</li>
+            <li>Unique insights into customer networks</li>
+            <li>Multiple customer buy together in one order</li>
+          </ul>
+        </div>
+        <div className=" marquee marquee--vertical">
+          <ul className="marquee__group ">
+            <li>Lower the cost of customer acquisition</li>
+            <li>Highly personalised buying experience</li>
+            <li>Fewer discounts to move unsold products</li>
+            <li>Unique insights into customer networks</li>
+            <li>Multiple customer buy together in one order</li>
+          </ul>
+          <ul aria-hidden="true" className="marquee__group ">
+            <li>Lower the cost of customer acquisition</li>
+            <li>Highly personalised buying experience</li>
+            <li>Fewer discounts to move unsold products</li>
+            <li>Unique insights into customer networks</li>
+            <li>Multiple customer buy together in one order</li>
+          </ul>
+        </div>
+        </div>
+       
       </section>
 
       <section className="early">

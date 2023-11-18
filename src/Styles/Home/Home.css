@@ -257,6 +257,10 @@
   transition: all 0.5s ease-in;
 }
 
+.marquee-wrap {
+  display: flex;
+}
+
 .marquee__group {
   flex-shrink: 0;
   display: flex;
