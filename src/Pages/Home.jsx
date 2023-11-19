@@ -310,7 +310,7 @@ const Home = () => {
               <li>Multiple customer buy together in one order</li>
             </ul>
           </div>
-          <div className=" marquee marquee--vertical">
+          <div className=" marquee marquee--vertical marquee--delay">
             <ul className="marquee__group ">
               <li>Lower the cost of customer acquisition</li>
               <li>Highly personalised buying experience</li>

@@ -329,6 +329,7 @@
   align-items: center;
   justify-content: space-around;
   gap: var(--gap);
+  margin-block: 0;
   min-width: 100%;
   animation: scroll-x var(--duration) linear infinite;
 }
@@ -349,6 +350,10 @@
 
 .marquee--vertical .marquee__group {
   animation-name: scroll-y;
+}
+
+.marquee--delay .marquee__group {
+  animation-delay: -18s;
 }
 
 .marquee--reverse .marquee__group {
