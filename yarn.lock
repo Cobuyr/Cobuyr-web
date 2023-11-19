@@ -168,6 +168,18 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-2.0.1.tgz#e5211452df060fa8522b55c7b3c0c4d1981cb044"
   integrity sha512-dvuCeX5fC9dXgJn9t+X5atfmgQAzUOWqS1254Gh0m6i8wKd10ebXkfNKiRK+1GWi/yTvvLDHpoxLr0xxxeslWw==
 
+"@lordicon/element@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@lordicon/element/-/element-1.2.0.tgz#bb148914cacdaef8e7139b17fd77711f701987a6"
+  integrity sha512-zsq5YvOJTsjbgBJ1VwwtSv2bsyqs3hIghb6qEL7Uf/5Z7dbkW4Oa7zIAzVOO0dhhX5OmVNrf9eVBWrXTnU8+Zg==
+  dependencies:
+    "@lordicon/helpers" "^1.0.2"
+
+"@lordicon/helpers@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@lordicon/helpers/-/helpers-1.0.2.tgz#49265cdd3b6943df26091529634617587fcd4fa8"
+  integrity sha512-qD9m9SsL9jSAV/gPjXXNAirtONEdzOaU1tSHh2B4nFz1yaXaa9Cmj9xN9ZGWqNsN1k2O+v+dO+uraty8xyD+hg==
+
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
   resolved "https://registry.yarnpkg.com/@nodelib/fs.scandir/-/fs.scandir-2.1.5.tgz#7619c2eb21b25483f6d167548b4cfd5a7488c3d5"
@@ -267,11 +279,6 @@
   version "0.1.5"
   resolved "https://registry.yarnpkg.com/@swc/types/-/types-0.1.5.tgz#043b731d4f56a79b4897a3de1af35e75d56bc63a"
   integrity sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==
-
-"@toon.rombaut/magnetic-elements@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@toon.rombaut/magnetic-elements/-/magnetic-elements-1.1.0.tgz#8a733cd3a17fbe69eb45c82177c60da43fcd840d"
-  integrity sha512-M8lPzt2SpgEuPhg05cu7KH3d0y5FZ/E8D3dBPxNrUL8lyZp0p0g7od60yBA0p3V8G/9+NWkKYCT6k7sGZ7PMWw==
 
 "@types/prop-types@*":
   version "15.7.10"
@@ -1260,6 +1267,11 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
+
+lottie-web@^5.12.2:
+  version "5.12.2"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.12.2.tgz#579ca9fe6d3fd9e352571edd3c0be162492f68e5"
+  integrity sha512-uvhvYPC8kGPjXT3MyKMrL3JitEAmDMp30lVkuq/590Mw9ok6pWcFCwXJveo0t5uqYw1UREQHofD+jVpdjBv8wg==
 
 minimatch@^3.0.5, minimatch@^3.1.1, minimatch@^3.1.2:
   version "3.1.2"

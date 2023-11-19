@@ -1,12 +1,19 @@
 // import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
 import dash from "/dash.jpg";
+import lottie from "lottie-web";
+import { defineElement } from "@lordicon/element";
+import Badge from "../Components/badge";
+
+// define "lord-icon" custom element with default properties
+defineElement(lottie.loadAnimation);
 
 const Home = () => {
   return (
     <>
       <section className="hero">
-        <div className="badge">Welcome</div>
+        {/* <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" /> */}
+
         <h1>Revolutionize Checkout with Social Buying</h1>
         <p>
           Enhance your checkout experience with Cobuyr's cutting-edge Social
@@ -23,7 +30,7 @@ const Home = () => {
         {/* <MagneticButtons/> */}
         {/* <div className="future-wrap"> */}
         <div className="future-textbox">
-          <div className="badge">The Future</div>
+          <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
           <h2>THE FUTURE OF PAYMENTS</h2>
           <p>
             Unleash the potential of your online business with Cobuyr's Social
@@ -134,7 +141,7 @@ const Home = () => {
       <section className="modern">
         <div className="container">
           <div className="head">
-            <div className="badge">The Future</div>
+            <Badge iconUrl="qucadebu" trigger="hover" text="MODERN PLATFORM" />
             <h2>THE MODERN PAYMENTS PLATFORM</h2>
           </div>
           <div className="info1">
@@ -219,7 +226,11 @@ const Home = () => {
       </section>
 
       <section className="info-banner">
-        <div className="badge">Checkout Transformation</div>
+        <Badge 
+        iconUrl="qucadebu" 
+        trigger="hover" 
+        text="Checkout Transformation" />
+    
         <div className="textbox">
           <h2>Buff up customer Transaction</h2>
           <p className="banner-text">
@@ -267,62 +278,63 @@ const Home = () => {
           <button className="primary-btn">Documentation</button>
         </div>
         <div className="marquee-wrap">
-        <div className=" marquee marquee--vertical">
-          <ul className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
-          <ul aria-hidden="true" className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
+          <div className=" marquee marquee--vertical">
+            <ul className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+            <ul aria-hidden="true" className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+          </div>
+          <div className=" marquee marquee--vertical marquee--reverse">
+            <ul className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+            <ul aria-hidden="true" className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+          </div>
+          <div className=" marquee marquee--vertical">
+            <ul className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+            <ul aria-hidden="true" className="marquee__group ">
+              <li>Lower the cost of customer acquisition</li>
+              <li>Highly personalised buying experience</li>
+              <li>Fewer discounts to move unsold products</li>
+              <li>Unique insights into customer networks</li>
+              <li>Multiple customer buy together in one order</li>
+            </ul>
+          </div>
         </div>
-        <div className=" marquee marquee--vertical marquee--reverse">
-          <ul className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
-          <ul aria-hidden="true" className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
-        </div>
-        <div className=" marquee marquee--vertical">
-          <ul className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
-          <ul aria-hidden="true" className="marquee__group ">
-            <li>Lower the cost of customer acquisition</li>
-            <li>Highly personalised buying experience</li>
-            <li>Fewer discounts to move unsold products</li>
-            <li>Unique insights into customer networks</li>
-            <li>Multiple customer buy together in one order</li>
-          </ul>
-        </div>
-        </div>
-       
       </section>
 
       <section className="early">
-        <div className="badge">
-          Early Adopter Programme Ends on <span>January 8 2024</span>
-        </div>
+      <Badge 
+        iconUrl="lqadwfir" 
+        trigger="hover" 
+        text="Early Adopter Programme Ends on January 8 2024" />
+        
         <h2 className="early-h2">Early Adopter Programme</h2>
         <h3>
           Become an early adopter and{" "}
@@ -335,7 +347,6 @@ const Home = () => {
           <input type="email" placeholder="Email" required />
           <button>Go!</button>
         </form>
-        
       </section>
     </>
   );

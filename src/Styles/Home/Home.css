@@ -7,18 +7,58 @@
 .badge {
   width: -moz-fit-content;
   width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border: 1px var(--light-border) solid;
   border-radius: 20px;
   font-size: 13px;
   padding: 5px 25px;
   margin-inline: auto;
   place-self: center;
+  position: relative;
+  background: var(--bg-color);
+}
+.badge::before, .badge::after {
+  content: "";
+  position: absolute;
+  background: var(--gradient-shadow);
+  background-size: 400%;
+  width: calc(100% - 15px);
+  height: calc(100% - 5px);
+  border-radius: inherit;
+  z-index: -1;
+}
+.badge::after {
+  transition: filter 0.9s ease-out;
+}
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+.badge P {
+  font-size: 14px;
+  background: #5389CF;
+  background: radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
 }
 .badge span {
   color: var(--highlight-color);
 }
-.badge:hover {
-  box-shadow: 0 0 10px -5px var(--text-color);
+.badge:hover::before, .badge:hover::after {
+  animation: shadow 20s linear infinite;
+}
+.badge:hover::after {
+  filter: blur(5px);
 }
 
 .hero {
@@ -86,6 +126,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  isolation: isolate;
 }
 .future-textbox * {
   margin-block: 10px;
@@ -138,7 +179,7 @@
   align-items: center;
   justify-content: center;
   background-color: #202022;
-  z-index: -1;
+  isolation: isolate;
 }
 .info-banner::after {
   content: "";
@@ -179,6 +220,7 @@
   background-color: var(--bg-color);
   border-radius: 0 0 100px 100px;
   box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
+  z-index: 1;
 }
 .modern .image {
   width: 60%;

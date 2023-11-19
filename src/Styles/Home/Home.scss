@@ -12,18 +12,73 @@
 // }
 .badge {
   width: fit-content;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   border: 1px var(--light-border) solid;
   border-radius: 20px;
   font-size: 13px;
   padding: 5px 25px;
   margin-inline: auto;
   place-self: center;
+  position: relative;
+  background: var(--bg-color);
+  // z-index: 2;
+
+  &::before,
+&::after {
+	content: "";
+	position: absolute;
+	// top: 0;
+	// left: 0;
+	background: var(--gradient-shadow);
+	background-size: 400%;
+	width: calc(100% - 15px);
+	height: calc(100% - 5px);
+  border-radius: inherit;
+	z-index: -1;
+}
+&::after {
+	transition: filter 0.9s ease-out;
+}
+
+
+@keyframes shadow {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 300% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+  P{
+    font-size: 14px;
+    // color: var(--highlight-color);
+    background: #5389CF;
+background: -webkit-radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
+background: -moz-radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
+background: radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+    margin: 0;
+  }
   span {
     color: var(--highlight-color);
   }
 
   &:hover {
-    box-shadow: 0 0 10px -5px var(--text-color);
+    &::before,
+    &::after {
+      animation: shadow 20s linear infinite;
+    }
+    &::after {
+      filter: blur(5px);
+    }
+    
   }
 }
 .hero {
@@ -99,6 +154,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
+  isolation: isolate;
 
   & * {
     margin-block: 10px;
@@ -276,7 +332,8 @@
   align-items: center;
   justify-content: center;
   background-color: #202022;
-  z-index: -1;
+  isolation: isolate;
+  // z-index: -1;
   // backdrop-filter: blur(10px);
 
   &::after {
@@ -325,6 +382,7 @@
   background-color: var(--bg-color);
   border-radius: 0 0 100px 100px;
   box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
+  z-index: 1;
 
   .image {
     width: 60%;
