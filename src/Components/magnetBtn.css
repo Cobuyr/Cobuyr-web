@@ -1,0 +1,21 @@
+/* 
+[g-component],
+[g-ref] {
+  padding: 5px;
+  border: 1px solid #343434;
+  border-radius: 2px;
+}
+
+.button {
+  width: 80px;
+  height: 80px;
+  background: #D0021B;
+  border: none;
+  border-radius: 50%;
+  margin: 0 25px;
+  font-size: 16px;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+} */

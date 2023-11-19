@@ -42,6 +42,26 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background: #2d2d2d;
+  border-radius: 50px;
+  position: relative;
+  width: 90%;
+  margin-inline: auto;
+  box-shadow: 0px 0px 168.9px rgba(0, 0, 0, 0.005), 0px 0px 144.3px rgba(0, 0, 0, 0.021), 0px 0px 103.7px rgba(0, 0, 0, 0.047), 0px 0px 79.1px rgba(0, 0, 0, 0.064), 0px 0px 248px rgba(0, 0, 0, 0.07);
+}
+.future::before {
+  content: "";
+  width: 25%;
+  height: 50%;
+  background-color: inherit;
+  position: absolute;
+  top: -25%;
+  left: 50%;
+  transform: translatex(-50%);
+  -webkit-clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
+  clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
+  z-index: -1;
+  box-shadow: 0 0 19px white;
 }
 
 .future-wrap {

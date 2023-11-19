@@ -1,3 +1,4 @@
+// import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
 import dash from "/dash.jpg";
 
@@ -19,6 +20,7 @@ const Home = () => {
       </section>
 
       <section className="future">
+        {/* <MagneticButtons/> */}
         {/* <div className="future-wrap"> */}
         <div className="future-textbox">
           <div className="badge">The Future</div>

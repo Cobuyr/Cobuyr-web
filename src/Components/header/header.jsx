@@ -16,7 +16,7 @@ const Header = () => {
     useEffect(() => {
       const handleScroll = () => {
         const winTop = window.scrollY;
-        if (winTop >= 500) {
+        if (winTop >= 100) {
           document.body.classList.add('sticky-header');
           setIsSticky(true);
         } else {

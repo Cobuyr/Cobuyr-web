@@ -268,6 +268,11 @@
   resolved "https://registry.yarnpkg.com/@swc/types/-/types-0.1.5.tgz#043b731d4f56a79b4897a3de1af35e75d56bc63a"
   integrity sha512-myfUej5naTBWnqOCc/MdVOLVjXUXtIA+NpDrDBKJtLLg2shUjBu3cZmB/85RyitKc55+lUUyl7oRfLOvkr2hsw==
 
+"@toon.rombaut/magnetic-elements@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@toon.rombaut/magnetic-elements/-/magnetic-elements-1.1.0.tgz#8a733cd3a17fbe69eb45c82177c60da43fcd840d"
+  integrity sha512-M8lPzt2SpgEuPhg05cu7KH3d0y5FZ/E8D3dBPxNrUL8lyZp0p0g7od60yBA0p3V8G/9+NWkKYCT6k7sGZ7PMWw==
+
 "@types/prop-types@*":
   version "15.7.10"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.7.10.tgz#892afc9332c4d62a5ea7e897fe48ed2085bbb08a"
