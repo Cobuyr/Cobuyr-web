@@ -63,6 +63,7 @@ background: -webkit-radial-gradient(circle farthest-side at center center, #5389
 background: -moz-radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
 background: radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
 -webkit-background-clip: text;
+background-clip: text;
 -webkit-text-fill-color: transparent;
     margin: 0;
   }
@@ -81,6 +82,28 @@ background: radial-gradient(circle farthest-side at center center, #5389CF 0%, v
     
   }
 }
+
+.iconBadge{
+  display: inline-flex;
+    padding: 3px;
+  border-radius: 5px;
+  border: 1px var(--light-border) solid;
+  background: radial-gradient(
+      circle at 25% 25%,
+      transparent 0%,
+      #32323275 70%,
+      var(--bg-color) 95%
+    );
+    transition: all 1s ease;
+
+  lord-icon {
+    width: 40px;
+    height: 40px;
+      flex-shrink: 0;
+      margin: 0 !important;
+    }
+}
+
 .hero {
   // width: 100vw;
   height: 100vh;
@@ -213,13 +236,25 @@ background: radial-gradient(circle farthest-side at center center, #5389CF 0%, v
       color: hsl(0, 0%, 65%);
       font-size: 14px;
     }
-    // &:hover {
-    //   transform: translateZ(100px);
-    //   z-index: 2;
-    // }
+    &:hover {
+      animation: swing 10s ease infinite alternate ;
+      .iconBadge {
+        box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 20%);
+        }
+    }
   }
 }
-// }
+@keyframes swing{
+0%,100%{
+  transform: rotate3d(1, 1, 1, 0deg);
+}
+25%{
+  transform: rotate3d(1, 1, 1, -.5deg);
+}
+75%{
+  transform: rotate3d(1, 1, 1, .5deg);
+}
+}
 
 //***** Transform SECTION *****
 // .hex-box {
@@ -724,13 +759,13 @@ background: radial-gradient(circle farthest-side at center center, #5389CF 0%, v
 //   }
 // }
 ul:has(> :hover) > li:not(:hover) {
-  opacity: 0.45;
+  opacity: 0.65;
 }
 ul:has(> :focus) > li:not(:focus) {
-  opacity: 0.45;
+  opacity: 0.65;
 }
 
-.container {
+.bento {
   display: grid;
   grid-gap: 1em;
   grid-template-columns: repeat(12, 1fr);
@@ -738,11 +773,17 @@ ul:has(> :focus) > li:not(:focus) {
   grid-auto-flow: dense;
   margin: 0 auto;
   max-width: 1200px;
-  // align-items: center;
-  //   justify-content: center;
-  //   justify-items: stretch;
-}
 
+  .iconBadge{
+    all: inherit;
+    lord-icon {
+      width: 50px;
+      height: 50px;
+        flex-shrink: 0;
+        margin: 0 !important;
+      }
+  }
+  
 .head {
   // grid-area: head;
   // grid-column: span 4;
@@ -770,6 +811,7 @@ ul:has(> :focus) > li:not(:focus) {
     var(--bg-color) 95%
   );
   padding: 12px 24px;
+  text-align: left;
 }
 
 .info2 {
@@ -834,9 +876,11 @@ ul:has(> :focus) > li:not(:focus) {
       hsl(0 0% 0% / 1) 80%,
       hsl(0 0% 0% / 0)
     );
-
+ul{
+  list-style-type: "\231B";
+}
     li {
-      list-style: none;
+      // list-style: none;
       // display: flex;
       // place-items: center;
       width: auto;
@@ -932,6 +976,9 @@ ul:has(> :focus) > li:not(:focus) {
     margin: 0;
     padding: 0;
   }
+}
+
+
 }
 
 .early {

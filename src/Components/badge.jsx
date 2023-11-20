@@ -24,4 +24,28 @@ stroke="bold"
   );
 };
 
-export default Badge;
+const IconBadge = ({ iconUrl, target, trigger }) => {
+  Badge.defaultProps = {
+      // iconUrl: `qucadebu`,
+      trigger: "hover",
+      target: ".iconBadge",
+    }
+  
+return (
+  <div className="iconBadge">
+  <lord-icon
+src={`https://cdn.lordicon.com/${iconUrl}.json`}
+trigger={`${trigger}`}
+target={`${target}`}
+delay="5000"
+stroke="bold"
+>
+</lord-icon>
+   </div>
+);
+};
+
+
+// 👇️ named exports
+export {Badge, IconBadge};
+

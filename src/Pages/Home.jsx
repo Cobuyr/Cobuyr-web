@@ -3,7 +3,8 @@ import "../Styles/Home/Home.css";
 import dash from "/dash.jpg";
 import lottie from "lottie-web";
 import { defineElement } from "@lordicon/element";
-import Badge from "../Components/badge";
+import { Badge, IconBadge } from "../Components/badge";
+import { Icon } from "../assets/icon";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -12,7 +13,7 @@ const Home = () => {
   return (
     <>
       <section className="hero">
-        {/* <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" /> */}
+        <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
 
         <h1>Revolutionize Checkout with Social Buying</h1>
         <p>
@@ -44,6 +45,7 @@ const Home = () => {
         <div className="future-listbox">
           <ul className="listbox">
             <li>
+              <IconBadge iconUrl="khheayfj" trigger="hover" target="li" />
               <h4>Unlock New Sales and Savings</h4>
               <p>
                 By introducing Social Buying, witness a surge in sales while
@@ -51,6 +53,7 @@ const Home = () => {
               </p>
             </li>
             <li>
+              <IconBadge iconUrl="odavpkmb" trigger="hover" target="li" />
               <h4>Personalized Buying Experiences</h4>
               <p>
                 Offer customers a tailored shopping journey, allowing multiple
@@ -58,6 +61,7 @@ const Home = () => {
               </p>
             </li>
             <li>
+              <IconBadge iconUrl="abwrkdvl" trigger="hover" target="li" />
               <h4>Insights and Data</h4>
               <p>
                 Gain invaluable insights into customer networks, enabling
@@ -66,6 +70,7 @@ const Home = () => {
               </p>
             </li>
             <li>
+              <IconBadge iconUrl="piwupaqb" trigger="hover" target="li" />
               <h4>Monetize Existing Data</h4>
               <p>
                 Maximize the potential of your customer data to enhance revenue
@@ -73,6 +78,7 @@ const Home = () => {
               </p>
             </li>
             <li>
+              <IconBadge iconUrl="njmddhpx" trigger="hover" target="li" />
               <h4>Increased Customer Satisfaction</h4>
               <p>
                 Provide a seamless co-buying experience, reducing basket
@@ -80,6 +86,7 @@ const Home = () => {
               </p>
             </li>
             <li>
+              <IconBadge iconUrl="ksdjzsym" trigger="hover" target="li" />
               <h4>Tech Spend Reduction</h4>
               <p>
                 Streamline technology costs while boosting order values and
@@ -139,13 +146,15 @@ const Home = () => {
       </section> */}
 
       <section className="modern">
-        <div className="container">
+        <div className="bento">
           <div className="head">
             <Badge iconUrl="qucadebu" trigger="hover" text="MODERN PLATFORM" />
             <h2>THE MODERN PAYMENTS PLATFORM</h2>
           </div>
           <div className="info1">
             <div className="textbox">
+              <IconBadge iconUrl="iiuaqmnt" trigger="hover" target=".info1" />
+
               <h3>Unified Payment Innovation</h3>
               <p>
                 Discover Cobuyr, the pioneer in integrated payment platforms.
@@ -164,6 +173,7 @@ const Home = () => {
           </div>
           <div className="info3">
             <div className="textbox">
+              <IconBadge iconUrl="wzrwaorf" trigger="hover" target=".info3" />
               <h3>Collaborative Purchasing Community</h3>
               <p>
                 Cobuyr fosters a vibrant community of cobuyers. It empowers
@@ -175,6 +185,7 @@ const Home = () => {
           </div>
           <div className="info2">
             <div className="textbox">
+              <IconBadge iconUrl="ezsjqygj" trigger="hover" target=".info2" />
               <h3>Cutting-edge Data and Analytics</h3>
               <p>
                 At Cobuyr, dive into an innovative world of data and analytics.
@@ -188,20 +199,20 @@ const Home = () => {
             <h2>Security Features</h2>
             <div className=" marquee">
               <ul className="marquee__group ">
-                <li>Data Encryption</li>
-                <li>Tokenization</li>
-                <li>Comnpliance Checks</li>
-                <li>Authentication</li>
-                <li>Fraud Prevention</li>
-                <li>User Privacy</li>
+                <li>Robust encryption protocols</li>
+                <li>Fortified server infrastructure</li>
+                <li>Legal and regulatory compliance</li>
+                <li>Multi-factor authentication</li>
+                <li>Advanced fraud algorithms</li>
+                <li>Strict access policies</li>
               </ul>
               <ul aria-hidden="true" className="marquee__group ">
-                <li>Data Encryption</li>
-                <li>Tokenization</li>
-                <li>Comnpliance Checks</li>
-                <li>Authentication</li>
-                <li>Fraud Prevention</li>
-                <li>User Privacy</li>
+                <li>Robust encryption protocols</li>
+                <li>Fortified server infrastructure</li>
+                <li>Legal and regulatory compliance</li>
+                <li>Multi-factor authentication</li>
+                <li>Advanced fraud algorithms</li>
+                <li>Strict access policies</li>
               </ul>
             </div>
           </div>
@@ -215,7 +226,7 @@ const Home = () => {
             <div className="textbox">
               <h3>What Ecommerce platform is your favourite?</h3>
               <ul>
-                <li>Shopify</li>
+                <li><Icon name={"shopify"}/>Shopify</li>
                 <li>WooCommerce</li>
                 <li>Magneto</li>
                 <li>Wix</li>
@@ -226,11 +237,12 @@ const Home = () => {
       </section>
 
       <section className="info-banner">
-        <Badge 
-        iconUrl="qucadebu" 
-        trigger="hover" 
-        text="Checkout Transformation" />
-    
+        <Badge
+          iconUrl="qucadebu"
+          trigger="hover"
+          text="Checkout Transformation"
+        />
+
         <div className="textbox">
           <h2>Buff up customer Transaction</h2>
           <p className="banner-text">
@@ -280,7 +292,7 @@ const Home = () => {
         <div className="marquee-wrap">
           <div className=" marquee marquee--vertical">
             <ul className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
+              <li><Icon />Lower the cost of customer acquisition</li>
               <li>Highly personalised buying experience</li>
               <li>Fewer discounts to move unsold products</li>
               <li>Unique insights into customer networks</li>
@@ -330,11 +342,12 @@ const Home = () => {
       </section>
 
       <section className="early">
-      <Badge 
-        iconUrl="lqadwfir" 
-        trigger="hover" 
-        text="Early Adopter Programme Ends on January 8 2024" />
-        
+        <Badge
+          iconUrl="lqadwfir"
+          trigger="hover"
+          text="Early Adopter Programme Ends on January 8 2024"
+        />
+
         <h2 className="early-h2">Early Adopter Programme</h2>
         <h3>
           Become an early adopter and{" "}
