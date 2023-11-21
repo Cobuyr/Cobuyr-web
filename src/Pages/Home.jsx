@@ -145,7 +145,7 @@ const Home = () => {
       <section className="modern">
         <div className="bento">
           <div className="head">
-            <Badge iconUrl="qucadebu" trigger="hover" text="MODERN PLATFORM" />
+            <Badge iconUrl="qucadebu" trigger="hover" text="Modern Platform" />
             <h2>THE MODERN PAYMENTS PLATFORM</h2>
           </div>
           <div className="info1">
@@ -254,12 +254,11 @@ const Home = () => {
               <h3>
                 How Social?{" "}
                 <lord-icon
-    src="https://cdn.lordicon.com/yxyampao.json"
-    trigger="loop-on-hover"
-    target=".info-mini"
-    delay="2000"
-    >
-</lord-icon>
+                  src="https://cdn.lordicon.com/yxyampao.json"
+                  trigger="loop-on-hover"
+                  target=".info-mini"
+                  delay="2000"
+                ></lord-icon>
               </h3>
               <p>Discover Cobuyr</p>
             </div>
@@ -311,22 +310,9 @@ const Home = () => {
         <div className="glow2"></div>
       </section>
 
-      {/* <section className="banner2">
-        <div className="textbox">
-          <h2>TRANSFORM YOUR CHECKOUT PROCESS FOR TODAY'S ERA OF SHARING </h2>
-          <p className="banner-text">
-            Give your customers the Social Buying experience they expect at
-            checkout that will also enhance your payment, data and analytics
-            capabilities. The only thing you need to do is simply add a “Group
-            Buy” button to your current checkout process.
-          </p>
-          <button className="primary-btn">Book Demo</button>
-        </div>
-      </section> */}
-
       <section className="integrate">
         <div className="int-textbox">
-          {/* <div className="badge">Integrate</div> */}
+        <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
           <h2>Integration and Benefits.</h2>
           <p>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
@@ -347,52 +333,139 @@ const Home = () => {
           <div className=" marquee marquee--vertical">
             <ul className="marquee__group ">
               <li>
-                <Icon />
+                <Icon name={"search"} />
                 Lower the cost of customer acquisition
               </li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
             <ul aria-hidden="true" className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"search"} />
+                Lower the cost of customer acquisition
+              </li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
           </div>
           <div className=" marquee marquee--vertical marquee--reverse">
             <ul className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"search"} />
+                Lower the cost of customer acquisition
+              </li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
             <ul aria-hidden="true" className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"search"} />
+                Lower the cost of customer acquisition
+              </li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
           </div>
           <div className=" marquee marquee--vertical marquee--delay">
             <ul className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"search"} />
+                Lower the cost of customer acquisition
+              </li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
             <ul aria-hidden="true" className="marquee__group ">
-              <li>Lower the cost of customer acquisition</li>
-              <li>Highly personalised buying experience</li>
-              <li>Fewer discounts to move unsold products</li>
-              <li>Unique insights into customer networks</li>
-              <li>Multiple customer buy together in one order</li>
+              <li>
+                <Icon name={"search"} />
+                Lower the cost of customer acquisition
+              </li>
+              <li>
+                <Icon name={"contact"} />
+                Highly personalised buying experience
+              </li>
+              <li>
+                <Icon name={"discount"} />
+                Fewer discounts to move unsold products
+              </li>
+              <li>
+                <Icon name={"insights"} />
+                Unique insights into customer networks
+              </li>
+              <li>
+                <Icon name={"group"} />
+                Multiple customer buy together in one order
+              </li>
             </ul>
           </div>
         </div>

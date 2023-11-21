@@ -537,12 +537,13 @@ background-clip: text;
   );
 
   li {
-    list-style: none;
-    // display: flex;
-    // place-items: center;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: space-around;
     width: 150px;
     height: 200px;
-    padding: 20px;
+    padding: 20px 15px;
     position: relative;
     font-size: 14px;
     text-align: center;
@@ -557,6 +558,9 @@ background-clip: text;
     );
     transition: all 0.5s ease-in;
 
+    svg{
+      width: 65px;
+    }
     // &:hover {
     //   background: radial-gradient(
     //     circle at 25% 0%,

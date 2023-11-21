@@ -339,10 +339,13 @@
           mask-image: linear-gradient(var(--mask-direction, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
 }
 .marquee li {
-  list-style: none;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: space-around;
   width: 150px;
   height: 200px;
-  padding: 20px;
+  padding: 20px 15px;
   position: relative;
   font-size: 14px;
   text-align: center;
@@ -350,6 +353,9 @@
   border-radius: 15px;
   background: radial-gradient(circle at 25% 0%, transparent 0%, rgba(50, 50, 50, 0.4588235294) 70%, var(--bg-color) 95%);
   transition: all 0.5s ease-in;
+}
+.marquee li svg {
+  width: 65px;
 }
 
 .marquee-wrap {
