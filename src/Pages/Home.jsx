@@ -484,7 +484,15 @@ const Home = () => {
           <span className="highlight">embrace the power of Social Buying</span>{" "}
           with Cobuyr today.
         </h3>
-        <form>
+        <form className="form">
+        <lord-icon
+    src="https://cdn.lordicon.com/ribxmuoc.json"
+    trigger="loop-on-hover"
+    delay="2500"
+    target=".form"
+    stroke="bold"
+    >
+</lord-icon>
           <span className="formtext"></span>
           <input type="text" placeholder="Name" required />
           <input type="email" placeholder="Email" required />

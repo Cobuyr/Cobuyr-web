@@ -884,6 +884,7 @@ ul:has(> :focus) > li:not(:focus) {
     li {
     
       display: flex;
+      flex-direction: unset;
       align-items: center;
       width: auto;
       height: auto;
@@ -900,7 +901,11 @@ ul:has(> :focus) > li:not(:focus) {
         var(--bg-color) 95%
       );
       transition: all 0.5s ease-in;
-
+      svg{
+        width: 50px;
+        height: unset;
+        
+      }
      
     }
   }
@@ -924,9 +929,9 @@ ul:has(> :focus) > li:not(:focus) {
   svg{
     width: 50px;
     height: unset;
-    &:hover{
-all: unset;
-    }
+//     &:hover{
+// all: unset;
+//     }
   }
   * {
     margin: 0;
@@ -1012,18 +1017,67 @@ all: unset;
 }
 
 .early {
+  isolation: isolate;
+  h3{
+    color: revert;
+  }
   form {
     padding: 12px 24px;
-    outline: 1px solid;
+    outline: 1px solid var(--light-border);
     border-radius: 20px;
     width: fit-content;
     margin-inline: auto;
+    
+    position: relative;
+    background: var(--bg-color);
 
+//     &::before,
+// &::after {
+// 	content: "";
+// 	position: absolute;
+//   top: 0;
+//   left: 0;
+// 	background: var(--gradient-shadow);
+// 	background-size: 90%;
+// 	width: calc(100% - 5px);
+// 	height: calc(100%);
+//   border-radius: inherit;
+// 	z-index: -1;
+// }
+// &::after {
+// 	transition: filter 0.9s ease-out;
+// }
+
+// &:hover {
+//   &::before,
+//   &::after {
+//     animation: shadow 1s linear 1;
+//   }
+//   &::after {
+//     filter: blur(5px);
+//   }
+// }
+
+    lord-icon{
+      width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    transition: all 0.9s ease-in-out;
+    }
+    &:hover{
+      lord-icon{
+        translate: 50px 10px;
+    rotate: 20deg;
+      }
+    }
     input {
       padding: 16px 32px;
       border-radius: 15px;
       border: none;
-      outline: 1px solid white;
+      outline: 1px solid var(--light-border);
       margin-inline: 10px;
     }
   }

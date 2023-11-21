@@ -498,6 +498,7 @@ ul:has(> :focus) > li:not(:focus) {
 }
 .bento .sec .marquee li {
   display: flex;
+  flex-direction: unset;
   align-items: center;
   width: auto;
   height: auto;
@@ -509,6 +510,10 @@ ul:has(> :focus) > li:not(:focus) {
   border-radius: 15px;
   background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(50, 50, 50, 0.4588235294) 40%, var(--bg-color) 95%);
   transition: all 0.5s ease-in;
+}
+.bento .sec .marquee li svg {
+  width: 50px;
+  height: unset;
 }
 .bento .poll {
   grid-column: auto/span 3;
@@ -522,9 +527,6 @@ ul:has(> :focus) > li:not(:focus) {
 .bento .poll svg {
   width: 50px;
   height: unset;
-}
-.bento .poll svg:hover {
-  all: unset;
 }
 .bento .poll * {
   margin: 0;
@@ -588,18 +590,39 @@ ul:has(> :focus) > li:not(:focus) {
   translate: 20px -10px;
 }
 
+.early {
+  isolation: isolate;
+}
+.early h3 {
+  color: revert;
+}
 .early form {
   padding: 12px 24px;
-  outline: 1px solid;
+  outline: 1px solid var(--light-border);
   border-radius: 20px;
   width: -moz-fit-content;
   width: fit-content;
   margin-inline: auto;
+  position: relative;
+  background: var(--bg-color);
+}
+.early form lord-icon {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+  transition: all 0.9s ease-in-out;
+}
+.early form:hover lord-icon {
+  translate: 50px 10px;
+  rotate: 20deg;
 }
 .early form input {
   padding: 16px 32px;
   border-radius: 15px;
   border: none;
-  outline: 1px solid white;
+  outline: 1px solid var(--light-border);
   margin-inline: 10px;
 }/*# sourceMappingURL=Home.css.map */
