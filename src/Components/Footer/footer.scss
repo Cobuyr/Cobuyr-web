@@ -8,6 +8,20 @@ footer {
     bottom: 0;
     position: relative;
     width: 100%;
+
+    svg {
+      fill: var(--text-color);
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      transition: 0.5s ease-in-out;
+    }
+    
+    svg:hover {
+      transform: scale(1.1);
+      fill: var(--highlight-color);
+    }
+  
   }
   
 .bottom {
@@ -48,19 +62,7 @@ footer {
     border: none;
   }
   
-  svg {
-    fill: var(--text-color);
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-    transition: 0.5s ease-in-out;
-  }
-  
-  svg:hover {
-    transform: scale(1.1);
-    fill: var(--highlight-color);
-  }
-
+ 
   #start {
     margin-left: auto;
   }

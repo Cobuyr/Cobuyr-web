@@ -87,6 +87,15 @@ main {
     max-width: 65ch;
   }
   
+    li:hover svg{
+          transform: scale(1.1);
+        }
+    svg{
+        width: 50px;
+         transition: all 0.5s ease;
+        }
+      
+
 /* Grouping content
      ========================================================================== */
 

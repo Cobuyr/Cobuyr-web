@@ -249,10 +249,10 @@ background-clip: text;
   transform: rotate3d(1, 1, 1, 0deg);
 }
 25%{
-  transform: rotate3d(1, 1, 1, -.5deg);
+  transform: rotate3d(1, 1, 1, -1.5deg);
 }
 75%{
-  transform: rotate3d(1, 1, 1, .5deg);
+  transform: rotate3d(1, 1, 1, 1.5deg);
 }
 }
 
@@ -876,20 +876,17 @@ ul:has(> :focus) > li:not(:focus) {
       hsl(0 0% 0% / 1) 80%,
       hsl(0 0% 0% / 0)
     );
-ul{
-  list-style-type: "\231B";
-}
+
     li {
-      // list-style: none;
-      // display: flex;
-      // place-items: center;
+    
+      display: flex;
+      align-items: center;
       width: auto;
       height: auto;
-      padding: 20px;
+      padding: 15px 20px;
       position: relative;
       font-size: 14px;
       text-align: center;
-      // line-height: 24px;
       border-inline: var(--light-border) 1px solid;
       border-radius: 15px;
       background: radial-gradient(
@@ -900,14 +897,7 @@ ul{
       );
       transition: all 0.5s ease-in;
 
-      // &:hover {
-      //   background: radial-gradient(
-      //     circle at 25% 0%,
-      //     transparent 0%,
-      //     #9a515175 70%,
-      //     var(--bg-color) 95%
-      //   );
-      // }
+     
     }
   }
 }
@@ -927,6 +917,13 @@ ul{
     #32323275 70%,
     var(--bg-color) 95%
   );
+  svg{
+    width: 50px;
+    height: unset;
+    &:hover{
+all: unset;
+    }
+  }
   * {
     margin: 0;
     padding: 0;
@@ -941,11 +938,16 @@ ul{
     padding-block: 20px;
 
     li {
+      display: flex;
+    align-items: center;
+    justify-content: flex-start;
       padding: 12px 24px;
       margin-block: 5px;
       border-radius: 50px;
       border: var(--light-border) 1px solid;
       transition: all 0.35s ease-out;
+
+      
     }
   }
 }
@@ -971,10 +973,34 @@ ul{
     flex-direction: column;
     place-items: center;
     align-items: flex-start;
+    
+    h3{
+      width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    lord-icon{
+      opacity: 0;
+      scale: 0;
+      translate: -5px 5px;
+      transition: all 1s linear(0 0%, 0 2.27%, 0.02 4.53%, 0.04 6.8%, 0.06 9.07%, 0.1 11.33%, 0.14 13.6%, 0.25 18.15%, 0.39 22.7%, 0.56 27.25%, 0.77 31.8%, 1 36.35%, 0.89 40.9%, 0.85 43.18%, 0.81 45.45%, 0.79 47.72%, 0.77 50%, 0.75 52.27%, 0.75 54.55%, 0.75 56.82%, 0.77 59.1%, 0.79 61.38%, 0.81 63.65%, 0.85 65.93%, 0.89 68.2%, 1 72.7%, 0.97 74.98%, 0.95 77.25%, 0.94 79.53%, 0.94 81.8%, 0.94 84.08%, 0.95 86.35%, 0.97 88.63%, 1 90.9%, 0.99 93.18%, 0.98 95.45%, 0.99 97.73%, 1 100%);
+}
+   
+    }
+   
   }
   * {
     margin: 0;
     padding: 0;
+  }
+
+  &:hover {
+    h3 lord-icon{
+    opacity: 1;
+    scale: 1;
+    translate: 20px -10px;
+    }
   }
 }
 

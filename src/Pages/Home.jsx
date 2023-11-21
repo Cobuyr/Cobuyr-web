@@ -1,13 +1,10 @@
 // import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
 import dash from "/dash.jpg";
-import lottie from "lottie-web";
-import { defineElement } from "@lordicon/element";
+
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
-
-// define "lord-icon" custom element with default properties
-defineElement(lottie.loadAnimation);
+import "/sprite.svg";
 
 const Home = () => {
   return (
@@ -199,26 +196,71 @@ const Home = () => {
             <h2>Security Features</h2>
             <div className=" marquee">
               <ul className="marquee__group ">
-                <li>Robust encryption protocols</li>
-                <li>Fortified server infrastructure</li>
-                <li>Legal and regulatory compliance</li>
-                <li>Multi-factor authentication</li>
-                <li>Advanced fraud algorithms</li>
-                <li>Strict access policies</li>
+                <li>
+                  <Icon name={"encrypt"} />
+                  Robust encryption protocols
+                </li>
+                <li>
+                  <Icon name={"server"} />
+                  Fortified server infrastructure
+                </li>
+                <li>
+                  <Icon name={"legal"} />
+                  Legal and regulatory compliance
+                </li>
+                <li>
+                  <Icon name={"auth"} />
+                  Multi-factor authentication
+                </li>
+                <li>
+                  <Icon name={"fraud"} />
+                  Advanced fraud algorithms
+                </li>
+                <li>
+                  <Icon name={"policy"} />
+                  Strict access policies
+                </li>
               </ul>
               <ul aria-hidden="true" className="marquee__group ">
-                <li>Robust encryption protocols</li>
-                <li>Fortified server infrastructure</li>
-                <li>Legal and regulatory compliance</li>
-                <li>Multi-factor authentication</li>
-                <li>Advanced fraud algorithms</li>
-                <li>Strict access policies</li>
+                <li>
+                  <Icon name={"encrypt"} />
+                  Robust encryption protocols
+                </li>
+                <li>
+                  <Icon name={"server"} />
+                  Fortified server infrastructure
+                </li>
+                <li>
+                  <Icon name={"legal"} />
+                  Legal and regulatory compliance
+                </li>
+                <li>
+                  <Icon name={"auth"} />
+                  Multi-factor authentication
+                </li>
+                <li>
+                  <Icon name={"fraud"} />
+                  Advanced fraud algorithms
+                </li>
+                <li>
+                  <Icon name={"policy"} />
+                  Strict access policies
+                </li>
               </ul>
             </div>
           </div>
           <div className="info-mini">
             <div className="textbox">
-              <h3>How Social?</h3>
+              <h3>
+                How Social?{" "}
+                <lord-icon
+    src="https://cdn.lordicon.com/yxyampao.json"
+    trigger="loop-on-hover"
+    target=".info-mini"
+    delay="2000"
+    >
+</lord-icon>
+              </h3>
               <p>Discover Cobuyr</p>
             </div>
           </div>
@@ -226,10 +268,22 @@ const Home = () => {
             <div className="textbox">
               <h3>What Ecommerce platform is your favourite?</h3>
               <ul>
-                <li><Icon name={"shopify"}/>Shopify</li>
-                <li>WooCommerce</li>
-                <li>Magneto</li>
-                <li>Wix</li>
+                <li>
+                  <Icon name={"shopify"} />
+                  Shopify
+                </li>
+                <li>
+                  <Icon name={"woocommerce"} />
+                  WooCommerce
+                </li>
+                <li>
+                  <Icon name={"magento"} />
+                  Magneto
+                </li>
+                <li>
+                  <Icon name={"wix"} />
+                  Wix
+                </li>
               </ul>
             </div>
           </div>
@@ -292,7 +346,10 @@ const Home = () => {
         <div className="marquee-wrap">
           <div className=" marquee marquee--vertical">
             <ul className="marquee__group ">
-              <li><Icon />Lower the cost of customer acquisition</li>
+              <li>
+                <Icon />
+                Lower the cost of customer acquisition
+              </li>
               <li>Highly personalised buying experience</li>
               <li>Fewer discounts to move unsold products</li>
               <li>Unique insights into customer networks</li>

@@ -6,8 +6,8 @@ export const Icon = ({ name, color, size }) => {
         size: "50",
       }
     return (
-      <svg style={{position: 'absolute'}} width={size} viewBox="0 0 1000 500" fill={color}>
-        <use href={"/sprite.svg" + `#${name}`} />
+      <svg width={size} viewBox="0 0 1000 500" fill={color}>
+        <use href={`/sprite.svg#${name}`} />
       </svg>
     )
    }
