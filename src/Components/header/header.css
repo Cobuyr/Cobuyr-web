@@ -159,9 +159,6 @@ header {
 
 /* Sticky Header Style */
 /* ---------------------------------------- */
-.sticky-header {
-  padding-top: 100px;
-}
 .sticky-header header {
   animation: navhide 1s ease-out forwards;
 }

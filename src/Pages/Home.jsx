@@ -475,7 +475,7 @@ const Home = () => {
         <Badge
           iconUrl="lqadwfir"
           trigger="hover"
-          text="Early Adopter Programme Ends on January 8 2024"
+          text="Ends on January 8 2024"
         />
 
         <h2 className="early-h2">Early Adopter Programme</h2>
