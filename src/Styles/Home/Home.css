@@ -45,8 +45,8 @@
 }
 .badge P {
   font-size: 14px;
-  background: #5389CF;
-  background: radial-gradient(circle farthest-side at center center, #5389CF 0%, var(--accent) 100%);
+  background: #5389cf;
+  background: radial-gradient(circle farthest-side at center center, #5389cf 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -107,8 +107,8 @@
 }
 .future::before {
   content: "";
-  width: 25%;
-  height: 50%;
+  width: 350px;
+  height: 350px;
   background-color: inherit;
   position: absolute;
   top: -25%;
@@ -251,7 +251,7 @@
 .modern {
   height: 100%;
   background-color: var(--bg-color);
-  border-radius: 0 0 100px 100px;
+  border-radius: 0 0 50px 50px;
   box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
   z-index: 1;
 }
@@ -291,14 +291,14 @@
 }
 
 .integrate {
-  padding-block: 10vh;
+  padding-block: 10vh 5vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   background-color: var(--bg-color);
-  border-radius: 100px 100px 0 0;
+  border-radius: 50px 50px 0 0;
   box-shadow: 0px -20px 25px -15px hsl(0, 0%, 5%);
 }
 .integrate .int-textbox {
@@ -360,6 +360,8 @@
 
 .marquee-wrap {
   display: flex;
+  justify-content: center;
+  gap: 20px;
 }
 
 .marquee__group {
@@ -516,7 +518,7 @@ ul:has(> :focus) > li:not(:focus) {
   height: unset;
 }
 .bento .poll {
-  grid-column: auto/span 3;
+  grid-column: auto/span 4;
   padding: 12px 24px;
   border-radius: 25px;
   -webkit-backdrop-filter: blur(10px);
@@ -545,6 +547,8 @@ ul:has(> :focus) > li:not(:focus) {
   display: flex;
   align-items: center;
   justify-content: flex-start;
+  align-items: center;
+  gap: 5%;
   padding: 12px 24px;
   margin-block: 5px;
   border-radius: 50px;
@@ -597,6 +601,8 @@ ul:has(> :focus) > li:not(:focus) {
   color: revert;
 }
 .early form {
+  display: flex;
+  align-items: center;
   padding: 12px 24px;
   outline: 1px solid var(--light-border);
   border-radius: 20px;
@@ -620,9 +626,91 @@ ul:has(> :focus) > li:not(:focus) {
   rotate: 20deg;
 }
 .early form input {
+  width: 50%;
   padding: 16px 32px;
   border-radius: 15px;
   border: none;
   outline: 1px solid var(--light-border);
   margin-inline: 10px;
+}
+
+@media (max-width: 1200px) {
+  .future::before {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .hero {
+    height: 75vh;
+  }
+  .future {
+    width: 97%;
+  }
+  .listbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media (max-width: 550px) {
+  .hero {
+    height: 75vh;
+  }
+  .hero h1 {
+    width: 100%;
+    font-size: 1.7em;
+  }
+  .listbox {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .bento {
+    grid-template-columns: repeat(8, 1fr);
+  }
+  .bento .head {
+    grid-column: auto/span 8;
+  }
+  .bento .info1 {
+    grid-column: auto/span 8;
+  }
+  .bento .info2 {
+    grid-column: auto/span 8;
+  }
+  .bento .info3 {
+    grid-column: auto/span 8;
+  }
+  .bento .sec {
+    grid-column: auto/span 8;
+  }
+  .bento .poll {
+    grid-column: auto/span 8;
+  }
+  .bento .info-mini {
+    grid-column: auto/span 8;
+  }
+  .integrate .marquee-wrap {
+    width: 100%;
+    gap: 10px;
+  }
+  .integrate .marquee--delay {
+    display: none;
+  }
+  .integrate blockquote {
+    margin-inline: auto;
+  }
+  .early form {
+    width: unset;
+    padding: 10px 5px !important;
+  }
+  .early form input {
+    padding: 10px 10px !important;
+    margin-inline: 5px !important;
+    font-size: 13px;
+  }
+  .early form lord-icon {
+    display: none;
+  }
+  .info-banner {
+    height: 60vh;
+  }
 }/*# sourceMappingURL=Home.css.map */
