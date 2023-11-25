@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Header.css";
+import "./header.css";
 
 // import 'https://unpkg.com/boxicons@latest/css/boxicons.min.css';
 // import 'https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css';
