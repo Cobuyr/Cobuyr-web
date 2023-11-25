@@ -39,15 +39,22 @@ const Header = () => {
 
     <header>
       <a href="#" className="logo">
-        <i className="ri-home-heart-fill"></i>
         <span>Logo</span>
       </a>
     
       <div className="main">
-        <a href="#" className="user">
-          <i className="ri-user-fill"></i>Sign In
+        <a href="#" className="get">
+        {/* <lord-icon
+    src="https://cdn.lordicon.com/avcjklpr.json"
+    trigger="loop-on-hover"
+    delay="1000"
+    stroke="bold"
+    // state="loop-line"
+    >
+</lord-icon> */}
+          Get App
         </a>
-        <a href="#">Register</a>
+    
         <div
           className={menuOpen ? "bx bx-x" : "bx bx-menu"}
           id="menu-icon"

@@ -156,6 +156,9 @@ header {
   top: 0;
   overflow: hidden;
 }
+header lord-icon {
+  width: 70px;
+}
 
 /* Sticky Header Style */
 /* ---------------------------------------- */
