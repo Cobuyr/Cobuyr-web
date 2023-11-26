@@ -1,0 +1,11 @@
+.who{
+display: flex;
+}
+
+.who-head h1{
+    font-size: clamp(1.5em,5vw,2.5em);
+}
+
+.who-text p{
+font-size: 14px;
+}

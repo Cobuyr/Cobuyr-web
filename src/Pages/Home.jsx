@@ -4,7 +4,7 @@ import dash from "/dash.jpg";
 
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
-import "/sprite.svg";
+
 
 const Home = () => {
   return (

@@ -7,6 +7,7 @@ import { defineElement } from "@lordicon/element";
 import Footer from "./Components/Footer/footer";
 import Header from "./Components/header/header";
 import Home from "./Pages/Home";
+import About from "./Pages/About";
 
 
 // define "lord-icon" custom element with default properties
@@ -18,6 +19,7 @@ function App() {
       <Header />
       <Home />
       <Footer/>
+      <About/>
     </>
   );
 }
