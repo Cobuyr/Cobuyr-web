@@ -1,5 +1,6 @@
 import "../Styles/About.css";
 import { Badge, IconBadge } from "../Components/badge";
+import { Icon } from "../assets/icon";
 
 const About = () => {
   return (
@@ -32,6 +33,51 @@ const About = () => {
               marketplaces to unite in group purchases for the first time.
             </span>
           </p>
+        </div>
+      </section>
+      <section className="partner">
+        <h2>Proudly Backed By </h2>
+        <div className=" marquee">
+          <ul className="marquee__group ">
+            <li>
+              <Icon name={"shopify"} />
+            </li>
+            <li>
+              <Icon name={"woo"} />
+            </li>
+            <li>
+              <Icon name={"wix"} />
+            </li>
+            <li>
+              <Icon name={"magento-full"} />
+            </li>
+            <li>
+              <Icon name={"salesforce"} />
+            </li>
+            <li>
+              <Icon name={"paypal"} />
+            </li>
+          </ul>
+          <ul aria-hidden="true" className="marquee__group ">
+            <li>
+              <Icon name={"shopify"} />
+            </li>
+            <li>
+              <Icon name={"woo"} />
+            </li>
+            <li>
+              <Icon name={"wix"} />
+            </li>
+            <li>
+              <Icon name={"magento-full"} />
+            </li>
+            <li>
+              <Icon name={"salesforce"} />
+            </li>
+            <li>
+              <Icon name={"paypal"} />
+            </li>
+          </ul>
         </div>
       </section>
     </>

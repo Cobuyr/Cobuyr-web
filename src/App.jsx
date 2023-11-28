@@ -8,6 +8,7 @@ import Footer from "./Components/Footer/footer";
 import Header from "./Components/header/header";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
+import Sub from "./Components/sub";
 
 
 // define "lord-icon" custom element with default properties
@@ -18,6 +19,7 @@ function App() {
     <>
       <Header />
       <Home />
+      <Sub/>
       <Footer/>
       <About/>
     </>
