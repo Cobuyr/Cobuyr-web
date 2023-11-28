@@ -23,8 +23,12 @@
     translate: -50% 0%;
     z-index: 1000;
 }
+.nav-wrap a.active {
+	color: var(--accent);
+  }
+
 .nav-wrap nav{
-	padding: 12px 24px;
+	padding: 10px 20px;
     border-radius: 25px;
     outline: 1px solid var(--light-border);
     background: radial-gradient(
@@ -99,6 +103,18 @@
 		margin: 0px 20px;
 	}
 }
+@media (max-width: 600px){
+
+	.navbar p{
+		font-size: 0.75rem;
+		padding: 5px 0;
+		margin: 0px 10px;
+	}
+	.nav-wrap nav{
+		padding: 6px 12px;
+	}
+}
+
 
 // @media (max-width: 1090px){
 // 	#menu-icon{

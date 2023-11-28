@@ -19,6 +19,7 @@ import Header from "./Components/header/header";
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Sub from "./Components/sub";
+import NoPage from "./Pages/NoPage";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -26,18 +27,17 @@ defineElement(lottie.loadAnimation);
 function App() {
   return (
     <>
-      <Header />
-
       <BrowserRouter>
+        <Header />
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/About" element={<About />} />
+          <Route path="/*" element={<NoPage />} />
         </Routes>
+        <Sub />
+        <Footer />
       </BrowserRouter>
-
-      <Sub />
-      <Footer />
     </>
   );
 }
