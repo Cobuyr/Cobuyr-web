@@ -1,6 +1,16 @@
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
+// import {
+//   createBrowserRouter,
+//   RouterProvider,
+//   Route,
+//   Link,
+// } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  // NavLink,
+} from "react-router-dom";
+
 import "./App.css";
 import lottie from "lottie-web";
 import { defineElement } from "@lordicon/element";
@@ -10,7 +20,6 @@ import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Sub from "./Components/sub";
 
-
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
 
@@ -18,10 +27,17 @@ function App() {
   return (
     <>
       <Header />
-      <Home />
-      <Sub/>
-      <Footer/>
-      <About/>
+
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/About" element={<About />} />
+        </Routes>
+      </BrowserRouter>
+
+      <Sub />
+      <Footer />
     </>
   );
 }

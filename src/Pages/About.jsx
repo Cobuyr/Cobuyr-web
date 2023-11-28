@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
 import "../Styles/About.css";
-import { Badge, IconBadge } from "../Components/badge";
+import { Badge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 
 const About = () => {

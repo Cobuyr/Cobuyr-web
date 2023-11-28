@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 // import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
-import dash from "/dash.jpg";
+// import dash from "/dash.jpg";
 
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
