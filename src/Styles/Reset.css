@@ -51,6 +51,8 @@ main {
    */
 
   h1 {
+  font-family: 'Lato', sans-serif;
+
     width: 80%;
     font-size: clamp(2em, 5vw, 4em);
     margin: 0.2em 0;
@@ -66,6 +68,8 @@ main {
     -webkit-text-fill-color: transparent;
   }
   h2{
+  font-family: 'Lato', sans-serif;
+
     font-size: clamp(1.5em,5vw,2.5em);
     max-width: 65ch;
     padding-inline: 20%;
@@ -80,9 +84,13 @@ main {
     -webkit-text-fill-color: transparent;
   }
   h3{
+  font-family: 'Lato', sans-serif;
+
     color: var(--highlight-color);
   }
   p{
+    font-family: 'quicksand';
+
     font-size: clamp(13.5px,5vw,16px);
     max-width: 65ch;
   }
