@@ -29,6 +29,8 @@ line-height: unset;
 
    & .marquee {
       height: auto;
+      width: 70%;
+      margin-inline: auto;
 
       & li {
         

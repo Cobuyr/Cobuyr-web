@@ -54,7 +54,8 @@ const Contact = () => {
   ];
 
   return (
-    <section className="contact">
+    <section className="contact ">
+      {/* <div className="ray jumbo"></div> */}
       <div id="contact-form">
         <input
           type="text"
@@ -79,7 +80,7 @@ const Contact = () => {
           Thank you for your message, we will be in touch in no time!
         </span>
       </div>
-      <div className="">
+      <div className="contact-text">
         <h1>Get in touch</h1>
       </div>
      <div className="faq">

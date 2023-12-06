@@ -1,3 +1,62 @@
+.magicpattern {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
+    background-image: url("data:image/svg+xml;utf8,%3Csvg viewBox=%220 0 2000 1000%22 xmlns=%22http:%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cmask id=%22b%22 x=%220%22 y=%220%22 width=%222000%22 height=%221000%22%3E%3Cpath fill=%22url(%23a)%22 d=%22M0 0h2000v1000H0z%22%2F%3E%3C%2Fmask%3E%3Cg style=%22transform-origin:center center%22 stroke=%22%23ccc%22 stroke-width=%221.8%22 mask=%22url(%23b)%22%3E%3Cpath fill=%22none%22 d=%22M0 0h87v87H0zM348 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc7f%22 d=%22M435 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M522 0h87v87h-87zM870 0h87v87h-87zM1044 0h87v87h-87zM1305 0h87v87h-87zM1479 0h87v87h-87zM1566 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc7f%22 d=%22M1653 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1740 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccccd%22 d=%22M1827 0h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1914 0h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccd9%22 d=%22M87 87h87v87H87z%22%2F%3E%3Cpath fill=%22%23ccccccb9%22 d=%22M261 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M348 87h87v87h-87zM609 87h87v87h-87zM696 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc98%22 d=%22M870 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M957 87h87v87h-87zM1044 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc5b%22 d=%22M1218 87h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccce7%22 d=%22M1566 87h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1653 87h87v87h-87zM1827 87h87v87h-87zM87 174h87v87H87zM174 174h87v87h-87zM348 174h87v87h-87zM435 174h87v87h-87zM522 174h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccf5%22 d=%22M609 174h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M783 174h87v87h-87zM1305 174h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc5f%22 d=%22M1479 174h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccca5%22 d=%22M1566 174h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1740 174h87v87h-87zM1827 174h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc4c%22 d=%22M1914 174h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 261h87v87H0zM174 261h87v87h-87zM261 261h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc91%22 d=%22M783 261h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 261h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc30%22 d=%22M1044 261h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1218 261h87v87h-87zM1305 261h87v87h-87zM1479 261h87v87h-87zM1566 261h87v87h-87zM1914 261h87v87h-87zM0 348h87v87H0zM87 348h87v87H87zM174 348h87v87h-87zM261 348h87v87h-87zM435 348h87v87h-87zM609 348h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccf9%22 d=%22M783 348h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M870 348h87v87h-87zM1131 348h87v87h-87zM1479 348h87v87h-87zM1827 348h87v87h-87zM1914 348h87v87h-87zM0 435h87v87H0zM87 435h87v87H87zM174 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc4b%22 d=%22M435 435h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M522 435h87v87h-87zM870 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc41%22 d=%22M957 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc99%22 d=%22M1044 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccb3%22 d=%22M1131 435h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1305 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc97%22 d=%22M1566 435h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1653 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc13%22 d=%22M1827 435h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc8c%22 d=%22M1914 435h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M0 522h87v87H0zM87 522h87v87H87zM348 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc09%22 d=%22M522 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccd7%22 d=%22M696 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc33%22 d=%22M957 522h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1044 522h87v87h-87zM1131 522h87v87h-87zM1218 522h87v87h-87zM1305 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccbd%22 d=%22M1392 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc1c%22 d=%22M1566 522h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1653 522h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc0f%22 d=%22M1914 522h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M174 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc72%22 d=%22M261 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M348 609h87v87h-87zM435 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc1e%22 d=%22M522 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M609 609h87v87h-87zM783 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccc8%22 d=%22M870 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M957 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc88%22 d=%22M1044 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1131 609h87v87h-87zM1218 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc8a%22 d=%22M1479 609h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1566 609h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccccf%22 d=%22M87 696h87v87H87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M174 696h87v87h-87zM348 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc54%22 d=%22M522 696h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M696 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc13%22 d=%22M870 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc62%22 d=%22M1131 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccb3%22 d=%22M1218 696h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1305 696h87v87h-87zM1479 696h87v87h-87zM1653 696h87v87h-87zM1740 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc1d%22 d=%22M1914 696h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc0c%22 d=%22M174 783h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M261 783h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccc5%22 d=%22M522 783h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc0b%22 d=%22M870 783h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M957 783h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccc9%22 d=%22M1218 783h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1392 783h87v87h-87zM1479 783h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccbf%22 d=%22M1566 783h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1740 783h87v87h-87zM0 870h87v87H0zM174 870h87v87h-87zM261 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc03%22 d=%22M348 870h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M435 870h87v87h-87zM522 870h87v87h-87zM783 870h87v87h-87zM870 870h87v87h-87zM1044 870h87v87h-87zM1392 870h87v87h-87zM1479 870h87v87h-87zM1566 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23ccccccdf%22 d=%22M1740 870h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc2c%22 d=%22M1827 870h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1914 870h87v87h-87zM87 957h87v87H87zM261 957h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc99%22 d=%22M609 957h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M783 957h87v87h-87zM957 957h87v87h-87zM1131 957h87v87h-87z%22%2F%3E%3Cpath fill=%22%23cccccc21%22 d=%22M1305 957h87v87h-87z%22%2F%3E%3Cpath fill=%22none%22 d=%22M1827 957h87v87h-87zM1914 957h87v87h-87z%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CradialGradient id=%22a%22%3E%3Cstop offset=%220%22 stop-color=%22%23fff%22%2F%3E%3Cstop offset=%221%22 stop-color=%22%23fff%22 stop-opacity=%220%22%2F%3E%3C%2FradialGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E");
+}
+
+@keyframes jumbo {
+    from {
+        background-position: 50% 50%, 50% 50%;
+    }
+
+    to {
+        background-position: 350% 50%, 350% 50%;
+    }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(100deg, #fff 0%, #fff 7%, transparent 10%, transparent 12%, #fff 16%);
+    --stripesDark: repeating-linear-gradient(100deg, #000 0%, #000 7%, transparent 10%, transparent 12%, #000 16%);
+    --rainbow: repeating-linear-gradient(100deg, #232b35 10%, #e879f9 15%, #313f4f 20%, #627f7a 25%, #343c45 30%);
+    background-image: var(--stripes);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+    /* filter: blur(10px) invert(100%); */
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.dark .jumbo {
+    background-image: var(--stripesDark), var(--rainbow);
+    filter: blur(10px) opacity(50%) saturate(200%);
+}
+
+.dark .jumbo::after {
+    background-image: var(--stripesDark), var(--rainbow);
+}
+
+.ray {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    height: 334px;
+    filter: blur(38px);
+}
+
 .contact {
     height: 100vh;
     display: grid;
@@ -5,52 +64,70 @@
     grid-auto-columns: 1fr;
     gap: 1em 1em;
     place-items: center;
+    /* background: url('/public/grid.png'); */
 
 
-& #contact-form {
+    & #contact-form {
 
-    color: #FFF;
-    padding: 20px;
+        color: #FFF;
+        padding: 20px;
+
+    }
+
+    & input,
+    & textarea {
+        width: 100%;
+        border: 0;
+        padding: 10px 5px;
+        box-sizing: border-box;
+        margin-bottom: 15px !important;
+        border-radius: 2px;
+        background: none;
+        border-bottom: groove;
+    }
+
+    & textarea {
+        height: 70px;
+        resize: vertical;
+    }
+
+    & button {
+        width: 100%;
+        color: #FFF;
+        margin-bottom: 15px;
+
+    }
+
+    & #contact-form span {
+        display: none;
+        text-align: center;
+    }
+
+    span.visible {
+        display: block;
+    }
+
 
 }
-
-& input,
-& textarea {
-    width: 100%;
-    border: 0;
-    padding: 10px 5px;
-    box-sizing: border-box;
-    margin-bottom: 15px !important;
-    border-radius: 2px;
-    background: none;
-    border-bottom: groove;
+.contact-text {
+    /* background-color: white; */
+    /* &::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        translate: -50% 0;
+        width: 100%;
+        height: 100vh;
+        background:
+            radial-gradient(ellipse at 50% 100%, rgb(254 69 255 / 1) 0%, 40%, rgb(255 255 255 / 0) 100%) 45.5% 1.03% / 20% 80.6% no-repeat no-repeat;
+       
+        z-index: -1;
+    } */
 }
-
-& textarea {
-    height: 70px;
-    resize: vertical;
-}
-
-& button {
-    width: 100%;
-    color: #FFF;
-    margin-bottom: 15px;
-
-}
-
-& #contact-form span {
-    display: none;
-    text-align: center;
-}
-
-span.visible {
-    display: block;
-}
-}
-
 
 /* faq section  */
-.faq{
+.faq {
     /* max-height: 100vh;
     overflow-y: scroll; */
 }

@@ -5,7 +5,8 @@ import "../Styles/Home/Home.css";
 
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
-
+import Sub from "../Components/sub";
+import Footer from "../Components/Footer/footer";
 
 const Home = () => {
   return (
@@ -313,7 +314,7 @@ const Home = () => {
 
       <section className="integrate">
         <div className="int-textbox">
-        <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
+          <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
           <h2>Integration and Benefits.</h2>
           <p>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
@@ -472,6 +473,8 @@ const Home = () => {
         </div>
       </section>
 
+      <Sub />
+      <Footer />
     </>
   );
 };
