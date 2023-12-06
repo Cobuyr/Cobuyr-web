@@ -1,9 +1,10 @@
 .who{
     min-height: 100vh;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
     grid-auto-columns: 1fr;
     gap: 1em 1em;
+    margin-block: 0;
     place-items: center;
     /* align-items: start; */
     text-align: left;
@@ -11,7 +12,9 @@
 .who .badge{
     margin: 0 0 20px 0;
 }
-
+.who-head{
+  width: 100%;
+}
 .who-head h1{
     /* width: 100%; */
     font-size: clamp(1.5em,5vw,2em);
@@ -25,12 +28,16 @@ line-height: unset;
 }
 
 .partner{
-    
+  
+    & h3{
+      font-size: 1.2em;
+      margin-top: 5vh;
+    }
 
    & .marquee {
       height: auto;
       width: 70%;
-      margin-inline: auto;
+      margin-right: auto;
 
       & li {
         
@@ -46,7 +53,24 @@ line-height: unset;
     }
   }
 
-  @media (max-width: 600px){
+  @media (max-width: 900px){
+.who{
+  margin-block: 10vh; 
+}
+	.who-text p{
+		text-align: justify;
+	}
+	.who-head{
+		text-align: -webkit-center;
+	}
+	.who-head h1{
+		width: 100%;
+	}
+  .partner .marquee {
+    margin-inline: auto;
+  }
+}
+  /* @media (max-width: 600px){
 
 	.who-text p{
 		text-align: justify;
@@ -57,4 +81,4 @@ line-height: unset;
 	.who-head h1{
 		width: 100%;
 	}
-}
+} */
