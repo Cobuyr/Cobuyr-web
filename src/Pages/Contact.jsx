@@ -9,8 +9,12 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [emailSent, setEmailSent] = useState(false);
+  // const [isEmailValid, setIsEmailValid] = useState(true);
 
   const submit = () => {
+
+    // setIsEmailValid(!!email);
+
     if (name && email && message) {
       const serviceId = "service_xpeei0l";
       const templateId = "cobuyrtemp";
@@ -54,7 +58,7 @@ const Contact = () => {
   ];
 
   return (
-    <section className="contact ">
+    <section className={`contact default ${emailSent ? "valid" : "invalid"}`}>
       {/* <div className="ray jumbo"></div> */}
       <div className="fl">
       <div className="contact-text">
@@ -89,8 +93,8 @@ const Contact = () => {
         ></textarea>
         <button onClick={submit}>Send Message</button>
 
-        <span className={emailSent ? "visible" : undefined}>
-          Thank you for your message, we will be in touch in no time!
+        <span className={emailSent ? "visible" : "not-visible"}>
+          <p>Thank you for your message, we will be in touch in no time!</p>
         </span>
       </div>
       </div>
