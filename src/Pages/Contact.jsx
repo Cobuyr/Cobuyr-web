@@ -33,10 +33,29 @@ const Contact = () => {
       setEmail("");
       setMessage("");
       setEmailSent(true);
-    } else {
-      alert("Please fill in all fields.");
-    }
+    } 
+    // else {
+    //   alert("Please fill in all fields.");
+    // }
   };
+
+  const [bgX, setBgX] = useState(0);
+  const [bgY, setBgY] = useState(0);
+
+  // Function to handle mouse movement
+  const handleMouseMove = (e) => {
+    const { clientX, clientY } = e;
+    const rect = e.target.getBoundingClientRect();
+
+    // Calculate mouse position relative to the element
+    const x = clientX - rect.left;
+    const y = clientY - rect.top;
+
+    // Update state with smooth effect
+    setBgX(x);
+    setBgY(y);
+  };
+
 
 
   // Data for accordion 
@@ -58,9 +77,17 @@ const Contact = () => {
   ];
 
   return (
-    <section className={`contact default ${emailSent ? "valid" : "invalid"}`}>
+    <section 
+    className={`contact default ${emailSent ? "valid" : "invalid"}`}
+    >
       {/* <div className="ray jumbo"></div> */}
-      <div className="fl">
+      <div 
+      className="fl"
+      onMouseMove={handleMouseMove}
+      style={{
+        '--bg-x': bgX,
+        '--bg-y': bgY,
+      }}>
       <div className="contact-text">
         <h1>Get in touch</h1>
       </div>
@@ -95,6 +122,9 @@ const Contact = () => {
 
         <span className={emailSent ? "visible" : "not-visible"}>
           <p>Thank you for your message, we will be in touch in no time!</p>
+        </span>
+        <span className={emailSent ? "not-visible" : "visible"}>
+          <p>Please Fill in all Fields</p>
         </span>
       </div>
       </div>

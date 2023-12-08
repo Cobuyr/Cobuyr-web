@@ -83,11 +83,12 @@
     gap: 1em 1em;
     margin-block: 0;
     place-items: center;
-    /* background: url('/public/grid.png'); */
+    background: radial-gradient( circle at 50% 50%, transparent 0%, #32323275 80%, var(--bg-color) 95% );
 
 
     & #contact-form {
         min-width: 500px;
+        min-height: 400px;
         color: #FFF;
         padding: 20px;
 
@@ -222,16 +223,25 @@
     &::before {
         content: '';
         width: 100%;
-        height: 100%;
+        height: 110%;
         background-image: url("./pgrid.jpg");
         background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         position: absolute;
-        top: 0px;
-        right: 0px;
+        top: 50%;
+        right: 0;
         bottom: 0px;
-        left: 0px;
+        left: 50%;
+        translate: -50% -50%;
         opacity: 0.025;
         z-index: -1;
+        
+  transition: background-position 50s ease-out;
+
+  /* Set background position based on mouse coordinates */
+  background-position: calc(var(--bg-x) * -1px) calc(var(--bg-y) * -1px);
+
     }
 }
 
