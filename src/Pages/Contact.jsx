@@ -61,18 +61,27 @@ const Contact = () => {
         <h1>Get in touch</h1>
       </div>
       <div id="contact-form">
+       
+        <div className="inp-field">
         <input
           type="text"
           placeholder="Your Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
+        <span></span>
+        </div>
+        <div className="inp-field">
         <input
           type="email"
           placeholder="Your email address"
           value={email}
+          required
           onChange={(e) => setEmail(e.target.value)}
         />
+        <span></span>
+        </div>
+        
         <textarea
           placeholder="Your message"
           value={message}
