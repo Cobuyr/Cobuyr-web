@@ -147,7 +147,7 @@ const Home = () => {
       <section className="modern">
         <div className="bento">
           <div className="head">
-            <Badge iconUrl="qucadebu" trigger="hover" text="Modern Platform" />
+            <Badge iconUrl="ofklvwkr" trigger="hover" text="Modern Platform" />
             <h2>THE MODERN PAYMENTS PLATFORM</h2>
           </div>
           <div className="info1">
@@ -293,7 +293,7 @@ const Home = () => {
 
       <section className="info-banner">
         <Badge
-          iconUrl="qucadebu"
+          iconUrl="kndkiwmf"
           trigger="hover"
           text="Checkout Transformation"
         />
