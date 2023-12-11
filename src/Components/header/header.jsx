@@ -2,6 +2,8 @@
 import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import "./header.css";
+import logo from "/cb-logo-blk.jpg";
+import smalllogo from "/cb-mark-blk.jpg";
 
 
 const Header = () => {
@@ -37,7 +39,14 @@ const Header = () => {
     <>
       <header>
         <NavLink to="/" className="logo">
-          <span>Logo</span>
+          <img 
+          src={logo} 
+          srcSet={`${logo} 700w, ${smalllogo} 400w`}
+          sizes="(max-width: 700px) 400px,
+         50vw"
+          alt="Cobuyr Logo" 
+          loading="eager"
+            />
         </NavLink>
 
         <div className="main">
@@ -55,11 +64,11 @@ const Header = () => {
          
           </NavLink>
 
-          <div
+          {/* <div
             className={menuOpen ? "bx bx-x" : "bx bx-menu"}
             id="menu-icon"
             onClick={handleMenuClick}
-          ></div>
+          ></div> */}
         </div>
       </header>
 
@@ -76,16 +85,21 @@ const Header = () => {
                About
               </NavLink>
             </li>
-            <li>
+            {/* <li>
               <NavLink to="/pricing">
                Pricing
               </NavLink>
-            </li>
+            </li> */}
             <li>
               <NavLink to="/Contact">
                Contact
               </NavLink>
             </li>
+            {/* <li className="unhide">
+              <NavLink to="/Contact">
+               Contact
+              </NavLink>
+            </li> */}
           </ul>
         </nav>
       </div>
