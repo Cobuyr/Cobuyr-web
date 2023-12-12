@@ -62,8 +62,7 @@
 }
 
 .main a {
-  margin-right: 25px;
-  margin-left: 10px;
+  margin-right: auto;
   color: var(--highlight-color);
   font-size: 1rem;
   font-weight: 500;
@@ -100,7 +99,7 @@ header {
   align-items: center;
   justify-content: space-between;
   background: transparent;
-  padding: 28px 10%;
+  padding: 35px 10%;
   transition: all 0.5s ease;
   text-align: center;
   position: relative;
@@ -149,15 +148,14 @@ header lord-icon {
   header {
     padding: 30px 2.5%;
   }
-  .logo img {
-    width: 50px;
-  }
-  .navbar p {
-    font-size: 0.75rem;
-    padding: 5px 0;
-    margin: 0px 10px;
+  .navbar a {
+    font-size: 0.8rem;
+    margin: 0px 15px;
   }
   .nav-wrap nav {
     padding: 6px 12px;
+  }
+  .main a {
+    font-size: 0.8rem;
   }
 }/*# sourceMappingURL=header.css.map */

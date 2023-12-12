@@ -41,9 +41,9 @@ const Header = () => {
         <NavLink to="/" className="logo">
           <img 
           src={logo} 
-          srcSet={`${logo} 700w, ${smalllogo} 400w`}
-          sizes="(max-width: 700px) 400px,
-         50vw"
+          // srcSet={`${logo} 700w, ${smalllogo} 400w`}
+          // sizes="(max-width: 700px) 10vw,
+        //  50vw"
           alt="Cobuyr Logo" 
           loading="eager"
             />
@@ -60,7 +60,7 @@ const Header = () => {
     // state="loop-line"
     >
 </lord-icon> */}
-              Get App
+              Book Demo
          
           </NavLink>
 

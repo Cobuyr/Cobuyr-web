@@ -97,53 +97,6 @@ const Home = () => {
         {/* </div> */}
       </section>
 
-      {/* <section className="transform">
-        <div className="badge">Checkout Transformation</div>
-        <div className="transform-textbox">
-          <h2>TRANSFORM YOUR CHECKOUT PROCESS FOR TODAY'S ERA OF SHARING </h2>
-          <p className="transform-text">
-            Cobuyr gives customers a new and memorable social buying experience
-            that also modernizes your checkout process by{" "}
-            <span className="highlight">making co-buying a reality</span> , and
-            creating more value for you.
-          </p>
-        </div>
-        <div className="hex-box">
-          <ul className="hex-list">
-            <li>Monetize existing data</li>
-            <li>LOGO HERE</li>
-            <li>Reduce customer acquisition costs</li>
-            <li>Lower basket abandonment</li>
-            <li>Improve customer satisfaction</li>
-            <li>Increase average order value</li>
-            <li>Reduce technology spend</li>
-          </ul>
-        </div>
-      </section> */}
-
-      {/* <section className="modern">
-        <div className="badge">New Method</div>
-        <div className="textbox">
-          <h2>THE MODERN PAYMENT PLATFORM</h2>
-          <p>
-            Introducing Cobuyr, a groundbreaking, comprehensive platform at the
-            forefront of modernized payment solutions. Experience the fusion of
-            payments, data management, and analytics, empowering you to harness
-            the collective purchasing potential of a vast community of cobuyers.
-            These are individuals seeking collaborative ways to split the
-            expenses of online purchases among their social circles,
-            revolutionizing the way products and services are acquired and
-            enjoyed.
-          </p>
-          <div className="image">
-            <img
-              src={dash}
-              alt="new category of multi-party payment transactions"
-            />
-          </div>
-        </div>
-      </section> */}
-
       <section className="modern">
         <div className="bento">
           <div className="head">
@@ -302,8 +255,8 @@ const Home = () => {
           <h2>Buff up customer Transaction</h2>
           <p className="banner-text">
             Payment technology has not kept up with what customers want, and
-            that is why we invented Social Buying, a new category of multi-party
-            payment transactions that enables your customers to split and
+            that is why we invented Social Buying,<span className="highlight"> a new category of multi-party
+            payment transactions </span>that enables your customers to split and
             securely pay for purchases together.
           </p>
           <button className="primary-btn">Book Demo</button>
@@ -318,10 +271,10 @@ const Home = () => {
           <h2>Integration and Benefits.</h2>
           <p>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
-            Plug-In. Our seamlessly integrated solution enables effortless
+            Plug-In. <span className="highlight">Our seamlessly integrated solution enables</span> effortless
             incorporation of Social Buying into your existing website structure,
-            ensuring a smooth and efficient transition without disrupting your
-            operations.
+            ensuring a <span className="highlight">smooth and efficient transition without disrupting your
+            operations.</span>
             <br />
             <blockquote>
               By integrating our API, you unlock a world of collaborative
