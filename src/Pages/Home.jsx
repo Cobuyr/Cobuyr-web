@@ -7,6 +7,7 @@ import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 import Sub from "../Components/sub";
 import Footer from "../Components/Footer/footer";
+// import LiquidButton from "../Components/magnetBtn";
 
 const Home = () => {
   return (
@@ -27,7 +28,7 @@ const Home = () => {
       </section>
 
       <section className="future">
-        {/* <MagneticButtons/> */}
+        {/* <LiquidButton/> */}
         {/* <div className="future-wrap"> */}
         <div className="future-textbox">
           <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />

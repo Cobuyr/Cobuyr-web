@@ -2,13 +2,24 @@
 import "../Styles/About.css";
 import { Badge } from "../Components/badge";
 import { Icon } from "../assets/icon";
-
+import '../Components/lb.js';
 const About = () => {
   return (
     <>
       <section className="who">
         <div className="who-head">
           <Badge iconUrl="kddybgok" trigger="hover" text="Who We Are" />
+          {/* <svg
+            className="liquid-button"
+            data-text="different viscosity"
+            data-force-factor="0.1"
+            data-layer-1-viscosity="0.5"
+            data-layer-2-viscosity="0.4"
+            data-layer-1-mouse-force="400"
+            data-layer-2-mouse-force="500"
+            data-layer-1-force-limit="1"
+            data-layer-2-force-limit="2"
+        ></svg> */}
           <h1>
             Cobuyr pioneered Social Buying, redefining e-commerce payments into
             a collaborative experience.

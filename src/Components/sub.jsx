@@ -27,8 +27,8 @@ const Sub = () => {
   >
 </lord-icon>
         <span className="formtext"></span>
-        <input type="text" placeholder="Name" required />
-        <input type="email" placeholder="Email" required />
+        <input autoComplete="name" name="name" type="text" placeholder="Name" required />
+        <input autoComplete="email" name="email" type="email" placeholder="Email" required />
         <button>Go!</button>
       </form>
     </section>

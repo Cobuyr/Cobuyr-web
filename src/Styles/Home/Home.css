@@ -79,6 +79,7 @@
 
 .hero {
   height: 100vh;
+  margin-block: unset;
   display: flex;
   flex-direction: column;
   justify-content: center;
