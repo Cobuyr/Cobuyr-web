@@ -33,6 +33,7 @@ footer svg:hover {
 .ftrtxt {
   font-size: 13px;
   text-align: center;
+  margin-block: 0;
 }
 .ftrtxt h6 {
   opacity: 0.6;

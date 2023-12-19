@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from "react";
 import "./footer.css";
 
@@ -35,7 +36,7 @@ const Footer = () => {
         </div>
       </div>
       <div className="foot-text">
-        <p className="ftrtxt">Copyright <a href="#">Cobuyr</a> 2023 | All Rights Reserved</p>
+        <h5 className="ftrtxt">Copyright <a href="#">Cobuyr</a> 2023 | All Rights Reserved</h5>
         <h6>
           This site is protected by <span className="highlight">reCAPTCHA</span>{" "}
           and the{" "}
