@@ -14,7 +14,7 @@
   top: 3.5vh;
   left: 50%;
   translate: -50% 0%;
-  z-index: 1000;
+  z-index: 40;
 }
 
 .nav-wrap a.active {
@@ -88,13 +88,13 @@
   font-size: 35px;
   color: var(--highlight-color);
   cursor: pointer;
-  z-index: 10001;
+  z-index: 41;
   display: none;
 }
 
 header {
   width: 100%;
-  z-index: 1000;
+  z-index: 40;
   display: flex;
   align-items: center;
   justify-content: space-between;

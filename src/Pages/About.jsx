@@ -1,13 +1,38 @@
 /* eslint-disable react/no-unescaped-entities */
+import React, { useRef, useEffect } from "react";
 import "../Styles/About.css";
+// import gsap from "gsap";
 import { Badge } from "../Components/badge";
 import { Icon } from "../assets/icon";
-import '../Components/lb.js';
+import "../Components/lb.js";
+import Transition from "../Components/Transition";
+// import Transition from "../Components/Transition";
 const About = () => {
+  // const about = gsap.timeline();
+  const who = useRef(null);
+  const partner = useRef(null);
+  const whoText = useRef(null);
+
+  // useEffect(() => {
+  //   about.from(who.current, {
+  //     duration: .6,
+  //     skewX: 10,
+  //     x: -100,
+  //     opacity: 0,
+  //   }, '-=3.5');
+  //   about.from(partner.current, {
+  //     duration: .5,
+  //     skewX: 10,
+  //     x: -100,
+  //     opacity: 0,
+  //   }, '-=3');
+  // });
   return (
     <>
+      {/* <Transition timeline={about} /> */}
+
       <section className="who">
-        <div className="who-head">
+        <div className="who-head" ref={who}>
           <Badge iconUrl="kddybgok" trigger="hover" text="Who We Are" />
           {/* <svg
             className="liquid-button"
@@ -24,53 +49,53 @@ const About = () => {
             Cobuyr pioneered Social Buying, redefining e-commerce payments into
             a collaborative experience.
           </h1>
-          <div className="partner">
-        <h3>Proudly Backed By </h3>
-        <div className=" marquee">
-          <ul className="marquee__group ">
-            <li>
-              <Icon name={"shopify"} />
-            </li>
-            <li>
-              <Icon name={"woo"} />
-            </li>
-            <li>
-              <Icon name={"wix"} />
-            </li>
-            <li>
-              <Icon name={"magento-full"} />
-            </li>
-            <li>
-              <Icon name={"salesforce"} />
-            </li>
-            <li>
-              <Icon name={"paypal"} />
-            </li>
-          </ul>
-          <ul aria-hidden="true" className="marquee__group ">
-            <li>
-              <Icon name={"shopify"} />
-            </li>
-            <li>
-              <Icon name={"woo"} />
-            </li>
-            <li>
-              <Icon name={"wix"} />
-            </li>
-            <li>
-              <Icon name={"magento-full"} />
-            </li>
-            <li>
-              <Icon name={"salesforce"} />
-            </li>
-            <li>
-              <Icon name={"paypal"} />
-            </li>
-          </ul>
+          <div className="partner" ref={partner}>
+            <h3>Proudly Backed By </h3>
+            <div className=" marquee">
+              <ul className="marquee__group ">
+                <li>
+                  <Icon name={"shopify"} />
+                </li>
+                <li>
+                  <Icon name={"woo"} />
+                </li>
+                <li>
+                  <Icon name={"wix"} />
+                </li>
+                <li>
+                  <Icon name={"magento-full"} />
+                </li>
+                <li>
+                  <Icon name={"salesforce"} />
+                </li>
+                <li>
+                  <Icon name={"paypal"} />
+                </li>
+              </ul>
+              <ul aria-hidden="true" className="marquee__group ">
+                <li>
+                  <Icon name={"shopify"} />
+                </li>
+                <li>
+                  <Icon name={"woo"} />
+                </li>
+                <li>
+                  <Icon name={"wix"} />
+                </li>
+                <li>
+                  <Icon name={"magento-full"} />
+                </li>
+                <li>
+                  <Icon name={"salesforce"} />
+                </li>
+                <li>
+                  <Icon name={"paypal"} />
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-        </div>
-        <div className="who-text">
+        <div className="who-text" ref={whoText}>
           <p>
             At Cobuyr, our vision revolves around fostering innovative
             connections among people through technology. In an era where
@@ -92,8 +117,9 @@ const About = () => {
           </p>
         </div>
       </section>
-     
     </>
   );
 };
-export default About;
+
+const TransAbout = Transition(About);
+export default TransAbout

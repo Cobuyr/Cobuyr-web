@@ -1,18 +1,14 @@
-// import {
-//   createBrowserRouter,
-//   RouterProvider,
-//   Route,
-//   Link,
-// } from "react-router-dom";
+
 import {
   BrowserRouter,
   Routes,
   Route,
-  // NavLink,
+
 } from "react-router-dom";
 
 import "./App.css";
 import emailjs from '@emailjs/browser'
+// import gsap from "gsap";
 import lottie from "lottie-web";
 import { defineElement } from "@lordicon/element";
 // import Footer from "./Components/Footer/footer";
@@ -22,6 +18,7 @@ import About from "./Pages/About";
 // import Sub from "./Components/sub";
 import NoPage from "./Pages/NoPage";
 import Contact from "./Pages/Contact";
+import { AnimatePresence } from "framer-motion";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -34,6 +31,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
+        <AnimatePresence mode="wait">
         <Routes>
           <Route index element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -41,6 +39,7 @@ function App() {
           <Route path="/Contact" element={<Contact />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>
+        </AnimatePresence>
       </BrowserRouter>
     </>
   );

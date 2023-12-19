@@ -7,6 +7,7 @@ import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 import Sub from "../Components/sub";
 import Footer from "../Components/Footer/footer";
+import Transition from "../Components/Transition";
 // import LiquidButton from "../Components/magnetBtn";
 
 const Home = () => {
@@ -433,4 +434,5 @@ const Home = () => {
   );
 };
 
-export default Home;
+const TransHome = Transition(Home);
+export default TransHome

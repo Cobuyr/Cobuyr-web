@@ -3,6 +3,7 @@ import "../Styles/Contact.css";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Accordion from "../Components/Accordion";
+import Transition from "../Components/Transition";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -141,4 +142,6 @@ const Contact = () => {
     </section>
   );
 };
-export default Contact;
+
+const TransContact = Transition(Contact);
+export default TransContact
