@@ -25,12 +25,11 @@
 
 // export default Transition;
 
-import { motion, useIsPresent } from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 
 // Transition HOC
 const Transition = (WrappedComponent) => {
-  // const isPresent = useIsPresent();
 
   return () => (
     <>

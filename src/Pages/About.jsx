@@ -1,39 +1,52 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useRef, useEffect } from "react";
 import "../Styles/About.css";
-// import gsap from "gsap";
 import { Badge } from "../Components/badge";
 import { Icon } from "../assets/icon";
+import { motion } from "framer-motion";
 import "../Components/lb.js";
 import Transition from "../Components/Transition";
-// import Transition from "../Components/Transition";
-const About = () => {
-  // const about = gsap.timeline();
-  const who = useRef(null);
-  const partner = useRef(null);
-  const whoText = useRef(null);
 
-  // useEffect(() => {
-  //   about.from(who.current, {
-  //     duration: .6,
-  //     skewX: 10,
-  //     x: -100,
-  //     opacity: 0,
-  //   }, '-=3.5');
-  //   about.from(partner.current, {
-  //     duration: .5,
-  //     skewX: 10,
-  //     x: -100,
-  //     opacity: 0,
-  //   }, '-=3');
-  // });
+
+const visible = {
+  opacity: 1,
+  x: 0,
+  y: 0,
+  transition: { staggerChildren: 0.4, duration: 0.5 },
+};
+
+const whoVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible,
+};
+
+const visible2 = {
+  opacity: 1,
+  x: 0,
+  y: 0,
+  transition: { staggerChildren: 0.4, duration: 0.5 },
+};
+
+// const textVariants = {
+//   hidden: { opacity: 0, x: 20 },
+//   visible2,
+// };
+
+const About = () => {
   return (
     <>
-      {/* <Transition timeline={about} /> */}
-
-      <section className="who">
-        <div className="who-head" ref={who}>
-          <Badge iconUrl="kddybgok" trigger="hover" text="Who We Are" />
+      <motion.section
+        className="who"
+        initial="hidden"
+        animate="visible"
+        exit={{ opacity: 0, transition: { duration: 1 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.3 } } }}
+      >
+        <div className="who-head">
+          <motion.div
+             variants={whoVariants}
+          >
+            <Badge iconUrl="kddybgok" trigger="hover" text="Who We Are" />
+          </motion.div>
           {/* <svg
             className="liquid-button"
             data-text="different viscosity"
@@ -45,11 +58,11 @@ const About = () => {
             data-layer-1-force-limit="1"
             data-layer-2-force-limit="2"
         ></svg> */}
-          <h1>
+          <motion.h1 variants={whoVariants}>
             Cobuyr pioneered Social Buying, redefining e-commerce payments into
             a collaborative experience.
-          </h1>
-          <div className="partner" ref={partner}>
+          </motion.h1>
+          <motion.div className="partner" variants={whoVariants}>
             <h3>Proudly Backed By </h3>
             <div className=" marquee">
               <ul className="marquee__group ">
@@ -93,10 +106,17 @@ const About = () => {
                 </li>
               </ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-        <div className="who-text" ref={whoText}>
-          <p>
+
+        <div
+          className="who-text"
+          
+        >
+          <motion.p variants={{
+              hidden: { opacity: 0, x: 20 },
+              visible,
+            }}>
             At Cobuyr, our vision revolves around fostering innovative
             connections among people through technology. In an era where
             everyday essentials strain budgets and sharing experiences enriches
@@ -110,16 +130,16 @@ const About = () => {
             potential. However, we've brought forth a game-changing solution.
             <br />
             <br />
-            <span className="highlight">
+            <span className="highlight" >
               Our platform empowers families, friends, and communities within
               marketplaces to unite in group purchases for the first time.
             </span>
-          </p>
+          </motion.p>
         </div>
-      </section>
+      </motion.section>
     </>
   );
 };
 
 const TransAbout = Transition(About);
-export default TransAbout
+export default TransAbout;
