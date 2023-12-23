@@ -19,18 +19,6 @@ const whoVariants = {
   visible,
 };
 
-const visible2 = {
-  opacity: 1,
-  x: 0,
-  y: 0,
-  transition: { staggerChildren: 0.4, duration: 0.5 },
-};
-
-// const textVariants = {
-//   hidden: { opacity: 0, x: 20 },
-//   visible2,
-// };
-
 const About = () => {
   return (
     <>

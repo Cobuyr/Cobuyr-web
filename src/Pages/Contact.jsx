@@ -4,6 +4,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Accordion from "../Components/Accordion";
 import Transition from "../Components/Transition";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -78,7 +79,7 @@ const Contact = () => {
   ];
 
   return (
-    <section 
+    <motion.section 
     className={`contact default ${emailSent ? "valid" : "invalid"}`}
     >
       {/* <div className="ray jumbo"></div> */}
@@ -139,7 +140,7 @@ const Contact = () => {
       </div>
      </div>
 
-    </section>
+    </motion.section>
   );
 };
 

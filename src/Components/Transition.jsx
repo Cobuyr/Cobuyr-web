@@ -1,32 +1,6 @@
 /* eslint-disable react/display-name */
-// /* eslint-disable react/prop-types */
-// import React, { useRef, useEffect } from "react";
-// import { Power4 } from "gsap";
-
-// import "./Components.css";
-
-// const Transition = ({timeline}) => {
-//     const trans = useRef(null)
-//     useEffect(() => {
-//       timeline.to(trans.current, {
-//         duration: 4,
-//         x: 2500,
-//         ease: Power4.easeOut
-//       })
-
-//     }, )
-
-//   return (
-//     <div className="tEffect" ref={trans}>
-//       <h1>Transition</h1>
-//     </div>
-//   );
-// };
-
-// export default Transition;
 
 import { motion } from "framer-motion";
-import React from "react";
 
 // Transition HOC
 const Transition = (WrappedComponent) => {
