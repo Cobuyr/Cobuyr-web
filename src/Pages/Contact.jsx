@@ -2,7 +2,7 @@ import "../Styles/Contact.css";
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import Accordion from "../Components/Accordion";
+// import Accordion from "../Components/Accordion";
 import Transition from "../Components/Transition";
 import { motion } from "framer-motion";
 
@@ -14,7 +14,6 @@ const Contact = () => {
   // const [isEmailValid, setIsEmailValid] = useState(true);
 
   const submit = () => {
-
     // setIsEmailValid(!!email);
 
     if (name && email && message) {
@@ -35,7 +34,7 @@ const Contact = () => {
       setEmail("");
       setMessage("");
       setEmailSent(true);
-    } 
+    }
     // else {
     //   alert("Please fill in all fields.");
     // }
@@ -58,91 +57,117 @@ const Contact = () => {
     setBgY(y);
   };
 
+  // Data for accordion
 
+  // let data = [
+  //   {
+  //     title: "One",
+  //     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`,
+  //   },
+  //   {
+  //     title: "Two",
+  //     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`,
+  //   },
+  //   {
+  //     title: "Three",
+  //     content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...
+  //     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`,
+  //   },
+  // ];
 
-  // Data for accordion 
+  const visible = {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { staggerChildren: 0.4, duration: 0.5 },
+  };
 
-  let data = [
-    {
-      title: "One",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`
-    },
-    {
-      title: "Two",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`
-    },
-    {
-      title: "Three",
-      content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ...`
-    }
-  ];
+  const contVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible,
+  };
 
   return (
-    <motion.section 
-    className={`contact default ${emailSent ? "valid" : "invalid"}`}
+    <motion.section
+      className={`contact default ${emailSent ? "valid" : "invalid"}`}
+      initial="hidden"
+      animate="visible"
+      exit={{ opacity: 0, transition: { duration: 1 } }}
+      variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
     >
       {/* <div className="ray jumbo"></div> */}
-      <div 
-      className="fl"
-      onMouseMove={handleMouseMove}
-      style={{
-        '--bg-x': bgX,
-        '--bg-y': bgY,
-      }}>
-      <div className="contact-text">
-        <h1>Get in touch</h1>
+      <div
+        className="fl"
+        onMouseMove={handleMouseMove}
+        style={{
+          "--bg-x": bgX,
+          "--bg-y": bgY,
+        }}
+      >
+        <motion.div className="contact-text"
+        variants={{
+          hidden: { opacity: 0, x: -20 },
+          visible,
+        }}>
+          <h1>Get in touch</h1>
+        </motion.div>
+
+
+        <motion.div id="contact-form"
+       >
+          <motion.div className="inp-field"
+          variants={contVariants}>
+            <input
+              type="text"
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+            />
+            <span></span>
+          </motion.div>
+          <motion.div className="inp-field"
+          variants={contVariants}>
+            <input
+              type="email"
+              placeholder="Your email address"
+              value={email}
+              required
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            <span></span>
+          </motion.div>
+
+          <motion.textarea
+            placeholder="Your message"
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            variants={contVariants}
+          ></motion.textarea>
+          <motion.button onClick={submit}
+          variants={contVariants}>Send Message</motion.button>
+
+          <motion.span className={emailSent ? "visible" : "not-visible"}
+          variants={contVariants}>
+            <p>Thank you for your message, we will be in touch in no time!</p>
+          </motion.span>
+          <motion.span className={emailSent ? "not-visible" : "visible"}
+          variants={contVariants}>
+            <p>Please Fill in all Fields</p>
+          </motion.span>
+        </motion.div>
       </div>
-      <div id="contact-form">
-       
-        <div className="inp-field">
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <span></span>
+
+      {/* <div className="fl r">
+        <div className="faq">
+          <Accordion data={data} />
         </div>
-        <div className="inp-field">
-        <input
-          type="email"
-          placeholder="Your email address"
-          value={email}
-          required
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <span></span>
+        <div className="contact-text">
+          <h1>FAQ</h1>
         </div>
-        
-        <textarea
-          placeholder="Your message"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-        ></textarea>
-        <button onClick={submit}>Send Message</button>
-
-        <span className={emailSent ? "visible" : "not-visible"}>
-          <p>Thank you for your message, we will be in touch in no time!</p>
-        </span>
-        <span className={emailSent ? "not-visible" : "visible"}>
-          <p>Please Fill in all Fields</p>
-        </span>
-      </div>
-      </div>
-
-      <div className="fl r">
-     <div className="faq">
-     <Accordion data={data} />
-     </div>
-     <div className="contact-text">
-        <h1>FAQ</h1>
-      </div>
-     </div>
-
+      </div> */}
     </motion.section>
   );
 };
 
 const TransContact = Transition(Contact);
-export default TransContact
+export default TransContact;
