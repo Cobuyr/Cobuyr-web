@@ -14,18 +14,6 @@ import { Section } from "../Components/inView";
 // import LiquidButton from "../Components/magnetBtn";
 
 const Home = () => {
-  // const mainControl = useAnimation();
-
-  // const ref = useRef(null);
-  // const ftRef = useRef(null);
-  // const isinView = useInView(
-  //   ref, { once: true }, );
-
-  // useEffect(() => {
-  //  if (isinView){
-  //   mainControl.start("visible")
-  //  }
-  // }, [isinView]);
 
   const visible = {
     opacity: 1,

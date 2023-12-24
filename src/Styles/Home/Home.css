@@ -632,11 +632,13 @@ ul:has(> :focus) > li:not(:focus) {
   z-index: -1;
   top: 0;
   right: 0;
-  transition: all 0.9s ease-in-out;
+  opacity: 0;
+  transition: all 0.9s ease-in-out, opacity 0.8s cubic-bezier(1, 0, 0, 1);
 }
 .early form:hover lord-icon {
   translate: 50px 10px;
   rotate: 20deg;
+  opacity: 1;
 }
 .early form input {
   width: 50%;
