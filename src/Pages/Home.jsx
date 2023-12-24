@@ -8,60 +8,95 @@ import { Icon } from "../assets/icon";
 import Sub from "../Components/sub";
 import Footer from "../Components/Footer/footer";
 import Transition from "../Components/Transition";
+import { motion } from "framer-motion";
+import { Section } from "../Components/inView";
+
 // import LiquidButton from "../Components/magnetBtn";
 
 const Home = () => {
+  // const mainControl = useAnimation();
+
+  // const ref = useRef(null);
+  // const ftRef = useRef(null);
+  // const isinView = useInView(
+  //   ref, { once: true }, );
+
+  // useEffect(() => {
+  //  if (isinView){
+  //   mainControl.start("visible")
+  //  }
+  // }, [isinView]);
+
+  const visible = {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { staggerChildren: 0.4, duration: 0.5 },
+  };
+
+  const homeVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible,
+  };
+
   return (
     <>
-      <section className="hero">
-        <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
+      <Section className="hero">
+        <motion.div variants={homeVariants}>
+          <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
+        </motion.div>
 
-        <h1>Revolutionize Checkout with Social Buying</h1>
-        <p>
+        <motion.h1 variants={homeVariants}>
+          Revolutionize Checkout with Social Buying
+        </motion.h1>
+        <motion.p variants={homeVariants}>
           Enhance your checkout experience with Cobuyr's cutting-edge Social
           Buying platform. Allow customers to{" "}
           <span className="highlight">
             purchase together, boosting sales and fostering a sense of
             community.
           </span>
-        </p>
-        <button className="primary-btn">Join Waitlist</button>
-      </section>
+        </motion.p>
+        <motion.button className="primary-btn" variants={homeVariants}>
+          Join Waitlist
+        </motion.button>
+      </Section>
 
-      <section className="future">
+      <Section className="future">
         {/* <LiquidButton/> */}
-        {/* <div className="future-wrap"> */}
-        <div className="future-textbox">
-          <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
-          <h2>THE FUTURE OF PAYMENTS</h2>
-          <p>
+        <motion.div className="future-textbox" variants={homeVariants}>
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
+          </motion.div>
+          <motion.h2 variants={homeVariants}>THE FUTURE OF PAYMENTS</motion.h2>
+          <motion.p variants={homeVariants}>
             Unleash the potential of your online business with Cobuyr's Social
             Buying solution. This innovative platform empowers customers to pool
             purchases,{" "}
             <span className="highlight">
               driving sales and reducing acquisition costs.
             </span>
-          </p>
-        </div>
-        <div className="future-listbox">
-          <ul className="listbox">
-            <li>
+          </motion.p>
+        </motion.div>
+        <motion.div className="future-listbox" variants={homeVariants}>
+          <motion.ul className="listbox" variants={homeVariants}>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="khheayfj" trigger="hover" target="li" />
               <h4>Unlock New Sales and Savings</h4>
               <p>
                 By introducing Social Buying, witness a surge in sales while
                 minimizing discounts on unsold products.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="odavpkmb" trigger="hover" target="li" />
               <h4>Personalized Buying Experiences</h4>
               <p>
                 Offer customers a tailored shopping journey, allowing multiple
                 buyers to unite in a single order.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="abwrkdvl" trigger="hover" target="li" />
               <h4>Insights and Data</h4>
               <p>
@@ -69,43 +104,50 @@ const Home = () => {
                 precise marketing engagements and a deeper understanding of
                 buyer behavior.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="piwupaqb" trigger="hover" target="li" />
               <h4>Monetize Existing Data</h4>
               <p>
                 Maximize the potential of your customer data to enhance revenue
                 streams.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="njmddhpx" trigger="hover" target="li" />
               <h4>Increased Customer Satisfaction</h4>
               <p>
                 Provide a seamless co-buying experience, reducing basket
                 abandonment and enhancing satisfaction.
               </p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
               <IconBadge iconUrl="ksdjzsym" trigger="hover" target="li" />
               <h4>Tech Spend Reduction</h4>
               <p>
                 Streamline technology costs while boosting order values and
                 reducing acquisition expenses.
               </p>
-            </li>
-          </ul>
-        </div>
-        {/* </div> */}
-      </section>
+            </motion.li>
+          </motion.ul>
+        </motion.div>
+      </Section>
 
-      <section className="modern">
+      <Section className="modern">
         <div className="bento">
-          <div className="head">
-            <Badge iconUrl="ofklvwkr" trigger="hover" text="Modern Platform" />
-            <h2>THE MODERN PAYMENTS PLATFORM</h2>
-          </div>
-          <div className="info1">
+          <motion.div className="head">
+            <motion.div variants={homeVariants}>
+              <Badge
+                iconUrl="ofklvwkr"
+                trigger="hover"
+                text="Modern Platform"
+              />
+            </motion.div>
+            <motion.h2 variants={homeVariants}>
+              THE MODERN PAYMENTS PLATFORM
+            </motion.h2>
+          </motion.div>
+          <motion.div className="info1" variants={homeVariants}>
             <div className="textbox">
               <IconBadge iconUrl="iiuaqmnt" trigger="hover" target=".info1" />
 
@@ -124,8 +166,8 @@ const Home = () => {
                 />
               </div> */}
             </div>
-          </div>
-          <div className="info3">
+          </motion.div>
+          <motion.div className="info3" variants={homeVariants}>
             <div className="textbox">
               <IconBadge iconUrl="wzrwaorf" trigger="hover" target=".info3" />
               <h3>Collaborative Purchasing Community</h3>
@@ -136,8 +178,8 @@ const Home = () => {
                 purchases are made and enjoyed.
               </p>
             </div>
-          </div>
-          <div className="info2">
+          </motion.div>
+          <motion.div className="info2" variants={homeVariants}>
             <div className="textbox">
               <IconBadge iconUrl="ezsjqygj" trigger="hover" target=".info2" />
               <h3>Cutting-edge Data and Analytics</h3>
@@ -148,8 +190,8 @@ const Home = () => {
                 through collaborative purchasing trends.
               </p>
             </div>
-          </div>
-          <div className="sec">
+          </motion.div>
+          <motion.div className="sec" variants={homeVariants}>
             <h2>Security Features</h2>
             <div className=" marquee">
               <ul className="marquee__group ">
@@ -205,8 +247,8 @@ const Home = () => {
                 </li>
               </ul>
             </div>
-          </div>
-          <div className="info-mini">
+          </motion.div>
+          <motion.div className="info-mini" variants={homeVariants}>
             <div className="textbox">
               <h3>
                 How Social?{" "}
@@ -219,75 +261,105 @@ const Home = () => {
               </h3>
               <p>Discover Cobuyr</p>
             </div>
-          </div>
-          <div className="poll">
+          </motion.div>
+          <motion.div className="poll" variants={homeVariants}>
             <div className="textbox">
-              <h3>What Ecommerce platform is your favourite?</h3>
-              <ul>
-                <li>
+              <motion.h3 variants={homeVariants}>
+                What Ecommerce platform is your favourite?
+              </motion.h3>
+              <motion.ul>
+                <motion.li variants={homeVariants}>
                   <Icon name={"shopify"} />
                   Shopify
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={homeVariants}>
                   <Icon name={"woocommerce"} />
                   WooCommerce
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={homeVariants}>
                   <Icon name={"magento"} />
                   Magneto
-                </li>
-                <li>
+                </motion.li>
+                <motion.li variants={homeVariants}>
                   <Icon name={"wix"} />
                   Wix
-                </li>
-              </ul>
+                </motion.li>
+              </motion.ul>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </Section>
 
-      <section className="info-banner">
-        <Badge
-          iconUrl="kndkiwmf"
-          trigger="hover"
-          text="Checkout Transformation"
-        />
+      <Section className="info-banner">
+        <motion.div variants={homeVariants}>
+          <Badge
+            iconUrl="kndkiwmf"
+            trigger="hover"
+            text="Checkout Transformation"
+          />
+        </motion.div>
 
-        <div className="textbox">
-          <h2>Buff up customer Transaction</h2>
-          <p className="banner-text">
+        <motion.div className="textbox" variants={homeVariants}>
+          <motion.h2 variants={homeVariants}>
+            Buff up customer Transaction
+          </motion.h2>
+          <motion.p className="banner-text" variants={homeVariants}>
             Payment technology has not kept up with what customers want, and
-            that is why we invented Social Buying,<span className="highlight"> a new category of multi-party
-            payment transactions </span>that enables your customers to split and
-            securely pay for purchases together.
-          </p>
-          <button className="primary-btn">Book Demo</button>
-        </div>
+            that is why we invented Social Buying,
+            <span className="highlight">
+              {" "}
+              a new category of multi-party payment transactions{" "}
+            </span>
+            that enables your customers to split and securely pay for purchases
+            together.
+          </motion.p>
+          <motion.button className="primary-btn" variants={homeVariants}>
+            Book Demo
+          </motion.button>
+        </motion.div>
         <div className="glow"></div>
         <div className="glow2"></div>
-      </section>
+      </Section>
 
-      <section className="integrate">
+      <Section className="integrate">
         <div className="int-textbox">
-          <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
-          <h2>Integration and Benefits.</h2>
-          <p>
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
+          </motion.div>
+          <motion.h2 variants={homeVariants}>
+            Integration and Benefits.
+          </motion.h2>
+          <motion.p variants={homeVariants}>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
-            Plug-In. <span className="highlight">Our seamlessly integrated solution enables</span> effortless
-            incorporation of Social Buying into your existing website structure,
-            ensuring a <span className="highlight">smooth and efficient transition without disrupting your
-            operations.</span>
+            Plug-In.{" "}
+            <span className="highlight">
+              Our seamlessly integrated solution enables
+            </span>{" "}
+            effortless incorporation of Social Buying into your existing website
+            structure, ensuring a{" "}
+            <span className="highlight">
+              smooth and efficient transition without disrupting your
+              operations.
+            </span>
             <br />
             <blockquote>
               By integrating our API, you unlock a world of collaborative
               purchasing opportunities for your customers while streamlining
               backend processes for your business.
             </blockquote>
-          </p>
-          <button className="primary-btn">Documentation</button>
+          </motion.p>
+          <motion.button className="primary-btn" variants={homeVariants}>
+            Documentation
+          </motion.button>
         </div>
-        <div className="marquee-wrap">
-          <div className=" marquee marquee--vertical">
+        <motion.div className="marquee-wrap" variants={homeVariants}>
+          <motion.div
+            className=" marquee marquee--vertical"
+            variants={{
+              hidden: { opacity: 0, x: -40 },
+              visible,
+            }}
+          >
             <ul className="marquee__group ">
               <li>
                 <Icon name={"search"} />
@@ -332,8 +404,14 @@ const Home = () => {
                 Multiple customer buy together in one order
               </li>
             </ul>
-          </div>
-          <div className=" marquee marquee--vertical marquee--reverse">
+          </motion.div>
+          <motion.div
+            className=" marquee marquee--vertical marquee--reverse"
+            variants={{
+              hidden: { opacity: 0 },
+              visible,
+            }}
+          >
             <ul className="marquee__group ">
               <li>
                 <Icon name={"search"} />
@@ -378,8 +456,14 @@ const Home = () => {
                 Multiple customer buy together in one order
               </li>
             </ul>
-          </div>
-          <div className=" marquee marquee--vertical marquee--delay">
+          </motion.div>
+          <motion.div
+            className=" marquee marquee--vertical marquee--delay"
+            variants={{
+              hidden: { opacity: 0, x: 40 },
+              visible,
+            }}
+          >
             <ul className="marquee__group ">
               <li>
                 <Icon name={"search"} />
@@ -424,9 +508,9 @@ const Home = () => {
                 Multiple customer buy together in one order
               </li>
             </ul>
-          </div>
-        </div>
-      </section>
+          </motion.div>
+        </motion.div>
+      </Section>
 
       <Sub />
       <Footer />
@@ -435,4 +519,4 @@ const Home = () => {
 };
 
 const TransHome = Transition(Home);
-export default TransHome
+export default TransHome;
