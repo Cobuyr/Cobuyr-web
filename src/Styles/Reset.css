@@ -2,12 +2,12 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
-*{
+* {
     padding: 0;
-	/* margin: 0; */
-	box-sizing: border-box;
-	text-decoration: none;
-	list-style: none;
+    /* margin: 0; */
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
 }
 
 html {
@@ -21,14 +21,15 @@ html {
 
 /* Sections
      ========================================================================== */
-section{
+section {
     width: 100%;
     /* height: 100vh; */
     position: relative;
     padding-inline: 5vw;
-   padding-block: 5vh;
-   margin-block: 10vh;
+    padding-block: 5vh;
+    margin-block: 10vh;
 }
+
 /**
    * Remove the margin in all browsers.
    */
@@ -50,59 +51,63 @@ main {
    * `article` contexts in Chrome, Firefox, and Safari.
    */
 
-  h1 {
-  font-family: 'Lato', sans-serif;
+h1 {
+    font-family: 'Lato', sans-serif;
 
     width: 80%;
     font-size: clamp(2em, 5vw, 4em);
     margin: 0.2em 0;
     text-transform: uppercase;
-    background-image: linear-gradient(
-      180deg,
-      hsl(0, 0%, 100%) 10%,
-      hsl(0, 0%, 50%) 100%
-    );
+    background-image: linear-gradient(180deg,
+            hsl(0, 0%, 100%) 10%,
+            hsl(0, 0%, 50%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-  }
-  h2{
-  font-family: 'Lato', sans-serif;
+}
 
-    font-size: clamp(1.5em,5vw,2.5em);
+h2 {
+    font-family: 'Lato', sans-serif;
+
+    font-size: clamp(1.5em, 5vw, 2.5em);
     max-width: 65ch;
     padding-inline: 20%;
-    background-image: linear-gradient(
-      180deg,
-      hsl(0, 0%, 100%) 10%,
-      hsl(0, 0%, 50%) 100%
-    );
+    background-image: linear-gradient(180deg,
+            hsl(0, 0%, 100%) 10%,
+            hsl(0, 0%, 50%) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-  }
-  h3{
-  font-family: 'Lato', sans-serif;
+}
+
+h3 {
+    font-family: 'Lato', sans-serif;
 
     color: var(--highlight-color);
-  }
-  p{
+}
+
+p {
     font-family: 'quicksand';
 
-    font-size: clamp(13.5px,5vw,16px);
+    font-size: clamp(13.5px, 5vw, 16px);
     max-width: 65ch;
-  }
-  
-    li:hover svg{
-          transform: scale(1.1);
-        }
-    svg{
-        width: 50px;
-         transition: all 0.5s ease;
-        }
-      
+}
+
+li:hover svg {
+    transform: scale(1.1);
+}
+
+svg {
+    width: 50px;
+    transition: all 0.5s ease;
+}
+
+.unset {
+    margin: 0;
+    padding: 0;
+}
 
 /* Grouping content
      ========================================================================== */
