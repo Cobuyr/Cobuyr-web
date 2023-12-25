@@ -35,7 +35,7 @@ const Home = () => {
         </motion.div>
 
         <motion.h1 variants={homeVariants}>
-          Revolutionize Checkout with Social Buying
+          Revolutionize Checkout with <span className="mainText">Social Buying</span>
         </motion.h1>
         <motion.p variants={homeVariants}>
           Enhance your checkout experience with Cobuyr's cutting-edge Social

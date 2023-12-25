@@ -100,10 +100,43 @@
   height: 150px;
   border-radius: 50%;
   margin: 2.5vw;
+  border: none;
   text-transform: uppercase;
+  position: relative;
   background: linear-gradient(284deg, #3c3c3c, #69005d, #381669);
   background-size: 300% 300%;
   animation: grad 11s ease infinite;
+}
+.hero .mgBtn button::before, .hero .mgBtn button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50%;
+  background: var(--gradient-shadow);
+  background-size: 400%;
+  width: calc(100% - 5px);
+  height: calc(100% - 2px);
+  border-radius: inherit;
+  z-index: -1;
+}
+.hero .mgBtn button::after {
+  transition: filter 0.9s ease-out;
+}
+.hero .mgBtn button:hover::before, .hero .mgBtn button:hover::after {
+  animation: shadow 20s linear infinite;
+}
+.hero .mgBtn button:hover::after {
+  filter: blur(5px);
+}
+
+.mainText {
+  font-size: clamp(1.2em, 5vw, 4em);
+  background-image: linear-gradient(313deg, rgb(179, 143, 241) 0%, #f53d8a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 @keyframes grad {
   0% {
