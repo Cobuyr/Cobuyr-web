@@ -10,11 +10,11 @@ import Footer from "../Components/Footer/footer";
 import Transition from "../Components/Transition";
 import { motion } from "framer-motion";
 import { Section } from "../Components/inView";
+import MagneticBtn from "../Components/magnetBtn";
 
 // import LiquidButton from "../Components/magnetBtn";
 
 const Home = () => {
-
   const visible = {
     opacity: 1,
     x: 0,
@@ -23,7 +23,7 @@ const Home = () => {
   };
 
   const homeVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 20, scaleZ: 1 },
     visible,
   };
 
@@ -45,13 +45,24 @@ const Home = () => {
             community.
           </span>
         </motion.p>
-        <motion.button className="primary-btn" variants={homeVariants}>
+        {/* <motion.button className="primary-btn" variants={homeVariants}>
           Join Waitlist
-        </motion.button>
+        </motion.button> */}
+
+        <motion.div
+          className="mgBtn"
+          variants={{
+            hidden: { opacity: 0, scaleZ: 0 },
+            visible,
+          }}
+        >
+          <MagneticBtn>
+            <button>Join The Waitlist</button>
+          </MagneticBtn>
+        </motion.div>
       </Section>
 
       <Section className="future">
-        {/* <LiquidButton/> */}
         <motion.div className="future-textbox" variants={homeVariants}>
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />

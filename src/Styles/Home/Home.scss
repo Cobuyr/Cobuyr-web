@@ -133,6 +133,64 @@
     linear-gradient(0deg, #242424ff 0%, #a9232300 10%),
     radial-gradient(100% 110% at 20% 50%, #242424 40%, #003aff30 99%),
     linear-gradient(313deg, #242424ff 0%, #f53d8aff 100%);
+
+    & .mgBtn {
+      position: absolute;
+      bottom: calc(0% - 7vw );
+      left: 50%;
+      translate: -50% -50%;
+  animation: jump 10s ease infinite;
+      button {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        margin: 2.5vw;
+        text-transform: uppercase;
+        background: linear-gradient(284deg, #3c3c3c, #69005d, #381669);
+        background-size: 300% 300%;
+      
+        -webkit-animation: grad 11s ease infinite;
+        -moz-animation: grad 11s ease infinite;
+        animation: grad 11s ease infinite;
+      }
+    }
+
+}
+
+
+// @keyframes float {
+//   0% {
+//     transform: translate3d(0px, 0px, 0px);
+
+//   }
+//   25% {
+//     transform: translate3d(10px, 10px, 0px);
+
+//   }
+//   75% {
+//     transform: translate3d(-10px, -10px, 0px);
+
+//   }
+//   100% {
+//     transform: translate3d(0px, 0px, 0px);
+
+//   }
+// }
+
+@-webkit-keyframes grad {
+  0%{background-position:0% 77%}
+  50%{background-position:100% 24%}
+  100%{background-position:0% 77%}
+}
+@-moz-keyframes grad {
+  0%{background-position:0% 77%}
+  50%{background-position:100% 24%}
+  100%{background-position:0% 77%}
+}
+@keyframes grad {
+  0%{background-position:0% 77%}
+  50%{background-position:100% 24%}
+  100%{background-position:0% 77%}
 }
 
 .highlight {
@@ -159,19 +217,20 @@
     0px 0px 79.1px rgba(0, 0, 0, 0.064), 0px 0px 248px rgba(0, 0, 0, 0.07);
   isolation: isolate;
 
-  &::before {
-    content: "";
-    width: 350px;
-    height: 350px;
-    background-color: inherit;
-    position: absolute;
-    top: -25%;
-    left: 50%;
-    transform: translatex(-50%);
-    -webkit-clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
-    clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
-    z-index: -1;
-  }
+  // &::before {
+  //   content: "";
+  //   width: 350px;
+  //   height: 350px;
+  //   background-color: inherit;
+  //   position: absolute;
+  //   top: -25%;
+  //   left: 50%;
+  //   transform: translatex(-50%);
+  //   -webkit-clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
+  //   clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
+  //   z-index: -1;
+  // }
+
 }
 
 .future-wrap {
@@ -975,9 +1034,7 @@ ul:has(> :focus) > li:not(:focus) {
       top: 0;
       right: 0;
       opacity: 0;
-      transition: 
-      all 0.9s ease-in-out,
-      opacity 0.8s cubic-bezier(1, 0, 0, 1);
+      transition: all 0.9s ease-in-out, opacity 0.8s cubic-bezier(1, 0, 0, 1);
     }
     &:hover {
       lord-icon {
