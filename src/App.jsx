@@ -19,6 +19,7 @@ import About from "./Pages/About";
 import NoPage from "./Pages/NoPage";
 import Contact from "./Pages/Contact";
 import { AnimatePresence } from "framer-motion";
+import Scene from "./Experience/scene";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -37,6 +38,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/Scene" element={<Scene />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>
         </AnimatePresence>
