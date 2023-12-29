@@ -1,9 +1,11 @@
 /* eslint-disable react/no-unknown-property */
 
 import * as THREE from "three";
-import { extend } from "@react-three/fiber";
-import React, { useMemo } from "react";
+import { extend, useFrame, useThree } from "@react-three/fiber";
+import React, { useMemo, useRef } from "react";
 import { useGLTF, shaderMaterial, useTexture } from "@react-three/drei";
+import { WaveMaterial } from './WaveMaterial'
+import { easing } from 'maath'
 
 import colorwaveVert from './shaders/vertex.js'
 import colorwaveFrag from './shaders/fragment.js'
@@ -62,6 +64,13 @@ export default function Cobuyr(props) {
     roughnessMap: './dec/wrough.jpg',
 })
 
+// const ref = useRef()
+// const { viewport, size } = useThree()
+// useFrame((state, delta) => {
+//   ref.current.time += delta
+//   easing.damp3(ref.current.pointer, state.pointer, 0.2, delta)
+// })
+
   const { nodes, materials } = useGLTF("./cobuyr.glb");
   return (
     <group {...props} dispose={null}>
@@ -71,6 +80,7 @@ export default function Cobuyr(props) {
         receiveShadow
         geometry={nodes.hends.geometry}
       >
+         {/* <waveMaterial ref={ref} key={WaveMaterial.key} resolution={[size.width * viewport.dpr, size.height * viewport.dpr]} /> */}
        <meshStandardMaterial {...dec} displacementScale={0} />
       </mesh>
 
@@ -81,11 +91,13 @@ export default function Cobuyr(props) {
         geometry={nodes.hends001.geometry}
         // material={colorShade}
       >
+       
         {/* <shaderMaterial
         fragmentShader={colorwaveFrag}
         vertexShader={colorwaveVert}
         uniforms={uniforms}
         /> */}
+         <meshStandardMaterial {...dec} displacementScale={0} />
       </mesh>
       {/* <mesh>
     <sphereGeometry args={[1, 32, 32]} />
@@ -97,7 +109,10 @@ export default function Cobuyr(props) {
         receiveShadow
         geometry={nodes.Cylinder.geometry}
         material={materials["Wave 2"]}
-      />
+       >
+         {/* <waveMaterial ref={ref} key={WaveMaterial.key} resolution={[size.width * viewport.dpr, size.height * viewport.dpr]} /> */}
+       {/* <meshStandardMaterial {...dec} displacementScale={0} /> */}
+      </mesh>
     </group>
   );
 }
