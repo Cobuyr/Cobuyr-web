@@ -32,42 +32,42 @@ export default function LineHero() {
 }
 //base spiral line
 
-function Lines({ dash, count, colors, radius = 50 }) {
-  const lines = useMemo(() => {
-    const Z_INCREMENT = 0.08
-    const ANGLE_INCREMENT = 0.025
-    const RADIUS_INCREMENT = 0.05
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08
+//     const ANGLE_INCREMENT = 0.025
+//     const RADIUS_INCREMENT = 0.05
 
-    return Array.from({ length: count }, (_, index) => {
-      const points = []
-      let z = 0
-      let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
-      let angle = Math.random() * Math.PI * 2
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = []
+//       let z = 0
+//       let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
+//       let angle = Math.random() * Math.PI * 2
 
-      while (z < radius) {
-        const x = Math.cos(angle) * radiusStart
-        const y = Math.sin(angle) * radiusStart
+//       while (z < radius) {
+//         const x = Math.cos(angle) * radiusStart
+//         const y = Math.sin(angle) * radiusStart
 
-        points.push(x, y, z)
+//         points.push(x, y, z)
 
-        z += Z_INCREMENT
-        angle += ANGLE_INCREMENT
-        radiusStart += RADIUS_INCREMENT
-      }
+//         z += Z_INCREMENT
+//         angle += ANGLE_INCREMENT
+//         radiusStart += RADIUS_INCREMENT
+//       }
 
-      return {
-        color: colors[parseInt(colors.length * Math.random())],
-        width: Math.max(radius / 500, (radius / 250) * Math.random()),
-        speed: Math.max(0.1, 1 * Math.random()),
-        curve: points
-      }
-    })
-  }, [colors, count, radius])
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points
+//       }
+//     })
+//   }, [colors, count, radius])
 
-  return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
-}
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
+// }
 
-// Zigzag Lines Pattern --- kinda good spiral nut not special
+// Zigzag Lines Pattern --- kinda good spiral but not special
 
 // function Lines({ dash, count, colors, radius = 50 }) {
 //   const lines = useMemo(() => {
@@ -186,40 +186,40 @@ function Lines({ dash, count, colors, radius = 50 }) {
 // // Generative Art Pattern ----- the best
 // // This pattern focuses on generating abstract generative art by applying sinusoidal variations to the radius and angle increments.
 
-// function Lines({ dash, count, colors, radius = 50 }) {
-//   const lines = useMemo(() => {
-//     const Z_INCREMENT = 0.08;
+function Lines({ dash, count, colors, radius = 50 }) {
+  const lines = useMemo(() => {
+    const Z_INCREMENT = 0.08;
 
-//     return Array.from({ length: count }, (_, index) => {
-//       const points = [];
-//       let z = 0;
-//       let radiusStart = Math.random() > 0.5 ? 0.9 : 0.3;
-//       let angle = Math.random() * Math.PI * 2;
+    return Array.from({ length: count }, (_, index) => {
+      const points = [];
+      let z = 0;
+      let radiusStart = Math.random() > 0.5 ? 0.9 : 0.3;
+      let angle = Math.random() * Math.PI * 2;
 
-//       while (z < radius) {
-//         const x = Math.cos(angle) * radiusStart;
-//         const y = Math.sin(angle) * radiusStart;
+      while (z < radius) {
+        const x = Math.cos(angle) * radiusStart;
+        const y = Math.sin(angle) * radiusStart;
 
-//         points.push(x, y, z);
+        points.push(x, y, z);
 
-//         z += Z_INCREMENT;
-//         //exp = erratic
-//         //tan = spherical erratic
-//         radiusStart += Math.sin(Math.random() * Math.PI) * 0.1; // Vary radius increment sinusoidally
-//         angle += Math.cos(Math.random() * Math.PI) * 0.2; // Vary angle increment cosinusoidally
-//       }
+        z += Z_INCREMENT;
+        //exp = erratic
+        //tan = spherical erratic
+        radiusStart += Math.exp(Math.random() * Math.PI) * 0.1; // Vary radius increment sinusoidally
+        angle += Math.cos(Math.random() * Math.PI) * 0.2; // Vary angle increment cosinusoidally
+      }
 
-//       return {
-//         color: colors[parseInt(colors.length * Math.random())],
-//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
-//         speed: Math.max(0.1, 1 * Math.random()),
-//         curve: points,
-//       };
-//     });
-//   }, [colors, count, radius]);
+      return {
+        color: colors[parseInt(colors.length * Math.random())],
+        width: Math.max(radius / 500, (radius / 250) * Math.random()),
+        speed: Math.max(0.1, 1 * Math.random()),
+        curve: points,
+      };
+    });
+  }, [colors, count, radius]);
 
-//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
-// }
+  return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+}
 
 // Celestial Spiral Pattern ---- not special
 // This pattern creates a spiral effect resembling celestial bodies using sine and cosine functions.
