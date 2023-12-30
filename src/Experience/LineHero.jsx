@@ -2,26 +2,27 @@ import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { extend, Canvas, useFrame } from '@react-three/fiber'
-import { EffectComposer, Bloom } from '@react-three/postprocessing'
+// import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { easing } from 'maath'
-import { useControls } from 'leva'
+// import { useControls } from 'leva'
 
 extend({ MeshLineGeometry, MeshLineMaterial })
 
 export default function LineHero() {
-  const { dash, count, radius } = useControls({
-    dash: { value: 0.9, min: 0, max: 0.99, step: 0.01 },
-    count: { value: 50, min: 0, max: 200, step: 1 },
-    radius: { value: 50, min: 1, max: 100, step: 1 }
+  const { dash, count, radius }= ({
+    dash: Math.round(((Math.random() * 0.7) + 0.4) * 10) / 10, 
+    count: 200,
+    radius: 50,
   })
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
+    <Canvas camera={{ position: [0, 0, 50], fov: 75 }}>
       <color attach="background" args={['#101020']} />
+      {/* <fog attach="fog"  color="red" near={1} far={radius} /> */}
       <Lines dash={dash} count={count} radius={radius} colors={[[10, 0.5, 2], [1, 2, 10], '#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff']} />
       <Rig />
-      <EffectComposer>
+      {/* <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1} radius={0.2} />
-      </EffectComposer>
+      </EffectComposer> */}
     </Canvas>
   )
 }
@@ -35,7 +36,7 @@ function Lines({ dash, count, colors, radius = 50 }) {
     return Array.from({ length: count }, (_, index) => {
       const points = []
       let z = 0
-      let radiusStart = Math.random() > 0.8 ? 0.1 : 0.3
+      let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
       let angle = Math.random() * Math.PI * 2
 
       while (z < radius) {
@@ -51,7 +52,7 @@ function Lines({ dash, count, colors, radius = 50 }) {
 
       return {
         color: colors[parseInt(colors.length * Math.random())],
-        width: Math.max(radius / 200, (radius / 150) * Math.random()),
+        width: Math.max(radius / 500, (radius / 250) * Math.random()),
         speed: Math.max(0.1, 1 * Math.random()),
         curve: points
       }
@@ -63,7 +64,8 @@ function Lines({ dash, count, colors, radius = 50 }) {
 
 function Fatline({ curve, width, color, speed, dash }) {
   const ref = useRef()
-  useFrame((state, delta) => (ref.current.material.dashOffset -= (delta * speed) / 10))
+  useFrame((state, delta) => (ref.current.material.dashOffset -= (delta * speed) / 20))
+
   return (
     <mesh ref={ref}>
       <meshLineGeometry points={curve} />
@@ -72,9 +74,17 @@ function Fatline({ curve, width, color, speed, dash }) {
   )
 }
 
+
 function Rig({ radius = 20 }) {
   useFrame((state, dt) => {
-    easing.damp3(state.camera.position, [Math.sin(state.pointer.x) * radius, Math.atan(state.pointer.y) * radius, Math.cos(state.pointer.x) * radius], 1.9, dt)
+    const multiplier = 0.2 // Adjust this value to control sensitivity
+
+    // Reduce the impact of mouse movement directly
+    const mouseX = -state.pointer.x * multiplier
+    const mouseY = -state.pointer.y * multiplier
+
+    easing.damp3(state.camera.position, [Math.sin(mouseX) * radius, Math.atan(mouseY) * radius, Math.cos(mouseX) * radius], 0.9, dt)
+
     state.camera.lookAt(0, 0, 0)
   })
 }

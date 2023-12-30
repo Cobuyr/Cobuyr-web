@@ -1,11 +1,12 @@
 import { Canvas } from "@react-three/fiber";
 import "./style.css";
 import Experience from "./Experience.jsx";
+import LineHero from "./LineHero";
 
 const Scene = () => {
   return (
     <div id="canvas-container">
-      <Canvas
+      {/* <Canvas
         shadows
         camera={{
           fov: 45,
@@ -15,7 +16,8 @@ const Scene = () => {
         }}
       >
         <Experience />
-      </Canvas>
+      </Canvas> */}
+      <LineHero/>
     </div>
   );
 };
