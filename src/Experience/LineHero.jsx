@@ -2,7 +2,7 @@ import * as THREE from 'three'
 import { useMemo, useRef } from 'react'
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline'
 import { extend, Canvas, useFrame } from '@react-three/fiber'
-// import { EffectComposer, Bloom } from '@react-three/postprocessing'
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { easing } from 'maath'
 // import { useControls } from 'leva'
 import { Perf } from "r3f-perf";
@@ -25,9 +25,9 @@ export default function LineHero() {
       <Perf position="bottom-left" />
 
       <Rig />
-      {/* <EffectComposer>
-        <Bloom mipmapBlur luminanceThreshold={1} radius={0.2} />
-      </EffectComposer> */}
+      <EffectComposer>
+        <Bloom mipmapBlur luminanceThreshold={0} radius={0.1} />
+      </EffectComposer>
     </Canvas>
   )
 }
