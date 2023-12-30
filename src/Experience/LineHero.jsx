@@ -17,7 +17,6 @@ export default function LineHero() {
   return (
     <Canvas camera={{ position: [0, 0, 50], fov: 75 }}>
       <color attach="background" args={['#101020']} />
-      {/* <fog attach="fog"  color="red" near={1} far={radius} /> */}
       <Lines dash={dash} count={count} radius={radius} colors={[[10, 0.5, 2], [1, 2, 10], '#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff']} />
       <Rig />
       {/* <EffectComposer>
@@ -27,40 +26,121 @@ export default function LineHero() {
   )
 }
 
-function Lines({ dash, count, colors, radius = 50 }) {
-  const lines = useMemo(() => {
-    const Z_INCREMENT = 0.08
-    const ANGLE_INCREMENT = 0.025
-    const RADIUS_INCREMENT = 0.05
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08
+//     const ANGLE_INCREMENT = 0.025
+//     const RADIUS_INCREMENT = 0.05
 
-    return Array.from({ length: count }, (_, index) => {
-      const points = []
-      let z = 0
-      let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
-      let angle = Math.random() * Math.PI * 2
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = []
+//       let z = 0
+//       let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
+//       let angle = Math.random() * Math.PI * 2
 
-      while (z < radius) {
-        const x = Math.cos(angle) * radiusStart
-        const y = Math.sin(angle) * radiusStart
+//       while (z < radius) {
+//         const x = Math.cos(angle) * radiusStart
+//         const y = Math.sin(angle) * radiusStart
 
-        points.push(x, y, z)
+//         points.push(x, y, z)
 
-        z += Z_INCREMENT
-        angle += ANGLE_INCREMENT
-        radiusStart += RADIUS_INCREMENT
-      }
+//         z += Z_INCREMENT
+//         angle += ANGLE_INCREMENT
+//         radiusStart += RADIUS_INCREMENT
+//       }
 
-      return {
-        color: colors[parseInt(colors.length * Math.random())],
-        width: Math.max(radius / 500, (radius / 250) * Math.random()),
-        speed: Math.max(0.1, 1 * Math.random()),
-        curve: points
-      }
-    })
-  }, [colors, count, radius])
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points
+//       }
+//     })
+//   }, [colors, count, radius])
 
-  return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
-}
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
+// }
+
+// Zigzag Lines Pattern kinda good
+
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08;
+//     const ANGLE_INCREMENT = 0.1; // Increase the angle increment for more prominent zigzag
+//     const RADIUS_INCREMENT = 0.15; // Increase the radius increment for a larger zigzag pattern
+
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = [];
+//       let z = 0;
+//       let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3;
+//       let angle = Math.random() * Math.PI * 2;
+
+//       while (z < radius) {
+//         const x = Math.cos(angle) * radiusStart;
+//         const y = Math.sin(angle) * radiusStart;
+
+//         points.push(x, y, z);
+
+//         z += Z_INCREMENT;
+//         angle += ANGLE_INCREMENT;
+//         radiusStart += RADIUS_INCREMENT;
+//       }
+
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points,
+//       };
+//     });
+//   }, [colors, count, radius]);
+
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+// }
+
+
+// // Lissajous Curve Pattern
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08;
+//     const ANGLE_INCREMENT_X = 0.1;
+//     const ANGLE_INCREMENT_Y = 0.15;
+//     const RADIUS_INCREMENT_X = 0.1;
+//     const RADIUS_INCREMENT_Y = 0.1;
+
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = [];
+//       let z = 0;
+//       let radiusStartX = Math.random() > 0.5 ? 0.9 : 0.3;
+//       let radiusStartY = Math.random() > 0.5 ? 0.9 : 0.3;
+//       let angleX = Math.random() * Math.PI * 2;
+//       let angleY = Math.random() * Math.PI * 2;
+
+//       while (z < radius) {
+//         const x = Math.cos(angleX) * radiusStartX;
+//         const y = Math.sin(angleY) * radiusStartY;
+
+//         points.push(x, y, z);
+
+//         z += Z_INCREMENT;
+//         angleX += ANGLE_INCREMENT_X;
+//         angleY += ANGLE_INCREMENT_Y;
+//         radiusStartX += RADIUS_INCREMENT_X;
+//         radiusStartY += RADIUS_INCREMENT_Y;
+//       }
+
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points,
+//       };
+//     });
+//   }, [colors, count, radius]);
+
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+// }
+
 
 function Fatline({ curve, width, color, speed, dash }) {
   const ref = useRef()
