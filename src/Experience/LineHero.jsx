@@ -5,19 +5,24 @@ import { extend, Canvas, useFrame } from '@react-three/fiber'
 // import { EffectComposer, Bloom } from '@react-three/postprocessing'
 import { easing } from 'maath'
 // import { useControls } from 'leva'
+import { Perf } from "r3f-perf";
+
 
 extend({ MeshLineGeometry, MeshLineMaterial })
 
 export default function LineHero() {
   const { dash, count, radius }= ({
     dash: Math.round(((Math.random() * 0.7) + 0.4) * 10) / 10, 
-    count: 200,
+    count: 50,
     radius: 50,
   })
   return (
+
     <Canvas camera={{ position: [0, 0, 50], fov: 75 }}>
       <color attach="background" args={['#101020']} />
       <Lines dash={dash} count={count} radius={radius} colors={[[10, 0.5, 2], [1, 2, 10], '#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff']} />
+      <Perf position="bottom-left" />
+
       <Rig />
       {/* <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={1} radius={0.2} />
@@ -25,41 +30,41 @@ export default function LineHero() {
     </Canvas>
   )
 }
+//base spiral line
+function Lines({ dash, count, colors, radius = 50 }) {
+  const lines = useMemo(() => {
+    const Z_INCREMENT = 0.08
+    const ANGLE_INCREMENT = 0.025
+    const RADIUS_INCREMENT = 0.05
 
-// function Lines({ dash, count, colors, radius = 50 }) {
-//   const lines = useMemo(() => {
-//     const Z_INCREMENT = 0.08
-//     const ANGLE_INCREMENT = 0.025
-//     const RADIUS_INCREMENT = 0.05
+    return Array.from({ length: count }, (_, index) => {
+      const points = []
+      let z = 0
+      let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
+      let angle = Math.random() * Math.PI * 2
 
-//     return Array.from({ length: count }, (_, index) => {
-//       const points = []
-//       let z = 0
-//       let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3
-//       let angle = Math.random() * Math.PI * 2
+      while (z < radius) {
+        const x = Math.cos(angle) * radiusStart
+        const y = Math.sin(angle) * radiusStart
 
-//       while (z < radius) {
-//         const x = Math.cos(angle) * radiusStart
-//         const y = Math.sin(angle) * radiusStart
+        points.push(x, y, z)
 
-//         points.push(x, y, z)
+        z += Z_INCREMENT
+        angle += ANGLE_INCREMENT
+        radiusStart += RADIUS_INCREMENT
+      }
 
-//         z += Z_INCREMENT
-//         angle += ANGLE_INCREMENT
-//         radiusStart += RADIUS_INCREMENT
-//       }
+      return {
+        color: colors[parseInt(colors.length * Math.random())],
+        width: Math.max(radius / 500, (radius / 250) * Math.random()),
+        speed: Math.max(0.1, 1 * Math.random()),
+        curve: points
+      }
+    })
+  }, [colors, count, radius])
 
-//       return {
-//         color: colors[parseInt(colors.length * Math.random())],
-//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
-//         speed: Math.max(0.1, 1 * Math.random()),
-//         curve: points
-//       }
-//     })
-//   }, [colors, count, radius])
-
-//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
-// }
+  return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
+}
 
 // Zigzag Lines Pattern kinda good
 
@@ -140,6 +145,82 @@ export default function LineHero() {
 
 //   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
 // }
+
+// // Galactic Patterns
+// // This pattern aims to simulate galactic or nebula-like appearances by adjusting the radius and angle increments randomly.
+
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08;
+
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = [];
+//       let z = 0;
+//       let radiusStart = Math.random() > 0.5 ? 0.9 : 0.3;
+//       let angle = Math.random() * Math.PI * 2;
+
+//       while (z < radius) {
+//         const x = Math.cos(angle) * radiusStart;
+//         const y = Math.sin(angle) * radiusStart;
+
+//         points.push(x, y, z);
+
+//         z += Z_INCREMENT;
+//         radiusStart += Math.random() * 0.9; // Randomize radius increment for variation
+//         angle += Math.random() * 0.05; // Randomize angle increment for variation
+//       }
+
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points,
+//       };
+//     });
+//   }, [colors, count, radius]);
+
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+// }
+
+// // Generative Art Pattern
+// // This pattern focuses on generating abstract generative art by applying sinusoidal variations to the radius and angle increments.
+
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08;
+
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = [];
+//       let z = 0;
+//       let radiusStart = Math.random() > 0.5 ? 0.9 : 0.3;
+//       let angle = Math.random() * Math.PI * 2;
+
+//       while (z < radius) {
+//         const x = Math.cos(angle) * radiusStart;
+//         const y = Math.sin(angle) * radiusStart;
+
+//         points.push(x, y, z);
+
+//         z += Z_INCREMENT;
+//         //exp = erratic
+//         //tan = spherical erratic
+//         radiusStart += Math.sin(Math.random() * Math.PI) * 0.1; // Vary radius increment sinusoidally
+//         angle += Math.cos(Math.random() * Math.PI) * 0.2; // Vary angle increment cosinusoidally
+//       }
+
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.1, 1 * Math.random()),
+//         curve: points,
+//       };
+//     });
+//   }, [colors, count, radius]);
+
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+// }
+
+
 
 
 function Fatline({ curve, width, color, speed, dash }) {
