@@ -187,7 +187,7 @@ export default function LineHero() {
 // // Generative Art Pattern ----- the best
 // // This pattern focuses on generating abstract generative art by applying sinusoidal variations to the radius and angle increments.
 
-function Lines({ dash, count, colors, radius = 50 }) {
+function Lines({ dash, count, colors, radius = 5 }) {
   const lines = useMemo(() => {
     const Z_INCREMENT = 0.08;
 
