@@ -13,7 +13,7 @@ extend({ MeshLineGeometry, MeshLineMaterial })
 export default function LineHero() {
   const { dash, count, radius }= ({
     dash: Math.round(((Math.random() * 0.7) + 0.4) * 10) / 10, 
-    count: 50,
+    count: 20,
     radius: 50,
   })
   return (
@@ -31,6 +31,7 @@ export default function LineHero() {
   )
 }
 //base spiral line
+
 function Lines({ dash, count, colors, radius = 50 }) {
   const lines = useMemo(() => {
     const Z_INCREMENT = 0.08
@@ -66,7 +67,7 @@ function Lines({ dash, count, colors, radius = 50 }) {
   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />)
 }
 
-// Zigzag Lines Pattern kinda good
+// Zigzag Lines Pattern --- kinda good spiral nut not special
 
 // function Lines({ dash, count, colors, radius = 50 }) {
 //   const lines = useMemo(() => {
@@ -104,8 +105,8 @@ function Lines({ dash, count, colors, radius = 50 }) {
 // }
 
 
-// // Lissajous Curve Pattern
-// function Lines({ dash, count, colors, radius = 50 }) {
+// Lissajous Curve Pattern  ------ unique but not good
+// function Lines({ dash, count, colors, radius = 25 }) {
 //   const lines = useMemo(() => {
 //     const Z_INCREMENT = 0.08;
 //     const ANGLE_INCREMENT_X = 0.1;
@@ -146,7 +147,7 @@ function Lines({ dash, count, colors, radius = 50 }) {
 //   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
 // }
 
-// // Galactic Patterns
+// // Galactic Patterns ------- 2nd best
 // // This pattern aims to simulate galactic or nebula-like appearances by adjusting the radius and angle increments randomly.
 
 // function Lines({ dash, count, colors, radius = 50 }) {
@@ -182,7 +183,7 @@ function Lines({ dash, count, colors, radius = 50 }) {
 //   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
 // }
 
-// // Generative Art Pattern
+// // Generative Art Pattern ----- the best
 // // This pattern focuses on generating abstract generative art by applying sinusoidal variations to the radius and angle increments.
 
 // function Lines({ dash, count, colors, radius = 50 }) {
@@ -220,7 +221,42 @@ function Lines({ dash, count, colors, radius = 50 }) {
 //   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
 // }
 
+// Celestial Spiral Pattern ---- not special
+// This pattern creates a spiral effect resembling celestial bodies using sine and cosine functions.
+// function Lines({ dash, count, colors, radius = 50 }) {
+//   const lines = useMemo(() => {
+//     const Z_INCREMENT = 0.08;
+//     const SPIRAL_FACTOR = 0.005; // Adjust the factor for the spiral effect
 
+//     return Array.from({ length: count }, (_, index) => {
+//       const points = [];
+//       let z = 0;
+//       let angle = index * Math.PI * 2;
+//       let radiusStart = Math.random() > 0.8 ? 0.9 : 0.3; // Adjust the starting radius
+
+//       while (z < radius) {
+//         const x = Math.sin(angle) * radiusStart;
+//         const y = Math.cos(angle) * radiusStart;
+//         const spiral = Math.sin(angle) * SPIRAL_FACTOR; // Apply a spiral factor
+
+//         points.push(x + spiral, y + spiral, z);
+
+//         z += Z_INCREMENT;
+//         angle += 0.5; // Adjust the angle increment for variation
+//         radiusStart += Math.random() * 0.9; // Increment radiusStart for controlled movement
+//       }
+
+//       return {
+//         color: colors[parseInt(colors.length * Math.random())],
+//         width: Math.max(radius / 500, (radius / 250) * Math.random()),
+//         speed: Math.max(0.01, 0.05 * Math.random()), // Adjust speed for controlled movement
+//         curve: points,
+//       };
+//     });
+//   }, [colors, count, radius]);
+
+//   return lines.map((props, index) => <Fatline key={index} dash={dash} {...props} />);
+// }
 
 
 function Fatline({ curve, width, color, speed, dash }) {
