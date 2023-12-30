@@ -3,12 +3,12 @@
 
 :root {
   --bg-color:#242424;
+  --accent: hsl(335, 90%, 60%);
   --text-color: hsl(0, 0%, 60%);
   --highlight-color: hsl(0, 0%, 90%);
   --light-border: #ffffff17;
   --primary-dark: hsl(210, 100%, 25%);
   --primary-light: hsl(120, 20%, 80%);
-  --accent: hsl(335, 90%, 60%);
   --lord-icon-secondary: var(--accent);
   --lord-icon-primary: var(--highlight-color);
   --gradient-shadow:linear-gradient(90deg, transparent, #5389CF, var(--accent), #5389CF, var(--accent), transparent);

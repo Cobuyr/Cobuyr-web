@@ -13,14 +13,15 @@ extend({ MeshLineGeometry, MeshLineMaterial })
 export default function LineHero() {
   const { dash, count, radius }= ({
     dash: Math.round(((Math.random() * 0.7) + 0.4) * 10) / 10, 
-    count: 20,
+    count: 30,
     radius: 50,
   })
   return (
 
     <Canvas camera={{ position: [0, 0, 50], fov: 75 }}>
-      <color attach="background" args={['#101020']} />
-      <Lines dash={dash} count={count} radius={radius} colors={[[10, 0.5, 2], [1, 2, 10], '#A2CCB6', '#FCEEB5', '#EE786E', '#e0feff']} />
+      {/* <color attach="background" args={['#242424']} /> */}
+      <Lines dash={dash} count={count} radius={radius} colors={[[10, 0.5, 2], [1, 2, 10], "#ff8c00", "#008080", "#800080", "#008000", "#ffa500"
+]} />
       <Perf position="bottom-left" />
 
       <Rig />
