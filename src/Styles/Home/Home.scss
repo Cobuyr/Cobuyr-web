@@ -20,6 +20,7 @@
   font-size: 13px;
   padding: 5px 25px;
   margin-inline: auto;
+  pointer-events: all;
   place-self: center;
   position: relative;
   background: var(--bg-color);
@@ -1132,7 +1133,7 @@ ul:has(> :focus) > li:not(:focus) {
   }
 }
 @media (max-width: 900px) {
-  .hero {
+  .hero,#canvas-container {
     height: 75vh;
   }
   .future {
@@ -1146,7 +1147,7 @@ ul:has(> :focus) > li:not(:focus) {
   }
 }
 @media (max-width: 550px) {
-  .hero {
+  .hero,#canvas-container {
     height: 75vh;
     h1 {
       width: 100%;
