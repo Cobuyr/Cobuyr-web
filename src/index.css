@@ -43,6 +43,15 @@
     background: #252525;
   background: linear-gradient(15deg, #101010 0%, #252525 100%);
 }
+@media (max-width: 900px) {
+  #canvas-container {
+    height: 75vh ;
+  }
+}
+@media (max-width: 550px) {
+  #canvas-container {
+    height: 75vh ;
+  }}
 
 ::selection {
   background: var(--accent);

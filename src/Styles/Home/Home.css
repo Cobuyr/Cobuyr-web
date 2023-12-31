@@ -710,7 +710,7 @@ ul:has(> :focus) > li:not(:focus) {
 }
 @media (max-width: 900px) {
   .hero, #canvas-container {
-    height: 75vh;
+    height: 75vh !important;
   }
   .future {
     width: 97%;
@@ -724,7 +724,7 @@ ul:has(> :focus) > li:not(:focus) {
 }
 @media (max-width: 550px) {
   .hero, #canvas-container {
-    height: 75vh;
+    height: 75vh !important;
   }
   .hero h1, #canvas-container h1 {
     width: 100%;

@@ -1,5 +1,7 @@
 import { Canvas } from "@react-three/fiber";
 import "../index.css";
+// import "../Styles/Home/Home.css";
+
 import Experience from "./Experience.jsx";
 import LineHero from "./LineHero";
 
