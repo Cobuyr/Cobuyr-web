@@ -11,6 +11,7 @@ import Transition from "../Components/Transition";
 import { motion } from "framer-motion";
 import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
+import Scene from "../Experience/scene";
 
 // import LiquidButton from "../Components/magnetBtn";
 
@@ -29,6 +30,7 @@ const Home = () => {
 
   return (
     <>
+    {/* <Scene/> */}
       <Section className="hero">
         <motion.div variants={homeVariants}>
           <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
