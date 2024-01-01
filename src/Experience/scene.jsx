@@ -8,18 +8,18 @@ import LineHero from "./LineHero";
 const Scene = () => {
   return (
     <div id="canvas-container">
-      {/* <Canvas
+      <Canvas
         shadows
         camera={{
           fov: 45,
           near: 0.1,
           far: 100,
-          position: [0, 3, 6],
+          position: [0, 0, 3.5],
         }}
       >
         <Experience />
-      </Canvas> */}
-      <LineHero/>
+      </Canvas>
+      {/* <LineHero/> */}
     </div>
   );
 };
