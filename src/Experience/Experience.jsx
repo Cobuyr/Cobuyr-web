@@ -83,6 +83,7 @@ const Ring = () => {
   useEffect(() => {
     RingRef.current.rotation.set(-Math.PI / 0.25, -Math.PI / 2, 0);
   }, []);
+  
   useFrame((state, delta) => {
     const xRotation = state.pointer.x; // Mouse movement along the X-axis
     const yRotation = state.pointer.y; // Mouse movement along the Y-axis

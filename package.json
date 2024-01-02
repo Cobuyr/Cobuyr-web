@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "devHost": "vite --host",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
@@ -15,6 +16,7 @@
     "@react-three/fiber": "^8.15.12",
     "@react-three/postprocessing": "^2.15.11",
     "@react-three/rapier": "^1.2.1",
+    "@use-gesture/react": "^10.3.0",
     "babel-plugin-glsl": "^1.0.0",
     "framer-motion": "^10.16.16",
     "glsl-noise": "^0.0.0",
