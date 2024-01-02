@@ -11,6 +11,9 @@ import { Perf } from "r3f-perf";
 import { Suspense } from "react";
 import CobuyrModel from "./CobuyrModel";
 import MetaFloat from "./Metaball";
+import { DoubleSide } from "three";
+import { EffectComposer, Bloom } from '@react-three/postprocessing'
+
 
 export default function Experience() {
   return (
@@ -31,12 +34,22 @@ export default function Experience() {
         intensity={1}
         shadow-normalBias={0.04}
       />
-
+<EffectComposer>
+        <Bloom mipmapBlur luminanceThreshold={0.6} radius={0.3} />
+      </EffectComposer>
       <ambientLight intensity={1} />
+
+      <mesh rotation={[0, -0.25, 0]}>
+        <ringGeometry args={[1.3, 1.35, 64]} />
+        <meshBasicMaterial
+          color={"pink"} 
+          side={DoubleSide}
+        />
+      </mesh>
 
       <Suspense>
         <CobuyrModel />
-        <AccumulativeShadows
+        {/* <AccumulativeShadows
           temporal
           frames={200}
           color="purple"
@@ -52,8 +65,8 @@ export default function Experience() {
             position={[5, 3, 2]}
             bias={0.001}
           />
-        </AccumulativeShadows>
-        <Environment preset={"night"} background={null} blur={1}   />
+        </AccumulativeShadows> */}
+        <Environment preset={"night"} background={null} blur={1} />
         {/* <MetaFloat/> */}
       </Suspense>
     </>
