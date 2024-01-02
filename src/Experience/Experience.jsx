@@ -10,6 +10,7 @@ import {
 import { Perf } from "r3f-perf";
 import { Suspense } from "react";
 import CobuyrModel from "./CobuyrModel";
+import MetaFloat from "./Metaball";
 
 export default function Experience() {
   return (
@@ -53,6 +54,7 @@ export default function Experience() {
           />
         </AccumulativeShadows>
         <Environment preset={"night"} background={null} blur={1}   />
+        {/* <MetaFloat/> */}
       </Suspense>
     </>
   );

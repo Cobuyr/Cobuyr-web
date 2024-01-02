@@ -16,6 +16,7 @@ const Scene = () => {
           far: 100,
           position: [0, 0, 3.5],
         }}
+        dpr={[1, 1.5]}
       >
         <Experience />
       </Canvas>
