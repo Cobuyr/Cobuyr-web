@@ -708,9 +708,6 @@ ul:has(> :focus) > li:not(:focus) {
   }
 }
 @media (max-width: 900px) {
-  .hero {
-    height: 75vh;
-  }
   .future {
     width: 97%;
   }
@@ -722,9 +719,6 @@ ul:has(> :focus) > li:not(:focus) {
   }
 }
 @media (max-width: 550px) {
-  .hero {
-    height: 75vh;
-  }
   .hero h1 {
     width: 100%;
     font-size: 1.7em;

@@ -3,27 +3,24 @@
 
 import * as THREE from "three";
 import {
-  AccumulativeShadows,
-  RandomizedLight,
-  OrbitControls,
+  // AccumulativeShadows,
+  // RandomizedLight,
+  // OrbitControls,
   Environment,
   MeshDistortMaterial,
-  MeshWobbleMaterial,
+  // MeshWobbleMaterial,
   GradientTexture,
-  useCursor,
+  // useCursor,
 } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Perf } from "r3f-perf";
 import { Suspense, useRef, useEffect, useState } from "react";
 import { easing } from "maath";
 import CobuyrModel from "./CobuyrModel";
-import MetaFloat from "./Metaball";
 import { DoubleSide } from "three";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 
 export default function Experience() {
-  const RingRef = useRef();
-
   return (
     <>
       <Perf position="top-left" />
@@ -62,18 +59,14 @@ export default function Experience() {
       </EffectComposer>
       <ambientLight intensity={1} />
 
-     
-
       <Suspense>
         <CameraRig>
           <CobuyrModel />
           <Ring />
-      <Blob/>
+          <Blob />
         </CameraRig>
 
-        <Environment files={"./night.hdr"} background={null} blur={1} />
-        {/* <Rig/> */}
-        {/* <MetaFloat/> */}
+        <Environment files={"./night.hdr"} background={null} />
       </Suspense>
     </>
   );
@@ -81,7 +74,6 @@ export default function Experience() {
 
 function CameraRig({ children }) {
   const group = useRef();
-  // const snap = useSnapshot(state)
   useFrame((state, delta) => {
     easing.damp3(
       state.camera.position,
@@ -128,20 +120,19 @@ const Ring = () => {
 function Blob() {
   const ref = useRef();
   return (
-    <mesh
-    >
+    <mesh>
       <sphereGeometry args={[0.25, 16, 16]} />
-      {/* <MeshWobbleMaterial ref={ref} factor={100} metalness={0.5} envMapIntensity={50} wireframe speed={1}>
+      <MeshDistortMaterial
+        ref={ref}
+        factor={0}
+        distort={0.7}
+        metalness={0.9}
+        envMapIntensity={50}
+        speed={1}
+      >
         <GradientTexture
           stops={[0, 0.5, 1]}
-          colors={["#008080", "#800080", "#008000",]}
-          size={100}
-        />
-      </MeshWobbleMaterial> */}
-      <MeshDistortMaterial ref={ref} factor={0} distort={0.7} metalness={0.9} envMapIntensity={50} speed={1}>
-        <GradientTexture
-          stops={[0, 0.5, 1]}
-          colors={["#008080", "#800080", "#008000",]}
+          colors={["#008080", "#800080", "#008000"]}
           size={100}
         />
       </MeshDistortMaterial>
