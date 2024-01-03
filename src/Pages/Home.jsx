@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <>
-    {/* <Scene/> */}
+    <Scene/>
       <Section className="hero">
         <motion.div variants={homeVariants}>
           <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />

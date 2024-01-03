@@ -34,18 +34,18 @@ export default function Experience() {
         castShadow
         position={[0, -5, 0]}
         intensity={0.5}
-        // color={"#008080"}
+        color={"#008080"}
         shadow-normalBias={0.04}
       />
       <directionalLight
         castShadow
         position={[0, 5, 0]}
         intensity={0.5}
-        // color={"#800080"}
+        color={"#800080"}
         shadow-normalBias={0.04}
       />
 
-      <pointLight
+      {/* <pointLight
       position={[4, 0, 0]}
       intensity={15}
       color={"#008090"}
@@ -55,7 +55,7 @@ export default function Experience() {
       position={[-4, 0, 0]}
       intensity={15}
       color={"#800080"}
-      />
+      /> */}
 
       <EffectComposer>
         <Bloom mipmapBlur luminanceThreshold={0.6} radius={0.3} />
