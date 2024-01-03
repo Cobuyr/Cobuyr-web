@@ -18,9 +18,10 @@ import { Suspense, useRef, useEffect, useState } from "react";
 import { easing } from "maath";
 import CobuyrModel from "./CobuyrModel";
 import { DoubleSide } from "three";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { EffectComposer, SelectiveBloom, Bloom } from "@react-three/postprocessing";
 
 export default function Experience() {
+  const lightRef = useRef();
   return (
     <>
       <Perf position="top-left" />
@@ -54,8 +55,16 @@ export default function Experience() {
       color={"#800080"}
       /> */}
 
-      <EffectComposer>
-        <Bloom mipmapBlur luminanceThreshold={0.6} radius={0.3} />
+      <EffectComposer disableNormalPass>
+        {/* <SelectiveBloom 
+        mipmapBlur 
+        luminanceThreshold={0.6} 
+        radius={0.3}
+        selection={RingRef}
+        lights={lightRef}
+        selectionLayer={10}
+        /> */}
+        <Bloom mipmapBlur luminanceThreshold={0.2} radius={0.8} />
       </EffectComposer>
       <ambientLight intensity={1} />
 
@@ -64,6 +73,7 @@ export default function Experience() {
           <CobuyrModel />
           <Ring />
           <Blob />
+          {/* <CombinedMesh/> */}
         </CameraRig>
 
         <Environment files={"./night.hdr"} background={null} />
@@ -91,6 +101,55 @@ function CameraRig({ children }) {
   return <group ref={group}>{children}</group>;
 }
 
+// const CombinedMesh = () => {
+//   const groupRef = useRef();
+
+//   useEffect(() => {
+//     groupRef.current.rotation.set(-Math.PI / 0.25, -Math.PI / 2, 0);
+//   }, []);
+
+//   useFrame(({ pointer }, delta) => {
+//     const xRotation = pointer.x || 0;
+//     const yRotation = pointer.y || 0;
+
+//     const targetRotation = [
+//       -Math.PI / 0.1 - yRotation / 2,
+//       -Math.PI / 2 - xRotation,
+//       0,
+//     ];
+
+//     groupRef.current.rotation.set(...targetRotation);
+//   });
+
+//   return (
+//     <group ref={groupRef}>
+//       {/* Ring */}
+//       <mesh>
+//         <ringGeometry args={[1.3, 1.35, 64]} />
+//         <meshBasicMaterial color={'pink'} side={THREE.DoubleSide} />
+//       </mesh>
+
+//       {/* Blob */}
+//       <mesh position={[0, 0, 0]} rotation={[0, 0, 0]}>
+//         <sphereGeometry args={[0.25, 16, 16]} />
+//         <MeshDistortMaterial
+//           factor={0}
+//           distort={0.7}
+//           metalness={0.9}
+//           envMapIntensity={50}
+//           speed={1}
+//         >
+//           <GradientTexture
+//             stops={[0, 0.5, 1]}
+//             colors={['#008080', '#800080', '#008000']}
+//             size={100}
+//           />
+//         </MeshDistortMaterial>
+//       </mesh>
+//     </group>
+//   );
+// };
+
 const Ring = () => {
   const RingRef = useRef();
   useEffect(() => {
@@ -112,7 +171,7 @@ const Ring = () => {
   return (
     <mesh rotation={[0, 0, 0]} ref={RingRef}>
       <ringGeometry args={[1.3, 1.35, 64]} />
-      <meshBasicMaterial color={"pink"} side={DoubleSide} />
+      <meshBasicMaterial color={"#f53d8a"} side={DoubleSide} />
     </mesh>
   );
 };
