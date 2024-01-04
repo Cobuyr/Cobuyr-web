@@ -4,8 +4,8 @@ import React from "react";
 import { useGLTF } from "@react-three/drei";
 
 
-export default function CobuyrModel(props) {
-  const { nodes, materials } = useGLTF("./cobuyr.glb");
+export default function DesktopModel(props) {
+  const { nodes, materials } = useGLTF("./DesktopModel.glb");
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -36,4 +36,4 @@ export default function CobuyrModel(props) {
   );
 }
 
-useGLTF.preload("./cobuyr.glb");
+useGLTF.preload("./DesktopModel.glb");
