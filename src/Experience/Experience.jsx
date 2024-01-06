@@ -53,7 +53,6 @@ function Responsive() {
 }
 
 const Light = () => {
-  // function Responsive() {
   if (isMobile) {
     return (
       <directionalLight

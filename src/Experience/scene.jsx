@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PerformanceMonitor } from "@react-three/drei";
 import Experience from "./Experience.jsx";
 import LineHero from "./LineHero";
+import Wavy from "./wavy";
 
 const Scene = () => {
   const [dpr, setDpr] = useState(1.5);
@@ -15,16 +16,16 @@ const Scene = () => {
           fov: 45,
           near: 0.1,
           far: 100,
-          position: [0, 0, 3.5],
+          position: [0, 0, 5],
         }}
         dpr={dpr}
-        // dpr={[1, 2]}
       >
         <PerformanceMonitor
           onIncline={() => setDpr(2)}
           onDecline={() => setDpr(1)}
         ></PerformanceMonitor>
-        <Experience />
+        {/* <Experience /> */}
+        <Wavy />
       </Canvas>
       {/* <LineHero/> */}
     </div>

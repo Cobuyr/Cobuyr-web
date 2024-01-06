@@ -20,6 +20,7 @@
   font-size: 13px;
   padding: 5px 25px;
   margin-inline: auto;
+  margin-bottom: 1em;
   pointer-events: all;
   place-self: center;
   position: relative;
@@ -122,18 +123,18 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  place-items: center;
+  align-items: center;
   position: absolute;
-    top: 0;
-    left: 0;
-    backdrop-filter: blur(3px);
-    background: radial-gradient(
-      circle at 50% 50%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
-    pointer-events: none;
+  top: 0;
+  left: 0;
+  // backdrop-filter: blur(3px);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(0, 0, 0, 0.3) 30%,
+    rgba(0, 0, 0, 0.1) 70%,
+    var(--bg-color) 95%
+  );
+  pointer-events: none;
 
   // background-size: 100% 100%;
   // background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 4px 0px;
@@ -149,7 +150,7 @@
 
   & .mgBtn {
     position: absolute;
-    bottom: calc(0% - 7vw);
+    bottom: calc(0% - 10vh);
     left: 50%;
     translate: -50% -50%;
     pointer-events: all;
@@ -197,14 +198,16 @@
           filter: blur(5px);
         }
       }
-    
     }
   }
 }
 .mainText {
   font-size: clamp(1.2em, 5vw, 4em);
-  background-image: 
-    linear-gradient(313deg, rgb(179, 143, 241) 0%, #f53d8aff 100%);
+  background-image: linear-gradient(
+    313deg,
+    rgb(179, 143, 241) 0%,
+    #f53d8aff 100%
+  );
 
   -webkit-background-clip: text;
   background-clip: text;
@@ -1134,7 +1137,7 @@ ul:has(> :focus) > li:not(:focus) {
 }
 
 @media (max-width: 900px) {
-  .hero{
+  .hero {
     // height: 85vh;
     backdrop-filter: blur(0px);
   }
@@ -1149,12 +1152,21 @@ ul:has(> :focus) > li:not(:focus) {
   }
 }
 @media (max-width: 550px) {
-  .hero{
-    // height: 75vh;
-    backdrop-filter: blur(0px);
+  .hero {
+    height: 80vh;
+    backdrop-filter: blur(2px);
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(0, 0, 0, 0.9) 30%,
+      rgba(0, 0, 0, 0.1) 70%,
+      var(--bg-color) 95%
+    );
     h1 {
       width: 100%;
-      font-size: 1.7em;
+      font-size: 2em;
+    }
+    p{
+      font-size: 1.1em;
     }
   }
   .listbox {
