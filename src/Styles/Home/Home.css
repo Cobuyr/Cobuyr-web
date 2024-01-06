@@ -89,7 +89,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.3) 30%, rgba(0, 0, 0, 0.1) 70%, var(--bg-color) 95%);
+  background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.3) 50%, var(--bg-color) 95%);
   pointer-events: none;
 }
 .hero .mgBtn {
