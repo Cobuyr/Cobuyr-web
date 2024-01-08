@@ -513,7 +513,7 @@ const Home = () => {
         </motion.div>
       </Section>
 
-      <Sub />
+      {/* <Sub /> */}
       <Footer />
     </>
   );

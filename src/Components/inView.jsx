@@ -10,7 +10,7 @@ export const Section = ({ children, className }) => {
       
   const ref = useRef(null);
 //   const vpRef = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: "some", margin: "20% 0px 0px 0px" });
+  const isInView = useInView(ref, { once: true, margin: "20% 0px 0px 0px" });
 
     useEffect(() => {
      if (isInView){

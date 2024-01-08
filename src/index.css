@@ -4,7 +4,7 @@
 :root {
   --bg-color:#242424;
   --accent: hsl(335, 90%, 60%);
-  --text-color: hsl(0, 0%, 60%);
+  --text-color: hsl(0, 0%, 70%);
   --highlight-color: hsl(0, 0%, 90%);
   --light-border: #ffffff17;
   --primary-dark: hsl(210, 100%, 25%);
@@ -138,7 +138,7 @@ button:focus-visible {
 p:not(.badge p){
   animation: fade linear both;
   animation-timeline: view(block);
-  animation-range: cover 0% contain 30%;
+  animation-range: cover 0% contain 15%;
 
 }
 
