@@ -11,8 +11,8 @@ export default function WaveModel(props) {
     <group {...props} dispose={null}>
       <mesh
         geometry={nodes.Plane.geometry}
-        scale={isMobile ? [0.08, 0.25, 0.09] : [0.15, 0.25, 0.35]}
-        rotation={isMobile ? [0, Math.PI / 4 , 0] : [0, Math.PI / 2, Math.PI / 1.25]}
+        scale={ [0.15, 0.25, 0.35]}
+        rotation={ [0, Math.PI / 2, Math.PI / 1.25]}
       >
         <MeshWobbleMaterial
           side={DoubleSide}

@@ -42,7 +42,7 @@ function Responsive() {
         <Ring />
         <Light />
         <EffectComposer disableNormalPass>
-          <Bloom mipmapBlur luminanceThreshold={0.2} radius={0.9} />
+          <Bloom mipmapBlur luminanceThreshold={0.2} radius={0.5} />
         </EffectComposer>
       </>
     );
