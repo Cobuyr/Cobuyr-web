@@ -76,41 +76,25 @@ const Sub = () => {
             </motion.li>
           </motion.ul>
         </div>
+        <div>
+      <motion.h4 variants={homeVariants}>
+          Terms and Condition
+        </motion.h4>
+        <ul>
+          <motion.li variants={homeVariants}>Your referral payment is contingent upon the retailer referencing your name during Cobuyr integration.</motion.li>
+          <motion.li variants={homeVariants}>Cobuyr reserves the right to terminate this referral program at its discretion.</motion.li>
+          <motion.li variants={homeVariants}>Additional terms may apply.</motion.li>
+        </ul>
+      </div>
       </div>
       <div className="early-form">
-        {/* <motion.form className="form" variants={homeVariants}>
-          
-          <lord-icon
+         {/* <lord-icon
             src="https://cdn.lordicon.com/ribxmuoc.json"
             trigger="loop-on-hover"
             delay="2500"
-            target=".form"
+            target=".early-form"
             stroke="bold"
-          />
-          <span className="formtext"></span>
-          <input
-            autoComplete="name"
-            name="name"
-            type="text"
-            placeholder="Name"
-            required
-          />
-          <input
-            autoComplete="email"
-            name="email"
-            type="email"
-            placeholder="Email"
-            required
-          />
-          <motion.button
-            variants={{
-              hidden: { opacity: 0, x: 40 },
-              visible,
-            }}
-          >
-            Go!
-          </motion.button>
-        </motion.form> */}
+          /> */}
         <ReferalForm/>
       </div>
     </Section>

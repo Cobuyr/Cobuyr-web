@@ -1,16 +1,16 @@
 import { Environment } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
-import { Perf } from "r3f-perf";
+// import { Perf } from "r3f-perf";
 import { Suspense, useRef, useEffect } from "react";
 import { easing } from "maath";
 import { DoubleSide } from "three";
-import { EffectComposer, Bloom } from "@react-three/postprocessing";
+// import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import WaveModel from "./wavemodel";
 
 export default function Wavy() {
   return (
     <>
-      <Perf position="top-left" />
+      {/* <Perf position="top-left" /> */}
 
       <Suspense>
         <Environment

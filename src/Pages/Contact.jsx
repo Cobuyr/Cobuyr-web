@@ -228,7 +228,7 @@ export const ReferalForm = () => {
   };
 
   return (
-      <motion.div id="contact-form">
+      <motion.form id="contact-form">
          <motion.h3 className="early-h2" variants={contVariants}>
           Information Submission
         </motion.h3>
@@ -298,6 +298,6 @@ export const ReferalForm = () => {
         >
           <p>Please Fill in all Fields</p>
         </motion.span>
-      </motion.div>
+      </motion.form>
   );
 };
