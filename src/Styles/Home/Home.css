@@ -671,13 +671,20 @@
   margin: 0 auto;
   max-width: 1400px;
 }
-.early li:hover {
+.early .listbox {
+  margin-block: 2.5em;
+}
+.early .listbox li {
+  padding: 16px;
+  text-align: center;
+}
+.early .listbox li:hover {
   animation: none;
 }
-.early li h4 {
+.early .listbox li h4 {
   color: var(--highlight-color);
 }
-.early li p {
+.early .listbox li p {
   color: silver;
 }
 .early .badge {
@@ -737,6 +744,7 @@
 .early-form {
   display: flex;
   align-items: center;
+  justify-content: center;
   grid-column: auto/span 2;
   border-radius: 25px;
   -webkit-backdrop-filter: blur(10px);
@@ -749,6 +757,23 @@
 @media (max-width: 1200px) {
   .future::before {
     display: none;
+  }
+}
+@media (max-width: 1100px) {
+  .early-form #contact-form {
+    min-width: 450px;
+    width: 100%;
+    padding: 20px;
+  }
+  .early .early-form {
+    grid-column: auto/span 5;
+    margin: auto;
+  }
+  .early .early-info {
+    grid-column: auto/span 5;
+    border: unset;
+    background: unset;
+    text-align: -webkit-center;
   }
 }
 @media (max-width: 900px) {
@@ -828,6 +853,11 @@
   }
   .early form lord-icon {
     display: none;
+  }
+  .early-form #contact-form {
+    min-width: 350px;
+    width: 100%;
+    padding: 20px;
   }
   .info-banner {
     height: 60vh;

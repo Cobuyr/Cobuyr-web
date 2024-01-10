@@ -116,6 +116,8 @@ const Contact = () => {
         <motion.div id="contact-form">
           <motion.div className="inp-field" variants={contVariants}>
             <input
+            name="name"
+            autoComplete="name"
               type="text"
               placeholder="Your Name"
               value={name}
@@ -125,6 +127,8 @@ const Contact = () => {
           </motion.div>
           <motion.div className="inp-field" variants={contVariants}>
             <input
+            name="email"
+            autoComplete="email"
               type="email"
               placeholder="Your email address"
               value={email}
@@ -177,20 +181,22 @@ export default TransContact;
 export const ReferalForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+  const [url, setUrl] = useState("");
   const [emailSent, setEmailSent] = useState(false);
   // const [isEmailValid, setIsEmailValid] = useState(true);
 
   const submit = () => {
     // setIsEmailValid(!!email);
 
-    if (name && email && message) {
+    if (name && email && phone && url) {
       const serviceId = "service_xpeei0l";
       const templateId = "cobuyrtemp";
       const templateParams = {
         name,
         email,
-        message,
+        phone,
+        url,
       };
 
       emailjs
@@ -200,7 +206,8 @@ export const ReferalForm = () => {
 
       setName("");
       setEmail("");
-      setMessage("");
+      setPhone("");
+      setUrl("");
       setEmailSent(true);
     }
     // else {
@@ -221,22 +228,30 @@ export const ReferalForm = () => {
   };
 
   return (
-    <div>
       <motion.div id="contact-form">
+         <motion.h3 className="early-h2" variants={contVariants}>
+          Information Submission
+        </motion.h3>
         <motion.div className="inp-field" variants={contVariants}>
           <input
+            autoComplete="name"
+            name="name"
             type="text"
             placeholder="Your Full Name"
             value={name}
+            title="Enter your Full name for proper identification"
             onChange={(e) => setName(e.target.value)}
           />
           <span></span>
         </motion.div>
         <motion.div className="inp-field" variants={contVariants}>
           <input
+          name="email"
+          autoComplete="email"
             type="email"
             placeholder="Your email address"
             value={email}
+            title="Enter a valid Email to receive confirmation"
             required
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -244,19 +259,25 @@ export const ReferalForm = () => {
         </motion.div>
         <motion.div className="inp-field" variants={contVariants}>
           <input
+          name="tel"
+          autoComplete="tel"
             type="tel"
             placeholder="Your Phone Number"
             required
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setPhone(e.target.value)}
           />
           <span></span>
         </motion.div>
         <motion.div className="inp-field" variants={contVariants}>
           <input
             type="url"
+            name="url"
+            autoComplete="url"
             placeholder="Your Registered site's URL"
+            pattern="https://.*"
             required
-            onChange={(e) => setEmail(e.target.value)}
+            title="Enter the correct URL of your proposed site  for validation"
+            onChange={(e) => setUrl(e.target.value)}
           />
           <span></span>
         </motion.div>
@@ -278,6 +299,5 @@ export const ReferalForm = () => {
           <p>Please Fill in all Fields</p>
         </motion.span>
       </motion.div>
-    </div>
   );
 };

@@ -1,5 +1,5 @@
 import "../Styles/Home/Home.css";
-import { Badge } from "../Components/badge";
+import { Badge, IconBadge } from "../Components/badge";
 import { motion } from "framer-motion";
 import { Section } from "./inView";
 import { ReferalForm } from "../Pages/Contact";
@@ -42,20 +42,39 @@ const Sub = () => {
           </span>
         </motion.h4>
         <div>
-          <ul className="listbox">
-            <li>
+          <motion.ul className="listbox" variants={homeVariants}>
+            <motion.li variants={homeVariants}>
+              <div className="iconBadge">
+               <lord-icon
+                  src="https://cdn.lordicon.com/wzrwaorf.json"
+                  trigger="hover"
+                  target="li"
+                  stroke="bold"
+                  state="hover-conversation-alt"
+                ></lord-icon>
+              </div>
               <h4>Suggest Cobuyr</h4>
               <p>Encourage your chosen company to integrate Cobuyr into their e-commerce setup.</p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
+               <IconBadge iconUrl="vdjwmfqs" trigger="hover" target="li" />
               <h4>Register with Us</h4>
               <p>Enter your details and the company's information below to ensure prompt payment upon their integration. <br/> It's crucial that the retailer references your name when they reach out to us.</p>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li variants={homeVariants}>
+               <div className="iconBadge">
+               <lord-icon
+                  src="https://cdn.lordicon.com/ofwxettw.json"
+                  trigger="hover"
+                  target="li"
+                  stroke="bold"
+                  state="morph-open"
+                ></lord-icon>
+              </div>
               <h4>Acknowledged</h4>
               <p>Upon form completion, your first name and the company's name will be listed on this page, confirming your submission acknowledgment.</p>
-            </li>
-          </ul>
+            </motion.li>
+          </motion.ul>
         </div>
       </div>
       <div className="early-form">
