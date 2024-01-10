@@ -95,7 +95,6 @@ const Contact = () => {
       exit={{ opacity: 0, transition: { duration: 1 } }}
       variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
     >
-      {/* <div className="ray jumbo"></div> */}
       <div
         className="fl"
         onMouseMove={handleMouseMove}
@@ -104,19 +103,18 @@ const Contact = () => {
           "--bg-y": bgY,
         }}
       >
-        <motion.div className="contact-text"
-        variants={{
-          hidden: { opacity: 0, x: -20 },
-          visible,
-        }}>
+        <motion.div
+          className="contact-text"
+          variants={{
+            hidden: { opacity: 0, x: -20 },
+            visible,
+          }}
+        >
           <h1>Get in touch</h1>
         </motion.div>
 
-
-        <motion.div id="contact-form"
-       >
-          <motion.div className="inp-field"
-          variants={contVariants}>
+        <motion.div id="contact-form">
+          <motion.div className="inp-field" variants={contVariants}>
             <input
               type="text"
               placeholder="Your Name"
@@ -125,8 +123,7 @@ const Contact = () => {
             />
             <span></span>
           </motion.div>
-          <motion.div className="inp-field"
-          variants={contVariants}>
+          <motion.div className="inp-field" variants={contVariants}>
             <input
               type="email"
               placeholder="Your email address"
@@ -143,15 +140,20 @@ const Contact = () => {
             onChange={(e) => setMessage(e.target.value)}
             variants={contVariants}
           ></motion.textarea>
-          <motion.button onClick={submit}
-          variants={contVariants}>Send Message</motion.button>
+          <motion.button onClick={submit} variants={contVariants}>
+            Send Message
+          </motion.button>
 
-          <motion.span className={emailSent ? "visible" : "not-visible"}
-          variants={contVariants}>
+          <motion.span
+            className={emailSent ? "visible" : "not-visible"}
+            variants={contVariants}
+          >
             <p>Thank you for your message, we will be in touch in no time!</p>
           </motion.span>
-          <motion.span className={emailSent ? "not-visible" : "visible"}
-          variants={contVariants}>
+          <motion.span
+            className={emailSent ? "not-visible" : "visible"}
+            variants={contVariants}
+          >
             <p>Please Fill in all Fields</p>
           </motion.span>
         </motion.div>
@@ -171,3 +173,111 @@ const Contact = () => {
 
 const TransContact = Transition(Contact);
 export default TransContact;
+
+export const ReferalForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailSent, setEmailSent] = useState(false);
+  // const [isEmailValid, setIsEmailValid] = useState(true);
+
+  const submit = () => {
+    // setIsEmailValid(!!email);
+
+    if (name && email && message) {
+      const serviceId = "service_xpeei0l";
+      const templateId = "cobuyrtemp";
+      const templateParams = {
+        name,
+        email,
+        message,
+      };
+
+      emailjs
+        .send(serviceId, templateId, templateParams)
+        .then((response) => console.log(response))
+        .then((error) => console.log(error));
+
+      setName("");
+      setEmail("");
+      setMessage("");
+      setEmailSent(true);
+    }
+    // else {
+    //   alert("Please fill in all fields.");
+    // }
+  };
+
+  const visible = {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: { staggerChildren: 0.4, duration: 0.5 },
+  };
+
+  const contVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible,
+  };
+
+  return (
+    <div>
+      <motion.div id="contact-form">
+        <motion.div className="inp-field" variants={contVariants}>
+          <input
+            type="text"
+            placeholder="Your Full Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <span></span>
+        </motion.div>
+        <motion.div className="inp-field" variants={contVariants}>
+          <input
+            type="email"
+            placeholder="Your email address"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span></span>
+        </motion.div>
+        <motion.div className="inp-field" variants={contVariants}>
+          <input
+            type="tel"
+            placeholder="Your Phone Number"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span></span>
+        </motion.div>
+        <motion.div className="inp-field" variants={contVariants}>
+          <input
+            type="url"
+            placeholder="Your Registered site's URL"
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <span></span>
+        </motion.div>
+
+        <motion.button onClick={submit} variants={contVariants}>
+          Submit
+        </motion.button>
+
+        <motion.span
+          className={emailSent ? "visible" : "not-visible"}
+          variants={contVariants}
+        >
+          <p>Thank you for submitting, we will be in touch in no time!</p>
+        </motion.span>
+        <motion.span
+          className={emailSent ? "not-visible" : "visible"}
+          variants={contVariants}
+        >
+          <p>Please Fill in all Fields</p>
+        </motion.span>
+      </motion.div>
+    </div>
+  );
+};

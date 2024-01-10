@@ -134,7 +134,7 @@
     rgba(0, 0, 0, 0.5) 60%,
     rgba(0, 0, 0, 0.4) 70%,
     rgba(0, 0, 0, 0.3) 80%,
-    rgba(0, 0, 0, 0.0) 90%,
+    rgba(0, 0, 0, 0) 90%
   );
   // background-image: url("./grad.png");
   background-size: 100% 100%;
@@ -219,7 +219,6 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
 }
-
 
 @-webkit-keyframes grad {
   0% {
@@ -667,7 +666,6 @@
   }
 }
 
-
 .bento {
   // display:none;
   display: grid;
@@ -693,7 +691,7 @@
   ul:has(> :focus) > li:not(:focus) {
     opacity: 0.65;
   }
-  
+
   .head {
     grid-column: auto/span 8;
     padding: 12px 24px;
@@ -938,19 +936,24 @@
   grid-template-columns: repeat(5, 1fr);
   // grid-template-rows: repeat(8, 8vw);
   grid-auto-flow: dense;
+  padding-inline: 0;
   margin: 0 auto;
   max-width: 1400px;
-  li{ 
-    &:hover{
+  li {
+    &:hover {
       animation: none;
     }
     h4 {
-    color: var(--highlight-color);
-  }
+      color: var(--highlight-color);
+    }
     p {
-    color: silver;
+      color: silver;
+    }
   }
-}
+  .badge {
+    margin-inline: unset;
+    margin-bottom: 2.5em;
+  }
   form {
     display: flex;
     align-items: center;
@@ -961,7 +964,7 @@
     margin-inline: auto;
     position: relative;
     background: var(--bg-color);
-   
+
     lord-icon {
       width: 60px;
       height: 60px;
@@ -989,7 +992,7 @@
     }
   }
 }
-.early-info{
+.early-info {
   grid-column: auto/span 3;
   border-radius: 25px;
   backdrop-filter: blur(10px);
@@ -1003,11 +1006,13 @@
   padding: 12px 24px;
   text-align: left;
 
-  h2{
+  h2 {
     padding: unset;
   }
 }
-.early-form{
+.early-form {
+  display: flex;
+  align-items: center;
   grid-column: auto/span 2;
   border-radius: 25px;
   backdrop-filter: blur(10px);
@@ -1058,7 +1063,7 @@
       width: 100%;
       font-size: 2em;
     }
-    p{
+    p {
       font-size: 1.1em;
     }
   }

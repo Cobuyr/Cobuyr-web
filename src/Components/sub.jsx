@@ -2,6 +2,7 @@ import "../Styles/Home/Home.css";
 import { Badge } from "../Components/badge";
 import { motion } from "framer-motion";
 import { Section } from "./inView";
+import { ReferalForm } from "../Pages/Contact";
 
 const Sub = () => {
   const visible = {
@@ -48,7 +49,7 @@ const Sub = () => {
             </li>
             <li>
               <h4>Register with Us</h4>
-              <p>Enter your details and the company's information below to ensure prompt payment upon their integration. It's crucial that the retailer references your name when they reach out to us.</p>
+              <p>Enter your details and the company's information below to ensure prompt payment upon their integration. <br/> It's crucial that the retailer references your name when they reach out to us.</p>
             </li>
             <li>
               <h4>Acknowledged</h4>
@@ -58,11 +59,8 @@ const Sub = () => {
         </div>
       </div>
       <div className="early-form">
-        <motion.form className="form" variants={homeVariants}>
-          {/* <motion.div variants={{
-              hidden: { opacity: 0 },
-              visible,
-            }}> */}
+        {/* <motion.form className="form" variants={homeVariants}>
+          
           <lord-icon
             src="https://cdn.lordicon.com/ribxmuoc.json"
             trigger="loop-on-hover"
@@ -70,7 +68,6 @@ const Sub = () => {
             target=".form"
             stroke="bold"
           />
-          {/* </motion.div> */}
           <span className="formtext"></span>
           <input
             autoComplete="name"
@@ -94,7 +91,8 @@ const Sub = () => {
           >
             Go!
           </motion.button>
-        </motion.form>
+        </motion.form> */}
+        <ReferalForm/>
       </div>
     </Section>
   );

@@ -26,15 +26,6 @@
     place-items: center;
     background: radial-gradient( circle at 50% 50%, transparent 0%, #32323275 80%, var(--bg-color) 95% );
 
-
-    & #contact-form {
-        min-width: 500px;
-        min-height: 400px;
-        color: #FFF;
-        padding: 20px;
-
-    }
-
     &::before, &::after {
         content: '';
         width: 2.5%;
@@ -56,7 +47,14 @@
         right: 0%;
         translate: 50% -50%;
     }
+}
+#contact-form {
+    min-width: 500px;
+    min-height: 400px;
+    color: #FFF;
+    padding: 20px;
 
+    
     & input,
     & textarea {
         width: 100%;
@@ -97,6 +95,8 @@
 
 
 }
+
+
 @keyframes glow {
     0%,100%{
         width: 2.5%;
