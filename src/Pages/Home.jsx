@@ -20,24 +20,26 @@ const Home = () => {
     opacity: 1,
     x: 0,
     y: 0,
+    scaleZ: 1,
     transition: { staggerChildren: 0.4, duration: 0.5 },
   };
 
   const homeVariants = {
-    hidden: { opacity: 0, y: 20, scaleZ: 1 },
+    hidden: { opacity: 0, y: 20, scaleZ: 0 },
     visible,
   };
 
   return (
     <>
-    <Scene/>
+      {/* <Scene/> */}
       <Section className="hero">
         <motion.div variants={homeVariants}>
           <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
         </motion.div>
 
         <motion.h1 variants={homeVariants}>
-          Revolutionize Checkout with <span className="mainText">Social Buying</span>
+          Revolutionize Checkout with{" "}
+          <span className="mainText">Social Buying</span>
         </motion.h1>
         <motion.p variants={homeVariants}>
           Enhance your checkout experience with Cobuyr's cutting-edge Social
