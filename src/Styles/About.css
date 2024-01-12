@@ -13,10 +13,10 @@
 
 .who::before {
   content: "";
-  width: 150px;
-  height: 350px;
+  width: 400px;
+  height: 200px;
   position: absolute;
-  top: 55%;
+  bottom: 0;
   left: 50%;
   translate: -50%;
   background-size: 100% 100%;
@@ -27,45 +27,9 @@
   box-shadow:
     #957024 -20px -20px 20px 0px,
     #502495 20px 20px 20px 0px;
-  border-radius: 97% 69% 91% 25%;
   z-index: -2;
   animation: burn 10s ease infinite, showw 5s ease forwards;
   will-change: auto;
-}
-
-@keyframes burn {
-
-  0%,
-  100% {
-
-    rotate: 0deg;
-  }
-
-  30% {
-    rotate: -5deg;
-  }
-
-  50% {
-    rotate: 9deg;
-    width: 200px;
-  }
-
-  90% {
-    rotate: 5deg;
-  }
-
-}
-
-@keyframes showw {
-
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-
 }
 
 .who::after {
@@ -125,6 +89,32 @@
       }
     }
   }
+}
+@keyframes burn {
+
+  0%,
+  100% {
+
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 15deg;
+    width: 300px;
+  }
+
+}
+
+@keyframes showw {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
 }
 
 @media (max-width: 900px) {
