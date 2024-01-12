@@ -1,5 +1,23 @@
 @use "sass:math";
 
+// %main-radial {
+//   background-size: 100% 100%;
+//   background-position: 0px 0px;
+//   background-image: radial-gradient(50% 50% at 0% 0%, #242424 5%, #32323275 30%, #00000000 100%);
+// }
+
+// :root{
+//   --main-radial-grad: radial-gradient(circle at 25% 0%,
+//   transparent 0%,
+//   #32323275 70%,
+//   var(--bg-color) 95%);
+
+// --sec-radial-grad: radial-gradient(circle at -25% 0%,
+//   transparent 0%,
+//   #32323275 70%,
+//   var(--bg-color) 95%);
+// }
+
 .textbox {
   display: flex;
   flex-direction: column;
@@ -273,24 +291,7 @@
   position: relative;
   width: 90%;
   margin-inline: auto;
-  // box-shadow: 0px 0px 168.9px rgba(0, 0, 0, 0.005),
-  //   0px 0px 144.3px rgba(0, 0, 0, 0.021), 0px 0px 103.7px rgba(0, 0, 0, 0.047),
-  //   0px 0px 79.1px rgba(0, 0, 0, 0.064), 0px 0px 248px rgba(0, 0, 0, 0.07);
   isolation: isolate;
-
-  // &::before {
-  //   content: "";
-  //   width: 350px;
-  //   height: 350px;
-  //   background-color: inherit;
-  //   position: absolute;
-  //   top: -25%;
-  //   left: 50%;
-  //   transform: translatex(-50%);
-  //   -webkit-clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
-  //   clip-path: inset(15% 15% 0 15% round 30% 30% 0% 0%);
-  //   z-index: -1;
-  // }
 }
 
 .future-wrap {
@@ -336,39 +337,46 @@
   grid-template-columns: repeat(3, 1fr);
   perspective: 1500px;
 
-  li {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    transition-property: transform;
-    display: block;
-    list-style: none;
-    text-align: left;
-    padding: 25px;
-    border-radius: 10px;
-    color: silver;
-    backdrop-filter: blur(5px);
-    border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at 25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
-    transform-origin: center;
-    transition: all 0.5s ease-in-out;
-    p {
+ 
+  $random-colors: #3498db1d, #e74d3c1d, #2ecc701d, #f39c121d, #9b59b61d, #e739b61d;
+
+  @for $i from 1 through 6 {
+    li:nth-child(#{$i}) {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition-property: transform;
+      display: block;
+      list-style: none;
+      text-align: left;
+      padding: 25px;
+      border-radius: 10px;
+      color: silver;
+      backdrop-filter: blur(5px);
+      border: var(--light-border) 1px solid;
+  
+      background-size: 100% 100%;
+      background-position: 0px 0px;
+      background-image: radial-gradient(100% 100% at 35% 35%, #32323275 63%, nth($random-colors, $i) 100%);
+      transform-origin: center;
+      transition: all 0.5s ease-in-out;
+       p {
       color: hsl(0, 0%, 65%);
       font-size: 14px;
     }
     &:hover {
       animation: swing 10s ease infinite alternate;
       .iconBadge {
-        box-shadow: 0px 0px 10px 3px rgb(0 0 0 / 20%);
+        box-shadow: 0px 0px 10px 3px nth($random-colors, $i);
       }
     }
+    }
   }
-}
+
+
+   
+  }
+
 @keyframes swing {
   0%,
   100% {
@@ -469,7 +477,6 @@
       top: 0;
       left: 0;
       width: 100%;
-      // background: radial-gradient(circle at 50% 0%, transparent 0%, #32323275 70%, var(--bg-color) 95%);
       background: linear-gradient(
         180deg,
         transparent 0%,
@@ -489,28 +496,21 @@
   }
 }
 
-.banner2 {
-  height: 100%;
-  width: 95%;
-  margin-inline: auto;
-  border-radius: 25px;
-  box-shadow: 0 0 50px -25px var(--bg-color);
-  // background: radial-gradient(
-  //     circle at 50% 0%,
-  //     #3232326a 0%,
-  //     #323232c2 70%,
-  //     var(--bg-color) 90%
-  //   ),
-  //   url("/public/grid.png");
-  background: radial-gradient(
-      circle at 50% 0%,
-      hsla(120, 20%, 80%, 0.3) 0%,
-      hsla(120, 20%, 80%, 0.5) 70%,
-      var(--bg-color) 90%
-    ),
-    url(/grid.png);
-  color: #202022;
-}
+// .banner2 {
+//   height: 100%;
+//   width: 95%;
+//   margin-inline: auto;
+//   border-radius: 25px;
+//   box-shadow: 0 0 50px -25px var(--bg-color);
+//   background: radial-gradient(
+//       circle at 50% 0%,
+//       hsla(120, 20%, 80%, 0.3) 0%,
+//       hsla(120, 20%, 80%, 0.5) 70%,
+//       var(--bg-color) 90%
+//     ),
+//     url(/grid.png);
+//   color: #202022;
+// }
 
 .integrate {
   // min-height: 60vh;
@@ -585,12 +585,7 @@
     // line-height: 24px;
     border: var(--light-border) 1px solid;
     border-radius: 15px;
-    background: radial-gradient(
-      circle at 25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--main-radial-grad);
     transition: all 0.5s ease-in;
 
     svg {
@@ -667,14 +662,19 @@
 }
 
 .bento {
-  // display:none;
   display: grid;
   grid-gap: 1em;
   grid-template-columns: repeat(12, 1fr);
-  // grid-template-rows: repeat(8, 8vw);
   grid-auto-flow: dense;
   margin: 0 auto;
   max-width: 1200px;
+
+  // ul:has(> :hover) > li:not(:hover) {
+  //   opacity: 0.65;
+  // }
+  // ul:has(> :focus) > li:not(:focus) {
+  //   opacity: 0.65;
+  // }
 
   .iconBadge {
     all: inherit;
@@ -684,12 +684,6 @@
       flex-shrink: 0;
       margin: 0 !important;
     }
-  }
-  ul:has(> :hover) > li:not(:hover) {
-    opacity: 0.65;
-  }
-  ul:has(> :focus) > li:not(:focus) {
-    opacity: 0.65;
   }
 
   .head {
@@ -706,12 +700,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     padding: 12px 24px;
     text-align: left;
   }
@@ -721,12 +710,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     padding: 12px 24px;
   }
 
@@ -735,12 +719,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     padding: 12px 24px;
   }
   .sec {
@@ -748,12 +727,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     padding: 12px 24px;
 
     .marquee {
@@ -803,12 +777,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     svg {
       width: 50px;
       height: unset;
@@ -848,12 +817,7 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: radial-gradient(
-      circle at -25% 0%,
-      transparent 0%,
-      #32323275 70%,
-      var(--bg-color) 95%
-    );
+    background: var(--sec-radial-grad);
     font-size: 14px;
     .textbox {
       flex-direction: column;
@@ -962,21 +926,16 @@
 .early-info {
   grid-column: auto/span 3;
   border-radius: 25px;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   border: var(--light-border) 1px solid;
-  background: radial-gradient(
-    circle at -25% 0%,
-    transparent 0%,
-    #32323275 70%,
-    var(--bg-color) 95%
-  );
+  background: var(--sec-radial-grad);
   padding: 12px 24px;
   text-align: left;
 
   h2 {
     padding: unset;
   }
-  li{
+  li {
     list-style: inside;
     list-style-type: disclosure-closed;
     font-size: 14px;
@@ -988,45 +947,38 @@
   justify-content: center;
   grid-column: auto/span 2;
   border-radius: 25px;
-  backdrop-filter: blur(10px);
+  // backdrop-filter: blur(10px);
   border: var(--light-border) 1px solid;
-  background: radial-gradient(
-    circle at -25% 0%,
-    transparent 0%,
-    #32323275 70%,
-    var(--bg-color) 95%
-  );
+  background: var(--sec-radial-grad);
   padding: 12px 24px;
   position: relative;
   isolation: isolate;
 
-    lord-icon {
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      z-index: -1;
-      bottom: 30%;
-      right: 0;
-      opacity: 0;
-      transition: all 0.9s ease-in-out, opacity 0.8s cubic-bezier(1, 0, 0, 1);
-    }
-    &:hover {
-      lord-icon {
-        translate: 50px 10px;
-        rotate: 20deg;
-        opacity: 1;
-      }
-    }
-
+  lord-icon {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    z-index: -1;
+    bottom: 30%;
+    right: 0;
+    opacity: 0;
+    transition: all 0.9s ease-in-out, opacity 0.8s cubic-bezier(1, 0, 0, 1);
   }
-
+  &:hover {
+    lord-icon {
+      translate: 50px 10px;
+      rotate: 20deg;
+      opacity: 1;
+    }
+  }
+}
 
 @media (max-width: 1200px) {
-  .future {
-    &::before {
-      display: none;
-    }
-  }
+  // .future {
+  //   &::before {
+  //     display: none;
+  //   }
+  // }
 }
 @media (max-width: 1100px) {
   .early-form #contact-form {
@@ -1050,7 +1002,7 @@
 @media (max-width: 900px) {
   .hero {
     // height: 85vh;
-    backdrop-filter: blur(0px);
+    // backdrop-filter: blur(0px);
   }
   .future {
     width: 97%;
@@ -1065,13 +1017,13 @@
 @media (max-width: 550px) {
   .hero {
     height: 80vh;
-    backdrop-filter: blur(2px);
-    background: radial-gradient(
-      circle at 50% 50%,
-      rgba(0, 0, 0, 0.9) 30%,
-      rgba(0, 0, 0, 0.1) 70%,
-      var(--bg-color) 95%
-    );
+    // backdrop-filter: blur(22px);
+    // background: radial-gradient(
+    //   circle at 50% 50%,
+    //   rgba(0, 0, 0, 0.9) 30%,
+    //   rgba(0, 0, 0, 0.1) 70%,
+    //   var(--bg-color) 95%
+    // );
     h1 {
       width: 100%;
       font-size: 2em;

@@ -135,7 +135,12 @@ const Home = () => {
           </motion.ul>
         </motion.div>
       </Section>
-
+      {/* <div className="image">
+                <img
+                  src={dash}
+                  alt="new category of multi-party payment transactions"
+                />
+              </div> */}
       <Section className="modern">
         <div className="bento">
           <motion.div className="head">
@@ -162,12 +167,6 @@ const Home = () => {
                 purchasing power of millions engaged in collaborative buying
                 with family and friends.
               </p>
-              {/* <div className="image">
-                <img
-                  src={dash}
-                  alt="new category of multi-party payment transactions"
-                />
-              </div> */}
             </div>
           </motion.div>
           <motion.div className="info3" variants={homeVariants}>
