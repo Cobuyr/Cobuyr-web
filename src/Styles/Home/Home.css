@@ -103,37 +103,61 @@
   width: 150px;
   height: 150px;
   border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3725490196) !important;
   margin: 2.5vw;
-  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
   text-transform: uppercase;
   position: relative;
-  background: linear-gradient(284deg, #3c3c3c, #69005d, #381669);
-  background-size: 300% 300%;
-  animation: grad 11s ease infinite;
+  background: transparent;
+  transition: all 3s ease-in-out;
 }
-.hero .mgBtn button::before, .hero .mgBtn button::after {
+.hero .mgBtn button lord-icon {
+  width: 50px;
+  height: 50px;
+  rotate: 90deg;
+  margin: 0;
+}
+.hero .mgBtn button::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 0%;
   left: 50%;
   translate: -50%;
-  background: var(--gradient-shadow);
-  background-size: 400%;
-  width: calc(100% - 5px);
-  height: calc(100% - 2px);
-  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  border: 1px solid hsla(0, 0%, 100%, 0.7);
+  border-radius: 50%;
   z-index: -1;
+  transition: all 3s ease-in-out;
 }
-.hero .mgBtn button::after {
-  transition: filter 0.9s ease-out;
+.hero .mgBtn button:focus, .hero .mgBtn button:focus-visible {
+  outline: none;
 }
-.hero .mgBtn button:hover::before, .hero .mgBtn button:hover::after {
-  animation: shadow 20s linear infinite;
+.hero .mgBtn button:hover {
+  border: 1px solid hsla(335, 90%, 60%, 0.7) !important;
+  animation: morph 5s ease-in-out infinite both;
 }
-.hero .mgBtn button:hover::after {
-  filter: blur(5px);
+.hero .mgBtn button:hover::before {
+  width: calc(100% + 10px);
+  height: calc(100% + 10px);
+  top: calc(0% - 5px);
+  animation: morph 10s ease-in-out infinite backwards;
 }
 
+@keyframes morph {
+  0%, 100% {
+    border-radius: 50%;
+  }
+  25%, 75% {
+    border-radius: 60% 40% 30% 50%/60% 30% 50% 40%;
+  }
+  50% {
+    border-radius: 30% 60% 50% 40%/50% 60% 30% 60%;
+  }
+}
 .mainText {
   font-size: clamp(1.2em, 5vw, 4em);
   background-image: linear-gradient(313deg, rgb(179, 143, 241) 0%, #f53d8a 100%);

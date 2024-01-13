@@ -61,7 +61,16 @@ const Home = () => {
           }}
         >
           <MagneticBtn>
-            <button>Join The Waitlist</button>
+            
+            <button>
+            <lord-icon
+    src="https://cdn.lordicon.com/vduvxizq.json"
+    trigger="hover"
+    target="button"
+    colors="primary:#ffffff"
+    >
+</lord-icon>
+              Join The Waitlist</button>
           </MagneticBtn>
         </motion.div>
       </Section>
