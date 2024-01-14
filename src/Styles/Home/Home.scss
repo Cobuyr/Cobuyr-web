@@ -328,7 +328,7 @@
   justify-content: space-evenly;
   isolation: isolate;
 
-  & * {
+  & *:not(.badge *) {
     margin-block: 10px;
   }
 }

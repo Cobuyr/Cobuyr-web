@@ -2,7 +2,7 @@
 // import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
 // import dash from "/dash.jpg";
-
+import { Link } from "react-router-dom";
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 import Sub from "../Components/sub";
@@ -61,16 +61,23 @@ const Home = () => {
           }}
         >
           <MagneticBtn>
-            
-            <button>
-            <lord-icon
-    src="https://cdn.lordicon.com/vduvxizq.json"
-    trigger="hover"
-    target="button"
-    colors="primary:#ffffff"
-    >
-</lord-icon>
-              Join The Waitlist</button>
+            <button
+              type="button"
+              onClick = {(e)=>{
+                e.preventDefault();
+                window.scrollTo({
+                top: document.querySelector("#referral").offsetTop,
+                behavior: "smooth",
+             });}}
+            >
+              <lord-icon
+                src="https://cdn.lordicon.com/vduvxizq.json"
+                trigger="hover"
+                target="button"
+                colors="primary:#ffffff"
+              ></lord-icon>
+              Join Referral
+            </button>
           </MagneticBtn>
         </motion.div>
       </Section>

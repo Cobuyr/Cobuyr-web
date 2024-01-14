@@ -18,7 +18,7 @@ const Sub = () => {
   };
 
   return (
-    <Section className="early">
+    <Section className="early" id="referral">
       <div className="early-info">
         <motion.div variants={homeVariants}>
           <Badge

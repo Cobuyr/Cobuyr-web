@@ -222,7 +222,7 @@
   justify-content: space-evenly;
   isolation: isolate;
 }
-.future-textbox * {
+.future-textbox *:not(.badge *) {
   margin-block: 10px;
 }
 
