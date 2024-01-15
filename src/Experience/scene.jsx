@@ -5,6 +5,7 @@ import { PerformanceMonitor } from "@react-three/drei";
 import Experience from "./Experience.jsx";
 import LineHero from "./LineHero";
 import Wavy from "./wavy";
+import Ring from "./Ring";
 
 const Scene = () => {
   const [dpr, setDpr] = useState(1.5);
@@ -25,7 +26,8 @@ const Scene = () => {
           onDecline={() => setDpr(1)}
         ></PerformanceMonitor>
         {/* <Experience /> */}
-        <Wavy />
+        {/* <Wavy /> */}
+        <Ring/>
       </Canvas>
       {/* <LineHero/> */}
     </div>

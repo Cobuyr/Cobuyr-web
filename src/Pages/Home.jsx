@@ -1,86 +1,65 @@
 /* eslint-disable react/no-unescaped-entities */
-// import MagneticButtons from "../Components/magnetBtn";
 import "../Styles/Home/Home.css";
-// import dash from "/dash.jpg";
-import { Link } from "react-router-dom";
+import dash from "/dash.jpg";
+
 import { Badge, IconBadge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 import Sub from "../Components/sub";
 import Footer from "../Components/Footer/footer";
 import Transition from "../Components/Transition";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
+import { useRef } from "react";
 import Scene from "../Experience/scene";
 
 // import LiquidButton from "../Components/magnetBtn";
 
-const Home = () => {
-  const visible = {
-    opacity: 1,
-    x: 0,
-    y: 0,
-    scaleZ: 1,
-    transition: { staggerChildren: 0.4, duration: 0.5 },
-  };
+const visible = {
+  opacity: 1,
+  x: 0,
+  y: 0,
+  scaleZ: 1,
+  transition: { staggerChildren: 0.4, duration: 0.5 },
+};
 
-  const homeVariants = {
-    hidden: { opacity: 0, y: 20, scaleZ: 0 },
-    visible,
-  };
+const homeVariants = {
+  hidden: { opacity: 0, y: 20, scaleZ: 0 },
+  visible,
+};
+
+const Home = () => {
+  const imgRef = useRef();
+  // const { scrollYProgress } = useScroll({
+  //   target: imgRef,
+  //   offset: ["start end", "end start"],
+  // });
+
+  // const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.4]);
+  // const x = useTransform(
+  //   scrollYProgress,
+  //   [0.1, 0.8, 0.9, 1],
+  //   ["0%", "50%", "55%", "100%"]
+  // );
 
   return (
     <>
-      {/* <Scene/> */}
-      <Section className="hero">
-        <motion.div variants={homeVariants}>
-          <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
-        </motion.div>
+      <Scene />
+      <Hero />
 
-        <motion.h1 variants={homeVariants}>
-          Revolutionize Checkout with{" "}
-          <span className="mainText">Social Buying</span>
-        </motion.h1>
-        <motion.p variants={homeVariants}>
-          Enhance your checkout experience with Cobuyr's cutting-edge Social
-          Buying platform. Allow customers to{" "}
-          <span className="highlight">
-            purchase together, boosting sales and fostering a sense of
-            community.
-          </span>
-        </motion.p>
-        {/* <motion.button className="primary-btn" variants={homeVariants}>
-          Join Waitlist
-        </motion.button> */}
-
+      <motion.section className="image-wrap" ref={imgRef}>
         <motion.div
-          className="mgBtn"
-          variants={{
-            hidden: { opacity: 0, scaleZ: 0 },
-            visible,
-          }}
+          variants={homeVariants}
+          className="image"
+          // style={{ opacity, scale, x }}
         >
-          <MagneticBtn>
-            <button
-              type="button"
-              onClick = {(e)=>{
-                e.preventDefault();
-                window.scrollTo({
-                top: document.querySelector("#referral").offsetTop,
-                behavior: "smooth",
-             });}}
-            >
-              <lord-icon
-                src="https://cdn.lordicon.com/vduvxizq.json"
-                trigger="hover"
-                target="button"
-                colors="primary:#ffffff"
-              ></lord-icon>
-              Join Referral
-            </button>
-          </MagneticBtn>
+          <img
+            src={dash}
+            alt="new category of multi-party payment transactions"
+          />
         </motion.div>
-      </Section>
+      </motion.section>
 
       <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
@@ -151,12 +130,7 @@ const Home = () => {
           </motion.ul>
         </motion.div>
       </Section>
-      {/* <div className="image">
-                <img
-                  src={dash}
-                  alt="new category of multi-party payment transactions"
-                />
-              </div> */}
+
       <Section className="modern">
         <div className="bento">
           <motion.div className="head">
@@ -538,3 +512,72 @@ const Home = () => {
 
 const TransHome = Transition(Home);
 export default TransHome;
+
+export function Hero() {
+  const heroRef = useRef(null);
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["end end", "end start"],
+  // });
+
+  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
+
+  return (
+    <Section className="hero-wrap">
+      <motion.div className="hero" 
+      ref={heroRef} 
+      // style={{ opacity, scale }}
+      >
+        <motion.div variants={homeVariants}>
+          <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
+        </motion.div>
+
+        <motion.h1 variants={homeVariants}>
+          Revolutionize Checkout with{" "}
+          <span className="mainText">Social Buying</span>
+        </motion.h1>
+        <motion.p variants={homeVariants}>
+          Enhance your checkout experience with Cobuyr's cutting-edge Social
+          Buying platform. Allow customers to{" "}
+          <span className="highlight">
+            purchase together, boosting sales and fostering a sense of
+            community.
+          </span>
+        </motion.p>
+        {/* <motion.button className="primary-btn" variants={homeVariants}>
+          Join Waitlist
+        </motion.button> */}
+
+        <motion.div
+          className="mgBtn"
+          variants={{
+            hidden: { opacity: 0, scaleZ: 0 },
+            visible,
+          }}
+        >
+          <MagneticBtn>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                window.scrollTo({
+                  top: document.querySelector("#referral").offsetTop,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              <lord-icon
+                src="https://cdn.lordicon.com/vduvxizq.json"
+                trigger="hover"
+                target="button"
+                colors="primary:#ffffff"
+              ></lord-icon>
+              Join Referral
+            </button>
+          </MagneticBtn>
+        </motion.div>
+      </motion.div>
+    </Section>
+  );
+}
