@@ -5,51 +5,41 @@ import { Suspense, useRef, useEffect, useLayoutEffect } from "react";
 import { easing } from "maath";
 import { DoubleSide } from "three";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-
 import { useTransform, useScroll, useTime } from "framer-motion";
 
 export default function Ring() {
   const RingRef = useRef();
+
   const degreesToRadians = (degrees) => (degrees * Math.PI) / 180;
+
   useEffect(() => {
     RingRef.current.rotation.set(-Math.PI / 0.25, -Math.PI / 2, 0);
   }, []);
 
-  //   useFrame((state, delta) => {
-  //     const xRotation = state.pointer.x; // Mouse movement along the X-axis
-  //     const yRotation = state.pointer.y; // Mouse movement along the Y-axis
-
-  //     const targetRotation = [
-  //       -Math.PI / 0.1 - yRotation / 2,
-  //       -Math.PI / 2 - xRotation,
-  //       0,
-  //     ];
-  //     easing.dampE(RingRef.current.rotation, targetRotation, 0.25, delta);
-  //   });
-
-  const gl = useThree((state) => state.gl);
   const { scrollYProgress } = useScroll();
   const yAngle = useTransform(
     scrollYProgress,
     [0, 0.1],
-    [0.1, degreesToRadians(180)]
+    [0, degreesToRadians(180)]
   );
 
-  const Xpos = useTransform(
-    scrollYProgress,
-    [0, 0.1],
-    [0, -2]
-  );
-  //   const time = useTime();
+  const Xpos = useTransform(scrollYProgress, [0, 0.1], [0, -2]);
 
-  useFrame(() => {
-    
-    // const newXPosition = 2 * scrollYProgress.get(); // Adjust the factor based on your requirement
-    // const newYPosition = 0; // Set the desired y-position
-    
-    RingRef.current.rotation.set(0, yAngle.get(), 0);
+  useFrame((state, delta) => {
+    const xRotation = state.pointer.x; // Mouse movement along the X-axis
+    const yRotation = state.pointer.y; // Mouse movement along the Y-axis
+
+    const targetRotation = [
+      -Math.PI / 0.1 - yRotation / 2,
+      -Math.PI / 0.1 - xRotation / 2,
+      0,
+    ];
+
+    RingRef.current.rotation.y = yAngle.get();
     RingRef.current.position.set(Xpos.get(), 0, 0);
-    // RingRef.current.position.set(newXPosition, newYPosition, 0);
+    
+    easing.dampE(RingRef.current.rotation, targetRotation, 0.9, delta);
+    
   });
 
   const isMobile = window.innerWidth < 768;

@@ -49,6 +49,7 @@
   height: 100vh;
   position: sticky;
   inset: 0;
+  filter: blur(6px);
   /* background: #252525;
   background: linear-gradient(15deg, #101010 0%, #252525 100%); */
 }
