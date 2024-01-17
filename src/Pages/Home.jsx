@@ -30,29 +30,32 @@ const homeVariants = {
 
 const Home = () => {
   const imgRef = useRef();
-  // const { scrollYProgress } = useScroll({
-  //   target: imgRef,
-  //   offset: ["start end", "end start"],
-  // });
+  const { scrollYProgress } = useScroll({
+    target: imgRef,
+    offset: ["start end", "end start"],
+  });
 
-  // const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
-  // const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.4]);
-  // const x = useTransform(
-  //   scrollYProgress,
-  //   [0.1, 0.8, 0.9, 1],
-  //   ["0%", "50%", "55%", "100%"]
-  // );
+  const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.4]);
+  const x = useTransform(
+    scrollYProgress,
+    [0.1, 0.8, 0.9, 1],
+    ["0%", "50%", "55%", "100%"]
+  );
 
   return (
     <>
-      <Scene />
+    <div className="scene">
+       <Scene />
+    </div>
+     
       <Hero />
 
       <motion.section className="image-wrap" ref={imgRef}>
         <motion.div
           variants={homeVariants}
           className="image"
-          // style={{ opacity, scale, x }}
+          style={{ opacity, scale, x }}
         >
           <img
             src={dash}
@@ -515,19 +518,19 @@ export default TransHome;
 
 export function Hero() {
   const heroRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: heroRef,
-  //   offset: ["end end", "end start"],
-  // });
+  const { scrollYProgress } = useScroll({
+    target: heroRef,
+    offset: ["end end", "end start"],
+  });
 
-  // const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  // const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
+  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
 
   return (
     <Section className="hero-wrap">
       <motion.div className="hero" 
       ref={heroRef} 
-      // style={{ opacity, scale }}
+      style={{ opacity, scale }}
       >
         <motion.div variants={homeVariants}>
           <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />

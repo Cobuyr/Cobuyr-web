@@ -79,6 +79,11 @@
   margin: 0 !important;
 }
 
+.scene {
+  height: 300vh;
+  position: relative;
+}
+
 .hero-wrap {
   margin: unset;
   padding: unset;
@@ -207,10 +212,10 @@
 
 .image {
   position: sticky;
+  inset: 0;
   border-radius: 20px;
   overflow: hidden;
   margin-block: 5vh;
-  position: relative;
 }
 .image img {
   width: 100%;
