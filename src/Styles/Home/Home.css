@@ -79,11 +79,6 @@
   margin: 0 !important;
 }
 
-.scene {
-  height: 300vh;
-  position: relative;
-}
-
 .hero-wrap {
   margin: unset;
   padding: unset;
@@ -205,17 +200,36 @@
   margin-block: 2.5vh;
 }
 
-.image-wrap {
-  height: 150vh;
+.scrollwrap {
+  height: 500vh;
   position: relative;
 }
 
-.image {
-  position: sticky;
+.branch1wrap {
+  display: flex;
+  align-items: center;
+  padding-inline: 50px;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
   inset: 0;
-  border-radius: 20px;
+}
+
+.mainText {
+  line-height: normal;
+  text-align: left;
+  flex-shrink: 1;
+  padding-inline: unset;
+  font-size: clamp(1.1em, 5vw, 3em);
+  max-width: 500px;
+}
+
+.image {
+  border-radius: 10px;
   overflow: hidden;
   margin-block: 5vh;
+  margin-inline: auto;
+  flex-grow: 1;
 }
 .image img {
   width: 100%;

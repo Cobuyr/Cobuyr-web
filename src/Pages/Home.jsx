@@ -28,41 +28,33 @@ const homeVariants = {
   visible,
 };
 
+const animationOrder = {
+  init: 0,
+  scaleInLeft: 0.1,
+  LtextFadein: 0.15,
+  LtextFadeinEnd: 0.2,
+  branch1End: 0.3,
+  shiftRight: 0.3,
+  RtextFadein: 0.35,
+  RtextFadeinEnd: 0.4,
+  jumboTextIn: 0.5,
+  jumboTextInEnd: 0.55,
+  PartnerTextin: 0.7,
+  PartnerTextinEnd: 0.75,
+  PartnerScrollvelocity: 0.75,
+  FtCover: 0.9,
+  end: 1,
+};
+
 const Home = () => {
-  const imgRef = useRef();
-  const { scrollYProgress } = useScroll({
-    target: imgRef,
-    offset: ["start end", "end start"],
-  });
-
-  const opacity = useTransform(scrollYProgress, [0.6, 1], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 1.4]);
-  const x = useTransform(
-    scrollYProgress,
-    [0.1, 0.8, 0.9, 1],
-    ["0%", "50%", "55%", "100%"]
-  );
-
   return (
     <>
-    <div className="scene">
-       <Scene />
-    </div>
-     
-      <Hero />
+      <div className="scene">
+        <Scene />
+      </div>
 
-      <motion.section className="image-wrap" ref={imgRef}>
-        <motion.div
-          variants={homeVariants}
-          className="image"
-          style={{ opacity, scale, x }}
-        >
-          <img
-            src={dash}
-            alt="new category of multi-party payment transactions"
-          />
-        </motion.div>
-      </motion.section>
+      <Hero />
+      <ScrollImg />
 
       <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
@@ -516,6 +508,128 @@ const Home = () => {
 const TransHome = Transition(Home);
 export default TransHome;
 
+
+export const ScrollImg = () => {
+  const TargetRef = useRef();
+  const { scrollYProgress } = useScroll({
+    target: TargetRef,
+    offset: ["start end", "end start"],
+  });
+
+  const opacity = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.scaleInLeft,
+      animationOrder.LtextFadeinEnd,
+      animationOrder.branch1End,
+    ],
+    [0, 1, 1, 1]
+  );
+  const scale = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.scaleInLeft,
+      animationOrder.LtextFadeinEnd,
+      animationOrder.branch1End,
+      animationOrder.RtextFadein,
+    ],
+    [5, 3, 2, 2, 2 ]
+  );
+  const x = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.scaleInLeft,
+      animationOrder.LtextFadeinEnd,
+      animationOrder.branch1End,
+      animationOrder.RtextFadein,
+    ],
+    ["120%", "100%", "100%", "100%", "-100%"]
+  );
+
+  const T1opacity = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.LtextFadein,
+      animationOrder.LtextFadeinEnd,
+      animationOrder.branch1End,
+      0.325,
+    ],
+    [0, 0, 1, 1, 0]
+  );
+  const T1scale = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.LtextFadein,
+      animationOrder.LtextFadeinEnd,
+      animationOrder.branch1End,
+      0.325
+    ],
+    [0, 1, 1, 1, 0]
+  );
+
+  const T2opacity = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.shiftRight,
+      animationOrder.RtextFadein,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.jumboTextIn,
+    ],
+    [0, 0, 1, 1, 0]
+  );
+  const T2scale = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.shiftRight,
+      animationOrder.RtextFadein,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.jumboTextIn,
+    ],
+    [0, 0, 1, 1, 0]
+  );
+
+  
+  return (
+    <motion.section className="scrollwrap" 
+    ref={TargetRef}
+    >
+      <div className="branch1wrap">
+          <motion.h2
+        // variants={homeVariants}
+        className="mainText"
+        style={{ opacity:T1opacity, scale:T1scale }}
+      >
+      Fully Customizable dashboard
+      </motion.h2>
+      <motion.div
+        // variants={homeVariants}
+        className="image"
+        style={{ opacity, scale, x }}
+      >
+        <img
+          src={dash}
+          alt="new category of multi-party payment transactions"
+        />
+      </motion.div>
+      <motion.h2
+        // variants={homeVariants}
+        className="mainText"
+        style={{ opacity:T2opacity, scale:T2scale }}
+      >
+      Extremely Detailed Analytics and product tracking
+      </motion.h2>
+      </div>
+       </motion.section>
+  );
+};
+
 export function Hero() {
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -528,10 +642,7 @@ export function Hero() {
 
   return (
     <Section className="hero-wrap">
-      <motion.div className="hero" 
-      ref={heroRef} 
-      style={{ opacity, scale }}
-      >
+      <motion.div className="hero" ref={heroRef} style={{ opacity, scale }}>
         <motion.div variants={homeVariants}>
           <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
         </motion.div>

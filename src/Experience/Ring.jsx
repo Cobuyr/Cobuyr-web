@@ -23,7 +23,8 @@ export default function Ring() {
     [0, degreesToRadians(180)]
   );
 
-  const Xpos = useTransform(scrollYProgress, [0, 0.1], [0, -2]);
+  const Xpos = useTransform(scrollYProgress, [0, 0.1], [0, 2]);
+  // const scale = useTransform(scrollYProgress, [0, 0.1], [1, 0.5]);
 
   useFrame((state, delta) => {
     const xRotation = state.pointer.x; // Mouse movement along the X-axis
@@ -34,14 +35,15 @@ export default function Ring() {
       -Math.PI / 0.1 - xRotation / 2,
       0,
     ];
-
-    RingRef.current.rotation.y = yAngle.get();
-    RingRef.current.position.set(Xpos.get(), 0, 0);
-    
     easing.dampE(RingRef.current.rotation, targetRotation, 0.9, delta);
     
-  });
+    // RingRef.current.rotation.y = yAngle.get();
+    RingRef.current.position.set(0, Xpos.get(), 0);
+    // RingRef.current.scale.set([scale]);
+    
 
+    // console.log(RingRef.current.scale);
+  });
   const isMobile = window.innerWidth < 768;
 
   return (

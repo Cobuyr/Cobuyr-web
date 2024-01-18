@@ -47,9 +47,9 @@
 #canvas-container {
   width: calc(100vw - 5px);
   height: 100vh;
-  position: sticky;
+  /* position: sticky;
   inset: 0;
-  filter: blur(6px);
+  filter: blur(6px); */
   /* background: #252525;
   background: linear-gradient(15deg, #101010 0%, #252525 100%); */
 }

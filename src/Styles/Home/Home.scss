@@ -117,8 +117,8 @@
   }
 }
 .scene{
-  height: 300vh;
-  position: relative;
+  // height: 300vh;
+  // position: relative;
 }
 .hero-wrap{
   margin: unset;
@@ -303,19 +303,36 @@
 }
 
 
-.image-wrap{
-  height: 150vh;
+.scrollwrap{
+  height: 500vh;
   position: relative;
   // overflow-x: hidden;
 }
+.branch1wrap{
+  display: flex;
+  align-items: center;
+  padding-inline: 50px;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  inset: 0;
+}
+.mainText{
+  line-height: normal;
+  text-align: left;
+  flex-shrink: 1;
+  padding-inline: unset;
+  font-size: clamp(1.1em, 5vw, 3em);
+  max-width: 500px;
+}
  .image {
-    // width: 60%;
+    // width: 70%;
     // height:100vh;
-    position: sticky;
-    inset: 0;
-    border-radius: 20px;
+    border-radius: 10px;
     overflow: hidden;
     margin-block: 5vh;
+    margin-inline: auto;
+    flex-grow: 1;
 
     // &::before {
     //   content: "";
