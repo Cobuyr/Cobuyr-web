@@ -201,7 +201,7 @@
 }
 
 .scrollwrap {
-  height: 500vh;
+  height: 1000vh;
   position: relative;
 }
 
@@ -212,6 +212,16 @@
   justify-content: center;
   width: 100%;
   position: fixed;
+  inset: 0;
+}
+
+.branch2wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
   inset: 0;
 }
 

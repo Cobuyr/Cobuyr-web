@@ -36,13 +36,14 @@ const animationOrder = {
   branch1End: 0.3,
   shiftRight: 0.3,
   RtextFadein: 0.35,
-  RtextFadeinEnd: 0.4,
-  jumboTextIn: 0.5,
-  jumboTextInEnd: 0.55,
-  PartnerTextin: 0.7,
-  PartnerTextinEnd: 0.75,
-  PartnerScrollvelocity: 0.75,
-  FtCover: 0.9,
+  RtextFadeinEnd: 0.55,
+  branch2End: 0.55,
+  jumboTextIn: 0.6,
+  jumboTextInEnd: 0.65,
+  PartnerTextin: 0.85,
+  PartnerTextinEnd: 0.9,
+  PartnerScrollvelocity: 0.95,
+  FtCover: 1,
   end: 1,
 };
 
@@ -508,7 +509,6 @@ const Home = () => {
 const TransHome = Transition(Home);
 export default TransHome;
 
-
 export const ScrollImg = () => {
   const TargetRef = useRef();
   const { scrollYProgress } = useScroll({
@@ -523,8 +523,11 @@ export const ScrollImg = () => {
       animationOrder.scaleInLeft,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.branch2End,
+          animationOrder.jumboTextIn,
     ],
-    [0, 1, 1, 1]
+    [0, 1, 1, 1, 1, 0, 0]
   );
   const scale = useTransform(
     scrollYProgress,
@@ -535,7 +538,7 @@ export const ScrollImg = () => {
       animationOrder.branch1End,
       animationOrder.RtextFadein,
     ],
-    [5, 3, 2, 2, 2 ]
+    [5, 3, 2, 2, 2]
   );
   const x = useTransform(
     scrollYProgress,
@@ -545,8 +548,10 @@ export const ScrollImg = () => {
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
       animationOrder.RtextFadein,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.jumboTextIn,
     ],
-    ["120%", "100%", "100%", "100%", "-100%"]
+    ["120%", "100%", "100%", "100%", "-100%", "-100%", "-200%"]
   );
 
   const T1opacity = useTransform(
@@ -567,7 +572,7 @@ export const ScrollImg = () => {
       animationOrder.LtextFadein,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
-      0.325
+      0.325,
     ],
     [0, 1, 1, 1, 0]
   );
@@ -579,9 +584,10 @@ export const ScrollImg = () => {
       animationOrder.shiftRight,
       animationOrder.RtextFadein,
       animationOrder.RtextFadeinEnd,
+      animationOrder.branch2End,
       animationOrder.jumboTextIn,
     ],
-    [0, 0, 1, 1, 0]
+    [0, 0, 1, 1,0, 0]
   );
   const T2scale = useTransform(
     scrollYProgress,
@@ -590,43 +596,71 @@ export const ScrollImg = () => {
       animationOrder.shiftRight,
       animationOrder.RtextFadein,
       animationOrder.RtextFadeinEnd,
+      animationOrder.branch2End,
       animationOrder.jumboTextIn,
+    ],
+    [0, 0, 1, 1, 0, 0]
+  );
+
+  const Jopacity = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.jumboTextIn,
+      animationOrder.jumboTextInEnd,
+      animationOrder.PartnerTextin,
     ],
     [0, 0, 1, 1, 0]
   );
+  const Jscale = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.RtextFadeinEnd,
+      animationOrder.jumboTextIn,
+      animationOrder.jumboTextInEnd,
+      0.77,
+      animationOrder.PartnerTextin,
+    ],
+    [0, 0.5, 1, 1, 0.5, 0]
+  );
 
-  
   return (
-    <motion.section className="scrollwrap" 
-    ref={TargetRef}
-    >
+    <motion.section className="scrollwrap" ref={TargetRef}>
       <div className="branch1wrap">
-          <motion.h2
-        // variants={homeVariants}
-        className="mainText"
-        style={{ opacity:T1opacity, scale:T1scale }}
-      >
-      Fully Customizable dashboard
-      </motion.h2>
-      <motion.div
-        // variants={homeVariants}
-        className="image"
-        style={{ opacity, scale, x }}
-      >
-        <img
-          src={dash}
-          alt="new category of multi-party payment transactions"
-        />
-      </motion.div>
-      <motion.h2
-        // variants={homeVariants}
-        className="mainText"
-        style={{ opacity:T2opacity, scale:T2scale }}
-      >
-      Extremely Detailed Analytics and product tracking
-      </motion.h2>
+        <motion.h2
+          // variants={homeVariants}
+          className="mainText"
+          style={{ opacity: T1opacity, scale: T1scale }}
+        >
+          Fully Customizable dashboard
+        </motion.h2>
+        <motion.div
+          // variants={homeVariants}
+          className="image"
+          style={{ opacity, scale, x }}
+        >
+          <img
+            src={dash}
+            alt="new category of multi-party payment transactions"
+          />
+        </motion.div>
+        <motion.h2
+          // variants={homeVariants}
+          className="mainText"
+          style={{ opacity: T2opacity, scale: T2scale }}
+        >
+          Extremely Detailed Analytics and product tracking
+        </motion.h2>
       </div>
-       </motion.section>
+
+      <div className="branch2wrap">
+        <motion.h1 className="h1" style={{ opacity: Jopacity, scale: Jscale }}>
+          Joint Purchase <br/> for all your customers...
+        </motion.h1>
+      </div>
+    </motion.section>
   );
 };
 
