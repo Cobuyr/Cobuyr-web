@@ -12,6 +12,7 @@ import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
 import { useRef } from "react";
 import Scene from "../Experience/scene";
+import Velocity from "../Components/Velocity";
 
 // import LiquidButton from "../Components/magnetBtn";
 
@@ -525,7 +526,7 @@ export const ScrollImg = () => {
       animationOrder.branch1End,
       animationOrder.RtextFadeinEnd,
       animationOrder.branch2End,
-          animationOrder.jumboTextIn,
+      animationOrder.jumboTextIn,
     ],
     [0, 1, 1, 1, 1, 0, 0]
   );
@@ -587,7 +588,7 @@ export const ScrollImg = () => {
       animationOrder.branch2End,
       animationOrder.jumboTextIn,
     ],
-    [0, 0, 1, 1,0, 0]
+    [0, 0, 1, 1, 0, 0]
   );
   const T2scale = useTransform(
     scrollYProgress,
@@ -601,7 +602,32 @@ export const ScrollImg = () => {
     ],
     [0, 0, 1, 1, 0, 0]
   );
-
+  // PartnerTextin: 0.85,
+  // PartnerTextinEnd: 0.9,
+  // PartnerScrollvelocity: 0.95,
+  // FtCover: 1,
+  const Popacity = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.PartnerTextin,
+      animationOrder.PartnerTextinEnd,
+      animationOrder.PartnerScrollvelocity,
+      animationOrder.FtCover,
+    ],
+    [0, 0, 1, 1, 0]
+  );
+  const Pscale = useTransform(
+    scrollYProgress,
+    [
+      animationOrder.init,
+      animationOrder.PartnerTextin,
+      animationOrder.PartnerTextinEnd,
+      animationOrder.PartnerScrollvelocity,
+      animationOrder.FtCover,
+    ],
+    [0, 0, 1, 1, 0]
+  );
   const Jopacity = useTransform(
     scrollYProgress,
     [
@@ -656,9 +682,61 @@ export const ScrollImg = () => {
       </div>
 
       <div className="branch2wrap">
-        <motion.h1 className="h1" style={{ opacity: Jopacity, scale: Jscale }}>
-          Joint Purchase <br/> for all your customers...
+        <motion.h1 style={{ opacity: Jopacity, scale: Jscale }}>
+          Joint Purchase <br /> for all your customers...
         </motion.h1>
+      </div>
+  
+      <div className="branch3wrap">
+        <motion.h2 style={{ opacity: Popacity, scale: Pscale }}>
+          Quick and easy Integration with any E-commerce Platform.
+        </motion.h2>
+        <Velocity/>
+        <motion.div className="partner">
+          {/* <h3>Proudly Backed By </h3> */}
+          <div className=" marquee">
+            <ul className="marquee__group ">
+              <li>
+                <Icon name={"shopify"} />
+              </li>
+              <li>
+                <Icon name={"woo"} />
+              </li>
+              <li>
+                <Icon name={"wix"} />
+              </li>
+              <li>
+                <Icon name={"magento-full"} />
+              </li>
+              <li>
+                <Icon name={"salesforce"} />
+              </li>
+              <li>
+                <Icon name={"paypal"} />
+              </li>
+            </ul>
+            <ul aria-hidden="true" className="marquee__group ">
+              <li>
+                <Icon name={"shopify"} />
+              </li>
+              <li>
+                <Icon name={"woo"} />
+              </li>
+              <li>
+                <Icon name={"wix"} />
+              </li>
+              <li>
+                <Icon name={"magento-full"} />
+              </li>
+              <li>
+                <Icon name={"salesforce"} />
+              </li>
+              <li>
+                <Icon name={"paypal"} />
+              </li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   );
