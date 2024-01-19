@@ -29,23 +29,37 @@ const homeVariants = {
   visible,
 };
 
+// const animationOrder = {
+//   init: 0,
+//   scaleInLeft: 0.1,
+//   LtextFadein: 0.15,
+//   LtextFadeinEnd: 0.2,
+//   branch1End: 0.3,
+//   shiftRight: 0.3,
+//   RtextFadein: 0.35,
+//   RtextFadeinEnd: 0.55,
+//   branch2End: 0.55,
+//   jumboTextIn: 0.6,
+//   jumboTextInEnd: 0.65,
+//   PartnerTextin: 0.85,
+//   PartnerTextinEnd: 0.9,
+//   PartnerScrollvelocity: 0.95,
+//   FtCover: 1,
+//   end: 1,
+// };
 const animationOrder = {
   init: 0,
   scaleInLeft: 0.1,
-  LtextFadein: 0.15,
-  LtextFadeinEnd: 0.2,
-  branch1End: 0.3,
-  shiftRight: 0.3,
-  RtextFadein: 0.35,
-  RtextFadeinEnd: 0.55,
-  branch2End: 0.55,
-  jumboTextIn: 0.6,
-  jumboTextInEnd: 0.65,
-  PartnerTextin: 0.85,
-  PartnerTextinEnd: 0.9,
-  PartnerScrollvelocity: 0.95,
-  FtCover: 1,
-  end: 1,
+  LtextFadein: 0.25,
+  LtextFadeinEnd: 0.3,
+  branch1End: 0.4,
+  shiftRight: 0.4,
+  RtextFadein: 0.55,
+  RtextFadeinEnd: 0.75,
+  branch2End: 0.75,
+  jumboTextIn: 0.8,
+  jumboTextInEnd: 0.85,
+  PartnerTextin: 1,
 };
 
 const Home = () => {
@@ -562,7 +576,7 @@ export const ScrollImg = () => {
       animationOrder.LtextFadein,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
-      0.325,
+      0.425,
     ],
     [0, 0, 1, 1, 0]
   );
@@ -573,7 +587,7 @@ export const ScrollImg = () => {
       animationOrder.LtextFadein,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
-      0.325,
+      0.425,
     ],
     [0, 1, 1, 1, 0]
   );
@@ -602,32 +616,6 @@ export const ScrollImg = () => {
     ],
     [0, 0, 1, 1, 0, 0]
   );
-  // PartnerTextin: 0.85,
-  // PartnerTextinEnd: 0.9,
-  // PartnerScrollvelocity: 0.95,
-  // FtCover: 1,
-  const Popacity = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.PartnerTextin,
-      animationOrder.PartnerTextinEnd,
-      animationOrder.PartnerScrollvelocity,
-      animationOrder.FtCover,
-    ],
-    [0, 0, 1, 1, 0]
-  );
-  const Pscale = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.PartnerTextin,
-      animationOrder.PartnerTextinEnd,
-      animationOrder.PartnerScrollvelocity,
-      animationOrder.FtCover,
-    ],
-    [0, 0, 1, 1, 0]
-  );
   const Jopacity = useTransform(
     scrollYProgress,
     [
@@ -637,7 +625,7 @@ export const ScrollImg = () => {
       animationOrder.jumboTextInEnd,
       animationOrder.PartnerTextin,
     ],
-    [0, 0, 1, 1, 0]
+    [0, 0, 1, 1, 1]
   );
   const Jscale = useTransform(
     scrollYProgress,
@@ -646,24 +634,45 @@ export const ScrollImg = () => {
       animationOrder.RtextFadeinEnd,
       animationOrder.jumboTextIn,
       animationOrder.jumboTextInEnd,
-      0.77,
+      0.87,
       animationOrder.PartnerTextin,
     ],
-    [0, 0.5, 1, 1, 0.5, 0]
+    [0, 0.5, 1, 1, 1, 1]
   );
+
+  // const Popacity = useTransform(
+  //   scrollYProgress,
+  //   [
+  //     animationOrder.init,
+  //     animationOrder.PartnerTextin,
+  //     animationOrder.PartnerTextinEnd,
+  //     animationOrder.PartnerScrollvelocity,
+  //     animationOrder.FtCover,
+  //   ],
+  //   [0, 0, 1, 1, 0]
+  // );
+  // const Pscale = useTransform(
+  //   scrollYProgress,
+  //   [
+  //     animationOrder.init,
+  //     animationOrder.PartnerTextin,
+  //     animationOrder.PartnerTextinEnd,
+  //     animationOrder.PartnerScrollvelocity,
+  //     animationOrder.FtCover,
+  //   ],
+  //   [0, 0, 1, 1, 0]
+  // );
 
   return (
     <motion.section className="scrollwrap" ref={TargetRef}>
       <div className="branch1wrap">
         <motion.h2
-          // variants={homeVariants}
-          className="mainText"
+          className="b1Text"
           style={{ opacity: T1opacity, scale: T1scale }}
         >
           Fully Customizable dashboard
         </motion.h2>
         <motion.div
-          // variants={homeVariants}
           className="image"
           style={{ opacity, scale, x }}
         >
@@ -673,8 +682,7 @@ export const ScrollImg = () => {
           />
         </motion.div>
         <motion.h2
-          // variants={homeVariants}
-          className="mainText"
+          className="b1Text"
           style={{ opacity: T2opacity, scale: T2scale }}
         >
           Extremely Detailed Analytics and product tracking
@@ -687,13 +695,12 @@ export const ScrollImg = () => {
         </motion.h1>
       </div>
   
-      <div className="branch3wrap">
+      {/* <div className="branch3wrap">
         <motion.h2 style={{ opacity: Popacity, scale: Pscale }}>
           Quick and easy Integration with any E-commerce Platform.
         </motion.h2>
-        <Velocity/>
-        <motion.div className="partner">
-          {/* <h3>Proudly Backed By </h3> */}
+        {/* <Velocity/> */}
+        {/* <motion.div className="partner">
           <div className=" marquee">
             <ul className="marquee__group ">
               <li>
@@ -737,7 +744,7 @@ export const ScrollImg = () => {
             </ul>
           </div>
         </motion.div>
-      </div>
+      </div> */} 
     </motion.section>
   );
 };

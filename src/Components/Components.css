@@ -33,7 +33,7 @@
   height: 100vh;
   background: #323232;
   z-index: 60;
-  transform-origin: 0% 10%;
+  transform-origin: 0% 0%;
 }
 
 .accordion {
@@ -138,6 +138,8 @@
   margin: 0;
   white-space: nowrap;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
@@ -148,10 +150,13 @@
   display: flex;
   white-space: nowrap;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-wrap: nowrap;
 }
 
-.parallax span {
-  display: block;
-  margin-right: 30px;
+.parallax span ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=Components.css.map */
