@@ -116,12 +116,13 @@
   }
 }
 .scene {
-  // height: 300vh;
-  // position: relative;
+  height: 250vh;
+  position: relative;
 }
 .hero-wrap {
   margin: unset;
   padding: unset;
+  z-index: 5;
   position: absolute;
   top: 0;
   left: 0;
@@ -301,6 +302,7 @@
 .scrollwrap {
   height: 500vh;
   position: relative;
+  padding-inline: unset;
   // overflow-x: hidden;
 }
 .branch1wrap {
@@ -363,6 +365,7 @@
   margin-block: 5vh;
   margin-inline: auto;
   flex-grow: 1;
+  z-index: 2;
 
   // &::before {
   //   content: "";

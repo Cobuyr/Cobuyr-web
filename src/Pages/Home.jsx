@@ -53,7 +53,8 @@ const animationOrder = {
   LtextFadein: 0.25,
   LtextFadeinEnd: 0.3,
   branch1End: 0.4,
-  shiftRight: 0.4,
+  Ltfadeout: 0.425,
+  shiftRight: 0.425,
   RtextFadein: 0.55,
   RtextFadeinEnd: 0.75,
   branch2End: 0.75,
@@ -65,12 +66,11 @@ const animationOrder = {
 const Home = () => {
   return (
     <>
-      <div className="scene">
+     <div className="scene">
         <Scene />
       </div>
-
       <Hero />
-      <ScrollImg />
+      <Scroller />
 
       <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
@@ -524,7 +524,7 @@ const Home = () => {
 const TransHome = Transition(Home);
 export default TransHome;
 
-export const ScrollImg = () => {
+export const Scroller = () => {
   const TargetRef = useRef();
   const { scrollYProgress } = useScroll({
     target: TargetRef,
@@ -576,7 +576,7 @@ export const ScrollImg = () => {
       animationOrder.LtextFadein,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
-      0.425,
+      animationOrder.Ltfadeout,
     ],
     [0, 0, 1, 1, 0]
   );
@@ -587,7 +587,7 @@ export const ScrollImg = () => {
       animationOrder.LtextFadein,
       animationOrder.LtextFadeinEnd,
       animationOrder.branch1End,
-      0.425,
+      animationOrder.Ltfadeout,
     ],
     [0, 1, 1, 1, 0]
   );
@@ -664,38 +664,36 @@ export const ScrollImg = () => {
   // );
 
   return (
-    <motion.section className="scrollwrap" ref={TargetRef}>
-      <div className="branch1wrap">
-        <motion.h2
-          className="b1Text"
-          style={{ opacity: T1opacity, scale: T1scale }}
-        >
-          Fully Customizable dashboard
-        </motion.h2>
-        <motion.div
-          className="image"
-          style={{ opacity, scale, x }}
-        >
-          <img
-            src={dash}
-            alt="new category of multi-party payment transactions"
-          />
-        </motion.div>
-        <motion.h2
-          className="b1Text"
-          style={{ opacity: T2opacity, scale: T2scale }}
-        >
-          Extremely Detailed Analytics and product tracking
-        </motion.h2>
-      </div>
+    <>
+      <motion.section className="scrollwrap" ref={TargetRef}>
+        <div className="branch1wrap">
+          <motion.h2
+            className="b1Text"
+            style={{ opacity: T1opacity, scale: T1scale }}
+          >
+            Fully Customizable dashboard
+          </motion.h2>
+          <motion.div className="image" style={{ opacity, scale, x }}>
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </motion.div>
+          <motion.h2
+            className="b1Text"
+            style={{ opacity: T2opacity, scale: T2scale }}
+          >
+            Extremely Detailed Analytics and product tracking
+          </motion.h2>
+        </div>
 
-      <div className="branch2wrap">
-        <motion.h1 style={{ opacity: Jopacity, scale: Jscale }}>
-          Joint Purchase <br /> for all your customers...
-        </motion.h1>
-      </div>
-  
-      {/* <div className="branch3wrap">
+        <div className="branch2wrap">
+          <motion.h1 style={{ opacity: Jopacity, scale: Jscale }}>
+            Joint Purchase <br /> for all your customers...
+          </motion.h1>
+        </div>
+
+        {/* <div className="branch3wrap">
         <motion.h2 style={{ opacity: Popacity, scale: Pscale }}>
           Quick and easy Integration with any E-commerce Platform.
         </motion.h2>
@@ -744,8 +742,9 @@ export const ScrollImg = () => {
             </ul>
           </div>
         </motion.div>
-      </div> */} 
-    </motion.section>
+      </div> */}
+      </motion.section>
+    </>
   );
 };
 
@@ -757,60 +756,62 @@ export function Hero() {
   });
 
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5], [1, 0.7]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0]);
 
   return (
-    <Section className="hero-wrap">
-      <motion.div className="hero" ref={heroRef} style={{ opacity, scale }}>
-        <motion.div variants={homeVariants}>
-          <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
-        </motion.div>
+    <>
+      <Section className="hero-wrap">
+        <motion.div className="hero" ref={heroRef} style={{ opacity, scale }}>
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
+          </motion.div>
 
-        <motion.h1 variants={homeVariants}>
-          Revolutionize Checkout with{" "}
-          <span className="mainText">Social Buying</span>
-        </motion.h1>
-        <motion.p variants={homeVariants}>
-          Enhance your checkout experience with Cobuyr's cutting-edge Social
-          Buying platform. Allow customers to{" "}
-          <span className="highlight">
-            purchase together, boosting sales and fostering a sense of
-            community.
-          </span>
-        </motion.p>
-        {/* <motion.button className="primary-btn" variants={homeVariants}>
+          <motion.h1 variants={homeVariants}>
+            Revolutionize Checkout with{" "}
+            <span className="mainText">Social Buying</span>
+          </motion.h1>
+          <motion.p variants={homeVariants}>
+            Enhance your checkout experience with Cobuyr's cutting-edge Social
+            Buying platform. Allow customers to{" "}
+            <span className="highlight">
+              purchase together, boosting sales and fostering a sense of
+              community.
+            </span>
+          </motion.p>
+          {/* <motion.button className="primary-btn" variants={homeVariants}>
           Join Waitlist
         </motion.button> */}
 
-        <motion.div
-          className="mgBtn"
-          variants={{
-            hidden: { opacity: 0, scaleZ: 0 },
-            visible,
-          }}
-        >
-          <MagneticBtn>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.preventDefault();
-                window.scrollTo({
-                  top: document.querySelector("#referral").offsetTop,
-                  behavior: "smooth",
-                });
-              }}
-            >
-              <lord-icon
-                src="https://cdn.lordicon.com/vduvxizq.json"
-                trigger="hover"
-                target="button"
-                colors="primary:#ffffff"
-              ></lord-icon>
-              Join Referral
-            </button>
-          </MagneticBtn>
+          <motion.div
+            className="mgBtn"
+            variants={{
+              hidden: { opacity: 0, scaleZ: 0 },
+              visible,
+            }}
+          >
+            <MagneticBtn>
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({
+                    top: document.querySelector("#referral").offsetTop,
+                    behavior: "smooth",
+                  });
+                }}
+              >
+                <lord-icon
+                  src="https://cdn.lordicon.com/vduvxizq.json"
+                  trigger="hover"
+                  target="button"
+                  colors="primary:#ffffff"
+                ></lord-icon>
+                Join Referral
+              </button>
+            </MagneticBtn>
+          </motion.div>
         </motion.div>
-      </motion.div>
-    </Section>
+      </Section>
+    </>
   );
 }
