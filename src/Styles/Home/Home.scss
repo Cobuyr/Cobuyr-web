@@ -784,7 +784,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 0% 100%, #00ff7a03 0%, #5200ff03 58%, #43005e05 100%);
     padding: 12px 24px;
     text-align: left;
   }
@@ -794,7 +795,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 13% 87%, #7900ff14 26%, #073AFF00 100%),radial-gradient(75% 75% at 50% 0%, #ff00b70f 0%, #07ff4605 99%),repeating-linear-gradient(60deg, #ffaa0001 46%, #00000001 68%);
     padding: 12px 24px;
   }
 
@@ -803,7 +805,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 100% 100%, #8c00ff03 0%, #bf00ff03 58%, #005e3605 100%);
     padding: 12px 24px;
   }
   .sec {
@@ -811,7 +814,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 13% 87%, #adff0005 26%, #073AFF00 100%),radial-gradient(75% 75% at 50% 0%, #7338961a 0%, #073AFF05 99%),repeating-linear-gradient(60deg, #ff00da01 19%, #00000003 68%);
     padding: 12px 24px;
 
     .marquee {
@@ -861,7 +865,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 13% 87%, #ff00bf14 25%, #c0ff0705 100%),radial-gradient(75% 75% at 50% 0%, #7d00ff0f 0%, #073AFF00 98%),repeating-linear-gradient(115deg, #00ffff01 46%, #00000001 68%);
     svg {
       width: 50px;
       height: unset;
@@ -901,7 +906,8 @@
     border-radius: 25px;
     backdrop-filter: blur(10px);
     border: var(--light-border) 1px solid;
-    background: var(--sec-radial-grad);
+    // background: var(--sec-radial-grad);
+    background-image: radial-gradient(75% 75% at 0% 100%, #c000ff0f 0%, #ff07c800 100%),radial-gradient(75% 75% at 100% 0%, #ff07c80f 0%, #4f2b5b00 100%);
     font-size: 14px;
     .textbox {
       flex-direction: column;
@@ -971,7 +977,7 @@
       h3 lord-icon {
         opacity: 1;
         scale: 1;
-        translate: 20px -10px;
+        translate: 15px -5px;
       }
     }
   }
