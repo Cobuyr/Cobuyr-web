@@ -47,8 +47,8 @@
 #canvas-container {
   width: calc(100vw - 5px);
   height: 100vh;
-  position: fixed;
-  inset: 0;
+  /* position: fixed; */
+  /* inset: 0; */
   /* z-index: 2; */
   /* filter: blur(6px); */
   /* background: #252525;

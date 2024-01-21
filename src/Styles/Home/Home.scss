@@ -116,8 +116,9 @@
   }
 }
 .scene {
-  height: 250vh;
-  position: relative;
+  // height: 250vh;
+  // position: sticky;
+  //   inset: 0;
 }
 .hero-wrap {
   margin: unset;
@@ -306,13 +307,19 @@
   // overflow-x: hidden;
 }
 .branch1wrap {
-  display: flex;
-  align-items: center;
-  padding-inline: 50px;
-  justify-content: center;
+  position: relative;
   width: 100%;
-  position: fixed;
-  inset: 0;
+
+
+  .branch1{
+    display: flex;
+    align-items: center;
+    padding-inline: 50px;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    inset: 0;
+  }
 }
 .branch2wrap {
   width: 100%;

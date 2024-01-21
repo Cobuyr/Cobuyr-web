@@ -79,11 +79,6 @@
   margin: 0 !important;
 }
 
-.scene {
-  height: 250vh;
-  position: relative;
-}
-
 .hero-wrap {
   margin: unset;
   padding: unset;
@@ -213,6 +208,10 @@
 }
 
 .branch1wrap {
+  position: relative;
+  width: 100%;
+}
+.branch1wrap .branch1 {
   display: flex;
   align-items: center;
   padding-inline: 50px;
