@@ -10,10 +10,9 @@ import Transition from "../Components/Transition";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Scene from "../Experience/scene";
 import Velocity from "../Components/Velocity";
-
 
 const visible = {
   opacity: 1,
@@ -48,11 +47,76 @@ const homeVariants = {
 // };
 
 const Home = () => {
+  const divRef = useRef(null);
+  const [isFocused, setIsFocused] = useState(false);
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [opacity, setOpacity] = useState(0);
+
+  const handleMouseMove = (e) => {
+    if (!divRef.current || isFocused) return;
+
+    const div = divRef.current;
+    const rect = div.getBoundingClientRect();
+
+    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  };
+
+  const handleFocus = () => {
+    setIsFocused(true);
+    setOpacity(1);
+  };
+
+  const handleBlur = () => {
+    setIsFocused(false);
+    setOpacity(0);
+  };
+
+  const handleMouseEnter = () => {
+    setOpacity(1);
+  };
+
+  const handleMouseLeave = () => {
+    setOpacity(0);
+  };
+
+  useEffect(() => {
+    const handleMouseMove = (ev) => {
+      const allCards = document.querySelectorAll(".card");
+      allCards.forEach((card) => {
+        const blob = card.querySelector(".blob");
+        const fblob = card.querySelector(".fakeblob");
+        const rec = fblob.getBoundingClientRect();
+        blob.style.opacity = "1";
+
+        blob.animate(
+          [
+            {
+              transform: `translate(${
+                ev.clientX - rec.left - rec.width / 2
+              }px,${ev.clientY - rec.top - rec.height / 2}px)`,
+            },
+          ],
+          {
+            duration: 300,
+            fill: "forwards",
+          }
+        );
+      });
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <>
-         <div className="scene"   
+      <div
+        className="scene"
         //  style={{ position:position }}
-         >
+      >
         <Scene />
       </div>
       <Hero />
@@ -75,23 +139,27 @@ const Home = () => {
         </motion.div>
         <motion.div className="future-listbox" variants={homeVariants}>
           <motion.ul className="listbox" variants={homeVariants}>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="khheayfj" trigger="hover" target="li" />
               <h4>Unlock New Sales and Savings</h4>
               <p>
                 By introducing Social Buying, witness a surge in sales while
                 minimizing discounts on unsold products.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="odavpkmb" trigger="hover" target="li" />
               <h4>Personalized Buying Experiences</h4>
               <p>
                 Offer customers a tailored shopping journey, allowing multiple
                 buyers to unite in a single order.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="abwrkdvl" trigger="hover" target="li" />
               <h4>Insights and Data</h4>
               <p>
@@ -99,30 +167,38 @@ const Home = () => {
                 precise marketing engagements and a deeper understanding of
                 buyer behavior.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="piwupaqb" trigger="hover" target="li" />
               <h4>Monetize Existing Data</h4>
               <p>
                 Maximize the potential of your customer data to enhance revenue
                 streams.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="njmddhpx" trigger="hover" target="li" />
               <h4>Increased Customer Satisfaction</h4>
               <p>
                 Provide a seamless co-buying experience, reducing basket
                 abandonment and enhancing satisfaction.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
-            <motion.li variants={homeVariants}>
+            <motion.li variants={homeVariants} className="card">
               <IconBadge iconUrl="ksdjzsym" trigger="hover" target="li" />
               <h4>Tech Spend Reduction</h4>
               <p>
                 Streamline technology costs while boosting order values and
                 reducing acquisition expenses.
               </p>
+              <div className="blob"></div>
+              <div className="fakeblob"></div>
             </motion.li>
           </motion.ul>
         </motion.div>
@@ -337,7 +413,24 @@ const Home = () => {
               backend processes for your business.
             </blockquote>
           </motion.p>
-          <motion.button className="primary-btn" variants={homeVariants}>
+          <motion.button
+            className="primary-btn base-input"
+            variants={homeVariants}
+            onMouseMove={handleMouseMove}
+            onFocus={handleFocus}
+            onBlur={handleBlur}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <span
+              className="overlay-input"
+              ref={divRef}
+              style={{
+                opacity,
+                WebkitMaskImage: `radial-gradient(50% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
+              }}
+              aria-hidden="true"
+            ></span>
             Documentation
           </motion.button>
         </div>
@@ -532,7 +625,7 @@ export default TransHome;
 //     jumboTextInEnd: 0.85,
 //     PartnerTextin: 1,
 //   };
-  
+
 //   const opacity = useTransform(
 //     scrollYProgress,
 //     [
@@ -759,18 +852,22 @@ export default TransHome;
 
 export function Hero() {
   const heroRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ["end end", "end start"],
-  });
+  // const { scrollYProgress } = useScroll({
+  //   target: heroRef,
+  //   offset: ["end end", "end start"],
+  // });
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0]);
+  // const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
+  // const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0]);
 
   return (
     <>
       <Section className="hero-wrap">
-        <motion.div className="hero" ref={heroRef} style={{ opacity, scale }}>
+        <motion.div
+          className="hero"
+          ref={heroRef}
+          // style={{ opacity, scale }}
+        >
           <motion.div variants={homeVariants}>
             <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
           </motion.div>

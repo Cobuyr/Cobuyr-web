@@ -17,10 +17,13 @@
       #32323275 70%,
       var(--bg-color) 95%);
 
-  --sec-radial-grad: radial-gradient(circle at -25% 0%,
+  --sec-radial-grad: 
+linear-gradient(rgb(73 73 73 / 7%), rgba(255, 255, 255, 0.0));
+  /* radial-gradient(circle at -25% 0%,
       #00000000 0%,
       #32323275 70%,
-      var(--bg-color) 95%);
+      var(--bg-color) 95%) */
+      ;
   --size: clamp(10rem, 1rem + 40vmin, 30rem);
   --gap: calc(var(--size) / 10);
   --duration: 60s;
@@ -68,9 +71,10 @@
 }
 
 ::selection {
-  background: var(--accent);
+  background: hsla(335, 90%, 60%, 0.5);
   color: #fff;
   -webkit-text-fill-color: #fff;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar {
@@ -175,10 +179,12 @@ p:not(.badge p, .hero p) {
 
 @keyframes bright {
   0% {
+    width: 30%;
     height: 25px;
   }
 
   100% {
+    width: 70%;
     height: 110px;
   }
 }
