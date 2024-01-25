@@ -528,7 +528,7 @@
       }
       &:hover {
         .iconBadge {
-          box-shadow: 0px 0px 5px 2px nth($random-colors, $i);
+          box-shadow: 0px 0px 5px nth($random-colors, $i);
         }
       }
     }
