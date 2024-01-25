@@ -836,6 +836,25 @@
   .head {
     grid-column: auto/span 8;
     padding: 12px 24px;
+    position: relative;
+
+    &::before{
+      content: "";
+      position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50%;
+    width: 80%;
+    height: 80%;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgb(42, 43, 48) 1px, rgb(42, 43, 48) 1px, transparent 1px, transparent 100%);
+    background-repeat: repeat;
+    background-position: left center;
+    background-size: 8px 8px;
+    mask-image: radial-gradient(rgb(0, 0, 0), transparent 50%);
+    opacity: 0.8;
+
+    }
 
     h2 {
       padding-inline: 10%;

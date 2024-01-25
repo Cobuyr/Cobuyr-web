@@ -111,20 +111,6 @@ const Home = () => {
     };
   }, []);
 
-  // const [spotlightPositions, setSpotlightPositions] = useState([]);
-
-  // const handleMouseMovee = (ev) => {
-  //   setSpotlightPositions((prevPositions) =>
-  //     prevPositions.map((position) => ({
-  //       x: ev.clientX - position.ref.current.getBoundingClientRect().left - position.width / 2,
-  //       y: ev.clientY - position.ref.current.getBoundingClientRect().top - position.height / 2,
-  //       ref: position.ref,
-  //       width: position.width,
-  //       height: position.height,
-  //     }))
-  //   );
-  // };
-
   const [spotlightPosition, setSpotlightPosition] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
   const cardContRef = useRef(null);
@@ -132,33 +118,32 @@ const Home = () => {
   const coverspotRef = useRef(null);
 
   useEffect(() => {
-    
-  const handleMouseMove = (ev) => {
-        // const allCards = cardRef;
-        const allCards = document.querySelectorAll(".card");
-        allCards.forEach((card) => {
-          const spotlight = spotRef.current;
-          const fspotlight = coverspotRef.current;
-          const rec = fspotlight.getBoundingClientRect();
-          spotlight.style.opacity = "1";
-  
-          spotlight.animate(
-            [
-              {
-                transform: `translate(${
-                  ev.clientX - rec.left - rec.width / 2
-                }px,${ev.clientY - rec.top - rec.height / 2}px)`,
-              },
-            ],
+    const handleMouseMove = (ev) => {
+      // const allCards = cardRef;
+      const allCards = document.querySelectorAll(".card");
+      allCards.forEach((card) => {
+        const spotlight = spotRef.current;
+        const fspotlight = coverspotRef.current;
+        const rec = fspotlight.getBoundingClientRect();
+        // spotlight.style.opacity = "1";
+
+        spotlight.animate(
+          [
             {
-              duration: 300,
-              fill: "forwards",
-            }
-          );
-        });
-      };
-      console.log(spotlightPosition);
-      const cardCont = cardRef.current;
+              transform: `translate(${
+                ev.clientX - rec.left - rec.width / 2
+              }px,${ev.clientY - rec.top - rec.height / 2}px)`,
+            },
+          ],
+          {
+            duration: 300,
+            fill: "forwards",
+          }
+        );
+      });
+    };
+    // console.log(spotlightPosition);
+    const cardCont = cardRef.current;
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
@@ -193,30 +178,48 @@ const Home = () => {
           </motion.p>
         </motion.div>
         <motion.div className="future-listbox" variants={homeVariants}>
-          <motion.ul className="listbox" variants={homeVariants}  ref={cardContRef}>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+          <motion.ul
+            className="listbox"
+            variants={homeVariants}
+            ref={cardContRef}
+          >
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="khheayfj" trigger="hover" target="li" />
               <h4>Unlock New Sales and Savings</h4>
               <p>
                 By introducing Social Buying, witness a surge in sales while
                 minimizing discounts on unsold products.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="odavpkmb" trigger="hover" target="li" />
               <h4>Personalized Buying Experiences</h4>
               <p>
                 Offer customers a tailored shopping journey, allowing multiple
                 buyers to unite in a single order.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="abwrkdvl" trigger="hover" target="li" />
               <h4>Insights and Data</h4>
               <p>
@@ -224,42 +227,70 @@ const Home = () => {
                 precise marketing engagements and a deeper understanding of
                 buyer behavior.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="piwupaqb" trigger="hover" target="li" />
               <h4>Monetize Existing Data</h4>
               <p>
                 Maximize the potential of your customer data to enhance revenue
                 streams.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="njmddhpx" trigger="hover" target="li" />
               <h4>Increased Customer Satisfaction</h4>
               <p>
                 Provide a seamless co-buying experience, reducing basket
                 abandonment and enhancing satisfaction.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card"  ref={cardRef}>
+            <motion.li variants={homeVariants} className="card" ref={cardRef}>
               <IconBadge iconUrl="ksdjzsym" trigger="hover" target="li" />
               <h4>Tech Spend Reduction</h4>
               <p>
                 Streamline technology costs while boosting order values and
                 reducing acquisition expenses.
               </p>
-              <div className="spotlight"  ref={spotRef} style={{
-            transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`}}></div>
-              <div className="coverspotlight"  ref={coverspotRef}></div>
+              <div
+                className="spotlight"
+                // ref={spotRef}
+                // style={{
+                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
+                // }}
+              ></div>
+              <div className="coverspotlight" 
+              ref={coverspotRef}
+              ></div>
             </motion.li>
           </motion.ul>
         </motion.div>
