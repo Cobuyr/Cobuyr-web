@@ -10,7 +10,7 @@ import Transition from "../Components/Transition";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
 import Velocity from "../Components/Velocity";
 
@@ -47,109 +47,71 @@ const homeVariants = {
 // };
 
 const Home = () => {
-  const divRef = useRef(null);
-  const [isFocused, setIsFocused] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [opacity, setOpacity] = useState(0);
+  // const divRef = useRef(null);
+  // const [isFocused, setIsFocused] = useState(false);
+  // const [position, setPosition] = useState({ x: 0, y: 0 });
+  // const [opacity, setOpacity] = useState(0);
 
-  const handleMouseMove = (e) => {
-    if (!divRef.current || isFocused) return;
+  // const handleMouseMove = (e) => {
+  //   if (!divRef.current || isFocused) return;
 
-    const div = divRef.current;
-    const rect = div.getBoundingClientRect();
+  //   const div = divRef.current;
+  //   const rect = div.getBoundingClientRect();
 
-    setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  };
+  //   setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+  // };
 
-  const handleFocus = () => {
-    setIsFocused(true);
-    setOpacity(1);
-  };
+  // const handleFocus = () => {
+  //   setIsFocused(true);
+  //   setOpacity(1);
+  // };
 
-  const handleBlur = () => {
-    setIsFocused(false);
-    setOpacity(0);
-  };
+  // const handleBlur = () => {
+  //   setIsFocused(false);
+  //   setOpacity(0);
+  // };
 
-  const handleMouseEnter = () => {
-    setOpacity(1);
-  };
+  // const handleMouseEnter = () => {
+  //   setOpacity(1);
+  // };
 
-  const handleMouseLeave = () => {
-    setOpacity(0);
-  };
+  // const handleMouseLeave = () => {
+  //   setOpacity(0);
+  // };
 
-  useEffect(() => {
-    const handleMouseMove = (ev) => {
-      const allCards = document.querySelectorAll(".card");
-      allCards.forEach((card) => {
-        const spotlight = card.querySelector(".spotlight");
-        const fspotlight = card.querySelector(".coverspotlight");
-        const rec = fspotlight.getBoundingClientRect();
-        spotlight.style.opacity = "1";
-
-        spotlight.animate(
-          [
-            {
-              transform: `translate(${
-                ev.clientX - rec.left - rec.width / 2
-              }px,${ev.clientY - rec.top - rec.height / 2}px)`,
-            },
-          ],
-          {
-            duration: 0,
-            fill: "forwards",
-          }
-        );
-      });
-    };
-
-    window.addEventListener("mousemove", handleMouseMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  const [spotlightPosition, setSpotlightPosition] = useState({ x: 0, y: 0 });
-  const cardRef = useRef(null);
   const cardContRef = useRef(null);
-  const spotRef = useRef(null);
-  const coverspotRef = useRef(null);
+
+  const cardRefs = Array.from({ length: 6 }).map(() => useRef(null));
+  const spotRefs = Array.from({ length: 6 }).map(() => useRef(null));
+  const coverspotRefs = Array.from({ length: 6 }).map(() => useRef(null));
 
   useEffect(() => {
     const handleMouseMove = (ev) => {
-      // const allCards = cardRef;
-      const allCards = document.querySelectorAll(".card");
-      allCards.forEach((card) => {
-        const spotlight = spotRef.current;
-        const fspotlight = coverspotRef.current;
+      cardRefs.forEach((cardRef, index) => {
+        const spotlight = spotRefs[index].current;
+        const fspotlight = coverspotRefs[index].current;
         const rec = fspotlight.getBoundingClientRect();
-        // spotlight.style.opacity = "1";
 
-        spotlight.animate(
-          [
-            {
-              transform: `translate(${
-                ev.clientX - rec.left - rec.width / 2
-              }px,${ev.clientY - rec.top - rec.height / 2}px)`,
-            },
-          ],
-          {
-            duration: 300,
-            fill: "forwards",
-          }
-        );
+        if (spotlight) {
+          spotlight.style.transform = `translate(${
+            ev.clientX - rec.left - rec.width / 2
+          }px, ${ev.clientY - rec.top - rec.height / 2}px)`;
+          spotlight.style.opacity = "1";
+        }
       });
     };
-    // console.log(spotlightPosition);
-    const cardCont = cardRef.current;
-    window.addEventListener("mousemove", handleMouseMove);
+
+    const cardCont = cardContRef.current;
+    if (cardCont) {
+      cardCont.addEventListener("mousemove", handleMouseMove);
+    }
 
     return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
+      if (cardCont) {
+        cardCont.removeEventListener("mousemove", handleMouseMove);
+      }
     };
-  }, []);
+  }, [cardRefs, spotRefs, coverspotRefs]);
 
   return (
     <>
@@ -177,49 +139,45 @@ const Home = () => {
             </span>
           </motion.p>
         </motion.div>
-        <motion.div className="future-listbox" variants={homeVariants}>
-          <motion.ul
-            className="listbox"
-            variants={homeVariants}
-            ref={cardContRef}
-          >
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+        <motion.div
+          className="future-listbox"
+          variants={homeVariants}
+          ref={cardContRef}
+        >
+          <motion.ul className="listbox" variants={homeVariants}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[0]}
+            >
               <IconBadge iconUrl="khheayfj" trigger="hover" target="li" />
               <h4>Unlock New Sales and Savings</h4>
               <p>
                 By introducing Social Buying, witness a surge in sales while
                 minimizing discounts on unsold products.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[0]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[0]}></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[1]}
+            >
               <IconBadge iconUrl="odavpkmb" trigger="hover" target="li" />
               <h4>Personalized Buying Experiences</h4>
               <p>
                 Offer customers a tailored shopping journey, allowing multiple
                 buyers to unite in a single order.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[1]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[1]}></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[2]}
+            >
               <IconBadge iconUrl="abwrkdvl" trigger="hover" target="li" />
               <h4>Insights and Data</h4>
               <p>
@@ -227,70 +185,50 @@ const Home = () => {
                 precise marketing engagements and a deeper understanding of
                 buyer behavior.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[2]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[2]}></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[3]}
+            >
               <IconBadge iconUrl="piwupaqb" trigger="hover" target="li" />
               <h4>Monetize Existing Data</h4>
               <p>
                 Maximize the potential of your customer data to enhance revenue
                 streams.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[3]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[3]}></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[4]}
+            >
               <IconBadge iconUrl="njmddhpx" trigger="hover" target="li" />
               <h4>Increased Customer Satisfaction</h4>
               <p>
                 Provide a seamless co-buying experience, reducing basket
                 abandonment and enhancing satisfaction.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[4]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[4]}></div>
             </motion.li>
-            <motion.li variants={homeVariants} className="card" ref={cardRef}>
+            <motion.li
+              variants={homeVariants}
+              className="card"
+              ref={cardRefs[5]}
+            >
               <IconBadge iconUrl="ksdjzsym" trigger="hover" target="li" />
               <h4>Tech Spend Reduction</h4>
               <p>
                 Streamline technology costs while boosting order values and
                 reducing acquisition expenses.
               </p>
-              <div
-                className="spotlight"
-                // ref={spotRef}
-                // style={{
-                //   transform: `translate(${spotlightPosition.x}px, ${spotlightPosition.y}px)`,
-                // }}
-              ></div>
-              <div className="coverspotlight" 
-              ref={coverspotRef}
-              ></div>
+              <div className="spotlight" ref={spotRefs[5]}></div>
+              <div className="coverspotlight" ref={coverspotRefs[5]}></div>
             </motion.li>
           </motion.ul>
         </motion.div>
@@ -505,7 +443,7 @@ const Home = () => {
               backend processes for your business.
             </blockquote>
           </motion.p>
-          <motion.button
+          {/* <motion.button
             className="primary-btn base-input"
             variants={homeVariants}
             onMouseMove={handleMouseMove}
@@ -524,7 +462,7 @@ const Home = () => {
               aria-hidden="true"
             ></span>
             Documentation
-          </motion.button>
+          </motion.button> */}
         </div>
         <motion.div className="marquee-wrap" variants={homeVariants}>
           <motion.div
