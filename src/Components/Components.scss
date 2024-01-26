@@ -1,11 +1,11 @@
 @use "sass:math";
-$randomMin:10; // Minimum value for random range
-$randomMax: 100; // Maximum value for random range
-@mixin randomTransformOrigin {
-  $randomX: math.floor(calc(math.random($randomMin) / 10)) * 10; // Generate random X value in steps of 10
-  $randomY: math.floor(calc(math.random($randomMin) / 10)) * 10; // Generate random Y value in steps of 10
-  transform-origin: unquote("#{$randomX}% #{$randomY}%"); // Set transform origin using the rounded values
-}
+// $randomMin:10; // Minimum value for random range
+// $randomMax: 100; // Maximum value for random range
+// @mixin randomTransformOrigin {
+//   $randomX: math.floor(calc(math.random($randomMin) / 10)) * 10; // Generate random X value in steps of 10
+//   $randomY: math.floor(calc(math.random($randomMin) / 10)) * 10; // Generate random Y value in steps of 10
+//   transform-origin: unquote("#{$randomX}% #{$randomY}%"); // Set transform origin using the rounded values
+// }
 .tEffect {
   position: absolute;
   background-color: aquamarine;
@@ -42,7 +42,7 @@ $randomMax: 100; // Maximum value for random range
   height: 100vh;
   background: #323232;
   z-index: 60;
-   @include randomTransformOrigin;
+  //  @include randomTransformOrigin;
 }
 
 // accordion*******
