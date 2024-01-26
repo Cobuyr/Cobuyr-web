@@ -519,6 +519,7 @@
         margin: auto;
         background-color: #2d2d2d;
         z-index: -1;
+        transition: all 1s ease-in-out;
       }
       .spotlight {
         background: nth($random-colors, $i);
@@ -847,16 +848,16 @@
     &::before {
       content: "";
       position: absolute;
-      top: 50%;
+      top: 0;
       left: 50%;
       translate: -50%;
-      width: 80%;
-      height: 80%;
+      width: 100%;
+      height: 100%;
       pointer-events: none;
       background-image: radial-gradient(
         circle,
-        rgb(42, 43, 48) 1px,
-        rgb(42, 43, 48) 1px,
+        var(--accent) 1px,
+        var(--accent) 1px,
         transparent 1px,
         transparent 100%
       );
@@ -864,7 +865,8 @@
       background-position: left center;
       background-size: 8px 8px;
       mask-image: radial-gradient(rgb(0, 0, 0), transparent 50%);
-      opacity: 0.8;
+      opacity: 0.5;
+      z-index: -1;
     }
 
     h2 {

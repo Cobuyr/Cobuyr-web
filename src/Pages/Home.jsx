@@ -12,7 +12,7 @@ import { Section } from "../Components/inView";
 import MagneticBtn from "../Components/magnetBtn";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
-import Velocity from "../Components/Velocity";
+// import Velocity from "../Components/Velocity";
 
 const visible = {
   opacity: 1,
