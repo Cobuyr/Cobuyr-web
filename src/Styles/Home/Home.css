@@ -171,7 +171,7 @@
   }
 }
 .mainText {
-  font-size: clamp(1.2em, 5vw, 4em);
+  font-size: calc(100% + 0.15em);
   background-image: linear-gradient(313deg, rgb(179, 143, 241) 0%, #f53d8a 100%);
   -webkit-background-clip: text;
   background-clip: text;
@@ -1048,7 +1048,7 @@
 }
 .early .badge {
   margin-inline: unset;
-  margin-bottom: 2.5em;
+  margin-block: 2.5em;
 }
 
 .early-info {

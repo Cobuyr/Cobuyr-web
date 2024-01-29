@@ -97,7 +97,10 @@ const Home = () => {
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
           </motion.div>
-          <motion.h2 variants={homeVariants}>PAYMENT METHOD OF THE FUTURE</motion.h2>
+          <motion.h2 variants={homeVariants}>
+            PAYMENT METHOD
+             OF<br /> THE <span className="mainText">FUTURE</span>
+          </motion.h2>
           <motion.p variants={homeVariants}>
             Unleash the potential of your online business with Cobuyr's Social
             Buying solution. This innovative platform empowers customers to pool
@@ -213,7 +216,8 @@ const Home = () => {
               />
             </motion.div>
             <motion.h2 variants={homeVariants}>
-              PAYMENT PLATFORM THAT BINDS PEOPLE
+              PAYMENT PLATFORM THAT <span className="mainText">BINDS</span>{" "}
+              PEOPLE
             </motion.h2>
           </motion.div>
           <motion.div className="info1" variants={homeVariants}>
@@ -364,7 +368,7 @@ const Home = () => {
 
         <motion.div className="textbox" variants={homeVariants}>
           <motion.h2 variants={homeVariants}>
-            Buff up customer Transaction
+            <span className="mainText">Buff up</span> customer Transaction
           </motion.h2>
           <motion.p className="banner-text" variants={homeVariants}>
             Payment technology has not kept up with what customers want, and
@@ -376,7 +380,7 @@ const Home = () => {
             that enables your customers to split and securely pay for purchases
             together.
           </motion.p>
-          <SpotBtn text={"Book Demo"}/>
+          <SpotBtn text={"Book Demo"} />
         </motion.div>
         <div className="glow"></div>
         <div className="glow2"></div>
@@ -388,7 +392,7 @@ const Home = () => {
             <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
           </motion.div>
           <motion.h2 variants={homeVariants}>
-            Integration and Benefits
+            Integrate with <span className="mainText">ease</span>
           </motion.h2>
           <motion.p variants={homeVariants}>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
@@ -404,14 +408,13 @@ const Home = () => {
             </span>
             <br />
           </motion.p>
-            <motion.blockquote variants={homeVariants}>
-              By integrating our API, you unlock a world of collaborative
-              purchasing opportunities for your customers while streamlining
-              backend processes for your business.
-            </motion.blockquote>
-          
-          <SpotBtn text={"Documentation"}/>
+          <motion.blockquote variants={homeVariants}>
+            By integrating our API, you unlock a world of collaborative
+            purchasing opportunities for your customers while streamlining
+            backend processes for your business.
+          </motion.blockquote>
 
+          <SpotBtn text={"Documentation"} />
         </div>
         <motion.div className="marquee-wrap" variants={homeVariants}>
           <motion.div
