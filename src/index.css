@@ -188,3 +188,14 @@ p:not(.badge p, .hero p) {
     height: 110px;
   }
 }
+@keyframes reveal {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+
+}

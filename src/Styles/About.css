@@ -28,7 +28,7 @@
     #957024 -20px -20px 20px 0px,
     #502495 20px 20px 20px 0px;
   z-index: -2;
-  animation: burn 10s ease infinite, showw 5s ease forwards;
+  animation: burn 10s ease infinite, reveal 5s ease forwards;
   will-change: auto;
 }
 
@@ -101,18 +101,6 @@
   50% {
     rotate: 15deg;
     width: 300px;
-  }
-
-}
-
-@keyframes showw {
-
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
   }
 
 }
