@@ -28,9 +28,9 @@ const Sub = () => {
           />
         </motion.div>
 
-        <motion.h3 className="early-h2" variants={homeVariants}>
+        <motion.h2 className="early-h2" variants={homeVariants}>
           Cobuyr Referral Program: Earn $250
-        </motion.h3>
+        </motion.h2>
         <motion.h4 variants={homeVariants}>
           Do you have a favourite retailer, airline, tour operator, e-commerce
           sites and marketplaces that you want to buy from online with family

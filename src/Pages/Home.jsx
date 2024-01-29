@@ -9,7 +9,7 @@ import Footer from "../Components/Footer/footer";
 import Transition from "../Components/Transition";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Section } from "../Components/inView";
-import MagneticBtn from "../Components/magnetBtn";
+import MagneticBtn, { SpotBtn } from "../Components/magnetBtn";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
 // import Velocity from "../Components/Velocity";
@@ -47,38 +47,6 @@ const homeVariants = {
 // };
 
 const Home = () => {
-  // const divRef = useRef(null);
-  // const [isFocused, setIsFocused] = useState(false);
-  // const [position, setPosition] = useState({ x: 0, y: 0 });
-  // const [opacity, setOpacity] = useState(0);
-
-  // const handleMouseMove = (e) => {
-  //   if (!divRef.current || isFocused) return;
-
-  //   const div = divRef.current;
-  //   const rect = div.getBoundingClientRect();
-
-  //   setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
-  // };
-
-  // const handleFocus = () => {
-  //   setIsFocused(true);
-  //   setOpacity(1);
-  // };
-
-  // const handleBlur = () => {
-  //   setIsFocused(false);
-  //   setOpacity(0);
-  // };
-
-  // const handleMouseEnter = () => {
-  //   setOpacity(1);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setOpacity(0);
-  // };
-
   const cardContRef = useRef(null);
 
   const cardRefs = Array.from({ length: 6 }).map(() => useRef(null));
@@ -129,7 +97,7 @@ const Home = () => {
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
           </motion.div>
-          <motion.h2 variants={homeVariants}>THE FUTURE OF PAYMENTS</motion.h2>
+          <motion.h2 variants={homeVariants}>PAYMENT METHOD OF THE FUTURE</motion.h2>
           <motion.p variants={homeVariants}>
             Unleash the potential of your online business with Cobuyr's Social
             Buying solution. This innovative platform empowers customers to pool
@@ -245,7 +213,7 @@ const Home = () => {
               />
             </motion.div>
             <motion.h2 variants={homeVariants}>
-              THE MODERN PAYMENTS PLATFORM
+              PAYMENT PLATFORM THAT BINDS PEOPLE
             </motion.h2>
           </motion.div>
           <motion.div className="info1" variants={homeVariants}>
@@ -408,9 +376,7 @@ const Home = () => {
             that enables your customers to split and securely pay for purchases
             together.
           </motion.p>
-          <motion.button className="primary-btn" variants={homeVariants}>
-            Book Demo
-          </motion.button>
+          <SpotBtn text={"Book Demo"}/>
         </motion.div>
         <div className="glow"></div>
         <div className="glow2"></div>
@@ -422,7 +388,7 @@ const Home = () => {
             <Badge iconUrl="dmgxtuzn" trigger="hover" text="API Integration" />
           </motion.div>
           <motion.h2 variants={homeVariants}>
-            Integration and Benefits.
+            Integration and Benefits
           </motion.h2>
           <motion.p variants={homeVariants}>
             Elevate your e-commerce experience with Cobuyr's user-friendly API
@@ -437,32 +403,15 @@ const Home = () => {
               operations.
             </span>
             <br />
-            <blockquote>
+          </motion.p>
+            <motion.blockquote variants={homeVariants}>
               By integrating our API, you unlock a world of collaborative
               purchasing opportunities for your customers while streamlining
               backend processes for your business.
-            </blockquote>
-          </motion.p>
-          {/* <motion.button
-            className="primary-btn base-input"
-            variants={homeVariants}
-            onMouseMove={handleMouseMove}
-            onFocus={handleFocus}
-            onBlur={handleBlur}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <span
-              className="overlay-input"
-              ref={divRef}
-              style={{
-                opacity,
-                WebkitMaskImage: `radial-gradient(50% 30px at ${position.x}px ${position.y}px, black 45%, transparent)`,
-              }}
-              aria-hidden="true"
-            ></span>
-            Documentation
-          </motion.button> */}
+            </motion.blockquote>
+          
+          <SpotBtn text={"Documentation"}/>
+
         </div>
         <motion.div className="marquee-wrap" variants={homeVariants}>
           <motion.div

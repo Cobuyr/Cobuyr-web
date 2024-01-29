@@ -158,4 +158,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.base-input {
+  transition: border-color 0.5s;
+  outline: none;
+  position: relative;
+}
+
+.overlay-input {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(193, 35, 146);
+  border-radius: inherit;
+  background-color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s;
 }/*# sourceMappingURL=Components.css.map */
