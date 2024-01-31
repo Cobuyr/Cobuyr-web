@@ -1064,6 +1064,25 @@
   font-size: 2em;
   text-transform: uppercase;
 }
+.early-info .listbox {
+  counter-reset: step;
+}
+.early-info .listbox li {
+  overflow: unset;
+}
+.early-info .listbox li::after {
+  content: "0" counter(step);
+  counter-increment: step;
+  position: absolute;
+  top: -10%;
+  left: 0;
+  font-size: 3em;
+  background-image: linear-gradient(180deg, hsl(0, 0%, 100%) 10%, hsla(0, 0%, 50%, 0) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
 .early-info li {
   list-style: inside;
   list-style-type: disclosure-closed;

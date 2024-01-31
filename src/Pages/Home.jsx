@@ -380,7 +380,7 @@ const Home = () => {
             that enables your customers to split and securely pay for purchases
             together.
           </motion.p>
-          <SpotBtn text={"Book Demo"} />
+          <SpotBtn text={"Book Demo"} variant={homeVariants} />
         </motion.div>
         <div className="glow"></div>
         <div className="glow2"></div>
@@ -414,7 +414,7 @@ const Home = () => {
             backend processes for your business.
           </motion.blockquote>
 
-          <SpotBtn text={"Documentation"} />
+          <SpotBtn text={"Documentation"} variant={homeVariants} />
         </div>
         <motion.div className="marquee-wrap" variants={homeVariants}>
           <motion.div

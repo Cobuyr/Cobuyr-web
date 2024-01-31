@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 // import Accordion from "../Components/Accordion";
 import Transition from "../Components/Transition";
 import { motion } from "framer-motion";
+import { SpotBtn } from "../Components/magnetBtn";
 
 const Contact = () => {
   const [name, setName] = useState("");
@@ -144,9 +145,11 @@ const Contact = () => {
             onChange={(e) => setMessage(e.target.value)}
             variants={contVariants}
           ></motion.textarea>
-          <motion.button onClick={submit} variants={contVariants}>
+
+          {/* <motion.button onClick={submit} variants={contVariants}>
             Send Message
-          </motion.button>
+          </motion.button> */}
+          <SpotBtn text={"Send Message"} variant={contVariants} submit={submit} />
 
           <motion.span
             className={emailSent ? "visible" : "not-visible"}
@@ -282,9 +285,11 @@ export const ReferalForm = () => {
           <span></span>
         </motion.div>
 
-        <motion.button onClick={submit} variants={contVariants}>
+        {/* <motion.button onClick={submit} variants={contVariants}>
           Submit
-        </motion.button>
+        </motion.button> */}
+
+<SpotBtn text={"Submit"} variant={contVariants} submit={submit} />
 
         <motion.span
           className={emailSent ? "visible" : "not-visible"}

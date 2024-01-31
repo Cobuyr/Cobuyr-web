@@ -33,7 +33,7 @@ export default function MagneticBtn({ children }) {
   );
 }
 
-export const SpotBtn = ({text}) => {
+export const SpotBtn = ({text, variant, submit}) => {
    const divRef = useRef(null);
   const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -78,15 +78,21 @@ export const SpotBtn = ({text}) => {
     visible,
   };
 
+  const contVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible,
+  };
+
   return (
     <motion.button
             className="primary-btn base-input"
-            variants={homeVariants}
+            variants={variant}
             onMouseMove={handleMouseMove}
             onFocus={handleFocus}
             onBlur={handleBlur}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            onClick={submit}
           >
             <span
               className="overlay-input"

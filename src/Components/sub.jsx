@@ -44,7 +44,7 @@ const Sub = () => {
         <div>
           <motion.ul className="listbox" variants={homeVariants}>
             <motion.li variants={homeVariants}>
-              <div className="iconBadge">
+              {/* <div className="iconBadge">
                <lord-icon
                   src="https://cdn.lordicon.com/wzrwaorf.json"
                   trigger="hover"
@@ -52,17 +52,17 @@ const Sub = () => {
                   stroke="bold"
                   state="hover-conversation-alt"
                 ></lord-icon>
-              </div>
+              </div> */}
               <h4>Suggest Cobuyr</h4>
               <p>Encourage your chosen company to integrate Cobuyr into their e-commerce setup.</p>
             </motion.li>
             <motion.li variants={homeVariants}>
-               <IconBadge iconUrl="vdjwmfqs" trigger="hover" target="li" />
+               {/* <IconBadge iconUrl="vdjwmfqs" trigger="hover" target="li" /> */}
               <h4>Register with Us</h4>
               <p>Enter your details and the company's information below to ensure prompt payment upon their integration. <br/> It's crucial that the retailer references your name when they reach out to us.</p>
             </motion.li>
             <motion.li variants={homeVariants}>
-               <div className="iconBadge">
+               {/* <div className="iconBadge">
                <lord-icon
                   src="https://cdn.lordicon.com/ofwxettw.json"
                   trigger="hover"
@@ -70,7 +70,7 @@ const Sub = () => {
                   stroke="bold"
                   state="morph-open"
                 ></lord-icon>
-              </div>
+              </div> */}
               <h4>Acknowledged</h4>
               <p>Upon form completion, your first name and the company's name will be listed on this page, confirming your submission acknowledgment.</p>
             </motion.li>
