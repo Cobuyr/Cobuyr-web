@@ -127,6 +127,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  pointer-events: none;
 
   // background-size: 100% 100%;
   // background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
@@ -578,7 +579,7 @@
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    z-index: -1;
+    z-index: -2;
     background-color: inherit;
   }
 
@@ -597,6 +598,7 @@
     animation-direction: reverse;
     animation-timeline: view(block);
     animation-range: entry 0% exit 40%;
+    z-index: -1;
   }
 
   .glow {
@@ -615,6 +617,7 @@
     animation: bright linear both;
     animation-timeline: view(block);
     animation-range: entry 0% exit 40%;
+    z-index: -1;
   }
 }
 
@@ -663,6 +666,7 @@
     h2 {
       padding: 0;
       text-transform: uppercase;
+      text-align: center;
     }
     p {
       max-width: 55ch;
@@ -826,33 +830,35 @@
     padding: 12px 24px;
     position: relative;
 
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      translate: -50%;
-      width: 100%;
-      height: 80%;
-      pointer-events: none;
-      background-image: radial-gradient(
-        circle,
-        var(--accent) 1px,
-        var(--accent) 1px,
-        transparent 1px,
-        transparent 100%
-      );
-      background-repeat: repeat;
-      background-position: left center;
-      background-size: 8px 8px;
-      mask-image: radial-gradient(rgb(0, 0, 0), transparent 50%);
-      opacity: 0.5;
-      z-index: -1;
-      animation: reveal 10s ease forwards;
-    }
 
     h2 {
       padding-inline: 10%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 50%;
+        translate: -50%;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        background-image: radial-gradient(
+          circle,
+          var(--accent) 1px,
+          var(--accent) 1px,
+          transparent 1px,
+          transparent 100%
+        );
+        background-repeat: repeat;
+        background-position: left center;
+        background-size: 8px 8px;
+        mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+        opacity: 0.5;
+        z-index: -1;
+        animation: reveal 10s ease forwards;
+      }
     }
   }
 
@@ -1180,11 +1186,15 @@ color: transparent;
       }
     }
   }
-  li {
+  ul{
+    text-align: left;
+    li {
     list-style: inside;
     list-style-type: disclosure-closed;
     font-size: 14px;
   }
+  }
+  
 }
 .early-form {
   display: flex;
