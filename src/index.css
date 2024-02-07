@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap&rel=preconnect');
 
 :root {
-  --bg-color: #242424;
+  --bg-color: #121212;
+  --bg-light: #161616;
   --accent: hsl(335, 90%, 60%);
-  --text-color: hsl(0, 0%, 70%);
+  --text-color: hsl(0, 0%, 80%);
   --highlight-color: hsl(0, 0%, 90%);
   --light-border: #ffffff17;
   --primary-dark: hsl(210, 100%, 25%);

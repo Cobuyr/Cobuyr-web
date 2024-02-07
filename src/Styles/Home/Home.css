@@ -173,11 +173,13 @@
 }
 .mainText {
   font-size: calc(100% + 0.15em);
-  background-image: linear-gradient(313deg, rgb(179, 143, 241) 0%, #f53d8a 100%);
+  background: linear-gradient(150deg, #e30d95 20%, #b048d3 40%, #3133a0 60%, #e30d95 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  animation: grad-text 9s linear infinite both;
 }
 @keyframes grad {
   0% {
@@ -188,6 +190,11 @@
   }
   100% {
     background-position: 0% 77%;
+  }
+}
+@keyframes grad-text {
+  100% {
+    background-position: -200%;
   }
 }
 .highlight {
@@ -273,7 +280,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #2d2d2d;
+  background: var(--bg-light);
   border-radius: 50px;
   position: relative;
   width: 90%;
@@ -374,12 +381,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(1) .spotlight {
   background: rgba(52, 152, 219, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(1) p {
   color: hsl(0, 0%, 65%);
@@ -387,11 +395,6 @@
 }
 .listbox li:nth-child(1):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(52, 152, 219, 0.2509803922);
-}
-.listbox li:nth-child(1):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 .listbox li:nth-child(2) {
   width: 100%;
@@ -419,12 +422,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(2) .spotlight {
   background: rgba(231, 77, 60, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(2) p {
   color: hsl(0, 0%, 65%);
@@ -432,11 +436,6 @@
 }
 .listbox li:nth-child(2):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(231, 77, 60, 0.2509803922);
-}
-.listbox li:nth-child(2):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 .listbox li:nth-child(3) {
   width: 100%;
@@ -464,12 +463,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(3) .spotlight {
   background: rgba(46, 204, 112, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(3) p {
   color: hsl(0, 0%, 65%);
@@ -477,11 +477,6 @@
 }
 .listbox li:nth-child(3):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(46, 204, 112, 0.2509803922);
-}
-.listbox li:nth-child(3):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 .listbox li:nth-child(4) {
   width: 100%;
@@ -509,12 +504,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(4) .spotlight {
   background: rgba(243, 156, 18, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(4) p {
   color: hsl(0, 0%, 65%);
@@ -522,11 +518,6 @@
 }
 .listbox li:nth-child(4):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(243, 156, 18, 0.2509803922);
-}
-.listbox li:nth-child(4):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 .listbox li:nth-child(5) {
   width: 100%;
@@ -554,12 +545,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(5) .spotlight {
   background: rgba(155, 89, 182, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(5) p {
   color: hsl(0, 0%, 65%);
@@ -567,11 +559,6 @@
 }
 .listbox li:nth-child(5):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(155, 89, 182, 0.2509803922);
-}
-.listbox li:nth-child(5):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 .listbox li:nth-child(6) {
   width: 100%;
@@ -599,12 +586,13 @@
   position: absolute;
   inset: 0;
   margin: auto;
-  background-color: #2d2d2d;
+  background-color: var(--bg-light);
   z-index: -1;
   transition: all 1s ease-in-out;
 }
 .listbox li:nth-child(6) .spotlight {
   background: rgba(231, 57, 182, 0.2509803922);
+  filter: blur(10px);
 }
 .listbox li:nth-child(6) p {
   color: hsl(0, 0%, 65%);
@@ -612,11 +600,6 @@
 }
 .listbox li:nth-child(6):hover .iconBadge {
   box-shadow: 0px 0px 5px rgba(231, 57, 182, 0.2509803922);
-}
-.listbox li:nth-child(6):hover::before {
-  background-color: rgba(45, 45, 45, 0.75);
-  -webkit-backdrop-filter: blur(65px);
-          backdrop-filter: blur(65px);
 }
 
 .info-banner {
@@ -627,7 +610,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #202022;
+  background-color: var(--bg-light);
   isolation: isolate;
 }
 .info-banner::after {

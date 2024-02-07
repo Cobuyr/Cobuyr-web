@@ -70,7 +70,7 @@ h1 {
 h2 {
     font-family: 'Lato', sans-serif;
 
-    font-size: clamp(1.5em, 5vw, 2.5em);
+    font-size: clamp(1.7em, 5vw, 3em);
     max-width: 65ch;
     padding-inline: 20%;
     text-transform: uppercase;

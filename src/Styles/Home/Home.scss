@@ -247,16 +247,13 @@
 
 .mainText {
   font-size: calc(100% + 0.15em);
-  background-image: linear-gradient(
-    313deg,
-    rgb(179, 143, 241) 0%,
-    #f53d8aff 100%
-  );
-
+  background: linear-gradient(150deg,#e30d95 20%,#b048d3 40%,#3133a0 60%,#e30d95 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+  animation: grad-text 9s linear infinite both;
 }
 
 @-webkit-keyframes grad {
@@ -292,7 +289,11 @@
     background-position: 0% 77%;
   }
 }
-
+@keyframes grad-text {
+  100% {
+    background-position: -200%;
+}
+}
 .highlight {
   color: var(--highlight-color);
 }
@@ -402,7 +403,7 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #2d2d2d;
+  background: var(--bg-light);
   border-radius: 50px;
   position: relative;
   width: 90%;
@@ -518,12 +519,13 @@
         position: absolute;
         inset: 0;
         margin: auto;
-        background-color: #2d2d2d;
+        background-color: var(--bg-light);
         z-index: -1;
         transition: all 1s ease-in-out;
       }
       .spotlight {
         background: nth($random-colors, $i);
+        filter: blur(10px);
       }
 
       p {
@@ -534,10 +536,10 @@
         .iconBadge {
           box-shadow: 0px 0px 5px nth($random-colors, $i);
         }
-        &::before {
-          background-color: rgba(45, 45, 45, 0.75);
-          backdrop-filter: blur(65px);
-        }
+        // &::before {
+        //   background-color: #161616fc;
+        //   backdrop-filter: blur(15px);
+        // }
       }
     }
   }
@@ -566,7 +568,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #202022;
+  background-color: var(--bg-light);
   isolation: isolate;
   // z-index: -1;
   // backdrop-filter: blur(10px);
