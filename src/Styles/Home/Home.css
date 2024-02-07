@@ -1124,6 +1124,9 @@
     background: unset;
     text-align: -webkit-center;
   }
+  .codebox {
+    width: 100%;
+  }
 }
 @media (max-width: 900px) {
   .future {

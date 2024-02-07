@@ -602,6 +602,7 @@ const Home = () => {
             hidden: { opacity: 0, x: 40 },
             visible,
           }}
+          className="codebox"
         >
           <Code code={htmlWidget} language="html" />
         </motion.div>
