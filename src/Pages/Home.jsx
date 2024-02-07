@@ -12,6 +12,7 @@ import { Section } from "../Components/inView";
 import MagneticBtn, { SpotBtn } from "../Components/magnetBtn";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
+import Code from "../Components/CodeWidget";
 // import Velocity from "../Components/Velocity";
 
 const visible = {
@@ -81,6 +82,29 @@ const Home = () => {
     };
   }, [cardRefs, spotRefs, coverspotRefs]);
 
+  const htmlWidget = `
+  <script src="https://cobuyr-static-widget.onrender.com/Widget.js">
+  </script>
+
+  <script>
+    const config = {
+      order: [{
+        name: string,
+        description: string,
+        price: number,
+        quantity: number,
+        id: string,
+        productType: 'wineries' | ' ',
+        image: string,
+      }],
+      publicKey: string,
+      totalQuantity: number,
+      amount: number,
+
+    };
+  </script>
+`;
+
   return (
     <>
       <div
@@ -98,8 +122,8 @@ const Home = () => {
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
           </motion.div>
           <motion.h2 variants={homeVariants}>
-            PAYMENT METHOD
-             OF<br /> THE <span className="mainText">FUTURE</span>
+            PAYMENT METHOD OF
+            <br /> THE <span className="mainText">FUTURE</span>
           </motion.h2>
           <motion.p variants={homeVariants}>
             Unleash the potential of your online business with Cobuyr's Social
@@ -409,14 +433,13 @@ const Home = () => {
             <br />
           </motion.p>
           <motion.blockquote variants={homeVariants}>
-            By integrating our API, you unlock a world of collaborative
-            purchasing opportunities for your customers while streamlining
-            backend processes for your business.
+            By integrating our API with just few lines of code, you unlock a world of collaborative
+            purchasing opportunities for your customers.
           </motion.blockquote>
 
           <SpotBtn text={"Documentation"} variant={homeVariants} />
         </div>
-        <motion.div className="marquee-wrap" variants={homeVariants}>
+        {/* <motion.div className="marquee-wrap" variants={homeVariants}>
           <motion.div
             className=" marquee marquee--vertical"
             variants={{
@@ -573,7 +596,14 @@ const Home = () => {
               </li>
             </ul>
           </motion.div>
+        </motion.div> */}
+        <motion.div variants={{
+              hidden: { opacity: 0, x: 40 },
+              visible,
+            }}>
+           <Code code={htmlWidget} language="html" />
         </motion.div>
+       
       </Section>
 
       <Sub />

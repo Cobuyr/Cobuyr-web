@@ -136,7 +136,8 @@ hr {
 pre {
     font-family: monospace, monospace;
     /* 1 */
-    font-size: 1em;
+    font-size: 0.8em;
+    margin: 0;
     /* 2 */
 }
 
@@ -188,6 +189,8 @@ samp {
     font-family: monospace, monospace;
     /* 1 */
     font-size: 1em;
+    border-radius: 8px;
+    text-align: left;
     /* 2 */
 }
 
