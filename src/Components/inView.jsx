@@ -22,7 +22,7 @@ export const Section = ({ children, className }) => {
       opacity: 1,
       x: 0,
       y: 0,
-      transition: { staggerChildren: 0.25, duration: 0.5 },
+      transition: { staggerChildren: 0.15, duration: 0.25 },
     };
   
   return (
@@ -32,8 +32,8 @@ export const Section = ({ children, className }) => {
         ref={ref}
         initial="hidden"
         animate= {mainControl}
-        exit={{ opacity: 0, transition: { duration: 0.3 } }}
-        variants={{ visible: { transition: { staggerChildren: 0.2 } } }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
       >
        {children}
       </motion.section>

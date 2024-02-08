@@ -123,11 +123,11 @@
 .hero-wrap {
   margin: unset;
   padding: unset;
-  z-index: 5;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
+  // z-index: 5;
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  // pointer-events: none;
 
   // background-size: 100% 100%;
   // background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
@@ -154,7 +154,7 @@
   // left: 0;
   backdrop-filter: blur(3px);
   background: radial-gradient(
-    circle at 50% 50%,
+    circle at 50% 0%,
     rgba(0, 0, 0, 0.6) 50%,
     rgba(0, 0, 0, 0.5) 60%,
     rgba(0, 0, 0, 0.4) 70%,
@@ -164,7 +164,7 @@
   // background-image: url("./grad.png");
   background-size: 100% 100%;
   background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-  pointer-events: none;
+  // pointer-events: none;
 
   p {
     font-size: clamp(15px, 5vw, 18px);

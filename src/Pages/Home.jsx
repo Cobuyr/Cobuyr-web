@@ -107,12 +107,12 @@ const Home = () => {
 
   return (
     <>
-      <div
+      {/* <div
         className="scene"
         //  style={{ position:position }}
       >
         <Scene />
-      </div>
+      </div> */}
       <Hero />
       {/* <Scroller /> */}
 
@@ -392,10 +392,10 @@ const Home = () => {
 
         <motion.div className="textbox" variants={homeVariants}>
           <motion.h2 variants={homeVariants}>
-            Universal Platform
+            Universal
             <span className="mainText"> Compatibilty</span>
           </motion.h2>
-          <motion.p className="banner-text" variants={homeVariants}>
+          {/* <motion.p className="banner-text" variants={homeVariants}>
             Our platform seamlessly integrates with leading e-commerce
             platforms, revolutionizing the checkout experience. By enabling
             customers to split payments securely and purchase together,
@@ -404,11 +404,11 @@ const Home = () => {
               Cobuyr bridges the divide between evolving customer preferences
               and existing payment technologies.{" "}
             </span>
-          </motion.p>
+          </motion.p> */}
           <Velocity />
         </motion.div>
-        <div className="glow"></div>
-        <div className="glow2"></div>
+        {/* <div className="glow"></div>
+        <div className="glow2"></div> */}
       </Section>
 
       <Section className="integrate">

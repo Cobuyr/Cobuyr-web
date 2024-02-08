@@ -16,7 +16,7 @@ const wrap = (min, max, v) => {
   return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
 };
 
-export function ParallaxText({ children }) {
+export function ParallaxText({ children, baseVelocity = 10 }) {
   const baseX = useMotionValue(0);
   const { scrollY } = useScroll();
   const scrollVelocity = useVelocity(scrollY);
@@ -35,14 +35,14 @@ export function ParallaxText({ children }) {
     [-30, 30]
   );
 
-  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+  const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 3], {
     clamp: false,
   });
   const x = useTransform(baseX, (v) => `${wrap(0, -25, v)}%`);
   const directionFactor = useRef(1);
 
   useAnimationFrame((t, delta) => {
-    let moveBy = directionFactor.current * -5 * (delta / 1000);
+    let moveBy = directionFactor.current * baseVelocity * (delta / 1000);
     if (velocityFactor.get() < 0) {
       directionFactor.current = -1;
     } else if (velocityFactor.get() > 0) {
@@ -52,6 +52,9 @@ export function ParallaxText({ children }) {
       moveBy += directionFactor.current * moveBy * velocityFactor.get();
       baseX.set(baseX.get() + moveBy);
     }
+    moveBy += directionFactor.current * moveBy * velocityFactor.get();
+
+        baseX.set(baseX.get() + moveBy);
   });
 
   return (
@@ -77,7 +80,7 @@ export function ParallaxText({ children }) {
 export default function Velocity() {
   return (
     <div>
-      <ParallaxText baseVelocity={-5}>
+      <ParallaxText baseVelocity={-1}>
         <ul>
           <li>
             <Icon name={"shopify"} />
