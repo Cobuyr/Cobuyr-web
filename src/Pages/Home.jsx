@@ -13,7 +13,7 @@ import MagneticBtn, { SpotBtn } from "../Components/magnetBtn";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
 import Code from "../Components/CodeWidget";
-// import Velocity from "../Components/Velocity";
+import Velocity from "../Components/Velocity";
 
 const visible = {
   opacity: 1,
@@ -114,7 +114,7 @@ const Home = () => {
         <Scene />
       </div>
       <Hero />
-      <Scroller />
+      {/* <Scroller /> */}
 
       <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
@@ -392,19 +392,20 @@ const Home = () => {
 
         <motion.div className="textbox" variants={homeVariants}>
           <motion.h2 variants={homeVariants}>
-            <span className="mainText">Buff up</span> customer Transaction
+            Universal Platform
+            <span className="mainText"> Compatibilty</span>
           </motion.h2>
           <motion.p className="banner-text" variants={homeVariants}>
-            Payment technology has not kept up with what customers want, and
-            that is why we invented Social Buying,
+            Our platform seamlessly integrates with leading e-commerce
+            platforms, revolutionizing the checkout experience. By enabling
+            customers to split payments securely and purchase together,
             <span className="highlight">
               {" "}
-              a new category of multi-party payment transactions{" "}
+              Cobuyr bridges the divide between evolving customer preferences
+              and existing payment technologies.{" "}
             </span>
-            that enables your customers to split and securely pay for purchases
-            together.
           </motion.p>
-          <SpotBtn text={"Book Demo"} variant={homeVariants} />
+          <Velocity />
         </motion.div>
         <div className="glow"></div>
         <div className="glow2"></div>
@@ -617,253 +618,253 @@ const Home = () => {
 const TransHome = Transition(Home);
 export default TransHome;
 
-export const Scroller = () => {
-  const TargetRef = useRef();
-  const { scrollYProgress } = useScroll({
-    target: TargetRef,
-    offset: ["start end", "end start"],
-  });
+// export const Scroller = () => {
+//   const TargetRef = useRef();
+//   const { scrollYProgress } = useScroll({
+//     target: TargetRef,
+//     offset: ["start end", "end start"],
+//   });
 
-  const animationOrder = {
-    init: 0,
-    scaleInLeft: 0.1,
-    LtextFadein: 0.25,
-    LtextFadeinEnd: 0.3,
-    branch1End: 0.4,
-    Ltfadeout: 0.425,
-    shiftRight: 0.425,
-    RtextFadein: 0.55,
-    RtextFadeinEnd: 0.75,
-    branch2End: 0.75,
-    jumboTextIn: 0.8,
-    jumboTextInEnd: 0.85,
-    PartnerTextin: 1,
-  };
+//   const animationOrder = {
+//     init: 0,
+//     scaleInLeft: 0.1,
+//     LtextFadein: 0.25,
+//     LtextFadeinEnd: 0.3,
+//     branch1End: 0.4,
+//     Ltfadeout: 0.425,
+//     shiftRight: 0.425,
+//     RtextFadein: 0.55,
+//     RtextFadeinEnd: 0.75,
+//     branch2End: 0.75,
+//     jumboTextIn: 0.8,
+//     jumboTextInEnd: 0.85,
+//     PartnerTextin: 1,
+//   };
 
-  const opacity = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.scaleInLeft,
-      animationOrder.LtextFadeinEnd,
-      animationOrder.branch1End,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.branch2End,
-      animationOrder.jumboTextIn,
-    ],
-    [0, 1, 1, 1, 1, 0, 0]
-  );
-  const scale = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.scaleInLeft,
-      animationOrder.LtextFadeinEnd,
-      animationOrder.branch1End,
-      animationOrder.RtextFadein,
-    ],
-    [5, 3, 2, 2, 2]
-  );
-  const x = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.scaleInLeft,
-      animationOrder.LtextFadeinEnd,
-      animationOrder.branch1End,
-      animationOrder.RtextFadein,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.jumboTextIn,
-    ],
-    ["120%", "100%", "100%", "100%", "-100%", "-100%", "-200%"]
-  );
+//   const opacity = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.scaleInLeft,
+//       animationOrder.LtextFadeinEnd,
+//       animationOrder.branch1End,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.branch2End,
+//       animationOrder.jumboTextIn,
+//     ],
+//     [0, 1, 1, 1, 1, 0, 0]
+//   );
+//   const scale = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.scaleInLeft,
+//       animationOrder.LtextFadeinEnd,
+//       animationOrder.branch1End,
+//       animationOrder.RtextFadein,
+//     ],
+//     [5, 3, 2, 2, 2]
+//   );
+//   const x = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.scaleInLeft,
+//       animationOrder.LtextFadeinEnd,
+//       animationOrder.branch1End,
+//       animationOrder.RtextFadein,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.jumboTextIn,
+//     ],
+//     ["120%", "100%", "100%", "100%", "-100%", "-100%", "-200%"]
+//   );
 
-  const T1opacity = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.LtextFadein,
-      animationOrder.LtextFadeinEnd,
-      animationOrder.branch1End,
-      animationOrder.Ltfadeout,
-    ],
-    [0, 0, 1, 1, 0]
-  );
-  const T1scale = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.LtextFadein,
-      animationOrder.LtextFadeinEnd,
-      animationOrder.branch1End,
-      animationOrder.Ltfadeout,
-    ],
-    [0, 1, 1, 1, 0]
-  );
+//   const T1opacity = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.LtextFadein,
+//       animationOrder.LtextFadeinEnd,
+//       animationOrder.branch1End,
+//       animationOrder.Ltfadeout,
+//     ],
+//     [0, 0, 1, 1, 0]
+//   );
+//   const T1scale = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.LtextFadein,
+//       animationOrder.LtextFadeinEnd,
+//       animationOrder.branch1End,
+//       animationOrder.Ltfadeout,
+//     ],
+//     [0, 1, 1, 1, 0]
+//   );
 
-  const T2opacity = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.shiftRight,
-      animationOrder.RtextFadein,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.branch2End,
-      animationOrder.jumboTextIn,
-    ],
-    [0, 0, 1, 1, 0, 0]
-  );
-  const T2scale = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.shiftRight,
-      animationOrder.RtextFadein,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.branch2End,
-      animationOrder.jumboTextIn,
-    ],
-    [0, 0, 1, 1, 0, 0]
-  );
-  const Jopacity = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.jumboTextIn,
-      animationOrder.jumboTextInEnd,
-      animationOrder.PartnerTextin,
-    ],
-    [0, 0, 1, 1, 1]
-  );
-  const Jscale = useTransform(
-    scrollYProgress,
-    [
-      animationOrder.init,
-      animationOrder.RtextFadeinEnd,
-      animationOrder.jumboTextIn,
-      animationOrder.jumboTextInEnd,
-      0.87,
-      animationOrder.PartnerTextin,
-    ],
-    [0, 0.5, 1, 1, 1, 1]
-  );
+//   const T2opacity = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.shiftRight,
+//       animationOrder.RtextFadein,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.branch2End,
+//       animationOrder.jumboTextIn,
+//     ],
+//     [0, 0, 1, 1, 0, 0]
+//   );
+//   const T2scale = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.shiftRight,
+//       animationOrder.RtextFadein,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.branch2End,
+//       animationOrder.jumboTextIn,
+//     ],
+//     [0, 0, 1, 1, 0, 0]
+//   );
+//   const Jopacity = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.jumboTextIn,
+//       animationOrder.jumboTextInEnd,
+//       animationOrder.PartnerTextin,
+//     ],
+//     [0, 0, 1, 1, 1]
+//   );
+//   const Jscale = useTransform(
+//     scrollYProgress,
+//     [
+//       animationOrder.init,
+//       animationOrder.RtextFadeinEnd,
+//       animationOrder.jumboTextIn,
+//       animationOrder.jumboTextInEnd,
+//       0.87,
+//       animationOrder.PartnerTextin,
+//     ],
+//     [0, 0.5, 1, 1, 1, 1]
+//   );
 
-  // const Popacity = useTransform(
-  //   scrollYProgress,
-  //   [
-  //     animationOrder.init,
-  //     animationOrder.PartnerTextin,
-  //     animationOrder.PartnerTextinEnd,
-  //     animationOrder.PartnerScrollvelocity,
-  //     animationOrder.FtCover,
-  //   ],
-  //   [0, 0, 1, 1, 0]
-  // );
-  // const Pscale = useTransform(
-  //   scrollYProgress,
-  //   [
-  //     animationOrder.init,
-  //     animationOrder.PartnerTextin,
-  //     animationOrder.PartnerTextinEnd,
-  //     animationOrder.PartnerScrollvelocity,
-  //     animationOrder.FtCover,
-  //   ],
-  //   [0, 0, 1, 1, 0]
-  // );
+//   // const Popacity = useTransform(
+//   //   scrollYProgress,
+//   //   [
+//   //     animationOrder.init,
+//   //     animationOrder.PartnerTextin,
+//   //     animationOrder.PartnerTextinEnd,
+//   //     animationOrder.PartnerScrollvelocity,
+//   //     animationOrder.FtCover,
+//   //   ],
+//   //   [0, 0, 1, 1, 0]
+//   // );
+//   // const Pscale = useTransform(
+//   //   scrollYProgress,
+//   //   [
+//   //     animationOrder.init,
+//   //     animationOrder.PartnerTextin,
+//   //     animationOrder.PartnerTextinEnd,
+//   //     animationOrder.PartnerScrollvelocity,
+//   //     animationOrder.FtCover,
+//   //   ],
+//   //   [0, 0, 1, 1, 0]
+//   // );
 
-  const position = useTransform(scrollYProgress, (pos) =>
-    pos >= 0.5 ? "relative" : "fixed"
-  );
-  return (
-    <>
-      <motion.section className="scrollwrap" ref={TargetRef}>
-        {/* <div className="scene" style={{ position: position }}>
-          <Scene />
-        </div> */}
-        <div className="branch1wrap">
-          <div className="branch1">
-            <motion.h2
-              className="b1Text"
-              style={{ opacity: T1opacity, scale: T1scale }}
-            >
-              Fully Customizable dashboard
-            </motion.h2>
-            <motion.div className="image" style={{ opacity, scale, x }}>
-              <img
-                src={dash}
-                alt="new category of multi-party payment transactions"
-              />
-            </motion.div>
-            <motion.h2
-              className="b1Text"
-              style={{ opacity: T2opacity, scale: T2scale }}
-            >
-              Extremely Detailed Analytics and product tracking
-            </motion.h2>
-          </div>
-        </div>
+//   const position = useTransform(scrollYProgress, (pos) =>
+//     pos >= 0.5 ? "relative" : "fixed"
+//   );
+//   return (
+//     <>
+//       <motion.section className="scrollwrap" ref={TargetRef}>
+//         {/* <div className="scene" style={{ position: position }}>
+//           <Scene />
+//         </div> */}
+//         <div className="branch1wrap">
+//           <div className="branch1">
+//             <motion.h2
+//               className="b1Text"
+//               style={{ opacity: T1opacity, scale: T1scale }}
+//             >
+//               Fully Customizable dashboard
+//             </motion.h2>
+//             <motion.div className="image" style={{ opacity, scale, x }}>
+//               <img
+//                 src={dash}
+//                 alt="new category of multi-party payment transactions"
+//               />
+//             </motion.div>
+//             <motion.h2
+//               className="b1Text"
+//               style={{ opacity: T2opacity, scale: T2scale }}
+//             >
+//               Extremely Detailed Analytics and product tracking
+//             </motion.h2>
+//           </div>
+//         </div>
 
-        <div className="branch2wrap">
-          <motion.h1 style={{ opacity: Jopacity, scale: Jscale }}>
-            Joint Purchase <br /> for all your customers...
-          </motion.h1>
-        </div>
+//         <div className="branch2wrap">
+//           <motion.h1 style={{ opacity: Jopacity, scale: Jscale }}>
+//             Joint Purchase <br /> for all your customers...
+//           </motion.h1>
+//         </div>
 
-        {/* <div className="branch3wrap">
-        <motion.h2 style={{ opacity: Popacity, scale: Pscale }}>
-          Quick and easy Integration with any E-commerce Platform.
-        </motion.h2>
-        {/* <Velocity/> */}
-        {/* <motion.div className="partner">
-          <div className=" marquee">
-            <ul className="marquee__group ">
-              <li>
-                <Icon name={"shopify"} />
-              </li>
-              <li>
-                <Icon name={"woo"} />
-              </li>
-              <li>
-                <Icon name={"wix"} />
-              </li>
-              <li>
-                <Icon name={"magento-full"} />
-              </li>
-              <li>
-                <Icon name={"salesforce"} />
-              </li>
-              <li>
-                <Icon name={"paypal"} />
-              </li>
-            </ul>
-            <ul aria-hidden="true" className="marquee__group ">
-              <li>
-                <Icon name={"shopify"} />
-              </li>
-              <li>
-                <Icon name={"woo"} />
-              </li>
-              <li>
-                <Icon name={"wix"} />
-              </li>
-              <li>
-                <Icon name={"magento-full"} />
-              </li>
-              <li>
-                <Icon name={"salesforce"} />
-              </li>
-              <li>
-                <Icon name={"paypal"} />
-              </li>
-            </ul>
-          </div>
-        </motion.div>
-      </div> */}
-      </motion.section>
-    </>
-  );
-};
+//         {/* <div className="branch3wrap">
+//         <motion.h2 style={{ opacity: Popacity, scale: Pscale }}>
+//           Quick and easy Integration with any E-commerce Platform.
+//         </motion.h2>
+//         {/* <Velocity/> */}
+//         {/* <motion.div className="partner">
+//           <div className=" marquee">
+//             <ul className="marquee__group ">
+//               <li>
+//                 <Icon name={"shopify"} />
+//               </li>
+//               <li>
+//                 <Icon name={"woo"} />
+//               </li>
+//               <li>
+//                 <Icon name={"wix"} />
+//               </li>
+//               <li>
+//                 <Icon name={"magento-full"} />
+//               </li>
+//               <li>
+//                 <Icon name={"salesforce"} />
+//               </li>
+//               <li>
+//                 <Icon name={"paypal"} />
+//               </li>
+//             </ul>
+//             <ul aria-hidden="true" className="marquee__group ">
+//               <li>
+//                 <Icon name={"shopify"} />
+//               </li>
+//               <li>
+//                 <Icon name={"woo"} />
+//               </li>
+//               <li>
+//                 <Icon name={"wix"} />
+//               </li>
+//               <li>
+//                 <Icon name={"magento-full"} />
+//               </li>
+//               <li>
+//                 <Icon name={"salesforce"} />
+//               </li>
+//               <li>
+//                 <Icon name={"paypal"} />
+//               </li>
+//             </ul>
+//           </div>
+//         </motion.div>
+//       </div> */}
+//       </motion.section>
+//     </>
+//   );
+// };
 
 export function Hero() {
   const heroRef = useRef(null);

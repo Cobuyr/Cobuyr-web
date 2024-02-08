@@ -452,3 +452,9 @@ template {
 [hidden] {
     display: none;
 }
+
+@media (max-width: 550px) {
+    h2{
+      padding-inline: unset;
+    }
+}

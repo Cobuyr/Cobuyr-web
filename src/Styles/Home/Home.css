@@ -103,6 +103,9 @@
   background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
   pointer-events: none;
 }
+.hero p {
+  font-size: clamp(15px, 5vw, 18px);
+}
 .hero .mgBtn {
   position: absolute;
   bottom: calc(0% - 15vh);
@@ -199,6 +202,7 @@
 }
 .highlight {
   color: var(--highlight-color);
+  text-shadow: 0px 0px 5px var(--accent);
 }
 
 .primary-btn {

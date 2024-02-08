@@ -166,6 +166,9 @@
   background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
   pointer-events: none;
 
+  p {
+    font-size: clamp(15px, 5vw, 18px);
+  }
   & .mgBtn {
     position: absolute;
     bottom: calc(0% - 15vh);
@@ -247,7 +250,13 @@
 
 .mainText {
   font-size: calc(100% + 0.15em);
-  background: linear-gradient(150deg,#e30d95 20%,#b048d3 40%,#3133a0 60%,#e30d95 100%);
+  background: linear-gradient(
+    150deg,
+    #e30d95 20%,
+    #b048d3 40%,
+    #3133a0 60%,
+    #e30d95 100%
+  );
   background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
@@ -292,10 +301,11 @@
 @keyframes grad-text {
   100% {
     background-position: -200%;
-}
+  }
 }
 .highlight {
   color: var(--highlight-color);
+  text-shadow: 0px 0px 5px var(--accent);
 }
 .primary-btn {
   padding: 10px 20px;
@@ -832,7 +842,6 @@
     padding: 12px 24px;
     position: relative;
 
-
     h2 {
       padding-inline: 10%;
       position: relative;
@@ -1172,31 +1181,32 @@
     li {
       overflow: unset;
       &::after {
-        content: "0"counter(step);
+        content: "0" counter(step);
         counter-increment: step;
         position: absolute;
         top: -10%;
         left: 0;
         font-size: 3em;
-        background-image: linear-gradient(180deg,
-        hsl(0, 0%, 100%) 10%,
-        hsla(0, 0%, 50%, 0) 100%);
--webkit-background-clip: text;
-background-clip: text;
-color: transparent;
--webkit-text-fill-color: transparent;
+        background-image: linear-gradient(
+          180deg,
+          hsl(0, 0%, 100%) 10%,
+          hsla(0, 0%, 50%, 0) 100%
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
       }
     }
   }
-  ul{
+  ul {
     text-align: left;
     li {
-    list-style: inside;
-    list-style-type: disclosure-closed;
-    font-size: 14px;
+      list-style: inside;
+      list-style-type: disclosure-closed;
+      font-size: 14px;
+    }
   }
-  }
-  
 }
 .early-form {
   display: flex;
@@ -1254,7 +1264,7 @@ color: transparent;
     text-align: -webkit-center;
     // text-align: center;
   }
-  .codebox{
+  .codebox {
     width: 100%;
   }
 }
