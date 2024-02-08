@@ -1,6 +1,6 @@
-import "./components.css";
-import { Icon } from "../assets/icon";
 import { useRef } from "react";
+import "./Components.css";
+import { Icon } from "../assets/icon";
 import {
   motion,
   useScroll,
