@@ -32,7 +32,7 @@ export function ParallaxText({ children, baseVelocity = 10 }) {
   const skewVelocityFactor = useTransform(
     skewVelocity,
     [-1000, 1000],
-    [-30, 30]
+    [-15, 15]
   );
 
   const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 3], {

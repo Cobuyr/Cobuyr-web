@@ -382,13 +382,13 @@ const Home = () => {
       </Section>
 
       <Section className="info-banner">
-        <motion.div variants={homeVariants}>
+        {/* <motion.div variants={homeVariants}>
           <Badge
             iconUrl="kndkiwmf"
             trigger="hover"
             text="Checkout Transformation"
           />
-        </motion.div>
+        </motion.div> */}
 
         <motion.div className="textbox" variants={homeVariants}>
           <motion.h2 variants={homeVariants}>
