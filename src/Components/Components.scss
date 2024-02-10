@@ -212,6 +212,117 @@
   transition: opacity 0.5s;
 }
 
+//////// Tabsss \\\\\\\
+///
+
+.vertical {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.Tab {
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 1rem 2rem;
+  transition: background 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.react-tabs {
+  -webkit-tap-highlight-color: transparent;
+
+  &__tab-list {
+    margin: 0 1rem 0 0;
+    padding: 0;
+    text-align: left;
+  }
+
+  &__tab {
+    display: inline-block;
+    border: 1px solid transparent;
+    border-bottom: none;
+    bottom: -1px;
+    position: relative;
+    list-style: none;
+    padding: 6px 12px;
+    cursor: pointer;
+
+    &--selected {
+      color: var(--accent);
+      transition: all 0.25s ease-in;
+      position: relative;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        border: none;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        right: -1px;
+        top: 0;
+        height: 100%;
+        border-radius: 2px;
+        border-right: 3px solid var(--accent);
+        animation: tabActive 0.5s ease-in-out;
+        transform-origin: center;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border: none;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    &--disabled {
+      color: GrayText;
+      cursor: default;
+    }
+  }
+
+  &__tab-panel {
+    display: none;
+
+    &--selected {
+      width: 80%;
+      padding: 1em 2em;
+      display: block;
+      background: var(--bg-light);
+      border-radius: 10px;
+      text-align: left;
+
+      p {
+        animation: tabPanelActive 0.35s ease-in-out;
+        transform-origin: top;
+      }
+    }
+  }
+}
+@keyframes tabActive {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+@keyframes tabPanelActive {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @media (max-width: 1100px) {
   .parallax {
     width: calc(100vw - 5px);

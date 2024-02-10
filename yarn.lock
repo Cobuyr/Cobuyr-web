@@ -835,6 +835,11 @@ chevrotain@^10.1.2:
     lodash "4.17.21"
     regexp-to-ast "0.5.0"
 
+clsx@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.1.0.tgz#e851283bcb5c80ee7608db18487433f7b23f77cb"
+  integrity sha512-m3iNNWpd9rl3jvvcBnu70ylMdrXt8Vlq4HYadnU5fwcOtvkSQWPmj7amUcDT2qYI7risszBjI5AUIUox9D16pg==
+
 color-convert@^1.9.0:
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.3.tgz#bb71850690e1f136567de629d2d5471deda4c1e8"
@@ -2288,7 +2293,7 @@ process-nextick-args@~2.0.0:
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.1.tgz#7820d9b16120cc55ca9ae7792680ae7dba6d7fe2"
   integrity sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==
 
-prop-types@^15.6.0, prop-types@^15.8.1:
+prop-types@^15.5.0, prop-types@^15.6.0, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -2366,12 +2371,25 @@ react-router@6.20.0:
   dependencies:
     "@remix-run/router" "1.13.0"
 
+react-tabs@^6.0.2:
+  version "6.0.2"
+  resolved "https://registry.yarnpkg.com/react-tabs/-/react-tabs-6.0.2.tgz#bc1065c3828561fee285a8fd045f22e0fcdde1eb"
+  integrity sha512-aQXTKolnM28k3KguGDBSAbJvcowOQr23A+CUJdzJtOSDOtTwzEaJA+1U4KwhNL9+Obe+jFS7geuvA7ICQPXOnQ==
+  dependencies:
+    clsx "^2.0.0"
+    prop-types "^15.5.0"
+
 react-use-measure@^2.1.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/react-use-measure/-/react-use-measure-2.1.1.tgz#5824537f4ee01c9469c45d5f7a8446177c6cc4ba"
   integrity sha512-nocZhN26cproIiIduswYpV5y5lQpSQS1y/4KuvUCjSKmw7ZWIS/+g3aFnX3WdBkyuGUtTLif3UTqnLLhbDoQig==
   dependencies:
     debounce "^1.2.1"
+
+react-web-tabs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/react-web-tabs/-/react-web-tabs-1.0.1.tgz#86972a9ca4a1de0d6fca31bc725e30c8a59c8e22"
+  integrity sha512-Cg5B2515iLTvown5Tby+f69hT3+3HXetvsGr/Akou1ltREX57E3b3xra4lBjuUay42epMZ/2rfq/e+tTwOgBTQ==
 
 react@^18.2.0:
   version "18.2.0"

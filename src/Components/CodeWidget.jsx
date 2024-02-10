@@ -5,7 +5,7 @@ import "highlight.js/styles/atom-one-dark.css";
 const Code = ({ language, code }) => {
   const codeRef = useRef(null);
   useEffect(() => {
-    hljs.highlightBlock(codeRef.current);
+    hljs.highlightElement(codeRef.current);
   }, [codeRef]);
   return (
     <pre>

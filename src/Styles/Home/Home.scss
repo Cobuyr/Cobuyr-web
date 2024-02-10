@@ -407,6 +407,23 @@
   }
 }
 
+//***** product tab SECTION *****
+
+// .products{
+
+// }
+.products-head{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  h2{
+    margin-block: 0.5em;
+  }
+}
+
 //***** FUTURE SECTION *****
 
 .future {

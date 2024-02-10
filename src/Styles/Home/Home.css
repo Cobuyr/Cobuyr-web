@@ -274,6 +274,17 @@
   width: 100%;
 }
 
+.products-head {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+.products-head h2 {
+  margin-block: 0.5em;
+}
+
 .future {
   display: flex;
   align-items: center;
@@ -602,7 +613,7 @@
 
 .info-banner {
   width: 100%;
-  height: 75vh;
+  height: 60vh;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -692,6 +703,9 @@
   border-left: var(--text-color) 2px solid;
   padding-inline: 15px;
   max-width: 55ch;
+}
+.integrate .codebox {
+  box-shadow: 0px 0px 7px rgba(1, 1, 1, 0.3019607843);
 }
 .integrate .int-listbox {
   height: 415px;

@@ -14,6 +14,7 @@ import { useRef, useState, useEffect, useLayoutEffect } from "react";
 import Scene from "../Experience/scene";
 import Code from "../Components/CodeWidget";
 import Velocity from "../Components/Velocity";
+import TabBox from "../Components/ProductTab";
 
 const visible = {
   opacity: 1,
@@ -113,7 +114,32 @@ const Home = () => {
       >
         <Scene />
       </div> */}
+
       <Hero />
+      
+      <Section className="products">
+        <div className="products-head">
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="qucadebu" trigger="hover" text="The One Stop" />
+          </motion.div>
+          <motion.h2 variants={homeVariants}>
+            <span className="mainText">One</span> platform.
+            <br />
+            <span className="mainText">Many</span> opportunities.
+          </motion.h2>
+          <motion.p variants={homeVariants}>
+            Cobuyr has invented the modern checkout experience for today’s era
+            of Social Buying with its{" "}
+            <span className="highlight">
+              all-in-one payments, connected data and analytics platform
+            </span>{" "}
+            that gives you all the capabilities to succeed now and in the
+            future.
+          </motion.p>
+        </div>
+
+        <TabBox />
+      </Section>
       {/* <Scroller /> */}
 
       <Section className="future">
