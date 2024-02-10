@@ -289,6 +289,7 @@
 
   &__tab-panel {
     display: none;
+    position: relative;
 
     &--selected {
       width: 80%;
@@ -302,6 +303,31 @@
         animation: tabPanelActive 0.35s ease-in-out;
         transform-origin: top;
       }
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      translate: -50%;
+      width: 120%;
+      height: 110%;
+      pointer-events: none;
+      background-image: radial-gradient(
+        circle,
+        var(--accent) 1px,
+        var(--accent) 1px,
+        transparent 1px,
+        transparent 100%
+      );
+      background-repeat: repeat;
+      background-position: left center;
+      background-size: 8px 8px;
+      mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+      opacity: 0.5;
+      z-index: -1;
+      animation: reveal 5s ease forwards;
     }
   }
 }

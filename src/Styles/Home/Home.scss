@@ -650,16 +650,6 @@
   }
 }
 
-//***** Modern SECTION *****
-
-.modern {
-  height: 100%;
-  background-color: var(--bg-color);
-  border-radius: 0 0 50px 50px;
-  box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
-  z-index: 1;
-}
-
 // .banner2 {
 //   height: 100%;
 //   width: 95%;
@@ -828,6 +818,16 @@
   to {
     transform: translateY(var(--scroll-end));
   }
+}
+
+//***** Modern SECTION *****
+
+.modern {
+  height: 100%;
+  background-color: var(--bg-color);
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
+  z-index: 1;
 }
 
 .bento {
@@ -1129,6 +1129,10 @@
     }
   }
 }
+
+
+
+///// sub section
 
 .early {
   isolation: isolate;
