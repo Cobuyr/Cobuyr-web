@@ -261,6 +261,14 @@
   border-radius: 10px;
   text-align: left;
 }
+.react-tabs__tab-panel--selected .panelImage {
+  height: 450px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3137254902);
+  animation: tabPanelActive 0.35s ease-in-out;
+  transform-origin: top left;
+}
 .react-tabs__tab-panel--selected p {
   animation: tabPanelActive 0.35s ease-in-out;
   transform-origin: top;
@@ -268,9 +276,9 @@
 .react-tabs__tab-panel::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: 50%;
   left: 50%;
-  translate: -50%;
+  translate: -50% -50%;
   width: 120%;
   height: 110%;
   pointer-events: none;
@@ -278,8 +286,8 @@
   background-repeat: repeat;
   background-position: left center;
   background-size: 8px 8px;
-  -webkit-mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
-          mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+  -webkit-mask-image: radial-gradient(100% 110%, rgb(0, 0, 0), transparent 50%);
+          mask-image: radial-gradient(100% 110%, rgb(0, 0, 0), transparent 50%);
   opacity: 0.5;
   z-index: -1;
   animation: reveal 5s ease forwards;
@@ -301,6 +309,16 @@
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes PanelImageActive {
+  0% {
+    translate: 10% 10%;
+    scale: 0.7;
+  }
+  100% {
+    translate: 5% 5%;
+    scale: 1;
   }
 }
 @media (max-width: 1100px) {

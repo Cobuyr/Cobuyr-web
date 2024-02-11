@@ -1,11 +1,8 @@
 import React from "react";
-import { render } from "react-dom";
-// import { Tab, TabPanel, Tabs, TabList } from "react-web-tabs";
+import dash from "/dash.jpg";
 import "./Components.css";
-// import "react-web-tabs/dist/react-web-tabs.css";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
-// import 'react-tabs/style/react-tabs.css';
 
 export default function TabBox() {
   return (
@@ -25,6 +22,12 @@ export default function TabBox() {
             Cobuyr gives your customers the ability to invite their family and
             friends to split the cost of purchasing products and services.
           </p>
+          <div className="panelImage">
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </div>
         </div>
       </TabPanel>
 
@@ -35,6 +38,12 @@ export default function TabBox() {
             Cobuyr enables your customers to use multiple payment cards when
             paying online.
           </p>
+          <div className="panelImage">
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </div>
         </div>
       </TabPanel>
 
@@ -45,6 +54,12 @@ export default function TabBox() {
             Cobuyr automatically integrates your systems and data so you have a
             single, enriched view of your customers.
           </p>
+          <div className="panelImage">
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </div>
         </div>
       </TabPanel>
 
@@ -56,6 +71,12 @@ export default function TabBox() {
             view of customers including all payments, customer relationships and
             behaviors.
           </p>
+          <div className="panelImage">
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </div>
         </div>
       </TabPanel>
 
@@ -67,6 +88,12 @@ export default function TabBox() {
             Intelligence, which enables you to understand and sell into the
             social networks of your customers.
           </p>
+          <div className="panelImage">
+            <img
+              src={dash}
+              alt="new category of multi-party payment transactions"
+            />
+          </div>
         </div>
       </TabPanel>
     </Tabs>
