@@ -245,7 +245,7 @@
   
       &:hover, &:focus {
         outline: none;
-        
+
         &::before,
         &::after {
           animation: shadow 20s linear infinite;
@@ -451,6 +451,9 @@
   margin-top: 0;
   width: calc(100vw - 5px);
   overflow: hidden;
+  // border-radius: 0 0 50px 50px;
+  // box-shadow: 0px 20px 25px -15px hsl(0, 0%, 5%);
+  // z-index: 1;
 }
 .products-head {
   display: flex;
