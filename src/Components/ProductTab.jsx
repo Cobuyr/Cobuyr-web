@@ -1,5 +1,11 @@
 import React from "react";
 import dash from "/dash.jpg";
+import adva from "/adva.webp";
+import cust from "/cust.webp";
+import group from "/group.webp";
+import multi from "/multi.webp";
+import unif from "/unif.webp";
+
 import "./Components.css";
 
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
@@ -24,7 +30,7 @@ export default function TabBox() {
           </p>
           <div className="panelImage">
             <img
-              src={dash}
+              src={group}
               alt="new category of multi-party payment transactions"
             />
           </div>
@@ -40,7 +46,7 @@ export default function TabBox() {
           </p>
           <div className="panelImage">
             <img
-              src={dash}
+              src={multi}
               alt="new category of multi-party payment transactions"
             />
           </div>
@@ -56,7 +62,7 @@ export default function TabBox() {
           </p>
           <div className="panelImage">
             <img
-              src={dash}
+              src={unif}
               alt="new category of multi-party payment transactions"
             />
           </div>
@@ -73,7 +79,7 @@ export default function TabBox() {
           </p>
           <div className="panelImage">
             <img
-              src={dash}
+              src={cust}
               alt="new category of multi-party payment transactions"
             />
           </div>
@@ -90,7 +96,7 @@ export default function TabBox() {
           </p>
           <div className="panelImage">
             <img
-              src={dash}
+              src={adva}
               alt="new category of multi-party payment transactions"
             />
           </div>

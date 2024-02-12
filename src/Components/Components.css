@@ -269,6 +269,9 @@
   animation: tabPanelActive 0.35s ease-in-out;
   transform-origin: top left;
 }
+.react-tabs__tab-panel--selected .panelImage image {
+  width: 100%;
+}
 .react-tabs__tab-panel--selected p {
   animation: tabPanelActive 0.35s ease-in-out;
   transform-origin: top;

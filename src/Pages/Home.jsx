@@ -418,7 +418,7 @@ const Home = () => {
 
         <motion.div className="textbox" variants={homeVariants}>
           <motion.h2 variants={homeVariants}>
-            Universal
+            Universal Platform
             <span className="mainText"> Compatibilty</span>
           </motion.h2>
           {/* <motion.p className="banner-text" variants={homeVariants}>
@@ -910,9 +910,9 @@ export function Hero() {
           ref={heroRef}
           // style={{ opacity, scale }}
         >
-          <motion.div variants={homeVariants}>
+          {/* <motion.div variants={homeVariants}>
             <Badge iconUrl="iuaevrjs" trigger="loop" text="Welcome" />
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1 variants={homeVariants}>
             Revolutionize Checkout with{" "}

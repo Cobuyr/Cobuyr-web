@@ -97,7 +97,6 @@
   font-size: clamp(15px, 5vw, 18px);
 }
 .hero .mgBtn {
-  margin-top: 4vh;
   pointer-events: all;
   cursor: pointer;
   animation: jump 10s ease infinite;
