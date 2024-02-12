@@ -116,18 +116,18 @@ const Home = () => {
       </div> */}
 
       <Hero />
-      
+
       <Section className="products">
         <div className="products-head">
-          <motion.div variants={homeVariants}>
+          {/* <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The One Stop" />
-          </motion.div>
+          </motion.div> */}
           <motion.h2 variants={homeVariants}>
             <span className="mainText">One</span> platform.
             <br />
             <span className="mainText">Many</span> opportunities.
           </motion.h2>
-          <motion.p variants={homeVariants}>
+          {/* <motion.p variants={homeVariants}>
             Cobuyr has invented the modern checkout experience for today’s era
             of Social Buying with its{" "}
             <span className="highlight">
@@ -135,14 +135,14 @@ const Home = () => {
             </span>{" "}
             that gives you all the capabilities to succeed now and in the
             future.
-          </motion.p>
+          </motion.p> */}
         </div>
 
         <TabBox />
       </Section>
       {/* <Scroller /> */}
 
-      <Section className="future">
+      {/* <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
@@ -253,9 +253,9 @@ const Home = () => {
             </motion.li>
           </motion.ul>
         </motion.div>
-      </Section>
+      </Section> */}
 
-      <Section className="modern">
+      {/* <Section className="modern">
         <div className="bento">
           <motion.div className="head">
             <motion.div variants={homeVariants}>
@@ -405,7 +405,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </Section>
+      </Section> */}
 
       <Section className="info-banner">
         {/* <motion.div variants={homeVariants}>
@@ -926,10 +926,6 @@ export function Hero() {
               community.
             </span>
           </motion.p>
-          {/* <motion.button className="primary-btn" variants={homeVariants}>
-          Join Waitlist
-        </motion.button> */}
-
           <motion.div
             className="mgBtn"
             variants={{
@@ -938,7 +934,7 @@ export function Hero() {
             }}
           >
             <MagneticBtn>
-              <button
+              {/* <button
                 type="button"
                 onClick={(e) => {
                   e.preventDefault();
@@ -948,14 +944,15 @@ export function Hero() {
                   });
                 }}
               >
-                <lord-icon
+                 <lord-icon
                   src="https://cdn.lordicon.com/vduvxizq.json"
                   trigger="hover"
                   target="button"
                   colors="primary:#ffffff"
-                ></lord-icon>
-                Join Referral
-              </button>
+                ></lord-icon> 
+                Get Started
+              </button> */}
+              <SpotBtn text={"Get Started"} variant={homeVariants} />
             </MagneticBtn>
           </motion.div>
         </motion.div>

@@ -262,7 +262,7 @@
   text-align: left;
 }
 .react-tabs__tab-panel--selected .panelImage {
-  height: 450px;
+  height: 350px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3137254902);
