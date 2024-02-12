@@ -34,17 +34,6 @@
 .badge::after {
   transition: filter 0.9s ease-out;
 }
-@keyframes shadow {
-  0% {
-    background-position: 0 0;
-  }
-  50% {
-    background-position: 300% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
-}
 .badge P {
   font-size: 14px !important;
   background: #5389cf;
@@ -95,6 +84,7 @@
 }
 .hero p {
   font-size: clamp(15px, 5vw, 18px);
+  margin-block: 2rem;
 }
 .hero .mgBtn {
   pointer-events: all;
@@ -103,6 +93,31 @@
 }
 .hero .mgBtn .primary-btn {
   padding: 20px 40px;
+  position: relative;
+}
+.hero .mgBtn .primary-btn::before, .hero .mgBtn .primary-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--gradient-shadow);
+  background-size: 400%;
+  width: calc(100% - 15px);
+  height: calc(100% - 5px);
+  border-radius: inherit;
+  z-index: -1;
+}
+.hero .mgBtn .primary-btn::after {
+  transition: filter 0.9s ease-out;
+}
+.hero .mgBtn .primary-btn:hover, .hero .mgBtn .primary-btn:focus {
+  outline: none;
+}
+.hero .mgBtn .primary-btn:hover::before, .hero .mgBtn .primary-btn:hover::after, .hero .mgBtn .primary-btn:focus::before, .hero .mgBtn .primary-btn:focus::after {
+  animation: shadow 20s linear infinite;
+}
+.hero .mgBtn .primary-btn:hover::after, .hero .mgBtn .primary-btn:focus::after {
+  filter: blur(5px);
 }
 
 @keyframes morph {
@@ -114,6 +129,17 @@
   }
   50% {
     border-radius: 30% 60% 50% 40%/50% 60% 30% 60%;
+  }
+}
+@keyframes shadow {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 300% 0;
+  }
+  100% {
+    background-position: 0 0;
   }
 }
 .mainText {
