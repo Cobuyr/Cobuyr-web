@@ -231,7 +231,7 @@
     //     }
     //   }
     // }
-    .primary-btn{
+    .primary-btn {
       padding: 20px 40px;
     }
   }
@@ -414,17 +414,19 @@
 
 //***** product tab SECTION *****
 
-.products{
-margin-top: 0;
+.products {
+  margin-top: 0;
+  width: calc(100vw - 5px);
+  overflow: hidden;
 }
-.products-head{
+.products-head {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 1.5rem;
 
-  h2{
+  h2 {
     margin-block: 0.5em;
   }
 }
@@ -1134,8 +1136,6 @@ margin-top: 0;
     }
   }
 }
-
-
 
 ///// sub section
 
