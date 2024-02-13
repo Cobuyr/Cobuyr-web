@@ -15,6 +15,7 @@ import Scene from "../Experience/scene";
 import Code from "../Components/CodeWidget";
 import Velocity from "../Components/Velocity";
 import TabBox from "../Components/ProductTab";
+import HeroScene from "../Experience/Hero";
 
 const visible = {
   opacity: 1,
@@ -114,6 +115,7 @@ const Home = () => {
       >
         <Scene />
       </div> */}
+      {/* <HeroScene /> */}
 
       <Hero />
 
@@ -952,7 +954,7 @@ export function Hero() {
                 ></lord-icon> 
                 Get Started
               </button> */}
-              <SpotBtn text={"Get Started"} variant={homeVariants} />
+              <motion.button variant={homeVariants} className="primary-btn" >Get Started</motion.button>
             </MagneticBtn>
           </motion.div>
         </motion.div>

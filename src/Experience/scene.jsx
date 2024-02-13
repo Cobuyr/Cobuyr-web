@@ -27,7 +27,7 @@ const Scene = () => {
         ></PerformanceMonitor>
         {/* <Experience /> */}
         {/* <Wavy /> */}
-        <Ring/>
+        {/* <Ring/> */}
       </Canvas>
       {/* <LineHero/> */}
     </div>
