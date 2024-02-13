@@ -388,6 +388,11 @@
     overflow-x: scroll;
     width: max-content;
   }
+  .tablist-wrap{
+    width: 100%;
+    overflow-x: scroll;
+    margin-bottom: 5vh;
+  }
   .react-tabs__tab--selected::after {
     right: 50%;
     bottom: 0px;
@@ -401,7 +406,7 @@
   }
   .Tab {
     padding: 0.3rem 0.5rem;
-    margin-right: 10px;
+    margin-right: 20px;
   }
   .react-tabs__tab-panel--selected {
     width: 100%;

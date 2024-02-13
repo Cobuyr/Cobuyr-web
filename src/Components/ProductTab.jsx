@@ -13,6 +13,8 @@ import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 export default function TabBox() {
   return (
     <Tabs className="vertical">
+      <div className="tablist-wrap">
+
       <TabList aria-orientation="vertical">
         <Tab className="Tab">Group Buy Payments</Tab>
         <Tab className="Tab">Single Multicard Payments</Tab>
@@ -20,6 +22,7 @@ export default function TabBox() {
         <Tab className="Tab">Connected Customer Intelligence</Tab>
         <Tab className="Tab">Advanced Analytics</Tab>
       </TabList>
+      </div>
 
       <TabPanel>
         <div>
