@@ -115,7 +115,7 @@ const Home = () => {
       >
         <Scene />
       </div> */}
-      {/* <HeroScene /> */}
+      <HeroScene />
 
       <Hero />
 
