@@ -95,24 +95,24 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o *  (100)}%, ${o *  (100)}%,0)`
+            (o) => `translate3d(${o * 65}%, ${o * 50}%,0)`
           ),
           left: "50%",
-          top: "50%",
+          top: "35%",
         }}
       >
         <Chat
           avatar={base}
           Tname={"Alan Jury"}
-          text={"Would you like to join me?"}
-          type={"received"}
+          text={"I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?"}
+          type={"sent"}
         />
 
         <Chat
           avatar={base}
-          Tname={"Alan Jury"}
-          text={"Would you like to join me?"}
-          type={"sent"}
+          Tname={"Zachary D."}
+          text={"ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?"}
+          type={"received"}
         />
       </web.div>
 
@@ -122,10 +122,10 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o * (-160) }%, ${o * 40 }%, 0)`
+            (o) => `translate3d(${o * -160}%, ${o * 40}%, 0)`
           ),
           left: "50%",
-          top: "20%"
+          top: "20%",
         }}
       >
         <Chat
@@ -160,7 +160,7 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o * (-170)}%, ${o * (-130)}%,0)`
+            (o) => `translate3d(${o * -170}%, ${o * -130}%,0)`
           ),
           top: "25%",
           left: "50%",
@@ -193,60 +193,65 @@ export default function HeroScene() {
       </web.div>
 
       <web.div
-  className="message"
-  style={{
-    opacity: props.open.to([0, 1], [0, 1]),
-    scale: props.open.to([0, 1], [0, 1]),
-    transform: props.open.to(
-      (o) => `translate3d(${o * 180 }%, -35%, 0)`
-    ),
-    top: '-25%',
-    left: '50%'
-  }}
->
-  <Chat
-    // avatar={chrisAvatar}
-    Tname={"Chris M."}
-    text={"Found an amazing group trip package with Cobuyr. Who's in for an adventure?"}
-    type={"sent"}
-  />
+        className="message"
+        style={{
+          opacity: props.open.to([0, 1], [0, 1]),
+          scale: props.open.to([0, 1], [0, 1]),
+          transform: props.open.to((o) => `translate3d(${o * 180}%, -35%, 0)`),
+          top: "-25%",
+          left: "50%",
+        }}
+      >
+        <Chat
+          // avatar={chrisAvatar}
+          Tname={"Chris M."}
+          text={
+            "Found an amazing group trip package with Cobuyr. Who's in for an adventure?"
+          }
+          type={"sent"}
+        />
 
-  <Chat
-    // avatar={jessicaAvatar}
-    Tname={"Jessica"}
-    text={"I'm interested! Where are we headed? Any beach destinations?"}
-    type={"received"}
-  />
+        <Chat
+          // avatar={jessicaAvatar}
+          Tname={"Jessica"}
+          text={"I'm interested! Where are we headed? Any beach destinations?"}
+          type={"received"}
+        />
 
-  <Chat
-    // avatar={samAvatar}
-    Tname={"Sammy W."}
-    text={"Count me in! I'm craving some sun and sand. Let's plan this out!"}
-    type={"received"}
-  />
+        <Chat
+          // avatar={samAvatar}
+          Tname={"Sammy W."}
+          text={
+            "Count me in! I'm craving some sun and sand. Let's plan this out!"
+          }
+          type={"received"}
+        />
 
-  <Chat
-    // avatar={chrisAvatar}
-    Tname={"Chris M."}
-    text={"Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?"}
-    type={"sent"}
-  />
+        <Chat
+          // avatar={chrisAvatar}
+          Tname={"Chris M."}
+          text={
+            "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?"
+          }
+          type={"sent"}
+        />
 
-  <Chat
-    // avatar={jessicaAvatar}
-    Tname={"Jessica"}
-    text={"Bali sounds perfect! I'm in for sure. Sam, what about you?"}
-    type={"received"}
-  />
+        <Chat
+          // avatar={jessicaAvatar}
+          Tname={"Jessica"}
+          text={"Bali sounds perfect! I'm in for sure. Sam, what about you?"}
+          type={"received"}
+        />
 
-  <Chat
-    // avatar={samAvatar}
-    Tname={"Sammy W."}
-    text={"Bali it is! Let's do this. Chris, can you send us the details so we can start planning?"}
-    type={"received"}
-  />
-</web.div>
-
+        <Chat
+          // avatar={samAvatar}
+          Tname={"Sammy W."}
+          text={
+            "Bali it is! Let's do this. Chris, can you send us the details so we can start planning?"
+          }
+          type={"received"}
+        />
+      </web.div>
 
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
         <three.spotLight
@@ -265,7 +270,7 @@ export default function HeroScene() {
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
-          opacity={0.4}
+          opacity={1}
           scale={20}
           blur={1.75}
           far={4.5}
