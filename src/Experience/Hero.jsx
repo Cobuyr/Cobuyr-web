@@ -197,8 +197,8 @@ export default function HeroScene() {
         style={{
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to((o) => `translate3d(${o * 180}%, -35%, 0)`),
-          top: "-25%",
+          transform: props.open.to((o) => `translate3d(${o * 180}%, -55%, 0)`),
+          top: "-15%",
           left: "50%",
         }}
       >
