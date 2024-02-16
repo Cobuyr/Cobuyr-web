@@ -118,6 +118,7 @@ body {
   min-height: 100vh;
   font-family: 'Lato', sans-serif;
   /* font-family: 'quicksand'; */
+  overflow-x: hidden;
 }
 
 h1 {

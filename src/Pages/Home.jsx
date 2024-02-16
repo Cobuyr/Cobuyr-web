@@ -115,9 +115,9 @@ const Home = () => {
       >
         <Scene />
       </div> */}
-      <HeroScene />
 
       <Hero />
+      <HeroScene />
 
       <Section className="products">
         <div className="products-head">

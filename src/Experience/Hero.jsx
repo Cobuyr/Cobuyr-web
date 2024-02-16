@@ -1,11 +1,21 @@
 import * as THREE from "three";
 import React, { Suspense, useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, useGLTF, ContactShadows } from "@react-three/drei";
+import {
+  Environment,
+  useGLTF,
+  ContactShadows,
+  useTexture,
+  Decal,
+  useEnvironment,
+} from "@react-three/drei";
 import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
-import { a as web } from "@react-spring/web";
+import { a as web, useInView, config  } from "@react-spring/web";
+// import { useInView } from "react-intersection-observer";
+
 import base from "/avatar.png";
+import city from "/city.hdr";
 
 // function Model({ open, hinge, ...props }) {
 //   const group = useRef()
@@ -43,13 +53,28 @@ import base from "/avatar.png";
 // }
 
 export default function HeroScene() {
+  const env = useEnvironment({ files: city });
+  const [ref, inView] = useInView({ threshold: 0.65 });
   // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(false);
   // We turn this into a spring animation that interpolates between 0 and 1
-  const props = useSpring({ open: Number(open) });
+  const props = useSpring({
+    open: Number(open),
+    config: config.molasses.friction=100, // Adjust the easing here
+    // delay: open ? 0 : 5000, // Add a delay when opening
+    // delay: 1000
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setOpen(true);
+    }
+  }, [inView]);
+
   return (
     <web.div
-      style={{ background: props.open.to([0, 1], ["#040404", "#191919"]) }}
+      ref={ref}
+      style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
       className="scene"
     >
       <web.h1
@@ -70,24 +95,6 @@ export default function HeroScene() {
         </p>
         <p class="sent">Glad you&rsquo;re safe</p>
       </web.div> */}
-      {/* <web.div className="message">
-        <div class="received">
-          <h4>Justina Lake</h4>
-          <p >
-            It was loud. We just laid there and said &ldquo;is this an
-            earthquake? I think this is an earthquake.&rdquo;
-          </p>
-        </div>
-        <div class="sent">
-          <h4>Ava John</h4>  
-        <p >Glad you&rsquo;re safe</p>
-        </div>
-      </web.div> */}
-      {/* <web.div className="m-received">
-        <img src="" alt="avatar" />
-        <h4>Alan Jury</h4>
-        <p>Would you like to join me?</p>
-      </web.div> */}
 
       <web.div
         className="message"
@@ -97,21 +104,25 @@ export default function HeroScene() {
           transform: props.open.to(
             (o) => `translate3d(${o * 65}%, ${o * 50}%,0)`
           ),
-          left: "50%",
+          left: "55%",
           top: "35%",
         }}
       >
         <Chat
           avatar={base}
           Tname={"Alan Jury"}
-          text={"I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?"}
+          text={
+            "I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?"
+          }
           type={"sent"}
         />
 
         <Chat
           avatar={base}
           Tname={"Zachary D."}
-          text={"ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?"}
+          text={
+            "ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?"
+          }
           type={"received"}
         />
       </web.div>
@@ -125,7 +136,7 @@ export default function HeroScene() {
             (o) => `translate3d(${o * -160}%, ${o * 40}%, 0)`
           ),
           left: "50%",
-          top: "20%",
+          top: "25%",
         }}
       >
         <Chat
@@ -197,8 +208,8 @@ export default function HeroScene() {
         style={{
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to((o) => `translate3d(${o * 180}%, -55%, 0)`),
-          top: "-15%",
+          transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
+          top: "15%",
           left: "50%",
         }}
       >
@@ -214,15 +225,8 @@ export default function HeroScene() {
         <Chat
           // avatar={jessicaAvatar}
           Tname={"Jessica"}
-          text={"I'm interested! Where are we headed? Any beach destinations?"}
-          type={"received"}
-        />
-
-        <Chat
-          // avatar={samAvatar}
-          Tname={"Sammy W."}
           text={
-            "Count me in! I'm craving some sun and sand. Let's plan this out!"
+            "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?"
           }
           type={"received"}
         />
@@ -230,15 +234,6 @@ export default function HeroScene() {
         <Chat
           // avatar={chrisAvatar}
           Tname={"Chris M."}
-          text={
-            "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?"
-          }
-          type={"sent"}
-        />
-
-        <Chat
-          // avatar={jessicaAvatar}
-          Tname={"Jessica"}
           text={"Bali sounds perfect! I'm in for sure. Sam, what about you?"}
           type={"received"}
         />
@@ -247,7 +242,7 @@ export default function HeroScene() {
           // avatar={samAvatar}
           Tname={"Sammy W."}
           text={
-            "Bali it is! Let's do this. Chris, can you send us the details so we can start planning?"
+            "Bali it is! Let's do this. Chris, can you send us the details on cobuyr so we can start planning?"
           }
           type={"received"}
         />
@@ -266,7 +261,7 @@ export default function HeroScene() {
           >
             <Model open={open} hinge={props.open.to([0, 1], [1.35, -0.425])} />
           </group>
-          <Environment preset="city" />
+          <Environment map={env} />
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
@@ -295,7 +290,16 @@ function Chat({ avatar, Tname, text, type, ...props }) {
 
 export function Model({ open, hinge, ...props }) {
   const { nodes, materials } = useGLTF("./laptop.glb");
-
+  // const sticker = useTexture("./cb-logo-blk.jpg");
+  const sticker = useTexture("./cb-mark-blk.jpg");
+  // const sticker = useTexture("./avatar.jpg");
+  // const sticker = useTexture(base);
+  // sticker.repeat.set(0.005, 0.005);
+  // sticker.mapping = THREE.UVMapping;
+  sticker.wrapS = sticker.wrapT = THREE.RepeatWrapping; // has effect
+  // sticker.rotation = 0; // has effect
+  // sticker.flipY = false; // has effect
+  sticker.repeat.set(1, 1);
   const group = useRef();
 
   const [hovered, setHovered] = useState(false);
@@ -343,7 +347,17 @@ export function Model({ open, hinge, ...props }) {
             receiveShadow
             geometry={nodes.Cube008.geometry}
             material={materials.aluminium}
-          />
+          >
+            {/* <meshStandardMaterial color={"gray"} />
+            <Decal debug position={[-3, 2, 0]}>
+              <meshBasicMaterial
+                map={sticker}
+                polygonOffset
+                polygonOffsetFactor={-1}
+              />
+            </Decal> */}
+          </mesh>
+
           <mesh
             castShadow
             receiveShadow
@@ -370,7 +384,35 @@ export function Model({ open, hinge, ...props }) {
           receiveShadow
           geometry={nodes.Cube002.geometry}
           material={materials.aluminium}
-        />
+        >
+          {/* <meshStandardMaterial color={"gray"} />
+
+          <Decal
+            // debug
+            position={[0, 0, 2]}
+            // rotation={Math.PI * 0.9}
+            scale={[10, 1, 10]}
+          >
+            <meshBasicMaterial
+              map={sticker}
+              polygonOffset
+              polygonOffsetFactor={-1}
+              map-flipY={false}
+              map-anisotropy={16}
+            />
+          </Decal> */}
+          {/* <Decal debug position={[3, -0.3, 5]} 
+          // scale={[2, 2, 1]}
+          >
+            <meshBasicMaterial
+              map={sticker}
+              polygonOffset
+              polygonOffsetFactor={-1}
+              map-flipY={false}
+              map-anisotropy={16}
+            />
+          </Decal> */}
+        </mesh>
         <mesh
           castShadow
           receiveShadow

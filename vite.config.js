@@ -6,5 +6,9 @@ export default defineConfig({
   plugins: [react()],
   optimizeDeps: {
     exclude: ['babel-plugin-glsl']
-  }
+  },
+  module: {
+    rules: [{ test: /\.hdr$/, use: "url-loader" }]
+  },
+  assetsInclude: "**/*.hdr"
 })

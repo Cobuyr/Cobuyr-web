@@ -120,7 +120,7 @@
     left: 50%;
     transform: translate3d(-50%, -50%, 0);
     font-weight: 400;
-    letter-spacing: -0.045em;
+    // letter-spacing: -0.045em;
     white-space: nowrap;
   }
   .message {
@@ -1476,6 +1476,10 @@
   position: relative;
   isolation: isolate;
 
+  #contact-form{
+    min-width: unset;
+    width: -webkit-fill-available;
+  }
   lord-icon {
     width: 60px;
     height: 60px;

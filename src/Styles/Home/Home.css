@@ -82,7 +82,6 @@
   left: 50%;
   transform: translate3d(-50%, -50%, 0);
   font-weight: 400;
-  letter-spacing: -0.045em;
   white-space: nowrap;
 }
 .scene .message {
@@ -1197,6 +1196,10 @@
   padding: 12px 24px;
   position: relative;
   isolation: isolate;
+}
+.early-form #contact-form {
+  min-width: unset;
+  width: -webkit-fill-available;
 }
 .early-form lord-icon {
   width: 60px;
