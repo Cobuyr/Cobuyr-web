@@ -169,7 +169,7 @@ button:focus-visible {
   }
 }
 
-p:not(.badge p, .hero p) {
+p:not(.badge p, .hero p, .message p) {
   animation: fade linear both;
   animation-timeline: view(block);
   animation-range: cover 0% contain 15%;

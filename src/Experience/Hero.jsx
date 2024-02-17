@@ -60,7 +60,7 @@ export default function HeroScene() {
   // We turn this into a spring animation that interpolates between 0 and 1
   const props = useSpring({
     open: Number(open),
-    config: config.molasses.friction=100, // Adjust the easing here
+    config: config.molasses, // Adjust the easing here
     // delay: open ? 0 : 5000, // Add a delay when opening
     // delay: 1000
   });
@@ -74,19 +74,22 @@ export default function HeroScene() {
   return (
     <web.div
       ref={ref}
-      style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
+      // style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
       className="scene"
     >
       <web.h1
         style={{
-          opacity: props.open.to([0, 1], [1, 0]),
+          // opacity: props.open.to([0, 1], [1, 0]),
           transform: props.open.to(
-            (o) => `translate3d(-50%,${o * 50 - 100}px,0)`
+            (o) => `translate3d(-50%,${o * -365}px,0)`
           ),
         }}
         className="scene-h1"
       >
         <span className="mainText">Connecting Buyers.</span>
+        {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
+        <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
+        
       </web.h1>
       {/* <web.div className="message">
         <p class="received">
