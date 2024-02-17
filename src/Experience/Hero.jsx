@@ -232,13 +232,6 @@ export default function HeroScene() {
         />
 
         <Chat
-          // avatar={chrisAvatar}
-          Tname={"Chris M."}
-          text={"Bali sounds perfect! I'm in for sure. Sam, what about you?"}
-          type={"received"}
-        />
-
-        <Chat
           // avatar={samAvatar}
           Tname={"Sammy W."}
           text={

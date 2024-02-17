@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap&rel=preconnect');
-@import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,700&display=swap&rel=preconnect');
+@font-face {
+  font-family: 'Lato';
+  src: url('./assets/Lato.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('./assets/Quicksand.ttf') format('truetype');
+}
 
 :root {
   --bg-color: #040404;
