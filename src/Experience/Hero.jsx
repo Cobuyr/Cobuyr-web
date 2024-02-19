@@ -77,7 +77,7 @@ export default function HeroScene() {
       // style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
       className="scene"
     >
-      <web.h1
+      {/* <web.h1
         style={{
           // opacity: props.open.to([0, 1], [1, 0]),
           transform: props.open.to(
@@ -90,14 +90,7 @@ export default function HeroScene() {
         {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
         <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
         
-      </web.h1>
-      {/* <web.div className="message">
-        <p class="received">
-          It was loud. We just laid there and said &ldquo;is this an earthquake?
-          I think this is an earthquake.&rdquo;
-        </p>
-        <p class="sent">Glad you&rsquo;re safe</p>
-      </web.div> */}
+      {/* </web.h1> */}
 
       <web.div
         className="message"
@@ -105,8 +98,11 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o * 65}%, ${o * 50}%,0)`
+            (o) => `translate3d(${o * 65}%, ${o * 25}%,0)`
           ),
+          // transform: props.open.to(
+          //   (o) => `translate3d(${o * 65}%, ${o * 50}%,0)`
+          // ),
           left: "55%",
           top: "35%",
         }}
@@ -136,8 +132,11 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o * -160}%, ${o * 40}%, 0)`
+            (o) => `translate3d(${o * -125}%, ${o * 25}%, 0)`
           ),
+          // transform: props.open.to(
+          //   (o) => `translate3d(${o * -160}%, ${o * 40}%, 0)`
+          // ),
           left: "50%",
           top: "25%",
         }}
@@ -174,8 +173,11 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(${o * -170}%, ${o * -130}%,0)`
+            (o) => `translate3d(${o * -120}%, ${o * -130}%,0)`
           ),
+          // transform: props.open.to(
+          //   (o) => `translate3d(${o * -170}%, ${o * -130}%,0)`
+          // ),
           top: "25%",
           left: "50%",
         }}
@@ -211,7 +213,8 @@ export default function HeroScene() {
         style={{
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
+          // transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
+          transform: props.open.to((o) => `translate3d(${o * 110}%, -120%, 0)`),
           top: "15%",
           left: "50%",
         }}
@@ -255,7 +258,7 @@ export default function HeroScene() {
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (e.stopPropagation(), setOpen(!open))}
           >
-            <Model open={open} hinge={props.open.to([0, 1], [1.35, -0.425])} />
+            <Model open={open} hinge={props.open.to([0, 1], [1.35, -0.425])} scale={0.8} />
           </group>
           <Environment map={env} />
         </Suspense>

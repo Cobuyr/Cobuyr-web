@@ -116,8 +116,11 @@ const Home = () => {
         <Scene />
       </div> */}
 
+<Section className="split">
+
       <Hero />
       <HeroScene />
+</Section>
 
       <Section className="products">
         <div className="products-head">
