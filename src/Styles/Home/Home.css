@@ -80,7 +80,7 @@
 
 .scene {
   height: 100vh;
-  width: 100%;
+  width: -webkit-fill-available;
   position: relative;
 }
 .scene .scene-h1 {
@@ -190,6 +190,7 @@
 .hero-wrap {
   margin: unset;
   padding-block: unset;
+  padding-right: unset;
 }
 
 .hero {
@@ -1229,6 +1230,15 @@
   opacity: 1;
 }
 
+@media (max-width: 1200px) {
+  .split {
+    text-align: unset;
+    flex-direction: column;
+  }
+  .hero {
+    padding-top: 10vh;
+  }
+}
 @media (max-width: 1100px) {
   .early-form #contact-form {
     min-width: 450px;

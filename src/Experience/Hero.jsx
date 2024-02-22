@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import React, { Suspense, useEffect, useRef, useState } from "react";
+import { Vector3 } from "three";
 import { Canvas, useFrame } from "@react-three/fiber";
 import {
   Environment,
@@ -8,10 +9,12 @@ import {
   useTexture,
   Decal,
   useEnvironment,
+  SpotLight,
+  useDepthBuffer,
 } from "@react-three/drei";
 import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
-import { a as web, useInView, config  } from "@react-spring/web";
+import { a as web, useInView, config } from "@react-spring/web";
 // import { useInView } from "react-intersection-observer";
 
 import base from "/avatar.png";
@@ -70,6 +73,7 @@ export default function HeroScene() {
       setOpen(true);
     }
   }, [inView]);
+  console.log(Spot);
 
   return (
     <web.div
@@ -89,7 +93,7 @@ export default function HeroScene() {
         <span className="mainText">Connecting Buyers.</span>
         {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
         <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
-        
+
       {/* </web.h1> */}
 
       <web.div
@@ -251,15 +255,26 @@ export default function HeroScene() {
         <three.spotLight
           position={[0, 7, 0]}
           intensity={10}
-          color={props.open.to([0, 1], ["#f0f0f0", "#ffffff"])}
+      //     penumbra={1}
+      // attenuation={5}
+      // anglePower={4}
+      // // intensity={25}
+      // scale={[2, 55, 1]}
+          // distance={props.open.to([0, 1], [15, 0])} angle={props.open.to([0, 1], [35, 0])}
+          // color={props.open.to([0, 1], ["#f0f0f0", "#ffffff"])}
         />
         <Suspense fallback={null}>
           <group
             rotation={[0, Math.PI, 0]}
             onClick={(e) => (e.stopPropagation(), setOpen(!open))}
           >
-            <Model open={open} hinge={props.open.to([0, 1], [1.35, -0.425])} scale={0.8} />
+            <Model
+              open={open}
+              hinge={props.open.to([0, 1], [1.35, -0.425])}
+              scale={0.8}
+            />
           </group>
+          {/* <Spot position={[0, 10, 0]} distance={props.open.to([0, 1], [15, 0])} angle={props.open.to([0, 1], [35, 0])} /> */}
           <Environment map={env} />
         </Suspense>
         <ContactShadows
@@ -426,6 +441,23 @@ export function Model({ open, hinge, ...props }) {
         material={materials.touchbar}
       />
     </group>
+  );
+}
+
+function Spot({ vec = new Vector3(), ...props }) {
+  const depthBuffer = useDepthBuffer({ frames: 1 });
+
+  return (
+    <three.spotLight
+      depthBuffer={depthBuffer}
+      castShadow
+      penumbra={1}
+      attenuation={5}
+      anglePower={4}
+      // intensity={25}
+      scale={[2, 55, 1]}
+      {...props}
+    />
   );
 }
 
