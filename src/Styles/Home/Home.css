@@ -76,6 +76,7 @@
   position: relative;
   margin-top: 0;
   padding-inline: 0;
+  padding-top: 0;
 }
 
 .scene {
@@ -118,7 +119,7 @@
   align-items: flex-end;
   font-size: 1.25rem;
   padding: 0.5rem 1.5rem;
-  background-color: #248bf5;
+  background-color: var(--accent);
   color: #fff;
   translate: 20px;
 }
@@ -131,7 +132,7 @@
   top: 2px;
   right: -25px;
   border-radius: 50%;
-  outline: 3px solid #248bf5;
+  outline: 3px solid var(--accent);
   z-index: 1;
 }
 .scene .m-sent h4 {

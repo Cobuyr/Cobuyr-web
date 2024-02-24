@@ -112,6 +112,7 @@
   position: relative;
   margin-top: 0;
   padding-inline: 0;
+  padding-top: 0;
 }
 .scene {
   // height: 250vh;
@@ -153,71 +154,6 @@
     // backdrop-filter: blur(9px);
   }
 
-  // .message p {
-  //   border-radius: 1.15rem;
-  //   line-height: 1.25;
-  //   max-width: 75%;
-  //   padding: 0.5rem 0.875rem;
-  //   position: relative;
-  //   word-wrap: break-word;
-  //   text-align: left;
-  // }
-
-  // .message p::before,
-  // .message p::after {
-  //   bottom: -0.1rem;
-  //   content: "";
-  //   height: 1rem;
-  //   position: absolute;
-  // }
-
-  // p.sent {
-  //   align-self: flex-end;
-  //   background-color: #248bf5;
-  //   color: #fff;
-  // }
-
-  // p.sent::before {
-  //   border-bottom-left-radius: 0.8rem 0.7rem;
-  //   border-right: 1rem solid #248bf5;
-  //   right: -0.35rem;
-  //   transform: translate(0, -0.1rem);
-  // }
-
-  // p.sent::after {
-  //   background-color: var(--bg-color);
-  //   border-bottom-left-radius: 0.5rem;
-  //   right: -40px;
-  //   transform: translate(-30px, -2px);
-  //   width: 10px;
-  // }
-
-  // p[class^="from-"] {
-  //   margin: 0.5rem 0;
-  //   width: fit-content;
-  // }
-
-  // p.received {
-  //   align-items: flex-start;
-  //   background-color: #e5e5ea;
-  //   color: #000;
-  // }
-
-  // p.received:before {
-  //   border-bottom-right-radius: 0.8rem 0.7rem;
-  //   border-left: 1rem solid #e5e5ea;
-  //   left: -0.5rem;
-  //   transform: translate(0, -0.05rem);
-  // }
-
-  // p.received::after {
-  //   background-color: var(--bg-color);
-  //   border-bottom-right-radius: 0.5rem;
-  //   left: 9px;
-  //   transform: translate(-29px, -3px);
-  //   width: 20px;
-  // }
-
   .m-sent {
     // position: absolute;
     // top: 30%;
@@ -230,7 +166,7 @@
     font-size: 1.25rem;
     // max-width: 300px;
     padding: 0.5rem 1.5rem;
-    background-color: #248bf5;
+    background-color: var(--accent);
     color: #fff;
     translate: 20px;
     // transform: translate3d(-50%, -50%, 0);
@@ -243,7 +179,7 @@
       top: 2px;
       right: -25px;
       border-radius: 50%;
-      outline: 3px solid #248bf5;
+      outline: 3px solid var(--accent);
       z-index: 1;
     }
     h4 {

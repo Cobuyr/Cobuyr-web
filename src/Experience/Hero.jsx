@@ -17,8 +17,20 @@ import { a as three } from "@react-spring/three";
 import { a as web, useInView, config } from "@react-spring/web";
 // import { useInView } from "react-intersection-observer";
 
-import base from "/avatar.png";
 import city from "/city.hdr";
+
+import base from "/avatar.png";
+import avatar0 from "/0.webp";
+import avatar1 from "/1.webp";
+import avatar2 from "/2.webp";
+import avatar3 from "/3.webp";
+import avatar4 from "/4.webp";
+import avatar5 from "/5.webp";
+import avatar6 from "/6.webp";
+import avatar7 from "/7.webp";
+import avatar8 from "/8.webp";
+import avatar9 from "/9.webp";
+import avatar10 from "/10.webp";
 
 // function Model({ open, hinge, ...props }) {
 //   const group = useRef()
@@ -73,7 +85,7 @@ export default function HeroScene() {
       setOpen(true);
     }
   }, [inView]);
-  console.log(Spot);
+  // console.log(Spot);
 
   return (
     <web.div
@@ -112,7 +124,7 @@ export default function HeroScene() {
         }}
       >
         <Chat
-          avatar={base}
+          avatar={avatar2}
           Tname={"Alan Jury"}
           text={
             "I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?"
@@ -121,7 +133,7 @@ export default function HeroScene() {
         />
 
         <Chat
-          avatar={base}
+          avatar={avatar3}
           Tname={"Zachary D."}
           text={
             "ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?"
@@ -146,7 +158,7 @@ export default function HeroScene() {
         }}
       >
         <Chat
-          //  avatar={vincent}
+           avatar={avatar4}
           Tname={"Vincent Moore"}
           text={
             "Looking to buy 30 pieces of vintage vinyl records at a discount. Anyone interested in splitting the purchase?"
@@ -155,14 +167,14 @@ export default function HeroScene() {
         />
 
         <Chat
-          //  avatar={sophia}
+           avatar={avatar0}
           Tname={"Sophia Adams"}
           text={"I'm interested! I collect vinyl too. I can take 15."}
           type={"received"}
         />
 
         <Chat
-          //  avatar={oliver}
+           avatar={avatar6}
           Tname={"Oliver Scott"}
           text={
             "Count me in! I'll take 10, and I know a friend who might want the remaining 5."
@@ -187,7 +199,7 @@ export default function HeroScene() {
         }}
       >
         <Chat
-          //  avatar={emma}
+           avatar={avatar1}
           Tname={"Emma"}
           text={
             "Looking to buy 70 pieces of base cut rings at a discount. Anyone want to share the purchase? I'm taking 20 pieces"
@@ -196,14 +208,14 @@ export default function HeroScene() {
         />
 
         <Chat
-          //  avatar={william}
+           avatar={avatar7}
           Tname={"William Dafren"}
           text={"I'm interested! I can take 20 for my boutique."}
           type={"received"}
         />
 
         <Chat
-          //  avatar={olivia}
+           avatar={avatar5}
           Tname={"Olivia"}
           text={
             "Count me in too. I'll take 15, and I know a friend who might want the remaining 15."
@@ -218,13 +230,13 @@ export default function HeroScene() {
           opacity: props.open.to([0, 1], [0, 1]),
           scale: props.open.to([0, 1], [0, 1]),
           // transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
-          transform: props.open.to((o) => `translate3d(${o * 110}%, -120%, 0)`),
-          top: "15%",
+          transform: props.open.to((o) => `translate3d(${o * 110}%, -150%, 0)`),
+          top: "25%",
           left: "50%",
         }}
       >
         <Chat
-          // avatar={chrisAvatar}
+          avatar={avatar9}
           Tname={"Chris M."}
           text={
             "Found an amazing group trip package with Cobuyr. Who's in for an adventure?"
@@ -233,7 +245,7 @@ export default function HeroScene() {
         />
 
         <Chat
-          // avatar={jessicaAvatar}
+          avatar={avatar8}
           Tname={"Jessica"}
           text={
             "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?"
@@ -242,7 +254,7 @@ export default function HeroScene() {
         />
 
         <Chat
-          // avatar={samAvatar}
+          avatar={avatar10}
           Tname={"Sammy W."}
           text={
             "Bali it is! Let's do this. Chris, can you send us the details on cobuyr so we can start planning?"
@@ -252,17 +264,20 @@ export default function HeroScene() {
       </web.div>
 
       <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
-        <three.spotLight
-          position={[0, 7, 0]}
-          intensity={10}
-      //     penumbra={1}
-      // attenuation={5}
-      // anglePower={4}
-      // // intensity={25}
-      // scale={[2, 55, 1]}
-          // distance={props.open.to([0, 1], [15, 0])} angle={props.open.to([0, 1], [35, 0])}
-          // color={props.open.to([0, 1], ["#f0f0f0", "#ffffff"])}
-        />
+        {/* <three.spotLight
+          position={[0, 3, -1]}
+          intensity={90}
+          penumbra={1}
+      attenuation={5}
+      anglePower={4}
+      // distance={70}
+      // angle={55}
+      // intensity={25}
+      scale={[2, 105, 1]}
+          distance={props.open.to([0, 1], [15, 10])} angle={props.open.to([0, 1], [35, 120])}
+          color={props.open.to([0, 1], ["#ffffff", "#ff0000"])}
+          // color={"#ffffff"}
+        /> */}
         <Suspense fallback={null}>
           <group
             rotation={[0, Math.PI, 0]}
@@ -274,7 +289,12 @@ export default function HeroScene() {
               scale={0.8}
             />
           </group>
-          {/* <Spot position={[0, 10, 0]} distance={props.open.to([0, 1], [15, 0])} angle={props.open.to([0, 1], [35, 0])} /> */}
+          <Spot
+            position={[0, 10, -7.5]}
+            // distance={props.open.to([0, 1], [15, 0])}
+            // angle={props.open.to([0, 1], [35, 0])}
+            // color={"#ffffff"}
+          />
           <Environment map={env} />
         </Suspense>
         <ContactShadows
@@ -446,16 +466,30 @@ export function Model({ open, hinge, ...props }) {
 
 function Spot({ vec = new Vector3(), ...props }) {
   const depthBuffer = useDepthBuffer({ frames: 1 });
+  const [open, setOpen] = useState(false);
+  // We turn this into a spring animation that interpolates between 0 and 1
+  const propse = useSpring({
+    open: Number(open),
+    config: config.molasses, // Adjust the easing here
+    // delay: open ? 0 : 5000, // Add a delay when opening
+    // delay: 1000
+  });
 
   return (
-    <three.spotLight
+    <SpotLight
       depthBuffer={depthBuffer}
       castShadow
       penumbra={1}
       attenuation={5}
       anglePower={4}
+      distance={5}
+      angle={5}
+      // distance={propse.open.to([0, 1], [15, 1])}
+      //       angle={propse.open.to([0, 1], [35, 1])}
       // intensity={25}
-      scale={[2, 55, 1]}
+      // color={propse.open.to([0, 1], ["#ffffff", "#ff0000"])}
+
+      scale={[2, 15, 1]}
       {...props}
     />
   );
