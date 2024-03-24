@@ -80,6 +80,122 @@ export default function HeroScene() {
     // delay: 1000
   });
 
+  // const [currentChatIndex, setCurrentChatIndex] = useState(0);
+  // const chats = [
+  //   [
+  //     {
+  //       avatar: avatar2,
+  //       Tname: "Alan Jury",
+  //       text: "I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?",
+  //       type: "sent"
+  //     },
+  //     {
+  //       avatar: avatar3,
+  //       Tname: "Zachary D.",
+  //       text: "ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?",
+  //       type: "received"
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       avatar: avatar4,
+  //       Tname: "Vincent Moore",
+  //       text: "Looking to buy 30 pieces of vintage vinyl records at a discount. Anyone interested in splitting the purchase?",
+  //       type: "sent"
+  //     },
+  //     {
+  //       avatar: avatar0,
+  //       Tname: "Sophia Adams",
+  //       text: "I'm interested! I collect vinyl too. I can take 15.",
+  //       type: "received"
+  //     },
+  //     {
+  //       avatar: avatar6,
+  //       Tname: "Oliver Scott",
+  //       text: "Count me in! I'll take 10, and I know a friend who might want the remaining 5.",
+  //       type: "sent"
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       avatar: avatar1,
+  //       Tname: "Emma",
+  //       text: "Looking to buy 70 pieces of base cut rings at a discount. Anyone want to share the purchase? I'm taking 20 pieces",
+  //       type: "sent"
+  //     },
+  //     {
+  //       avatar: avatar7,
+  //       Tname: "William Dafren",
+  //       text: "I'm interested! I can take 20 for my boutique.",
+  //       type: "received"
+  //     },
+  //     {
+  //       avatar: avatar5,
+  //       Tname: "Olivia",
+  //       text: "Count me in too. I'll take 15, and I know a friend who might want the remaining 15.",
+  //       type: "received"
+  //     }
+  //   ],
+  //   [
+  //     {
+  //       avatar: avatar9,
+  //       Tname: "Chris M.",
+  //       text: "Found an amazing group trip package with Cobuyr. Who's in for an adventure?",
+  //       type: "sent"
+  //     },
+  //     {
+  //       avatar: avatar8,
+  //       Tname: "Jessica",
+  //       text: "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?",
+  //       type: "received"
+  //     },
+  //     {
+  //       avatar: avatar10,
+  //       Tname: "Sammy W.",
+  //       text: "Bali it is! Let's do this. Chris, can you send us the details on cobuyr so we can start planning?",
+  //       type: "received"
+  //     }
+  //   ]
+  // ];
+  // const chatAnimations = [
+  //   {
+  //     opacity: props.open.to([0, 1], [0, 1]),
+  //     scale: props.open.to([0, 1], [0, 1]),
+  //     transform: props.open.to((o) => `translate3d(${o * 65}%, ${o * 25}%,0)`),
+  //     left: "55%",
+  //     top: "35%"
+  //   },
+  //   {
+  //     opacity: props.open.to([0, 1], [0, 1]),
+  //     scale: props.open.to([0, 1], [0, 1]),
+  //     transform: props.open.to((o) => `translate3d(${o * -125}%, ${o * 25}%, 0)`),
+  //     left: "50%",
+  //     top: "25%"
+  //   },
+  //   {
+  //     opacity: props.open.to([0, 1], [0, 1]),
+  //     scale: props.open.to([0, 1], [0, 1]),
+  //     transform: props.open.to((o) => `translate3d(${o * -120}%, ${o * -130}%,0)`),
+  //     top: "25%",
+  //     left: "45%"
+  //   },
+  //   {
+  //     opacity: props.open.to([0, 1], [0, 1]),
+  //     scale: props.open.to([0, 1], [0, 1]),
+  //     transform: props.open.to((o) => `translate3d(${o * 110}%, -150%, 0)`),
+  //     top: "25%",
+  //     left: "60%"
+  //   }
+  // ];
+  
+ 
+  // const chatProps = useSpring(chatAnimations[currentChatIndex]);
+
+  // const handleClick = () => {
+  //   setOpen(!open);
+  //   setCurrentChatIndex((prevIndex) => (prevIndex + 1) % chats.length);
+  // };
+
   useEffect(() => {
     if (inView) {
       setOpen(true);
@@ -93,6 +209,20 @@ export default function HeroScene() {
       // style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
       className="scene"
     >
+
+{/* Render the current chat group */}
+{/* {chats.map((chatGroup, index) => (
+        <web.div
+          key={index}
+          className={`message ${index === currentChatIndex ? "visible" : ""}`}
+          style={chatProps}
+        >
+          {chatGroup.map((chat, chatIndex) => (
+            <Chat key={chatIndex} avatar={chat.avatar} Tname={chat.Tname} text={chat.text} type={chat.type} />
+          ))}
+        </web.div>
+      ))} */}
+
       {/* <web.h1
         style={{
           // opacity: props.open.to([0, 1], [1, 0]),
@@ -195,7 +325,7 @@ export default function HeroScene() {
           //   (o) => `translate3d(${o * -170}%, ${o * -130}%,0)`
           // ),
           top: "25%",
-          left: "50%",
+          left: "45%",
         }}
       >
         <Chat
@@ -232,7 +362,7 @@ export default function HeroScene() {
           // transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
           transform: props.open.to((o) => `translate3d(${o * 110}%, -150%, 0)`),
           top: "25%",
-          left: "50%",
+          left: "60%",
         }}
       >
         <Chat
@@ -263,39 +393,36 @@ export default function HeroScene() {
         />
       </web.div>
 
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
-        {/* <three.spotLight
-          position={[0, 3, -1]}
-          intensity={90}
-          penumbra={1}
-      attenuation={5}
-      anglePower={4}
-      // distance={70}
-      // angle={55}
-      // intensity={25}
-      scale={[2, 105, 1]}
-          distance={props.open.to([0, 1], [15, 10])} angle={props.open.to([0, 1], [35, 120])}
-          color={props.open.to([0, 1], ["#ffffff", "#ff0000"])}
-          // color={"#ffffff"}
-        /> */}
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}
+      // gl={{ preserveDrawingBuffer: false }}
+      >
+
         <Suspense fallback={null}>
-          <group
+          <three.group
             rotation={[0, Math.PI, 0]}
-            onClick={(e) => (e.stopPropagation(), setOpen(!open))}
+            // rotation={[Math.PI / 0.65, Math.PI, 0]}
+// rotation-x={props.open.to([0, 1], [Math.PI / 0.42, Math.PI / 0.5])}
+            // onClick={(e) => (e.stopPropagation(), setOpen(!open))}
+            // onClick={handleClick}
           >
             <Model
               open={open}
               hinge={props.open.to([0, 1], [1.35, -0.425])}
-              scale={0.8}
+              scale={props.open.to([0, 1], [2.1, 1])}
+              // position={[0, 10, 0]}
+              position={props.open.to([0, 1], [0, -1.5])}
             />
-          </group>
-          <Spot
+          </three.group>
+          {/* <Spot
             position={[0, 10, -7.5]}
+            visible={1}
+            dist={props.open.to([0, 1], [1, 0])}
             // distance={props.open.to([0, 1], [15, 0])}
             // angle={props.open.to([0, 1], [35, 0])}
             // color={"#ffffff"}
-          />
-          <Environment map={env} />
+          /> */}
+          {/* <CameraRig/> */}
+          <Environment map={env}/>
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
@@ -322,7 +449,7 @@ function Chat({ avatar, Tname, text, type, ...props }) {
   );
 }
 
-export function Model({ open, hinge, ...props }) {
+export function Model({ open,scale, position, hinge, ...props }) {
   const { nodes, materials } = useGLTF("./laptop.glb");
   // const sticker = useTexture("./cb-logo-blk.jpg");
   const sticker = useTexture("./cb-mark-blk.jpg");
@@ -346,35 +473,39 @@ export function Model({ open, hinge, ...props }) {
     const t = state.clock.getElapsedTime();
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      open ? Math.cos(t / 10) / 10 + 0.25 : 0,
+      open ? Math.cos(t / 10) / 15 + 0.25 : 0,
       0.1
     );
     group.current.rotation.y = THREE.MathUtils.lerp(
       group.current.rotation.y,
-      open ? Math.sin(t / 10) / 4 : 0,
+      open ? Math.sin(t / 10) / 8 : 0,
       0.1
     );
     group.current.rotation.z = THREE.MathUtils.lerp(
       group.current.rotation.z,
-      open ? Math.sin(t / 10) / 10 : 0,
+      open ? Math.sin(t / 10) / 15 : 0,
       0.1
     );
     group.current.position.y = THREE.MathUtils.lerp(
       group.current.position.y,
-      open ? (-2 + Math.sin(t)) / 3 : -4.3,
+      open ? (-2 + Math.sin(t)) / 5 : -4.3,
       0.1
     );
   });
 
   return (
-    <group
+    <three.group
       ref={group}
       {...props}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
       onPointerOut={(e) => setHovered(false)}
       dispose={null}
+      scale={scale}
+      position-y={position}
     >
-      <three.group rotation-x={hinge}>
+      <three.group 
+      // rotation-x={hinge}
+      >
         <group>
           <mesh
             castShadow
@@ -460,22 +591,27 @@ export function Model({ open, hinge, ...props }) {
         geometry={nodes.touchbar.geometry}
         material={materials.touchbar}
       />
-    </group>
+    </three.group>
   );
 }
 
-function Spot({ vec = new Vector3(), ...props }) {
-  const depthBuffer = useDepthBuffer({ frames: 1 });
-  const [open, setOpen] = useState(false);
-  // We turn this into a spring animation that interpolates between 0 and 1
-  const propse = useSpring({
-    open: Number(open),
-    config: config.molasses, // Adjust the easing here
-    // delay: open ? 0 : 5000, // Add a delay when opening
-    // delay: 1000
+function CameraRig() {
+  const [vec] = useState(() => new THREE.Vector3());
+  return useFrame((state) => {
+    state.camera.position.lerp(
+      vec.set(state.mouse.x * 3,state.mouse.y * 3 , 30),
+      0.01
+    );
+    state.camera.lookAt(0, 0, 0);
   });
+}
+
+
+function Spot({ vec = new Vector3(), dist, ...props }) {
+  const depthBuffer = useDepthBuffer({ frames: 1 });
 
   return (
+    <three.group scale-x={dist}>
     <SpotLight
       depthBuffer={depthBuffer}
       castShadow
@@ -492,6 +628,7 @@ function Spot({ vec = new Vector3(), ...props }) {
       scale={[2, 15, 1]}
       {...props}
     />
+    </three.group>
   );
 }
 

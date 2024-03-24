@@ -273,6 +273,7 @@
 }
 .react-tabs__tab-panel--selected .panelImage img {
   width: 100%;
+  border-radius: 10px;
 }
 .react-tabs__tab-panel--selected p {
   animation: tabPanelActive 0.35s ease-in-out;

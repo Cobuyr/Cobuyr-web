@@ -70,11 +70,12 @@
 
 .split {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: left;
   position: relative;
-  margin-top: 0;
+  margin: 0;
   padding-inline: 0;
   padding-top: 0;
 }
@@ -83,6 +84,7 @@
   height: 100vh;
   width: -webkit-fill-available;
   position: relative;
+  translate: 0 -5vh;
 }
 .scene .scene-h1 {
   margin: 0;
@@ -110,6 +112,10 @@
   scale: 0.65;
   translate: -50% 50%;
   transform: translate3d(-50%, -50%, 0);
+}
+.scene .visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 .scene .m-sent {
   position: relative;
@@ -195,13 +201,14 @@
 }
 
 .hero {
-  height: 100vh;
+  height: 70vh;
   margin-block: unset;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   position: relative;
+  text-align: center;
 }
 .hero p {
   font-size: clamp(15px, 5vw, 18px);
@@ -241,7 +248,7 @@
   filter: blur(5px);
 }
 .hero h1 {
-  width: 100%;
+  width: 80%;
   font-size: clamp(2em, 5vw, 3.5em);
 }
 
