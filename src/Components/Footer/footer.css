@@ -4,7 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #141414;
+  background-color: #101010;
+  margin-block: unset;
 }
 .footer-widget h3 {
   font-size: 2em;

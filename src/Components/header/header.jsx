@@ -64,7 +64,7 @@ const Header = () => {
         </NavLink>
 
         <div className="main">
-          <NavLink to="/get" className="logo">
+          <NavLink to="/Earn" className="logo">
             {/* <lord-icon
     src="https://cdn.lordicon.com/avcjklpr.json"
     trigger="loop-on-hover"
@@ -99,11 +99,9 @@ const Header = () => {
             <motion.li variants={headVariants}>
               <NavLink to="/About">About</NavLink>
             </motion.li>
-            {/* <li>
-              <NavLink to="/pricing">
-               Pricing
-              </NavLink>
-            </li> */}
+            {/* <motion.li variants={headVariants}>
+              <NavLink to="/Earn">Earn</NavLink>
+            </motion.li> */}
             <motion.li variants={headVariants}>
               <NavLink to="/Contact">Contact</NavLink>
             </motion.li>

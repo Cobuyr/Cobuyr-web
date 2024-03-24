@@ -3,6 +3,7 @@ import { Badge, IconBadge } from "../Components/badge";
 import { motion } from "framer-motion";
 import { Section } from "./inView";
 import { ReferalForm } from "../Pages/Contact";
+import Footer from "./Footer/footer";
 
 const Sub = () => {
   const visible = {
@@ -18,7 +19,9 @@ const Sub = () => {
   };
 
   return (
-    <Section className="early" >
+    <>
+
+    <Section className="early">
       <div className="early-info" id="referral">
         <motion.div variants={homeVariants}>
           <Badge
@@ -54,15 +57,22 @@ const Sub = () => {
                 ></lord-icon>
               </div> */}
               <h4>Suggest Cobuyr</h4>
-              <p>Encourage your chosen company to integrate Cobuyr into their e-commerce setup.</p>
+              <p>
+                Encourage your chosen company to integrate Cobuyr into their
+                e-commerce setup.
+              </p>
             </motion.li>
             <motion.li variants={homeVariants}>
-               {/* <IconBadge iconUrl="vdjwmfqs" trigger="hover" target="li" /> */}
+              {/* <IconBadge iconUrl="vdjwmfqs" trigger="hover" target="li" /> */}
               <h4>Register with Us</h4>
-              <p>Enter your details and the company's information below to ensure prompt payment upon their integration. <br/> It's crucial that the retailer references your name when they reach out to us.</p>
+              <p>
+                Enter your details and the company's information below to ensure
+                prompt payment upon their integration. <br /> It's crucial that
+                the retailer references your name when they reach out to us.
+              </p>
             </motion.li>
             <motion.li variants={homeVariants}>
-               {/* <div className="iconBadge">
+              {/* <div className="iconBadge">
                <lord-icon
                   src="https://cdn.lordicon.com/ofwxettw.json"
                   trigger="hover"
@@ -72,32 +82,44 @@ const Sub = () => {
                 ></lord-icon>
               </div> */}
               <h4>Acknowledged</h4>
-              <p>Upon form completion, your first name and the company's name will be listed on this page, confirming your submission acknowledgment.</p>
+              <p>
+                Upon form completion, your first name and the company's name
+                will be listed on this page, confirming your submission
+                acknowledgment.
+              </p>
             </motion.li>
           </motion.ul>
         </div>
-        <div>
-      <motion.h4 variants={homeVariants}>
-          Terms and Condition
-        </motion.h4>
-        <ul>
-          <motion.li variants={homeVariants}>Your referral payment is contingent upon the retailer referencing your name during Cobuyr integration.</motion.li>
-          <motion.li variants={homeVariants}>Cobuyr reserves the right to terminate this referral program at its discretion.</motion.li>
-          <motion.li variants={homeVariants}>Additional terms may apply.</motion.li>
-        </ul>
-      </div>
       </div>
       <div className="early-form">
-         {/* <lord-icon
+        {/* <lord-icon
             src="https://cdn.lordicon.com/ribxmuoc.json"
             trigger="loop-on-hover"
             delay="2500"
             target=".early-form"
             stroke="bold"
           /> */}
-        <ReferalForm/>
+        <div className="terms">
+          <motion.h3 variants={homeVariants}>Terms and Condition</motion.h3>
+          <ul>
+            <motion.li variants={homeVariants}>
+              Your referral payment is contingent upon the retailer referencing
+              your name during Cobuyr integration.
+            </motion.li>
+            <motion.li variants={homeVariants}>
+              Cobuyr reserves the right to terminate this referral program at
+              its discretion.
+            </motion.li>
+            <motion.li variants={homeVariants}>
+              Additional terms may apply.
+            </motion.li>
+          </ul>
+        </div>
+        <ReferalForm />
       </div>
     </Section>
+    <Footer/>
+    </>
   );
 };
 export default Sub;

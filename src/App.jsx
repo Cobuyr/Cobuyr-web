@@ -18,6 +18,7 @@ import About from "./Pages/About";
 // import Sub from "./Components/sub";
 import NoPage from "./Pages/NoPage";
 import Contact from "./Pages/Contact";
+import Earn from "./Pages/Earn";
 import { AnimatePresence } from "framer-motion";
 import Scene from "./Experience/scene";
 
@@ -38,6 +39,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
+          <Route path="/Earn" element={<Earn />} />
           <Route path="/Scene" element={<Scene />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>
