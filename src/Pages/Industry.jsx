@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import "../Styles/Industry.css";
+// import "../Styles/Industry.css";
 import { Badge } from "../Components/badge";
 import { Icon } from "../assets/icon";
 import { motion } from "framer-motion";

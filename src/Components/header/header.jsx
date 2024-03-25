@@ -52,7 +52,7 @@ const Header = () => {
   return (
     <>
       <header>
-        <NavLink to="/" className="logo">
+        <NavLink to="/home" className="logo">
           <img
             src={logo}
             // srcSet={`${logo} 700w, ${smalllogo} 400w`}
@@ -93,15 +93,18 @@ const Header = () => {
       >
         <nav>
           <ul className={menuOpen ? "navbar open" : "navbar"}>
-            <motion.li className="hide">
+            {/* <motion.li className="hide">
               <NavLink to="/">Home</NavLink>
-            </motion.li>
-            <motion.li variants={headVariants}>
-              <NavLink to="/About">About</NavLink>
-            </motion.li>
-            {/* <motion.li variants={headVariants}>
-              <NavLink to="/Earn">Earn</NavLink>
             </motion.li> */}
+            <motion.li variants={headVariants}>
+              <NavLink to="/About">Why Cobuyr</NavLink>
+            </motion.li>
+            <motion.li className="hide" variants={headVariants}>
+              <NavLink to="/Industry">Industries</NavLink>
+            </motion.li>
+            <motion.li className="hide" variants={headVariants}>
+              <NavLink to="/Platform">Platform</NavLink>
+            </motion.li>
             <motion.li variants={headVariants}>
               <NavLink to="/Contact">Contact</NavLink>
             </motion.li>

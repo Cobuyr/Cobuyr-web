@@ -114,10 +114,10 @@ header lord-icon {
 /* Sticky Header Style */
 /* ---------------------------------------- */
 .sticky-header header {
-  animation: navhide 1s ease-out forwards;
+  animation: headhide 0.5s ease-out forwards;
 }
 .sticky-header .hide {
-  animation: navhide 1.5s ease-in forwards;
+  animation: navhide 0.5s ease-in forwards;
 }
 
 @keyframes navhide {
@@ -128,10 +128,25 @@ header lord-icon {
     scale: 1.1;
     opacity: 0.5;
   }
-  100% {
+  80% {
     scale: 0;
     opacity: 0;
+  }
+  100% {
     display: none;
+  }
+}
+@keyframes headhide {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+    opacity: 0.5;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
   }
 }
 @media (max-width: 1280px) {

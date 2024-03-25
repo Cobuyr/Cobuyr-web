@@ -21,6 +21,8 @@ import Contact from "./Pages/Contact";
 import Earn from "./Pages/Earn";
 import { AnimatePresence } from "framer-motion";
 import Scene from "./Experience/scene";
+import Platform from "./Pages/Platform";
+import Industry from "./Pages/Industry";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -40,6 +42,8 @@ function App() {
           <Route path="/About" element={<About />} />
           <Route path="/Contact" element={<Contact />} />
           <Route path="/Earn" element={<Earn />} />
+          <Route path="/Platform" element={<Platform />} />
+          <Route path="/Industry" element={<Industry />} />
           <Route path="/Scene" element={<Scene />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>

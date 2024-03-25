@@ -70,7 +70,7 @@ const Footer = () => {
         </p>
         <div className="wdgt-btn">
           <SpotBtn text={"Book a demo"} />
-          <a href="#">About Social Buying</a>
+          <a href="/Earn">About Social Buying</a>
         </div>
       </Section>
       <footer className="footer">
@@ -120,13 +120,13 @@ const Footer = () => {
               <h4>Menu</h4>
               <ul>
                 <li>
-                  <a href="#">Why Cobuyr</a>
+                  <a href="/About">Why Cobuyr</a>
                 </li>
                 <li>
-                  <a href="#">Platform</a>
+                  <a href="/Plaform">Platform</a>
                 </li>
                 <li>
-                  <a href="#">Industries</a>
+                  <a href="/Industry">Industries</a>
                 </li>
               </ul>
             </div>
@@ -148,13 +148,13 @@ const Footer = () => {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="#">Contact Us</a>
+                  <a href="/Contact">Contact Us</a>
                 </li>
                 <li>
-                  <a href="#">Schedule Demo</a>
+                  <a href="/Earn">Schedule Demo</a>
                 </li>
                 <li>
-                  <a href="#">FAQs</a>
+                  <a href="/Contact">FAQs</a>
                 </li>
               </ul>
             </div>
