@@ -741,50 +741,6 @@
   isolation: isolate;
   z-index: 0;
 }
-.info-banner::after {
-  content: "";
-  width: 100%;
-  height: 200%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  z-index: -2;
-  background-color: inherit;
-}
-.info-banner .glow2 {
-  width: 70%;
-  height: 50px;
-  position: absolute;
-  bottom: -30%;
-  left: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background-color: hsla(321, 100%, 75%, 0.45);
-  filter: blur(50px) drop-shadow(0px 42px 40px hsla(321, 100%, 75%, 0.35));
-  animation: bright linear both;
-  animation-direction: reverse;
-  animation-timeline: view(block);
-  animation-range: entry 0% exit 40%;
-  z-index: -1;
-}
-.info-banner .glow {
-  width: 70%;
-  height: 50px;
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  translate: -50% -50%;
-  border-radius: 50%;
-  background-color: hsla(240, 100%, 75%, 0.45);
-  filter: blur(50px) drop-shadow(0px 42px 40px hsla(240, 100%, 75%, 0.35));
-  rotate: 180deg;
-  transform-origin: bottom;
-  animation: bright linear both;
-  animation-timeline: view(block);
-  animation-range: entry 0% exit 40%;
-  z-index: -1;
-}
 
 .integrate {
   padding-block: 10vh 5vh;
