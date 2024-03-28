@@ -78,6 +78,10 @@
   margin: 0;
   padding-inline: 0;
   padding-top: 0;
+  background: url(./plexus.png);
+  background-size: contain;
+  background-blend-mode: overlay;
+  background-color: rgba(4, 4, 4, 0.7333333333);
 }
 
 .scene {
