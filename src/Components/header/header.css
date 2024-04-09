@@ -9,12 +9,13 @@
 
 .nav-wrap {
   position: fixed;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: -moz-max-content;
+  width: max-content;
   top: 3.5vh;
   left: 50%;
   translate: -50% 0%;
   z-index: 40;
+  will-change: contents;
 }
 
 .nav-wrap a.active {
@@ -106,6 +107,7 @@ header {
   position: fixed;
   top: 0;
   overflow: hidden;
+  will-change: contents;
 }
 header lord-icon {
   width: 70px;
@@ -149,6 +151,14 @@ header lord-icon {
     opacity: 0;
   }
 }
+@keyframes headslide {
+  0% {
+    top: 9.5vh;
+  }
+  100% {
+    top: 3.5vh;
+  }
+}
 @media (max-width: 1280px) {
   header {
     padding: 35px 2%;
@@ -166,6 +176,12 @@ header lord-icon {
   .navbar a {
     font-size: 0.8rem;
     margin: 0px 15px;
+  }
+  .sticky-header .nav-wrap {
+    animation: headslide 0.5s ease-out forwards 1s;
+  }
+  .nav-wrap {
+    top: 9.5vh;
   }
   .nav-wrap nav {
     padding: 6px 12px;

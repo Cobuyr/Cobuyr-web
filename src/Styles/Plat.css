@@ -2,11 +2,14 @@
     display: flex;
     justify-content: space-between;
     column-gap: 20px;
-
+.platimg{
+    width: 100%;  
+}
 }
 
 .plattext {
     text-align: left;
+    width: fit-content;
 
     h2 {
         padding: 0;
@@ -14,7 +17,7 @@
 }
 
 .platimg {
-    width: 80%;
+    width: 60%;
 
     img {
         width: 100%;
@@ -26,18 +29,85 @@
 .platList {
     min-height: 100vh;
 
+    h2 {
+        padding-inline: 10%;
+    }
+
     .list {
         display: flex;
         justify-content: space-between;
         column-gap: 50px;
         margin-block: 10vh;
+        padding-block: 5vh;
 
         .subtext {
             text-align: left;
         }
 
-        /* &:nth-of-type(even){
-flex-direction: column-reverse;
-        } */
+        &:nth-of-type(even) {
+            flex-direction: row-reverse;
+        }
     }
+}
+
+.info-banner {
+    margin-block: 5vh;
+
+    h2 {
+        padding-inline: 10%;
+    }
+
+    p {
+        max-width: 75ch;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .platHead{
+        flex-direction: column-reverse;
+    }
+    .plattext{
+        text-align: center;
+        text-align: -webkit-center;
+        align-self: center;
+    }
+    
+    .platList {
+        .list {
+            flex-direction: column-reverse;
+
+            &:nth-of-type(even) {
+                flex-direction: column-reverse;
+            }
+        }
+    }
+
+    .platimg {
+        width: 80%;
+        align-self: center;
+    }
+
+    .subtext{
+        align-self: center;
+        h3 {
+        text-align: center;
+        text-align: -webkit-center;
+    }
+}
+}
+
+@media (max-width: 700px) {
+
+    .platimg {
+        width: 100%;
+    }
+
+    .info-banner h2 {
+            padding-inline: 5%;
+        }
+        .platList h2 {
+            padding-inline: 5%;
+        }
+      
 }
