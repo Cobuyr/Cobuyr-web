@@ -11,9 +11,15 @@
     text-align: left;
     width: fit-content;
 
-    h2 {
+    h3 {
+        font-size: 2rem;
         padding: 0;
     }
+
+    /* & h3 {
+        font-size: 2rem;
+        padding: 0;
+    } */
 }
 
 .platimg {
@@ -30,6 +36,7 @@
     min-height: 100vh;
 
     h2 {
+        font-size: 2rem;
         padding-inline: 10%;
     }
 
