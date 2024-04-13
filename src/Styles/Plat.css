@@ -55,7 +55,33 @@
 
     h2 {
         padding-inline: 10%;
-    }
+        position: relative;
+  
+        &::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          translate: -50%;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          background-image: radial-gradient(
+            circle,
+            var(--accent) 1px,
+            var(--accent) 1px,
+            transparent 1px,
+            transparent 100%
+          );
+          background-repeat: repeat;
+          background-position: left center;
+          background-size: 8px 8px;
+          mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+          opacity: 0.5;
+          z-index: -1;
+          animation: reveal 10s ease forwards;
+        }
+      }
 
     p {
         max-width: 75ch;
