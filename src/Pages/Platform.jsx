@@ -33,7 +33,7 @@ const Platform = () => {
           variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
         >
           <motion.h2 variants={platVariants}>
-            Modernize your checkout overnight to attract and retain more
+          <span className="mainText">Modernize</span> your checkout overnight to attract and retain more
             customers
           </motion.h2>
           <motion.p variants={platVariants}>
@@ -60,7 +60,7 @@ const Platform = () => {
 
       <Section className="info-banner">
         <motion.h2 variants={platVariants}>
-          Give your customers the buying experience they want
+          Give your customers the <span className="mainText">buying experience</span> they want
         </motion.h2>
         <motion.p
           variants={{
@@ -79,7 +79,7 @@ const Platform = () => {
 
       <Section className="platList">
         <motion.h2 variants={platVariants}>
-          Powerful Capabilities in One Solution
+        <span className="mainText">Powerful</span> Capabilities in One <span className="mainText">Solution</span>
         </motion.h2>
         <motion.div
           initial="hidden"
