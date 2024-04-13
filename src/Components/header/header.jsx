@@ -73,7 +73,7 @@ const Header = () => {
     // state="loop-line"
     >
 </lord-icon> */}
-            Book Demo
+            Earn Money
           </NavLink>
 
           {/* <div
@@ -93,17 +93,17 @@ const Header = () => {
       >
         <nav>
           <ul className={menuOpen ? "navbar open" : "navbar"}>
-            {/* <motion.li className="hide">
+            <motion.li>
               <NavLink to="/">Home</NavLink>
-            </motion.li> */}
+            </motion.li>
             <motion.li variants={headVariants}>
               <NavLink to="/About">Why Cobuyr</NavLink>
             </motion.li>
             <motion.li className="hide" variants={headVariants}>
-              <NavLink to="/Industry">Industries</NavLink>
+              <NavLink to="/Platform">Platform</NavLink>
             </motion.li>
             <motion.li className="hide" variants={headVariants}>
-              <NavLink to="/Platform">Platform</NavLink>
+              <NavLink to="/Industry">Industries</NavLink>
             </motion.li>
             <motion.li variants={headVariants}>
               <NavLink to="/Contact">Contact</NavLink>

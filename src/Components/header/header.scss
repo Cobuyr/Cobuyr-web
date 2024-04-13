@@ -38,6 +38,8 @@
 }
 .navbar {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0;
 }
 .navbar li {
@@ -182,10 +184,10 @@ header {
 }
 @keyframes headhide {
   0% {
-	top: 0px; 
+    top: 0px;
   }
   50% {
-	top: 10px; 
+    top: 10px;
     opacity: 0.5;
   }
   100% {
@@ -197,7 +199,7 @@ header {
   0% {
     top: 9.5vh;
   }
-  
+
   100% {
     top: 3.5vh;
   }
@@ -228,15 +230,15 @@ header {
     margin: 0px 15px;
   }
 
-  .sticky-header .nav-wrap{
+  .sticky-header .nav-wrap {
     animation: headslide 0.5s ease-out forwards 1s;
   }
-  .nav-wrap{
+  .nav-wrap {
     top: 9.5vh;
     nav {
-    padding: 6px 12px;
+      padding: 6px 12px;
+    }
   }
-}
   .main a {
     font-size: 0.8rem;
   }
