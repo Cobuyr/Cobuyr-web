@@ -10,10 +10,12 @@
 .plattext {
     text-align: left;
     width: fit-content;
+    padding-inline: 0;
 
-    h3 {
-        font-size: 2rem;
+    h3,h2 {
+        font-size: clamp(1.5em, 5vw, 2em);
         padding: 0;
+        text-transform: uppercase;
     }
 
     /* & h3 {
