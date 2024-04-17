@@ -1243,6 +1243,11 @@
     grid-template-columns: repeat(8, 1fr);
   }
 }
+@media (max-width: 800px) {
+  .scene {
+    display: none;
+  }
+}
 @media (max-width: 550px) {
   .hero {
     height: 70vh;

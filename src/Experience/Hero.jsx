@@ -400,6 +400,7 @@ export default function HeroScene() {
         <Suspense fallback={null}>
           <three.group
             rotation={[0, Math.PI, 0]}
+            // position-y={props.open.to([0, 1], [0, -5])}
             // rotation={[Math.PI / 0.65, Math.PI, 0]}
 // rotation-x={props.open.to([0, 1], [Math.PI / 0.42, Math.PI / 0.5])}
             // onClick={(e) => (e.stopPropagation(), setOpen(!open))}
@@ -410,7 +411,7 @@ export default function HeroScene() {
               hinge={props.open.to([0, 1], [1.35, -0.425])}
               scale={props.open.to([0, 1], [2.1, 1])}
               // position={[0, 10, 0]}
-              position={props.open.to([0, 1], [0, -1.5])}
+              position-y={props.open.to([0, 1], [0, -1.5])}
             />
           </three.group>
           {/* <Spot
