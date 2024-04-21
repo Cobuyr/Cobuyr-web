@@ -60,7 +60,7 @@
 }
 
 .info-banner {
-    margin-block: 5vh;
+    /* margin-block: 5vh; */
 
     h2 {
         padding-inline: 10%;

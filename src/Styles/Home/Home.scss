@@ -105,6 +105,7 @@
 }
 
 .split {
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +116,7 @@
   // margin-top: 0;
   padding-inline: 0;
   padding-top: 0;
-  background: url(./plexus.png);
+  // background: url(./plexus.png);
   background-size: contain;
   background-blend-mode: overlay;
   background-color: #040404bb;
@@ -135,10 +136,10 @@
   //   inset: 0;
   height: 100vh;
   width: -webkit-fill-available;
-  // background-color: var(--bg-color);
+  background-color: var(--bg-color);
   position: relative;
 
-  translate: 0 -5vh;
+  // translate: 0 -5vh;
   // z-index: -1;
 
   .scene-h1 {
@@ -268,7 +269,7 @@
 .hero-wrap {
   margin: unset;
   padding-block: unset;
-  padding-right: unset;
+  // padding-right: unset;
   // background: url(./plexus.png);
   // background-size: cover;
   // background-blend-mode: overlay;
@@ -1541,6 +1542,12 @@
     display: none;
   }
 }
+@media (max-width: 700px) {
+  .split{
+    margin-top: -5vh;
+    height: 95vh;
+  }
+  }
 @media (max-width: 550px) {
   .hero {
     height: 70vh;
@@ -1627,6 +1634,6 @@
   .info-banner {
     height: 100%;
     /* margin: 0; */
-    padding-block: 0;
+    // padding-block: 0;
   }
 }

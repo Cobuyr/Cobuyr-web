@@ -16,6 +16,7 @@ import Code from "../Components/CodeWidget";
 import Velocity from "../Components/Velocity";
 import TabBox from "../Components/ProductTab";
 import HeroScene from "../Experience/Hero";
+import Plexus from "../Components/Plexus";
 
 const visible = {
   opacity: 1,
@@ -117,10 +118,10 @@ const Home = () => {
       </div> */}
 
 <Section className="split">
-
+<Plexus/>
       <Hero />
-      <HeroScene />
 </Section>
+      <HeroScene />
 
       <Section className="products">
         <div className="products-head">

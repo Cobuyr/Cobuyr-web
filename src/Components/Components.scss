@@ -381,6 +381,15 @@
   }
 }
 
+// plexus \\\\\\\\\\\\\
+#plexus canvas{
+  position: absolute !important;
+  z-index: -1;
+}
+
+
+
+
 @media (max-width: 600px) {
   .vertical {
     flex-direction: column;
