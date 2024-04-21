@@ -11,6 +11,11 @@ import {
   useEnvironment,
   SpotLight,
   useDepthBuffer,
+  OrbitControls,
+  useCursor,
+  Text,
+  RenderTexture,
+  PerspectiveCamera,
 } from "@react-three/drei";
 import { useSpring } from "@react-spring/core";
 import { a as three } from "@react-spring/three";
@@ -187,8 +192,7 @@ export default function HeroScene() {
   //     left: "60%"
   //   }
   // ];
-  
- 
+
   // const chatProps = useSpring(chatAnimations[currentChatIndex]);
 
   // const handleClick = () => {
@@ -209,9 +213,8 @@ export default function HeroScene() {
       // style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
       className="scene"
     >
-
-{/* Render the current chat group */}
-{/* {chats.map((chatGroup, index) => (
+      {/* Render the current chat group */}
+      {/* {chats.map((chatGroup, index) => (
         <web.div
           key={index}
           className={`message ${index === currentChatIndex ? "visible" : ""}`}
@@ -226,16 +229,13 @@ export default function HeroScene() {
       <web.h1
         style={{
           opacity: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to(
-            (o) => `translate3d(-50%,${o * 300}px,0)`
-          ),
+          transform: props.open.to((o) => `translate3d(-50%,${o * -370}px,0)`),
         }}
         className="scene-h1"
       >
-       Connecting <span className="mainText">Buyers.</span>
-       {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
+        Connecting <span className="mainText">Buyers.</span>
+        {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
         <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
-
       </web.h1>
 
       <web.div
@@ -288,7 +288,7 @@ export default function HeroScene() {
         }}
       >
         <Chat
-           avatar={avatar4}
+          avatar={avatar4}
           Tname={"Vincent Moore"}
           text={
             "Looking to buy 30 pieces of vintage vinyl records at a discount. Anyone interested in splitting the purchase?"
@@ -297,14 +297,14 @@ export default function HeroScene() {
         />
 
         <Chat
-           avatar={avatar0}
+          avatar={avatar0}
           Tname={"Sophia Adams"}
           text={"I'm interested! I collect vinyl too. I can take 15."}
           type={"received"}
         />
 
         <Chat
-           avatar={avatar6}
+          avatar={avatar6}
           Tname={"Oliver Scott"}
           text={
             "Count me in! I'll take 10, and I know a friend who might want the remaining 5."
@@ -329,7 +329,7 @@ export default function HeroScene() {
         }}
       >
         <Chat
-           avatar={avatar1}
+          avatar={avatar1}
           Tname={"Emma"}
           text={
             "Looking to buy 70 pieces of base cut rings at a discount. Anyone want to share the purchase? I'm taking 20 pieces"
@@ -338,14 +338,14 @@ export default function HeroScene() {
         />
 
         <Chat
-           avatar={avatar7}
+          avatar={avatar7}
           Tname={"William Dafren"}
           text={"I'm interested! I can take 20 for my boutique."}
           type={"received"}
         />
 
         <Chat
-           avatar={avatar5}
+          avatar={avatar5}
           Tname={"Olivia"}
           text={
             "Count me in too. I'll take 15, and I know a friend who might want the remaining 15."
@@ -393,16 +393,18 @@ export default function HeroScene() {
         />
       </web.div>
 
-      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}
-      // gl={{ preserveDrawingBuffer: false }}
+      <Canvas
+        dpr={[1, 2]}
+        camera={{ position: [0, 0, -30], fov: 35 }}
+        // gl={{ preserveDrawingBuffer: false }}
       >
-
+        {/* <OrbitControls /> */}
         <Suspense fallback={null}>
           <three.group
             rotation={[0, Math.PI, 0]}
             // position-y={props.open.to([0, 1], [0, -5])}
             // rotation={[Math.PI / 0.65, Math.PI, 0]}
-// rotation-x={props.open.to([0, 1], [Math.PI / 0.42, Math.PI / 0.5])}
+            // rotation-x={props.open.to([0, 1], [Math.PI / 0.42, Math.PI / 0.5])}
             // onClick={(e) => (e.stopPropagation(), setOpen(!open))}
             // onClick={handleClick}
           >
@@ -423,7 +425,7 @@ export default function HeroScene() {
             // color={"#ffffff"}
           /> */}
           <CameraRig/>
-          <Environment map={env}/>
+          <Environment map={env} />
         </Suspense>
         <ContactShadows
           position={[0, -4.5, 0]}
@@ -450,18 +452,18 @@ function Chat({ avatar, Tname, text, type, ...props }) {
   );
 }
 
-export function Model({ open,scale, position, hinge, ...props }) {
+export function Model({ open, scale, position, hinge, ...props }) {
   const { nodes, materials } = useGLTF("./laptop.glb");
-  // const sticker = useTexture("./cb-logo-blk.jpg");
-  const sticker = useTexture("./cb-mark-blk.jpg");
-  // const sticker = useTexture("./avatar.jpg");
-  // const sticker = useTexture(base);
-  // sticker.repeat.set(0.005, 0.005);
-  // sticker.mapping = THREE.UVMapping;
-  sticker.wrapS = sticker.wrapT = THREE.RepeatWrapping; // has effect
-  // sticker.rotation = 0; // has effect
-  // sticker.flipY = false; // has effect
-  sticker.repeat.set(1, 1);
+  // // const sticker = useTexture("./cb-logo-blk.jpg");
+  // const sticker = useTexture("./cb-mark-blk.jpg");
+  // // const sticker = useTexture("./avatar.jpg");
+  // // const sticker = useTexture(base);
+  // // sticker.repeat.set(0.005, 0.005);
+  // // sticker.mapping = THREE.UVMapping;
+  // sticker.wrapS = sticker.wrapT = THREE.RepeatWrapping; // has effect
+  // // sticker.rotation = 0; // has effect
+  // // sticker.flipY = false; // has effect
+  // sticker.repeat.set(1, 1);
   const group = useRef();
 
   const [hovered, setHovered] = useState(false);
@@ -494,6 +496,12 @@ export function Model({ open,scale, position, hinge, ...props }) {
     );
   });
 
+  const textRef = useRef();
+
+  const sticker2 = useTexture("./cb-mark-blk.jpg");
+  const sticker1 = useTexture("./cb-logo-blk.jpg");
+  const sticker3 = useTexture("./avatar.jpg");
+
   return (
     <three.group
       ref={group}
@@ -504,7 +512,7 @@ export function Model({ open,scale, position, hinge, ...props }) {
       scale={scale}
       position-y={position}
     >
-      <three.group 
+      <three.group
       // rotation-x={hinge}
       >
         <group>
@@ -514,14 +522,60 @@ export function Model({ open,scale, position, hinge, ...props }) {
             geometry={nodes.Cube008.geometry}
             material={materials.aluminium}
           >
-            {/* <meshStandardMaterial color={"gray"} />
-            <Decal debug position={[-3, 2, 0]}>
-              <meshBasicMaterial
-                map={sticker}
+            <meshStandardMaterial color={"silver"} />
+
+            {/* Easter Egg Sticker */}
+
+            <Decal position={[0, 4, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]}>
+              <meshStandardMaterial
+                roughness={1}
+                transparent
                 polygonOffset
                 polygonOffsetFactor={-1}
-              />
-            </Decal> */}
+              >
+                <RenderTexture attach="map">
+                  <PerspectiveCamera
+                    makeDefault
+                    aspect={1 / 1}
+                    position={[0, 0, 5]}
+                  />
+                  <color attach="background" args={["white"]} />
+                  <ambientLight intensity={Math.PI} />
+                  <directionalLight position={[10, 10, 5]} />
+                  <Dodecahedron sticker={sticker3} scale={0.8} />
+                </RenderTexture>
+              </meshStandardMaterial>
+            </Decal>
+
+            <Decal position={[0, 3, 0]} rotation={[0, 0, 0]} scale={[3, 1, 1]}>
+              <meshStandardMaterial
+                roughness={1}
+                transparent
+                polygonOffset
+                polygonOffsetFactor={-1}
+              >
+                <RenderTexture attach="map">
+                  <PerspectiveCamera
+                    makeDefault
+                    aspect={16 / 9}
+                    position={[0, 0, 7]}
+                  />
+                  <color attach="background" args={["#a00948"]} />
+                  <ambientLight intensity={Math.PI} />
+                  <directionalLight position={[10, 10, 5]} />
+                  <Text
+                    rotation={[0, Math.PI, 0]}
+                    ref={textRef}
+                    fontSize={2}
+                    color="white"
+                    scale={0.66}
+                  >
+                    You Found Me!{"\n"}
+                    I'm Easter Egg Rick!
+                  </Text>
+                </RenderTexture>
+              </meshStandardMaterial>
+            </Decal>
           </mesh>
 
           <mesh
@@ -549,35 +603,59 @@ export function Model({ open,scale, position, hinge, ...props }) {
           castShadow
           receiveShadow
           geometry={nodes.Cube002.geometry}
-          material={materials.aluminium}
+          // material={materials.aluminium}
         >
-          {/* <meshStandardMaterial color={"gray"} />
+          <meshStandardMaterial color={"black"} />
 
           <Decal
-            // debug
-            position={[0, 0, 2]}
-            // rotation={Math.PI * 0.9}
-            scale={[10, 1, 10]}
+            position={[-3, 0, 4.5]}
+            rotation={[-1, Math.PI, 0.5]}
+            scale={[2, 1, 1]}
           >
-            <meshBasicMaterial
-              map={sticker}
+            <meshStandardMaterial
+              roughness={1}
+              transparent
               polygonOffset
               polygonOffsetFactor={-1}
-              map-flipY={false}
-              map-anisotropy={16}
-            />
-          </Decal> */}
-          {/* <Decal debug position={[3, -0.3, 5]} 
-          // scale={[2, 2, 1]}
+            >
+              <RenderTexture attach="map">
+                <PerspectiveCamera
+                  makeDefault
+                  aspect={16 / 9}
+                  position={[0, 0, 5]}
+                />
+                <color attach="background" args={["black"]} />
+                <ambientLight intensity={Math.PI} />
+                <directionalLight position={[10, 10, 5]} />
+                <Dodecahedron sticker={sticker2} />
+              </RenderTexture>
+            </meshStandardMaterial>
+          </Decal>
+
+          <Decal
+            position={[3.2, 0, 5]}
+            rotation={[-1, 0, 0]}
+            scale={[2.5, 1, 1]}
           >
-            <meshBasicMaterial
-              map={sticker}
+            <meshStandardMaterial
+              roughness={1}
+              transparent
               polygonOffset
               polygonOffsetFactor={-1}
-              map-flipY={false}
-              map-anisotropy={16}
-            />
-          </Decal> */}
+            >
+              <RenderTexture attach="map">
+                <PerspectiveCamera
+                  makeDefault
+                  aspect={16 / 9}
+                  position={[0, 0, 5]}
+                />
+                <color attach="background" args={["black"]} />
+                <ambientLight intensity={Math.PI} />
+                <directionalLight position={[10, 10, 5]} />
+                <Dodecahedron sticker={sticker1} />
+              </RenderTexture>
+            </meshStandardMaterial>
+          </Decal>
         </mesh>
         <mesh
           castShadow
@@ -595,40 +673,68 @@ export function Model({ open,scale, position, hinge, ...props }) {
     </three.group>
   );
 }
+function Dodecahedron({ sticker, ...props }) {
+  const meshRef = useRef();
+  const [hovered, hover] = useState(false);
+  const [clicked, click] = useState(false);
+  useCursor(hovered);
 
+  return (
+    <group {...props}>
+      <mesh
+        ref={meshRef}
+        // scale={clicked ? 2.25 : 1.75}
+        scale={10}
+        // onClick={() => click(!clicked)}
+        // onPointerOver={() => hover(true)}
+        // onPointerOut={() => hover(false)}
+        // side={THREE.DoubleSide}
+        // visible={false}
+      >
+        <planeGeometry args={[1, 0.5]} />
+        <meshStandardMaterial />
+        <Decal
+          scale={[1, 0.5, 1]}
+          debug
+          polygonOffsetFactor={-0}
+          map={sticker}
+        />
+      </mesh>
+    </group>
+  );
+}
 function CameraRig() {
   const [vec] = useState(() => new THREE.Vector3());
   return useFrame((state) => {
     state.camera.position.lerp(
-      vec.set(state.mouse.x * 3,state.mouse.y * 3 , -30),
-      0.01
+      vec.set(state.mouse.x * 10, state.mouse.y * 7, -30),
+      0.025
     );
     state.camera.lookAt(0, 0, 0);
   });
 }
-
 
 function Spot({ vec = new Vector3(), dist, ...props }) {
   const depthBuffer = useDepthBuffer({ frames: 1 });
 
   return (
     <three.group scale-x={dist}>
-    <SpotLight
-      depthBuffer={depthBuffer}
-      castShadow
-      penumbra={1}
-      attenuation={5}
-      anglePower={4}
-      distance={5}
-      angle={5}
-      // distance={propse.open.to([0, 1], [15, 1])}
-      //       angle={propse.open.to([0, 1], [35, 1])}
-      // intensity={25}
-      // color={propse.open.to([0, 1], ["#ffffff", "#ff0000"])}
+      <SpotLight
+        depthBuffer={depthBuffer}
+        castShadow
+        penumbra={1}
+        attenuation={5}
+        anglePower={4}
+        distance={5}
+        angle={5}
+        // distance={propse.open.to([0, 1], [15, 1])}
+        //       angle={propse.open.to([0, 1], [35, 1])}
+        // intensity={25}
+        // color={propse.open.to([0, 1], ["#ffffff", "#ff0000"])}
 
-      scale={[2, 15, 1]}
-      {...props}
-    />
+        scale={[2, 15, 1]}
+        {...props}
+      />
     </three.group>
   );
 }
