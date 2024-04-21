@@ -223,20 +223,20 @@ export default function HeroScene() {
         </web.div>
       ))} */}
 
-      {/* <web.h1
+      <web.h1
         style={{
-          // opacity: props.open.to([0, 1], [1, 0]),
+          opacity: props.open.to([0, 1], [0, 1]),
           transform: props.open.to(
-            (o) => `translate3d(-50%,${o * -365}px,0)`
+            (o) => `translate3d(-50%,${o * 300}px,0)`
           ),
         }}
         className="scene-h1"
       >
-        <span className="mainText">Connecting Buyers.</span>
-        {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
+       Connecting <span className="mainText">Buyers.</span>
+       {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
         <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
 
-      {/* </web.h1> */}
+      </web.h1>
 
       <web.div
         className="message"
@@ -422,7 +422,7 @@ export default function HeroScene() {
             // angle={props.open.to([0, 1], [35, 0])}
             // color={"#ffffff"}
           /> */}
-          {/* <CameraRig/> */}
+          <CameraRig/>
           <Environment map={env}/>
         </Suspense>
         <ContactShadows
@@ -600,7 +600,7 @@ function CameraRig() {
   const [vec] = useState(() => new THREE.Vector3());
   return useFrame((state) => {
     state.camera.position.lerp(
-      vec.set(state.mouse.x * 3,state.mouse.y * 3 , 30),
+      vec.set(state.mouse.x * 3,state.mouse.y * 3 , -30),
       0.01
     );
     state.camera.lookAt(0, 0, 0);
