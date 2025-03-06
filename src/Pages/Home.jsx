@@ -11,12 +11,11 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { Section } from "../Components/inView";
 import MagneticBtn, { SpotBtn } from "../Components/magnetBtn";
 import { useRef, useState, useEffect, useLayoutEffect } from "react";
-import Scene from "../Experience/scene";
+// import Scene from "../Experience/scene";
 import Code from "../Components/CodeWidget";
 import Velocity from "../Components/Velocity";
 import TabBox from "../Components/ProductTab";
 import HeroScene from "../Experience/Hero";
-import Plexus from "../Components/Plexus";
 
 const visible = {
   opacity: 1,
@@ -118,7 +117,6 @@ const Home = () => {
       </div> */}
 
       <Section className="split">
-        {/* <Plexus /> */}
         <Hero />
       </Section>
       {/* <HeroScene /> */}
