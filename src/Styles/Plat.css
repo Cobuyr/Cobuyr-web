@@ -1,7 +1,8 @@
 .platHead {
     display: flex;
     justify-content: space-between;
-    column-gap: 20px;
+    -moz-column-gap: 3rem;
+         column-gap: 3rem;
 .platimg{
     width: 100%;  
 }
@@ -9,6 +10,8 @@
 
 .plattext {
     text-align: left;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     padding-inline: 0;
 
@@ -45,7 +48,8 @@
     .list {
         display: flex;
         justify-content: space-between;
-        column-gap: 50px;
+        -moz-column-gap: 50px;
+             column-gap: 50px;
         margin-block: 10vh;
         padding-block: 5vh;
 
@@ -85,10 +89,12 @@
           background-repeat: repeat;
           background-position: left center;
           background-size: 8px 8px;
-          mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+          -webkit-mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
+                  mask-image: radial-gradient(70% 100%, rgb(0, 0, 0), transparent 70%);
           opacity: 0.5;
           z-index: -1;
-          animation: reveal 10s ease forwards;
+          -webkit-animation: reveal 10s ease forwards;
+                  animation: reveal 10s ease forwards;
         }
       }
 
@@ -97,6 +103,13 @@
     }
 }
 
+@media (max-width: 1200px) {
+    .platHead {
+        .platimg {
+            display: none;
+        }
+    }
+}
 
 @media (max-width: 1200px) {
     .platHead{

@@ -211,7 +211,7 @@ const About = () => {
             />
           </motion.div>
           <motion.h2 variants={whoVariants}>
-            Welcome to the era of Social Buying -{" "}
+            Welcome to the era of Social Buying <br/>
             <span className="mainText">
               modernizing your checkout experience.
             </span>
