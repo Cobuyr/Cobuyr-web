@@ -140,7 +140,7 @@
   display: flex;
   flex-wrap: nowrap;
   -webkit-mask-image: linear-gradient(var(--mask-direction, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 30%, hsl(0, 0%, 0%) 70%, hsla(0, 0%, 0%, 0));
-          mask-image: linear-gradient(var(--mask-direction, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 30%, hsl(0, 0%, 0%) 70%, hsla(0, 0%, 0%, 0));
+  mask-image: linear-gradient(var(--mask-direction, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 30%, hsl(0, 0%, 0%) 70%, hsla(0, 0%, 0%, 0));
 }
 
 .parallax .scroller {
@@ -239,6 +239,7 @@
   height: 100%;
   border-radius: 2px;
   border-right: 3px solid var(--accent);
+  -webkit-animation: tabActive 0.5s ease-in-out;
   animation: tabActive 0.5s ease-in-out;
   transform-origin: center;
 }
@@ -268,6 +269,7 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3137254902);
+  -webkit-animation: tabPanelActive 0.35s ease-in-out;
   animation: tabPanelActive 0.35s ease-in-out;
   transform-origin: top left;
 }
@@ -276,6 +278,7 @@
   border-radius: 10px;
 }
 .react-tabs__tab-panel--selected p {
+  -webkit-animation: tabPanelActive 0.35s ease-in-out;
   animation: tabPanelActive 0.35s ease-in-out;
   transform-origin: top;
 }
@@ -293,12 +296,23 @@
   background-position: left center;
   background-size: 8px 8px;
   -webkit-mask-image: radial-gradient(100% 110%, rgb(0, 0, 0), transparent 50%);
-          mask-image: radial-gradient(100% 110%, rgb(0, 0, 0), transparent 50%);
+  mask-image: radial-gradient(100% 110%, rgb(0, 0, 0), transparent 50%);
   opacity: 0.5;
   z-index: -1;
+  -webkit-animation: reveal 5s ease forwards;
   animation: reveal 5s ease forwards;
 }
 
+@-webkit-keyframes tabActive {
+  0% {
+    opacity: 0;
+    scale: 0;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
 @keyframes tabActive {
   0% {
     opacity: 0;
@@ -309,12 +323,30 @@
     scale: 1;
   }
 }
+@-webkit-keyframes tabPanelActive {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes tabPanelActive {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+@-webkit-keyframes PanelImageActive {
+  0% {
+    translate: 10% 10%;
+    scale: 0.7;
+  }
+  100% {
+    translate: 5% 5%;
+    scale: 1;
   }
 }
 @keyframes PanelImageActive {
@@ -332,7 +364,7 @@
   z-index: -1;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   .vertical {
     flex-direction: column;
   }
@@ -340,6 +372,7 @@
     display: flex;
     flex-direction: row;
     overflow-x: scroll;
+    width: -webkit-max-content;
     width: -moz-max-content;
     width: max-content;
   }

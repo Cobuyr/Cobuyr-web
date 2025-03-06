@@ -117,11 +117,11 @@ const Home = () => {
         <Scene />
       </div> */}
 
-<Section className="split">
-<Plexus/>
-      <Hero />
-</Section>
-      <HeroScene />
+      <Section className="split">
+        {/* <Plexus /> */}
+        <Hero />
+      </Section>
+      {/* <HeroScene /> */}
 
       <Section className="products">
         <div className="products-head">
@@ -632,7 +632,7 @@ const Home = () => {
         </motion.div> */}
         <motion.div
           variants={{
-            hidden: { opacity: 0, x: 40 },
+            hidden: { opacity: 0 },
             visible,
           }}
           className="codebox"
@@ -958,7 +958,9 @@ export function Hero() {
                 ></lord-icon> 
                 Get Started
               </button> */}
-              <motion.button variant={homeVariants} className="primary-btn" >Get Started</motion.button>
+              <motion.button variant={homeVariants} className="primary-btn">
+                Get Started
+              </motion.button>
             </MagneticBtn>
           </motion.div>
         </motion.div>

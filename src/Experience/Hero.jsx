@@ -416,14 +416,7 @@ export default function HeroScene() {
               position-y={props.open.to([0, 1], [0, -1.5])}
             />
           </three.group>
-          {/* <Spot
-            position={[0, 10, -7.5]}
-            visible={1}
-            dist={props.open.to([0, 1], [1, 0])}
-            // distance={props.open.to([0, 1], [15, 0])}
-            // angle={props.open.to([0, 1], [35, 0])}
-            // color={"#ffffff"}
-          /> */}
+          
           <CameraRig/>
           <Environment map={env} />
         </Suspense>

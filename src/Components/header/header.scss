@@ -13,6 +13,8 @@
 
 .nav-wrap {
   position: fixed;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   top: 3.5vh;
   left: 50%;
@@ -34,7 +36,8 @@
     #32323275 70%,
     var(--bg-color) 95%
   );
-  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 .navbar {
   display: flex;
@@ -156,14 +159,33 @@ header {
 .sticky-header {
   // padding-top: 100px;
   header {
-    animation: headhide 0.5s ease-out forwards;
+    -webkit-animation: headhide 0.5s ease-out forwards;
+            animation: headhide 0.5s ease-out forwards;
   }
   .hide {
-    animation: navhide 0.5s ease-in forwards;
+    -webkit-animation: navhide 0.5s ease-in forwards;
+            animation: navhide 0.5s ease-in forwards;
   }
   // 	.unhide{
   // 		animation: navhide 1.5s ease-in backwards;
   // 	}
+}
+
+@-webkit-keyframes navhide {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+    opacity: 0.5;
+  }
+  80% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
 }
 
 @keyframes navhide {
@@ -182,6 +204,19 @@ header {
     display: none;
   }
 }
+@-webkit-keyframes headhide {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+    opacity: 0.5;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
 @keyframes headhide {
   0% {
     top: 0px;
@@ -193,6 +228,15 @@ header {
   100% {
     top: -100px;
     opacity: 0;
+  }
+}
+@-webkit-keyframes headslide {
+  0% {
+    top: 9.5vh;
+  }
+
+  100% {
+    top: 3.5vh;
   }
 }
 @keyframes headslide {
@@ -218,7 +262,7 @@ header {
 
 @media (max-width: 700px) {
   header {
-    padding: 30px 2.5%;
+    padding: 20px 10vw;
   }
   // .logo img{
   // 	// width: 50px;
@@ -231,7 +275,8 @@ header {
   }
 
   .sticky-header .nav-wrap {
-    animation: headslide 0.5s ease-out forwards 1s;
+    -webkit-animation: headslide 0.5s ease-out forwards 1s;
+            animation: headslide 0.5s ease-out forwards 1s;
   }
   .nav-wrap {
     top: 9.5vh;
@@ -242,4 +287,10 @@ header {
   .main a {
     font-size: 0.8rem;
   }
+}
+@media (max-width: 350px) {
+  .navbar a {
+    font-size: 0.7rem;
+    margin: 0px 10px;
+}
 }

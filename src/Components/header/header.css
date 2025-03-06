@@ -9,6 +9,7 @@
 
 .nav-wrap {
   position: fixed;
+  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   top: 3.5vh;
@@ -28,7 +29,7 @@
   outline: 1px solid var(--light-border);
   background: radial-gradient(circle at -25% 0%, transparent 0%, rgba(50, 50, 50, 0.4588235294) 70%, var(--bg-color) 95%);
   -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 
 .navbar {
@@ -118,12 +119,30 @@ header lord-icon {
 /* Sticky Header Style */
 /* ---------------------------------------- */
 .sticky-header header {
+  -webkit-animation: headhide 0.5s ease-out forwards;
   animation: headhide 0.5s ease-out forwards;
 }
 .sticky-header .hide {
+  -webkit-animation: navhide 0.5s ease-in forwards;
   animation: navhide 0.5s ease-in forwards;
 }
 
+@-webkit-keyframes navhide {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+    opacity: 0.5;
+  }
+  80% {
+    scale: 0;
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
 @keyframes navhide {
   0% {
     scale: 1;
@@ -140,6 +159,19 @@ header lord-icon {
     display: none;
   }
 }
+@-webkit-keyframes headhide {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 10px;
+    opacity: 0.5;
+  }
+  100% {
+    top: -100px;
+    opacity: 0;
+  }
+}
 @keyframes headhide {
   0% {
     top: 0px;
@@ -151,6 +183,14 @@ header lord-icon {
   100% {
     top: -100px;
     opacity: 0;
+  }
+}
+@-webkit-keyframes headslide {
+  0% {
+    top: 9.5vh;
+  }
+  100% {
+    top: 3.5vh;
   }
 }
 @keyframes headslide {
@@ -173,13 +213,14 @@ header lord-icon {
 }
 @media (max-width: 700px) {
   header {
-    padding: 30px 2.5%;
+    padding: 20px 10vw;
   }
   .navbar a {
     font-size: 0.8rem;
     margin: 0px 15px;
   }
   .sticky-header .nav-wrap {
+    -webkit-animation: headslide 0.5s ease-out forwards 1s;
     animation: headslide 0.5s ease-out forwards 1s;
   }
   .nav-wrap {
@@ -190,5 +231,11 @@ header lord-icon {
   }
   .main a {
     font-size: 0.8rem;
+  }
+}
+@media (max-width: 350px) {
+  .navbar a {
+    font-size: 0.7rem;
+    margin: 0px 10px;
   }
 }/*# sourceMappingURL=header.css.map */

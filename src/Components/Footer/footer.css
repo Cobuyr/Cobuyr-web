@@ -17,8 +17,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  width: 350px;
+  max-width: 350px;
+  width: 100%;
 }
 .footer-widget .wdgt-btn a {
   padding: 1em 0.5em;
@@ -136,6 +136,7 @@ ul {
   padding-inline: 16px;
   gap: 2em;
   color: var(--text-color);
+  width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   display: flex;
@@ -172,6 +173,9 @@ ul {
 }
 @media (max-width: 574px) {
   .footer-col {
-    min-width: 200px;
+    min-width: 180px;
+  }
+  .footer-col ul li a::after, .wdgt-btn a::after {
+    display: none;
   }
 }/*# sourceMappingURL=footer.css.map */

@@ -38,14 +38,14 @@ const Header = () => {
 
   const visible = {
     opacity: 1,
-    x: 0,
-    y: 0,
-    scaleX:1,
-    transition: { staggerChildren: 0.4, duration: 0.5 },
+    // x: 0,
+    // y: 0,
+    // scaleX:1,
+    transition: { staggerChildren: 0.25, duration: 0.5 },
   };
 
   const headVariants = {
-    hidden: { opacity: 0, scaleX:0, },
+    hidden: { opacity: 1 },
     visible,
   };
 
@@ -88,24 +88,32 @@ const Header = () => {
         className="nav-wrap"
         initial="hidden"
         animate="visible"
-        exit={{ opacity: 0, transition: { duration: 1 } }}
-        variants={{ visible: { transition: { staggerChildren: 0.4 } } }}
+        exit={{ opacity: 0, transition: { duration: 0.5 } }}
+        variants={{ visible: { transition: { staggerChildren: 0.25 } } }}
       >
         <nav>
           <ul className={menuOpen ? "navbar open" : "navbar"}>
             <motion.li>
               <NavLink to="/">Home</NavLink>
             </motion.li>
-            <motion.li variants={headVariants}>
+            <motion.li 
+            // variants={headVariants}
+            >
               <NavLink to="/About">Why Cobuyr</NavLink>
             </motion.li>
-            <motion.li className="hide" variants={headVariants}>
+            <motion.li className="hide" 
+            // variants={headVariants}
+            >
               <NavLink to="/Platform">Platform</NavLink>
             </motion.li>
-            <motion.li className="hide" variants={headVariants}>
+            {/* <motion.li className="hide" 
+            // variants={headVariants}
+            >
               <NavLink to="/Industry">Industries</NavLink>
-            </motion.li>
-            <motion.li variants={headVariants}>
+            </motion.li> */}
+            <motion.li 
+            // variants={headVariants}
+            >
               <NavLink to="/Contact">Contact</NavLink>
             </motion.li>
             {/* <li className="unhide">
