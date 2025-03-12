@@ -141,10 +141,12 @@
   .scene-h1 {
     margin: 0;
     padding: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+    width: 100%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    transform: translateY(70px);
     font-weight: 400;
     // letter-spacing: -0.045em;
     white-space: nowrap;

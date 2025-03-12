@@ -9,19 +9,16 @@ import {
   useTexture,
   Decal,
   useEnvironment,
-  SpotLight,
-  useDepthBuffer,
-  OrbitControls,
+  // SpotLight,
+  // useDepthBuffer,
+  // OrbitControls,
   useCursor,
   Text,
   RenderTexture,
   PerspectiveCamera,
 } from "@react-three/drei";
-import { useSpring } from "@react-spring/core";
-import { a as three } from "@react-spring/three";
-import { a as web, useInView, config } from "@react-spring/web";
-// import { useInView } from "react-intersection-observer";
 
+import { gsap } from "gsap";
 import city from "/city.hdr";
 
 import base from "/avatar.png";
@@ -37,218 +34,67 @@ import avatar8 from "/8.webp";
 import avatar9 from "/9.webp";
 import avatar10 from "/10.webp";
 
-// function Model({ open, hinge, ...props }) {
-//   const group = useRef()
-//   // Load model
-//   const { nodes, materials } = useGLTF('/mac-draco.glb')
-//   // Take care of cursor state on hover
-//   const [hovered, setHovered] = useState(false)
-//   useEffect(() => void (document.body.style.cursor = hovered ? 'pointer' : 'auto'), [hovered])
-//   // Make it float in the air when it's opened
-//   useFrame((state) => {
-//     const t = state.clock.getElapsedTime()
-//     group.current.rotation.x = THREE.MathUtils.lerp(group.current.rotation.x, open ? Math.cos(t / 10) / 10 + 0.25 : 0, 0.1)
-//     group.current.rotation.y = THREE.MathUtils.lerp(group.current.rotation.y, open ? Math.sin(t / 10) / 4 : 0, 0.1)
-//     group.current.rotation.z = THREE.MathUtils.lerp(group.current.rotation.z, open ? Math.sin(t / 10) / 10 : 0, 0.1)
-//     group.current.position.y = THREE.MathUtils.lerp(group.current.position.y, open ? (-2 + Math.sin(t)) / 3 : -4.3, 0.1)
-//   })
-
-//   return (
-//     <group ref={group} {...props} onPointerOver={(e) => (e.stopPropagation(), setHovered(true))} onPointerOut={(e) => setHovered(false)} dispose={null}>
-//       <three.group rotation-x={hinge} position={[0, -0.04, 0.41]}>
-//         <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
-//           <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
-//           <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
-//           <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} />
-//         </group>
-//       </three.group>
-//       <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
-//       <group position={[0, -0.1, 3.39]}>
-//         <mesh material={materials.aluminium} geometry={nodes['Cube002'].geometry} />
-//         <mesh material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
-//       </group>
-//       <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />
-//     </group>
-//   )
-// }
-
 export default function HeroScene() {
   const env = useEnvironment({ files: city });
   const [ref, inView] = useInView({ threshold: 0.65 });
-  // This flag controls open state, alternates between true & false
   const [open, setOpen] = useState(false);
-  // We turn this into a spring animation that interpolates between 0 and 1
-  const props = useSpring({
-    open: Number(open),
-    config: config.molasses, // Adjust the easing here
-    // delay: open ? 0 : 5000, // Add a delay when opening
-    // delay: 1000
-  });
-
-  // const [currentChatIndex, setCurrentChatIndex] = useState(0);
-  // const chats = [
-  //   [
-  //     {
-  //       avatar: avatar2,
-  //       Tname: "Alan Jury",
-  //       text: "I found a Gaming setup package deal and I only want the custom gaming chair, Who would like to join me?",
-  //       type: "sent"
-  //     },
-  //     {
-  //       avatar: avatar3,
-  //       Tname: "Zachary D.",
-  //       text: "ohhh yeaahh, I saw the same deal and need only the High-sens mouse and Foldable table, can i join and pay for only those?",
-  //       type: "received"
-  //     }
-  //   ],
-  //   [
-  //     {
-  //       avatar: avatar4,
-  //       Tname: "Vincent Moore",
-  //       text: "Looking to buy 30 pieces of vintage vinyl records at a discount. Anyone interested in splitting the purchase?",
-  //       type: "sent"
-  //     },
-  //     {
-  //       avatar: avatar0,
-  //       Tname: "Sophia Adams",
-  //       text: "I'm interested! I collect vinyl too. I can take 15.",
-  //       type: "received"
-  //     },
-  //     {
-  //       avatar: avatar6,
-  //       Tname: "Oliver Scott",
-  //       text: "Count me in! I'll take 10, and I know a friend who might want the remaining 5.",
-  //       type: "sent"
-  //     }
-  //   ],
-  //   [
-  //     {
-  //       avatar: avatar1,
-  //       Tname: "Emma",
-  //       text: "Looking to buy 70 pieces of base cut rings at a discount. Anyone want to share the purchase? I'm taking 20 pieces",
-  //       type: "sent"
-  //     },
-  //     {
-  //       avatar: avatar7,
-  //       Tname: "William Dafren",
-  //       text: "I'm interested! I can take 20 for my boutique.",
-  //       type: "received"
-  //     },
-  //     {
-  //       avatar: avatar5,
-  //       Tname: "Olivia",
-  //       text: "Count me in too. I'll take 15, and I know a friend who might want the remaining 15.",
-  //       type: "received"
-  //     }
-  //   ],
-  //   [
-  //     {
-  //       avatar: avatar9,
-  //       Tname: "Chris M.",
-  //       text: "Found an amazing group trip package with Cobuyr. Who's in for an adventure?",
-  //       type: "sent"
-  //     },
-  //     {
-  //       avatar: avatar8,
-  //       Tname: "Jessica",
-  //       text: "Great! I was thinking of a beach getaway in Bali. Plenty of sun, sand, and relaxation. What do you both think?",
-  //       type: "received"
-  //     },
-  //     {
-  //       avatar: avatar10,
-  //       Tname: "Sammy W.",
-  //       text: "Bali it is! Let's do this. Chris, can you send us the details on cobuyr so we can start planning?",
-  //       type: "received"
-  //     }
-  //   ]
-  // ];
-  // const chatAnimations = [
-  //   {
-  //     opacity: props.open.to([0, 1], [0, 1]),
-  //     scale: props.open.to([0, 1], [0, 1]),
-  //     transform: props.open.to((o) => `translate3d(${o * 65}%, ${o * 25}%,0)`),
-  //     left: "55%",
-  //     top: "35%"
-  //   },
-  //   {
-  //     opacity: props.open.to([0, 1], [0, 1]),
-  //     scale: props.open.to([0, 1], [0, 1]),
-  //     transform: props.open.to((o) => `translate3d(${o * -125}%, ${o * 25}%, 0)`),
-  //     left: "50%",
-  //     top: "25%"
-  //   },
-  //   {
-  //     opacity: props.open.to([0, 1], [0, 1]),
-  //     scale: props.open.to([0, 1], [0, 1]),
-  //     transform: props.open.to((o) => `translate3d(${o * -120}%, ${o * -130}%,0)`),
-  //     top: "25%",
-  //     left: "45%"
-  //   },
-  //   {
-  //     opacity: props.open.to([0, 1], [0, 1]),
-  //     scale: props.open.to([0, 1], [0, 1]),
-  //     transform: props.open.to((o) => `translate3d(${o * 110}%, -150%, 0)`),
-  //     top: "25%",
-  //     left: "60%"
-  //   }
-  // ];
-
-  // const chatProps = useSpring(chatAnimations[currentChatIndex]);
-
-  // const handleClick = () => {
-  //   setOpen(!open);
-  //   setCurrentChatIndex((prevIndex) => (prevIndex + 1) % chats.length);
-  // };
+  const sceneRef = useRef();
 
   useEffect(() => {
     if (inView) {
       setOpen(true);
     }
   }, [inView]);
-  // console.log(Spot);
 
+  useEffect(() => {
+    if (open) {
+      gsap.fromTo(
+        sceneRef.current,
+        { opacity: 0 },
+        { opacity: 1, duration: 1, ease: "power2.out" }
+      );
+
+      // GSAP animations for chat messages
+      gsap.fromTo(
+        ".message",
+        {
+          opacity: 0,
+          scale: 0,
+          x: (i) => (i % 2 === 0 ? 65 : -125), // Alternate between left and right
+          y: (i) => (i % 2 === 0 ? 25 : -130), // Alternate between top and bottom
+        },
+        {
+          opacity: 1,
+          scale: 1,
+          x: 0,
+          y: 0,
+          duration: 1,
+          stagger: 0.2,
+          ease: "power2.out",
+        }
+      );
+    } else {
+      // Reset animations when closed
+      // gsap.to(".message", {
+      //   opacity: 0,
+      //   scale: 0,
+      //   x: (i) => (i % 2 === 0 ? 65 : -125),
+      //   y: (i) => (i % 2 === 0 ? 25 : -130),
+      //   duration: 1,
+      //   stagger: 0.2,
+      //   ease: "power2.out",
+      // });
+    }
+  }, [open]);
   return (
-    <web.div
-      ref={ref}
-      // style={{ background: props.open.to([0, 1], ["#040404", "#0e0e0e"]) }}
-      className="scene"
-    >
-      {/* Render the current chat group */}
-      {/* {chats.map((chatGroup, index) => (
-        <web.div
-          key={index}
-          className={`message ${index === currentChatIndex ? "visible" : ""}`}
-          style={chatProps}
-        >
-          {chatGroup.map((chat, chatIndex) => (
-            <Chat key={chatIndex} avatar={chat.avatar} Tname={chat.Tname} text={chat.text} type={chat.type} />
-          ))}
-        </web.div>
-      ))} */}
-
-      <web.h1
-        style={{
-          opacity: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to((o) => `translate3d(-50%,${o * -370}px,0)`),
-        }}
-        className="scene-h1"
-      >
+    <div ref={ref} className="scene">
+      <h1 ref={sceneRef} className="scene-h1">
         Connecting <span className="mainText">Buyers.</span>
-        {/* <span className="mainText" style={{ display: props.open.to([0, 1], ["hidden", "inline"]) }}>Buyers.</span>
-        <span className="mainText" style={{ display: props.open.to([0, 1], ["inline", "hidden"]) }}>Interests.</span> */}
-      </web.h1>
+      </h1>
 
-      <web.div
+      <div
         className="message"
         style={{
-          opacity: props.open.to([0, 1], [0, 1]),
-          scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to(
-            (o) => `translate3d(${o * 65}%, ${o * 25}%,0)`
-          ),
-          // transform: props.open.to(
-          //   (o) => `translate3d(${o * 65}%, ${o * 50}%,0)`
-          // ),
           left: "55%",
           top: "35%",
         }}
@@ -270,19 +116,11 @@ export default function HeroScene() {
           }
           type={"received"}
         />
-      </web.div>
+      </div>
 
-      <web.div
+      <div
         className="message"
         style={{
-          opacity: props.open.to([0, 1], [0, 1]),
-          scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to(
-            (o) => `translate3d(${o * -125}%, ${o * 25}%, 0)`
-          ),
-          // transform: props.open.to(
-          //   (o) => `translate3d(${o * -160}%, ${o * 40}%, 0)`
-          // ),
           left: "50%",
           top: "25%",
         }}
@@ -311,19 +149,11 @@ export default function HeroScene() {
           }
           type={"sent"}
         />
-      </web.div>
+      </div>
 
-      <web.div
+      <div
         className="message"
         style={{
-          opacity: props.open.to([0, 1], [0, 1]),
-          scale: props.open.to([0, 1], [0, 1]),
-          transform: props.open.to(
-            (o) => `translate3d(${o * -120}%, ${o * -130}%,0)`
-          ),
-          // transform: props.open.to(
-          //   (o) => `translate3d(${o * -170}%, ${o * -130}%,0)`
-          // ),
           top: "25%",
           left: "45%",
         }}
@@ -352,15 +182,11 @@ export default function HeroScene() {
           }
           type={"received"}
         />
-      </web.div>
+      </div>
 
-      <web.div
+      <div
         className="message"
         style={{
-          opacity: props.open.to([0, 1], [0, 1]),
-          scale: props.open.to([0, 1], [0, 1]),
-          // transform: props.open.to((o) => `translate3d(${o * 165}%, -90%, 0)`),
-          transform: props.open.to((o) => `translate3d(${o * 110}%, -150%, 0)`),
           top: "25%",
           left: "60%",
         }}
@@ -391,33 +217,16 @@ export default function HeroScene() {
           }
           type={"received"}
         />
-      </web.div>
+      </div>
 
-      <Canvas
-        dpr={[1, 2]}
-        camera={{ position: [0, 0, -30], fov: 35 }}
-        // gl={{ preserveDrawingBuffer: false }}
-      >
+      <Canvas dpr={[1, 2]} camera={{ position: [0, 0, -30], fov: 35 }}>
         {/* <OrbitControls /> */}
         <Suspense fallback={null}>
-          <three.group
-            rotation={[0, Math.PI, 0]}
-            // position-y={props.open.to([0, 1], [0, -5])}
-            // rotation={[Math.PI / 0.65, Math.PI, 0]}
-            // rotation-x={props.open.to([0, 1], [Math.PI / 0.42, Math.PI / 0.5])}
-            // onClick={(e) => (e.stopPropagation(), setOpen(!open))}
-            // onClick={handleClick}
-          >
-            <Model
-              open={open}
-              hinge={props.open.to([0, 1], [1.35, -0.425])}
-              scale={props.open.to([0, 1], [2.1, 1])}
-              // position={[0, 10, 0]}
-              position-y={props.open.to([0, 1], [0, -1.5])}
-            />
-          </three.group>
-          
-          <CameraRig/>
+          <group rotation={[0, Math.PI, 0]}>
+            <Model open={open} />
+          </group>
+
+          <CameraRig />
           <Environment map={env} />
         </Suspense>
         <ContactShadows
@@ -428,7 +237,7 @@ export default function HeroScene() {
           far={4.5}
         />
       </Canvas>
-    </web.div>
+    </div>
   );
 }
 
@@ -437,27 +246,18 @@ function Chat({ avatar, Tname, text, type, ...props }) {
     avatar: base,
   };
   return (
-    <web.div {...props} className={`m-${type}`}>
+    <div {...props} className={`m-${type}`}>
       <img src={avatar} alt={`${Tname} avatar`} />
       <h4>{Tname}</h4>
       <p>{text}</p>
-    </web.div>
+    </div>
   );
 }
 
-export function Model({ open, scale, position, hinge, ...props }) {
+export function Model({ open, ...props }) {
   const { nodes, materials } = useGLTF("./laptop.glb");
-  // // const sticker = useTexture("./cb-logo-blk.jpg");
-  // const sticker = useTexture("./cb-mark-blk.jpg");
-  // // const sticker = useTexture("./avatar.jpg");
-  // // const sticker = useTexture(base);
-  // // sticker.repeat.set(0.005, 0.005);
-  // // sticker.mapping = THREE.UVMapping;
-  // sticker.wrapS = sticker.wrapT = THREE.RepeatWrapping; // has effect
-  // // sticker.rotation = 0; // has effect
-  // // sticker.flipY = false; // has effect
-  // sticker.repeat.set(1, 1);
   const group = useRef();
+  const hinge = useRef();
 
   const [hovered, setHovered] = useState(false);
   useEffect(
@@ -465,11 +265,29 @@ export function Model({ open, scale, position, hinge, ...props }) {
     [hovered]
   );
 
+  useEffect(() => {
+    if (open) {
+      // GSAP animations for hinge, scale, and position
+      gsap.to(hinge.current.rotation, {
+        x: -0.3, // Replace hinge animation
+        duration: 1,
+        ease: "power2.out",
+      });
+    } else {
+      // Reset animations when closed
+      gsap.to(hinge.current.rotation, {
+        x: 1.35,
+        duration: 1,
+        ease: "power2.out",
+      });
+    }
+  }, [open]);
+
   useFrame((state) => {
     const t = state.clock.getElapsedTime();
     group.current.rotation.x = THREE.MathUtils.lerp(
       group.current.rotation.x,
-      open ? Math.cos(t / 10) / 15 + 0.25 : 0,
+      open ? Math.cos(t / 10) / 9 + 0.25 : 0,
       0.1
     );
     group.current.rotation.y = THREE.MathUtils.lerp(
@@ -496,18 +314,15 @@ export function Model({ open, scale, position, hinge, ...props }) {
   const sticker3 = useTexture("./avatar.jpg");
 
   return (
-    <three.group
+    <group
       ref={group}
       {...props}
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
       onPointerOut={(e) => setHovered(false)}
       dispose={null}
-      scale={scale}
-      position-y={position}
+      scale={[1.25, 1.25, 1.25]}
     >
-      <three.group
-      // rotation-x={hinge}
-      >
+      <group ref={hinge}>
         <group>
           <mesh
             castShadow
@@ -516,59 +331,6 @@ export function Model({ open, scale, position, hinge, ...props }) {
             material={materials.aluminium}
           >
             <meshStandardMaterial color={"silver"} />
-
-            {/* Easter Egg Sticker */}
-
-            <Decal position={[0, 4, 0]} rotation={[0, 0, 0]} scale={[1, 1, 1]}>
-              <meshStandardMaterial
-                roughness={1}
-                transparent
-                polygonOffset
-                polygonOffsetFactor={-1}
-              >
-                <RenderTexture attach="map">
-                  <PerspectiveCamera
-                    makeDefault
-                    aspect={1 / 1}
-                    position={[0, 0, 5]}
-                  />
-                  <color attach="background" args={["white"]} />
-                  <ambientLight intensity={Math.PI} />
-                  <directionalLight position={[10, 10, 5]} />
-                  <Dodecahedron sticker={sticker3} scale={0.8} />
-                </RenderTexture>
-              </meshStandardMaterial>
-            </Decal>
-
-            <Decal position={[0, 3, 0]} rotation={[0, 0, 0]} scale={[3, 1, 1]}>
-              <meshStandardMaterial
-                roughness={1}
-                transparent
-                polygonOffset
-                polygonOffsetFactor={-1}
-              >
-                <RenderTexture attach="map">
-                  <PerspectiveCamera
-                    makeDefault
-                    aspect={16 / 9}
-                    position={[0, 0, 7]}
-                  />
-                  <color attach="background" args={["#a00948"]} />
-                  <ambientLight intensity={Math.PI} />
-                  <directionalLight position={[10, 10, 5]} />
-                  <Text
-                    rotation={[0, Math.PI, 0]}
-                    ref={textRef}
-                    fontSize={2}
-                    color="white"
-                    scale={0.66}
-                  >
-                    You Found Me!{"\n"}
-                    I'm Easter Egg Rick!
-                  </Text>
-                </RenderTexture>
-              </meshStandardMaterial>
-            </Decal>
           </mesh>
 
           <mesh
@@ -584,7 +346,7 @@ export function Model({ open, scale, position, hinge, ...props }) {
             material={materials["screen.001"]}
           />
         </group>
-      </three.group>
+      </group>
       <mesh
         castShadow
         receiveShadow
@@ -599,7 +361,7 @@ export function Model({ open, scale, position, hinge, ...props }) {
           // material={materials.aluminium}
         >
           <meshStandardMaterial color={"black"} />
-
+          {/* 
           <Decal
             position={[-3, 0, 4.5]}
             rotation={[-1, Math.PI, 0.5]}
@@ -648,7 +410,7 @@ export function Model({ open, scale, position, hinge, ...props }) {
                 <Dodecahedron sticker={sticker1} />
               </RenderTexture>
             </meshStandardMaterial>
-          </Decal>
+          </Decal> */}
         </mesh>
         <mesh
           castShadow
@@ -663,27 +425,17 @@ export function Model({ open, scale, position, hinge, ...props }) {
         geometry={nodes.touchbar.geometry}
         material={materials.touchbar}
       />
-    </three.group>
+    </group>
   );
 }
 function Dodecahedron({ sticker, ...props }) {
   const meshRef = useRef();
   const [hovered, hover] = useState(false);
-  const [clicked, click] = useState(false);
   useCursor(hovered);
 
   return (
     <group {...props}>
-      <mesh
-        ref={meshRef}
-        // scale={clicked ? 2.25 : 1.75}
-        scale={10}
-        // onClick={() => click(!clicked)}
-        // onPointerOver={() => hover(true)}
-        // onPointerOut={() => hover(false)}
-        // side={THREE.DoubleSide}
-        // visible={false}
-      >
+      <mesh ref={meshRef} scale={10}>
         <planeGeometry args={[1, 0.5]} />
         <meshStandardMaterial />
         <Decal
@@ -696,6 +448,7 @@ function Dodecahedron({ sticker, ...props }) {
     </group>
   );
 }
+
 function CameraRig() {
   const [vec] = useState(() => new THREE.Vector3());
   return useFrame((state) => {
@@ -707,29 +460,30 @@ function CameraRig() {
   });
 }
 
-function Spot({ vec = new Vector3(), dist, ...props }) {
-  const depthBuffer = useDepthBuffer({ frames: 1 });
+const useInView = (options = { threshold: 0.65 }) => {
+  const ref = useRef(null);
+  const [inView, setInView] = useState(false);
 
-  return (
-    <three.group scale-x={dist}>
-      <SpotLight
-        depthBuffer={depthBuffer}
-        castShadow
-        penumbra={1}
-        attenuation={5}
-        anglePower={4}
-        distance={5}
-        angle={5}
-        // distance={propse.open.to([0, 1], [15, 1])}
-        //       angle={propse.open.to([0, 1], [35, 1])}
-        // intensity={25}
-        // color={propse.open.to([0, 1], ["#ffffff", "#ff0000"])}
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setInView(true);
+        observer.disconnect(); // Stop observing once the element is in view
+      }
+    }, options);
 
-        scale={[2, 15, 1]}
-        {...props}
-      />
-    </three.group>
-  );
-}
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [options]);
+
+  return [ref, inView];
+};
 
 useGLTF.preload("./laptop.glb");

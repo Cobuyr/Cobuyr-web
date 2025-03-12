@@ -146,7 +146,7 @@ const Home = () => {
       </Section>
       {/* <Scroller /> */}
 
-      {/* <Section className="future">
+      <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
@@ -257,9 +257,9 @@ const Home = () => {
             </motion.li>
           </motion.ul>
         </motion.div>
-      </Section> */}
+      </Section>
 
-      {/* <Section className="modern">
+      <Section className="modern">
         <div className="bento">
           <motion.div className="head">
             <motion.div variants={homeVariants}>
@@ -409,7 +409,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </Section> */}
+      </Section>
 
       <Section className="info-banner">
         {/* <motion.div variants={homeVariants}>
