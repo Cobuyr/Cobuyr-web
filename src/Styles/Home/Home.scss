@@ -904,6 +904,15 @@
 //   color: #202022;
 // }
 
+.integrate.benefit{
+  align-items: center;
+  background-color: var(--bg-light);
+  border-radius: 50px;
+  box-shadow: unset;
+  .int-textbox {
+    min-height: unset;
+  }
+}
 .integrate {
   // min-height: 60vh;
   padding-block: 10vh 5vh;
@@ -914,7 +923,7 @@
   align-items: flex-end;
   background-color: var(--bg-color);
   border-radius: 50px 50px 0 0;
-  box-shadow: 0px -20px 25px -15px hsl(0, 0%, 5%);
+  // box-shadow: 0px -20px 25px -15px hsl(0, 0%, 5%);
 
   .int-textbox {
     min-height: 415px;
@@ -1436,32 +1445,34 @@
   // margin: 0 auto;
   // max-width: 1400px;
 
+  height: auto;
+  padding-block: unset;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 
-  &::before,
-  &::after {
-    content: "";
-    width: 200px;
-    height: 200px;
-    position: absolute;
-    top: 45%;
-    left: 55%;
-    translate: -50%;
-    border-radius: 100%;
-    background-color: #ad6ef56a;
-    z-index: -1;
-    mix-blend-mode: multiply;
-    -webkit-filter: blur(120px);
-    filter: blur(120px);
-  }
-  &::after {
-    top: 25%;
-    left: 5%;
-    background-color: #d765566a;
-  }
+  // &::before,
+  // &::after {
+  //   content: "";
+  //   width: 200px;
+  //   height: 200px;
+  //   position: absolute;
+  //   top: 45%;
+  //   left: 55%;
+  //   translate: -50%;
+  //   border-radius: 100%;
+  //   background-color: #ad6ef56a;
+  //   z-index: -1;
+  //   mix-blend-mode: multiply;
+  //   -webkit-filter: blur(120px);
+  //   filter: blur(120px);
+  // }
+  // &::after {
+  //   top: 25%;
+  //   left: 5%;
+  //   background-color: #d765566a;
+  // }
   .listbox {
     margin-block: 2.5em;
     li {
@@ -1496,7 +1507,7 @@
 
   h2 {
     padding: unset;
-    font-size: 2em;
+    // font-size: 2em;
     text-transform: uppercase;
   }
   h4 {
@@ -1513,7 +1524,7 @@
         position: absolute;
         top: -10%;
         left: 0;
-        font-size: 3em;
+        font-size: 2rem;
         background-image: linear-gradient(
           180deg,
           hsl(0, 0%, 100%) 10%,

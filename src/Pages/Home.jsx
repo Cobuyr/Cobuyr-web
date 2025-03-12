@@ -121,6 +121,118 @@ const Home = () => {
       </Section>
       {/* <HeroScene /> */}
 
+      <Section className="integrate benefit">
+        <div className="int-textbox">
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="kezeezyg" trigger="hover" text="Benefits" />
+          </motion.div>
+          <motion.h2 variants={homeVariants}>
+            How Does It <br />
+            <span className="mainText">Benefit You?</span>
+          </motion.h2>
+          {/* <motion.p variants={homeVariants}>
+            Elevate your e-commerce experience with Cobuyr's user-friendly API
+            Plug-In.{" "}
+            <span className="highlight">
+              Our seamlessly integrated solution enables
+            </span>{" "}
+            effortless incorporation of Social Buying into your existing website
+            structure, ensuring a{" "}
+            <span className="highlight">
+              smooth and efficient transition without disrupting your
+              operations.
+            </span>
+            <br />
+          </motion.p>
+          <motion.blockquote variants={homeVariants}>
+            By integrating our API with just few lines of code, you unlock a
+            world of collaborative purchasing opportunities for your customers.
+          </motion.blockquote> */}
+
+          {/* <SpotBtn text={"Documentation"} variant={homeVariants} /> */}
+        </div>
+
+        <motion.div className="marquee-wrap" variants={homeVariants}>
+          {/* Marquee Group 1 */}
+          <motion.div
+            className="marquee marquee--vertical"
+            variants={{
+              hidden: { opacity: 0, x: -40 },
+              visible,
+            }}
+          >
+            <ul className="marquee__group">
+              {marqueeGroup1.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+            <ul aria-hidden="true" className="marquee__group">
+              {marqueeGroup1.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Marquee Group 2 */}
+          <motion.div
+            className="marquee marquee--vertical marquee--reverse"
+            variants={{
+              hidden: { opacity: 0 },
+              visible,
+            }}
+          >
+            <ul className="marquee__group">
+              {marqueeGroup2.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+            <ul aria-hidden="true" className="marquee__group">
+              {marqueeGroup2.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Marquee Group 3 */}
+          <motion.div
+            className="marquee marquee--vertical marquee--delay"
+            variants={{
+              hidden: { opacity: 0, x: 40 },
+              visible,
+            }}
+          >
+            <ul className="marquee__group">
+              {marqueeGroup3.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+            <ul aria-hidden="true" className="marquee__group">
+              {marqueeGroup3.map((item, index) => (
+                <li key={index}>
+                  <Icon name={item.icon} />
+                  {item.text}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+        </motion.div>
+      </Section>
+
       <Section className="products">
         <div className="products-head">
           {/* <motion.div variants={homeVariants}>
@@ -146,7 +258,7 @@ const Home = () => {
       </Section>
       {/* <Scroller /> */}
 
-      <Section className="future">
+      {/* <Section className="future">
         <motion.div className="future-textbox" variants={homeVariants}>
           <motion.div variants={homeVariants}>
             <Badge iconUrl="qucadebu" trigger="hover" text="The Future" />
@@ -257,9 +369,9 @@ const Home = () => {
             </motion.li>
           </motion.ul>
         </motion.div>
-      </Section>
+      </Section> */}
 
-      <Section className="modern">
+      {/* <Section className="modern">
         <div className="bento">
           <motion.div className="head">
             <motion.div variants={homeVariants}>
@@ -409,7 +521,7 @@ const Home = () => {
             </div>
           </motion.div>
         </div>
-      </Section>
+      </Section> */}
 
       <Section className="info-banner">
         {/* <motion.div variants={homeVariants}>
@@ -441,6 +553,49 @@ const Home = () => {
         <div className="glow2"></div> */}
       </Section>
 
+      <Section className="early">
+        <div className="early-info" id="referral">
+          <motion.div variants={homeVariants}>
+            <Badge iconUrl="lqadwfir" trigger="hover" text="How To" />
+          </motion.div>
+
+          <motion.h2 className="early-h2" variants={homeVariants}>
+            How it <span className="mainText">works</span>
+          </motion.h2>
+          <motion.h4 variants={homeVariants}>
+            Cobuyr simply inserts into your current checkout process without the
+            need to replace or add a new payment gateway or other technologies.
+            {/* <span className="highlight">
+            Advocate for them to integrate the Cobuyr checkout button. Upon
+            Cobuyr's launch, you stand to earn $250 as our appreciation for your
+            initiative.
+          </span> */}
+          </motion.h4>
+          <div>
+            <motion.ul className="listbox" variants={homeVariants}>
+              <motion.li variants={homeVariants}>
+                <h4>PRODUCT PAGE</h4>
+              </motion.li>
+              <motion.li variants={homeVariants}>
+                <h4>SHOPPING CART PAGE</h4>
+              </motion.li>
+              <motion.li variants={homeVariants}>
+                <h4>GROUP BUY</h4>
+              </motion.li>
+              <motion.li variants={homeVariants}>
+                <h4>SHIPPING & BILLING INFO</h4>
+              </motion.li>
+              <motion.li variants={homeVariants}>
+                <h4>PAYMENT INFO</h4>
+              </motion.li>
+              <motion.li variants={homeVariants}>
+                <h4>ORDER CONFIRMATION</h4>
+              </motion.li>
+            </motion.ul>
+          </div>
+        </div>
+      </Section>
+
       <Section className="integrate">
         <div className="int-textbox">
           <motion.div variants={homeVariants}>
@@ -470,164 +625,6 @@ const Home = () => {
 
           <SpotBtn text={"Documentation"} variant={homeVariants} />
         </div>
-        {/* <motion.div className="marquee-wrap" variants={homeVariants}>
-          <motion.div
-            className=" marquee marquee--vertical"
-            variants={{
-              hidden: { opacity: 0, x: -40 },
-              visible,
-            }}
-          >
-            <ul className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-            <ul aria-hidden="true" className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            className=" marquee marquee--vertical marquee--reverse"
-            variants={{
-              hidden: { opacity: 0 },
-              visible,
-            }}
-          >
-            <ul className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-            <ul aria-hidden="true" className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-          </motion.div>
-          <motion.div
-            className=" marquee marquee--vertical marquee--delay"
-            variants={{
-              hidden: { opacity: 0, x: 40 },
-              visible,
-            }}
-          >
-            <ul className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-            <ul aria-hidden="true" className="marquee__group ">
-              <li>
-                <Icon name={"search"} />
-                Lower the cost of customer acquisition
-              </li>
-              <li>
-                <Icon name={"contact"} />
-                Highly personalised buying experience
-              </li>
-              <li>
-                <Icon name={"discount"} />
-                Fewer discounts to move unsold products
-              </li>
-              <li>
-                <Icon name={"insights"} />
-                Unique insights into customer networks
-              </li>
-              <li>
-                <Icon name={"group"} />
-                Multiple customer buy together in one order
-              </li>
-            </ul>
-          </motion.div>
-        </motion.div> */}
         <motion.div
           variants={{
             hidden: { opacity: 0 },
@@ -639,7 +636,6 @@ const Home = () => {
         </motion.div>
       </Section>
 
-      {/* <Sub /> */}
       <Footer />
     </>
   );
@@ -966,3 +962,60 @@ export function Hero() {
     </>
   );
 }
+
+const marqueeGroup1 = [
+  { icon: "search", text: "Reduce cost of customer acquisition" },
+  {
+    icon: "modernize",
+    text: "Modernize your checkout for today's era of Social Buying",
+  },
+  {
+    icon: "increase",
+    text: "Increase Average Order Value and Customer Lifetime Value",
+  },
+  {
+    icon: "retention",
+    text: "Improve customer activation and retention rates",
+  },
+  {
+    icon: "engagement",
+    text: "Enhance customer engagement through personalized offers",
+  },
+  { icon: "analytics", text: "Streamline operations with real-time analytics" },
+];
+
+const marqueeGroup2 = [
+  { icon: "search", text: "Improve Checkout Conversion" },
+  { icon: "monetize", text: "Monetize Existing Datasource" },
+  { icon: "acquire", text: "Acquire more customers Faster" },
+  { icon: "view", text: "Obtain Single Realtime View of customers" },
+  { icon: "loyalty", text: "Boost customer loyalty with exclusive rewards" },
+  {
+    icon: "payment",
+    text: "Simplify payment processes for faster transactions",
+  },
+];
+
+const marqueeGroup3 = [
+  { icon: "search", text: "Improve Checkout Conversion" },
+  {
+    icon: "modernize",
+    text: "Modernize your checkout for today's era of Social Buying",
+  },
+  {
+    icon: "increase",
+    text: "Increase Average Order Value and Customer Lifetime Value",
+  },
+  {
+    icon: "retention",
+    text: "Improve customer activation and retention rates",
+  },
+  {
+    icon: "inventory",
+    text: "Optimize inventory management with predictive analytics",
+  },
+  {
+    icon: "social",
+    text: "Expand market reach through social media integration",
+  },
+];

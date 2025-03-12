@@ -65,8 +65,7 @@ const Footer = () => {
           Welcome to the era of <span className="mainText">Social Buying</span>
         </h3>
         <p>
-          Social buying is changing the landscape of how retailers and consumers
-          approach online purchasing{" "}
+        Social Buying is transforming the payments industry, enabling retailers to innovatively engage more customers through their social networks.
         </p>
         <div className="wdgt-btn">
           <SpotBtn text={"Book a demo"} />
