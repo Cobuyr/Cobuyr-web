@@ -22,11 +22,11 @@ const visible = {
   x: 0,
   y: 0,
   scaleZ: 1,
-  transition: { staggerChildren: 0.4, duration: 0.5 },
+  transition: { staggerChildren: 0.25, duration: 0.5 },
 };
 
 const homeVariants = {
-  hidden: { opacity: 0, y: 20, scaleZ: 0 },
+  hidden: { opacity: 0, y: 5, scaleZ: 0 },
   visible,
 };
 
@@ -130,26 +130,6 @@ const Home = () => {
             How Does It <br />
             <span className="mainText">Benefit You?</span>
           </motion.h2>
-          {/* <motion.p variants={homeVariants}>
-            Elevate your e-commerce experience with Cobuyr's user-friendly API
-            Plug-In.{" "}
-            <span className="highlight">
-              Our seamlessly integrated solution enables
-            </span>{" "}
-            effortless incorporation of Social Buying into your existing website
-            structure, ensuring a{" "}
-            <span className="highlight">
-              smooth and efficient transition without disrupting your
-              operations.
-            </span>
-            <br />
-          </motion.p>
-          <motion.blockquote variants={homeVariants}>
-            By integrating our API with just few lines of code, you unlock a
-            world of collaborative purchasing opportunities for your customers.
-          </motion.blockquote> */}
-
-          {/* <SpotBtn text={"Documentation"} variant={homeVariants} /> */}
         </div>
 
         <motion.div className="marquee-wrap" variants={homeVariants}>
@@ -157,7 +137,7 @@ const Home = () => {
           <motion.div
             className="marquee marquee--vertical"
             variants={{
-              hidden: { opacity: 0, x: -40 },
+              hidden: { opacity: 0, x: -20 },
               visible,
             }}
           >
@@ -209,7 +189,7 @@ const Home = () => {
           <motion.div
             className="marquee marquee--vertical marquee--delay"
             variants={{
-              hidden: { opacity: 0, x: 40 },
+              hidden: { opacity: 0, x: 20 },
               visible,
             }}
           >
@@ -915,16 +895,19 @@ export function Hero() {
           </motion.div> */}
 
           <motion.h1 variants={homeVariants}>
-            Revolutionize Checkout with{" "}
-            <span className="mainText">Social Buying</span>
+            Increase online Sales by letting people make{" "}
+            <span className="mainText">Instant Group Payments</span>
+            {/* Revolutionize Checkout with{" "}
+            <span className="mainText">Social Buying</span> */}
           </motion.h1>
           <motion.p variants={homeVariants}>
-            Enhance your checkout experience with Cobuyr's cutting-edge Social
+            Cobuyr invented Instant Group Payments so your customers can buy together in groups <span className="highlight">instantly.</span>
+            {/* Enhance your checkout experience with Cobuyr's cutting-edge Social
             Buying platform. Allow customers to{" "}
             <span className="highlight">
               purchase together, boosting sales and fostering a sense of
               community.
-            </span>
+            </span> */}
           </motion.p>
           <motion.div
             className="mgBtn"
@@ -974,18 +957,18 @@ const marqueeGroup1 = [
     text: "Increase Average Order Value and Customer Lifetime Value",
   },
   {
-    icon: "retention",
+    icon: "keep",
     text: "Improve customer activation and retention rates",
   },
   {
-    icon: "engagement",
+    icon: "policy",
     text: "Enhance customer engagement through personalized offers",
   },
   { icon: "analytics", text: "Streamline operations with real-time analytics" },
 ];
 
 const marqueeGroup2 = [
-  { icon: "search", text: "Improve Checkout Conversion" },
+  { icon: "increase", text: "Improve Checkout Conversion" },
   { icon: "monetize", text: "Monetize Existing Datasource" },
   { icon: "acquire", text: "Acquire more customers Faster" },
   { icon: "view", text: "Obtain Single Realtime View of customers" },
@@ -1007,7 +990,7 @@ const marqueeGroup3 = [
     text: "Increase Average Order Value and Customer Lifetime Value",
   },
   {
-    icon: "retention",
+    icon: "keep",
     text: "Improve customer activation and retention rates",
   },
   {

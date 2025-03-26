@@ -3,6 +3,7 @@ import React from "react";
 import "./footer.css";
 import { Section } from "../inView";
 import { SpotBtn } from "../magnetBtn";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -40,18 +41,18 @@ const Footer = () => {
     //   </div>
     //   <div className="foot-text">
     //     <h5 className="ftrtxt">
-    //       Copyright <a href="#">Cobuyr</a> 2023 | All Rights Reserved
+    //       Copyright <Link to="#">Cobuyr</Link> 2023 | All Rights Reserved
     //     </h5>
     //     <h6>
     //       This site is protected by{" "}
     //       <span className="highlight">reCAPTCHA</span> and the{" "}
-    //       <a href="https://policies.google.com/privacy">
+    //       <Link to="https://policies.google.com/privacy">
     //         Google Privacy Policy
-    //       </a>{" "}
+    //       </Link>{" "}
     //       and{" "}
-    //       <a href="https://policies.google.com/terms">
+    //       <Link to="https://policies.google.com/terms">
     //         Terms of Service apply
-    //       </a>
+    //       </Link>
     //       .
     //     </h6>
     //   </div>
@@ -69,7 +70,7 @@ const Footer = () => {
         </p>
         <div className="wdgt-btn">
           <SpotBtn text={"Book a demo"} />
-          <a href="/Earn">About Social Buying</a>
+          <Link to="/Earn">About Social Buying</Link>
         </div>
       </Section>
       <footer className="footer">
@@ -119,13 +120,13 @@ const Footer = () => {
               <h4>Menu</h4>
               <ul>
                 <li>
-                  <a href="/About">Why Cobuyr</a>
+                  <Link to="/About">Why Cobuyr</Link>
                 </li>
                 <li>
-                  <a href="/Plaform">Platform</a>
+                  <Link to="/Platform">Platform</Link>
                 </li>
                 <li>
-                  <a href="/Industry">Industries</a>
+                  <Link to="/Industry">Industries</Link>
                 </li>
               </ul>
             </div>
@@ -133,13 +134,13 @@ const Footer = () => {
               <h4>Policies</h4>
               <ul>
                 <li>
-                  <a href="#">Marketing Statements</a>
+                  <Link to="#">Marketing Statements</Link>
                 </li>
                 <li>
-                  <a href="#">Privacy Policy</a>
+                  <Link to="#">Privacy Policy</Link>
                 </li>
                 <li>
-                  <a href="#">data Protection Policy</a>
+                  <Link to="#">data Protection Policy</Link>
                 </li>
               </ul>
             </div>
@@ -147,13 +148,13 @@ const Footer = () => {
               <h4>Contact</h4>
               <ul>
                 <li>
-                  <a href="/Contact">Contact Us</a>
+                  <Link to="/Contact">Contact Us</Link>
                 </li>
                 <li>
-                  <a href="/Earn">Schedule Demo</a>
+                  <Link to="/Earn">Schedule Demo</Link>
                 </li>
                 <li>
-                  <a href="/Contact">FAQs</a>
+                  <Link to="/Contact">FAQs</Link>
                 </li>
               </ul>
             </div>
@@ -173,7 +174,7 @@ export function CopyrightNotice() {
 
   return (
     <h5 className="ftrtxt">
-      &copy;{currentYear} <a href="#">Cobuyr</a> | All Rights Reserved
+      &copy;{currentYear} <Link to="#">Cobuyr</Link> | All Rights Reserved
     </h5>
   );
 }
