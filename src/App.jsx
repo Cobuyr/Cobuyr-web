@@ -23,6 +23,9 @@ import { AnimatePresence } from "framer-motion";
 import Scene from "./Experience/scene";
 import Platform from "./Pages/Platform";
 import Industry from "./Pages/Industry";
+import Privacy from "./Pages/Privacy";
+import DataProtectionPolicy from "./Pages/DataProtection";
+import MarketingStatement from "./Pages/MarketingStatement";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -44,6 +47,9 @@ function App() {
           <Route path="/Earn" element={<Earn />} />
           <Route path="/Platform" element={<Platform />} />
           <Route path="/Industry" element={<Industry />} />
+          <Route path="/Privacy" element={<Privacy />} />
+          <Route path="/DataProtectionPolicy" element={<DataProtectionPolicy />} />
+          <Route path="/MarketingStatement" element={<MarketingStatement />} />
           <Route path="/Scene" element={<Scene />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>

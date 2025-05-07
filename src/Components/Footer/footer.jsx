@@ -134,13 +134,13 @@ const Footer = () => {
               <h4>Policies</h4>
               <ul>
                 <li>
-                  <Link to="#">Marketing Statements</Link>
+                  <Link to="/MarketingStatement">Marketing Statements</Link>
                 </li>
                 <li>
-                  <Link to="#">Privacy Policy</Link>
+                  <Link to="/Privacy">Privacy Policy</Link>
                 </li>
                 <li>
-                  <Link to="#">data Protection Policy</Link>
+                  <Link to="/DataProtectionPolicy">data Protection Policy</Link>
                 </li>
               </ul>
             </div>
