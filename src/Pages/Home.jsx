@@ -971,7 +971,7 @@ const marqueeGroup2 = [
   { icon: "increase", text: "Improve Checkout Conversion" },
   { icon: "monetize", text: "Monetize Existing Datasource" },
   { icon: "acquire", text: "Acquire more customers Faster" },
-  { icon: "view", text: "Obtain Single Realtime View of customers" },
+  { icon: "analytics", text: "Obtain Single Realtime View of customers" },
   { icon: "loyalty", text: "Boost customer loyalty with exclusive rewards" },
   {
     icon: "payment",

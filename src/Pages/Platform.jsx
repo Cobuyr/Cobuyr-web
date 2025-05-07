@@ -13,7 +13,7 @@ const visible = {
   x: 0,
   y: 0,
   scale: 1,
-  transition: { staggerChildren: 0.4, duration: 0.5 },
+  transition: { staggerChildren: 0.25, duration: 0.5 },
 };
 
 const platVariants = {
@@ -30,7 +30,7 @@ const Platform = () => {
           initial="hidden"
           animate="visible"
           exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
+          variants={{ visible: { transition: { staggerChildren: 0.25 } } }}
         >
           <motion.h2 variants={platVariants}>
           <span className="mainText">Modernize</span> your checkout overnight to attract and retain more
@@ -54,7 +54,7 @@ const Platform = () => {
             visible,
           }}
         >
-          <img src="/group.webp" alt="dsdss" />
+          <img src="/plat.webp" alt="platform that empowers retailers" />
         </motion.div>
       </Section>
 
@@ -85,7 +85,7 @@ const Platform = () => {
           initial="hidden"
           animate="visible"
           exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
+          variants={{ visible: { transition: { staggerChildren: 0.25 } } }}
         >
           <div className="list">
             <motion.div className="subtext">
@@ -108,14 +108,14 @@ const Platform = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/air.webp" alt="Enable customers to split purchases" />
             </motion.div>
           </div>
 
           <div className="list">
             <div className="subtext">
               <motion.h3 variants={platVariants}>
-                Give your custorners multiple ways to buy
+                Give your customers multiple ways to buy
               </motion.h3>
               <motion.p variants={platVariants}>
                 Cobuyr enables your customers to use multiple cards in a single
@@ -132,7 +132,7 @@ const Platform = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/plat.webp" alt="Give your custorners multiple ways to buy" />
             </motion.div>
           </div>
           <div className="list">
@@ -156,7 +156,7 @@ const Platform = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/APIs.webp" alt="Integrate your systems and data in minutes" />
             </motion.div>
           </div>
           <div className="list">
@@ -181,7 +181,7 @@ const Platform = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/map.webp" alt="customer insights" />
             </motion.div>
           </div>
           <div className="list">
@@ -205,7 +205,7 @@ const Platform = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/ana.webp" alt="Predict what your customers will buy next" />
             </motion.div>
           </div>
         </motion.div>

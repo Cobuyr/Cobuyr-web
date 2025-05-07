@@ -13,7 +13,7 @@ const visible = {
   x: 0,
   y: 0,
   scale: 1,
-  transition: { staggerChildren: 0.4, duration: 0.5 },
+  transition: { staggerChildren: 0.15, duration: 0.5 },
 };
 
 const platVariants = {
@@ -30,7 +30,7 @@ const Industry = () => {
           initial="hidden"
           animate="visible"
           exit={{ opacity: 0, transition: { duration: 1 } }}
-          variants={{ visible: { transition: { staggerChildren: 0.5 } } }}
+          variants={{ visible: { transition: { staggerChildren: 0.25 } } }}
         >
           <motion.h3 variants={platVariants}>
             Millions of people around the world want to buy online like they can
@@ -54,7 +54,7 @@ const Industry = () => {
             visible,
           }}
         >
-          <img src="/group.webp" alt="dsdss" />
+          <img src="/peo.webp" alt="instant group buy" />
         </motion.div>
       </Section>
 
@@ -106,7 +106,7 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/air.webp" alt="airlines" />
             </motion.div>
           </div>
 
@@ -129,7 +129,7 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/beer.webp" alt=" Wine, beer and spirit retailers" />
             </motion.div>
           </div>
           <div className="list">
@@ -151,7 +151,7 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img style={{objectFit:'contain'}} src="/hosp.webp" alt="Hospitality companies" />
             </motion.div>
           </div>
           <div className="list">
@@ -172,7 +172,7 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/lux.webp" alt="Luxury retailers" />
             </motion.div>
           </div>
           <div className="list">
@@ -193,7 +193,7 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/trav.webp" alt="Travel companies" />
             </motion.div>
           </div>
           <div className="list">
@@ -214,7 +214,24 @@ const Industry = () => {
               }}
               className="platimg"
             >
-              <img src="/group.webp" alt="" />
+              <img src="/mark2.webp" alt="Marketplaces" />
+            </motion.div>
+          </div>
+          <div className="list">
+            <div className="subtext">
+              <motion.h3 variants={platVariants}>Wineries</motion.h3>
+              <motion.p variants={platVariants}>
+              Consumers have near unlimited choice when buying wines so yesterday’s customer acquisition and retention strategies need to be rethought.  Wineries use Cobuyr to better connect, engage and serve customers that results in generating incremental online sales from new new and existing customers, including wine club members.
+              </motion.p>
+            </div>
+            <motion.div
+              variants={{
+                hidden: { opacity: 0, scale: 0.95 },
+                visible,
+              }}
+              className="platimg"
+            >
+              <img src="/down.webp" alt="Marketplaces" />
             </motion.div>
           </div>
         </motion.div>

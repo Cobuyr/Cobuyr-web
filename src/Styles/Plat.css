@@ -1,5 +1,7 @@
 .platHead {
+    height: 100vh;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     -moz-column-gap: 3rem;
          column-gap: 3rem;
@@ -29,11 +31,16 @@
 
 .platimg {
     width: 60%;
-
+    border-radius: 15px;
+    
     img {
-        width: 100%;
+        /* width: 100%; */
         height: 100%;
         border-radius: 15px;
+        max-height: 350px;
+           -o-object-fit: cover;
+              object-fit: cover;
+           aspect-ratio: 16 / 9;
     }
 }
 
@@ -44,13 +51,17 @@
         font-size: 2rem;
         padding-inline: 10%;
     }
+    h3 {
+        font-size: 1.5rem;
+        /* padding-inline: 10%; */
+    }
 
     .list {
         display: flex;
         justify-content: space-between;
         -moz-column-gap: 50px;
              column-gap: 50px;
-        margin-block: 10vh;
+        margin-block: 5vh;
         padding-block: 5vh;
 
         .subtext {
