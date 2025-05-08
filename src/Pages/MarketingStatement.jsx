@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/footer";
 const MarketingStatement  = () => {
   return (
     <>
-      <Section>
+      <Section className={'policywrapper'}>
       <div className="policy-page">
       <h1 className="policy-title">Marketing Statement</h1>
       

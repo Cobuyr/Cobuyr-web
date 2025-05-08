@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/footer";
 const Privacy = () => {
   return (
     <>
-      <Section>
+      <Section className={'policywrapper'}>
         <div className="policy-page">
           <h1 className="policy-title">Privacy Policy</h1>
 

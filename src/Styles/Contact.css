@@ -1,17 +1,19 @@
+.default {
+    --Glow: hsla(321, 100%, 75%, 0.45);
+}
 
-.default{
-    --Glow:hsla(321, 100%, 75%, 0.45);
+.valid {
+    --Glow: hsla(120, 71%, 48%, 0.5);
 }
-.valid{
-    --Glow:hsla(120, 71%, 48%, 0.5);
+
+.invalid {
+    --Glow: hsla(0, 100%, 61%, 0.5);
 }
-.invalid{
-    --Glow:hsla(0, 100%, 61%, 0.5);
-}
+
 .contact {
-    --defaultGlow:hsla(321, 100%, 75%, 0.45);
-    --validGlow:hsla(120, 71%, 48%, 0.5);
-    --invalidGlow:hsla(0, 100%, 61%, 0.5);
+    --defaultGlow: hsla(321, 100%, 75%, 0.45);
+    --validGlow: hsla(120, 71%, 48%, 0.5);
+    --invalidGlow: hsla(0, 100%, 61%, 0.5);
 
     height: 100vh;
     width: 100vw;
@@ -24,9 +26,10 @@
     gap: 1em 1em;
     margin-block: 0;
     place-items: center;
-    background: radial-gradient( circle at 50% 50%, transparent 0%, #32323275 80%, var(--bg-color) 95% );
+    background: radial-gradient(circle at 50% 50%, transparent 0%, #32323275 80%, var(--bg-color) 95%);
 
-    &::before, &::after {
+    &::before,
+    &::after {
         content: '';
         width: 2.5%;
         height: 70%;
@@ -37,24 +40,27 @@
         /* clip-path: circle(50%); */
         border-radius: 50%;
         background-color: var(--Glow);
-        filter: blur(50px) drop-shadow(0px 42px 40px var(--Glow));
+        -webkit-filter: blur(50px) drop-shadow(0px 42px 40px var(--Glow));
+                filter: blur(50px) drop-shadow(0px 42px 40px var(--Glow));
         transition: all 1s ease;
-        animation: glow 10s ease infinite ;
+        -webkit-animation: glow 10s ease infinite;
+                animation: glow 10s ease infinite;
     }
 
-    &::after {   
+    &::after {
         left: unset;
         right: 0%;
         translate: 50% -50%;
     }
 }
+
 #contact-form {
     min-width: 500px;
     min-height: 400px;
     color: #FFF;
     padding: 20px;
 
-    
+
     & input,
     & textarea {
         width: 100%;
@@ -97,36 +103,54 @@
 }
 
 
-@keyframes glow {
-    0%,100%{
+@-webkit-keyframes glow {
+
+    0%,
+    100% {
         width: 2.5%;
     }
-    50%{
+
+    50% {
         width: 7.5%;
     }
 }
-.inp-field{
+
+
+@keyframes glow {
+
+    0%,
+    100% {
+        width: 2.5%;
+    }
+
+    50% {
+        width: 7.5%;
+    }
+}
+
+.inp-field {
     width: 100%;
 
-    & input + span {
+    & input+span {
         position: relative;
         display: block !important;
-      }
-      
-      & input + span::before {
+    }
+
+    & input+span::before {
         position: absolute;
         right: -20px;
         top: 5px;
-      }
-      
-      & input:focus:invalid {
+    }
+
+    & input:focus:invalid {
         border-bottom: groove var(--invalidGlow);
-      }
-      & input:focus:valid {
+    }
+
+    & input:focus:valid {
         border-bottom: groove var(--validGlow);
-      }
-      
-     /* & input:focus:invalid + span::before {
+    }
+
+    /* & input:focus:invalid + span::before {
         content: "✖";
         color: rgb(255, 69, 69);
       }
@@ -135,7 +159,7 @@
         content: "✓";
         color: green;
       } */
-    
+
 }
 
 .contact-text {
@@ -162,13 +186,27 @@
 }
 
 /* faq section  */
+.faqPage{
+    height: 100%;
+    /* overflow: hidden; */
+    background: linear-gradient(15deg, rgba(255, 255, 255, 0) 0%, rgb(227 13 149 / 3%) 50%, rgb(176 72 211 / 5%) 100%), url(./node.svg);
+}
 .faq {
-    /* max-height: 100vh;
-    overflow-y: scroll; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        width: 100%;
+    }
 }
 
 .fl {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -190,11 +228,11 @@
         translate: -50% -50%;
         opacity: 0.025;
         z-index: -1;
-        
-  transition: background-position 50s ease-out;
 
-  /* Set background position based on mouse coordinates */
-  background-position: calc(var(--bg-x) * -1px) calc(var(--bg-y) * -1px);
+        transition: background-position 50s ease-out;
+
+        /* Set background position based on mouse coordinates */
+        background-position: calc(var(--bg-x) * -1px) calc(var(--bg-y) * -1px);
 
     }
 }
@@ -206,18 +244,18 @@
 
 
 @media (max-width: 900px) {
-    .fl{
+    .fl {
         flex-direction: column;
 
-        & h1{
+        & h1 {
             width: 100%;
         }
 
         #contact-form {
             width: 100%;
             min-width: unset;
-            
+
         }
     }
-    
+
 }

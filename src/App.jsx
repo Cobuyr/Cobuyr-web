@@ -26,6 +26,7 @@ import Industry from "./Pages/Industry";
 import Privacy from "./Pages/Privacy";
 import DataProtectionPolicy from "./Pages/DataProtection";
 import MarketingStatement from "./Pages/MarketingStatement";
+import Faq from "./Pages/Faq";
 
 // define "lord-icon" custom element with default properties
 defineElement(lottie.loadAnimation);
@@ -50,6 +51,7 @@ function App() {
           <Route path="/Privacy" element={<Privacy />} />
           <Route path="/DataProtectionPolicy" element={<DataProtectionPolicy />} />
           <Route path="/MarketingStatement" element={<MarketingStatement />} />
+          <Route path="/Faq" element={<Faq />} />
           <Route path="/Scene" element={<Scene />} />
           <Route path="/*" element={<NoPage />} />
         </Routes>

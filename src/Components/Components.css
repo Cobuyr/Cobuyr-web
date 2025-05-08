@@ -36,9 +36,15 @@
 }
 
 .accordion {
-  box-shadow: 0px 13px 23px -13px rgba(0, 0, 0, 0.5);
   width: 100%;
   background-color: transparent;
+  border-block: 2px solid white;
+}
+.accordion .accordItem {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+.accordion .accordItem:last-child {
+  border-bottom: none;
 }
 
 .title {
@@ -56,10 +62,15 @@
   border-radius: 4px;
   margin-top: 2px;
   transition: all 0.2s ease-in;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 
 .title-text {
   margin-left: 10px;
+  font-size: 1.25rem;
 }
 
 .title:hover {
@@ -93,6 +104,8 @@
 }
 
 .content-text {
+  font-size: 1rem;
+  max-width: 100ch;
   padding: 25px 15px;
   visibility: hidden;
   opacity: 0;
@@ -109,16 +122,14 @@
 .fa-angle-down {
   font-size: 20px;
   color: rgba(255, 255, 255, 0.5);
-  transition: all 0.6s cubic-bezier(0.08, 1.09, 0.32, 1.275);
+  transform: rotate(0deg);
+  transform-origin: center;
+  transition: all 0.3s ease;
 }
 
 .fa-rotate-180 {
+  transform: rotate(180deg);
   color: rgb(255, 255, 255);
-}
-
-.arrow-wrapper {
-  position: absolute;
-  margin-left: 375px;
 }
 
 .progress {

@@ -7,7 +7,7 @@ import Footer from "../Components/Footer/footer";
 const DataProtectionPolicy = () => {
   return (
     <>
-      <Section>
+      <Section className={'policywrapper'}>
       <div className="policy-page">
       <h1 className="policy-title">Data Protection Policy</h1>
       

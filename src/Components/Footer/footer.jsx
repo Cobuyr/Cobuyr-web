@@ -154,7 +154,7 @@ const Footer = () => {
                   <Link to="/Earn">Schedule Demo</Link>
                 </li>
                 <li>
-                  <Link to="/Contact">FAQs</Link>
+                  <Link to="/Faq">FAQs</Link>
                 </li>
               </ul>
             </div>
