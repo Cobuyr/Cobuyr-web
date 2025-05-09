@@ -874,13 +874,6 @@ export default TransHome;
 
 export function Hero() {
   const heroRef = useRef(null);
-  // const { scrollYProgress } = useScroll({
-  //   target: heroRef,
-  //   offset: ["end end", "end start"],
-  // });
-
-  // const opacity = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-  // const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 0.7, 0]);
 
   return (
     <>

@@ -115,8 +115,8 @@
   // background: url(./plexus.png);
   background-size: contain;
   background-blend-mode: overlay;
-  background-color: #040404bb;
-  background: linear-gradient(15deg, rgba(255, 255, 255, 0) 0%, rgb(227 13 149 / 3%) 50%, rgb(176 72 211 / 3%) 100%), url(./node.svg);
+  background-color: #040404;
+  background: linear-gradient(15deg, rgba(255, 255, 255, 0) 0%, rgb(227 13 149 / 5%) 50%, rgb(176 72 211 / 10%) 100%), url(./node.svg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -911,7 +911,7 @@
 .integrate.benefit{
   align-items: center;
   background-color: var(--bg-light);
-  border-radius: 50px;
+  // border-radius: 50px;
   box-shadow: unset;
   .int-textbox {
     min-height: unset;
@@ -926,7 +926,7 @@
   justify-content: space-evenly;
   align-items: flex-end;
   background-color: var(--bg-color);
-  border-radius: 50px 50px 0 0;
+  // border-radius: 50px 50px 0 0;
   // box-shadow: 0px -20px 25px -15px hsl(0, 0%, 5%);
 
   .int-textbox {

@@ -1,10 +1,10 @@
 import React from "react";
 import dash from "/dash.jpg";
-import adva from "/adva.webp";
-import cust from "/cust.webp";
-import group from "/group.webp";
-import multi from "/multi.webp";
-import unif from "/unif.webp";
+import adva from "/ana.webp";
+import cust from "/map.webp";
+import group from "/air.webp";
+import multi from "/plat.webp";
+import unif from "/multi.webp";
 
 import "./Components.css";
 
